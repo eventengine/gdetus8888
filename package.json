@@ -15,7 +15,7 @@
   "author": "#NothingPersonalCorp.",
   "repository": {
     "type": "git",
-    "url": "git@github.com:gdetus/gdetus8888.git"
+    "url": "git@github.com:eventengine/gdetus8888.git"
   },
   "license": "ISC",
   "dependencies": {
