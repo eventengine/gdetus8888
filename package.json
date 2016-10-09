@@ -1,0 +1,54 @@
+{
+  "name": "gdetus",
+  "version": "2.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "shipit gdetus deploy",
+    "rollback": "shipit gdetus rollback",
+    "start": "NODE_ENV=development node server.js",
+    "start-production": "shipit gdetus start",
+    "stop-production": "shipit gdetus stop",
+    "status-production": "shipit gdetus status"
+  },
+  "author": "#NothingPersonalCorp.",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:gdetus/gdetus8888.git"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "bluebird": "^3.4.1",
+    "blueimp-file-upload": "^9.12.5",
+    "body-parser": "^1.15.2",
+    "commander": "^2.9.0",
+    "cookie-parser": "^1.4.3",
+    "cropper": "^2.3.4",
+    "ejs": "^2.4.2",
+    "escape-html": "^1.0.3",
+    "express": "^4.14.0",
+    "express-mysql-session": "^1.1.1",
+    "express-resource": "^1.0.0",
+    "express-session": "^1.14.0",
+    "express-validator": "^2.20.8",
+    "js-yaml": "^3.6.1",
+    "lodash": "^4.13.1",
+    "mime": "^1.3.4",
+    "multiparty": "^4.1.2",
+    "mysql-promise": "^3.0.0",
+    "node-uuid": "^1.4.7",
+    "nodemailer": "^2.5.0",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "passport-remember-me": "0.0.1",
+    "password-generator": "^2.0.2",
+    "socket.io": "^1.5.0",
+    "validator": "^5.5.0",
+    "vhost": "^3.0.2"
+  },
+  "devDependencies": {
+    "shipit-cli": "^1.4.1",
+    "shipit-deploy": "^2.2.0"
+  }
+}

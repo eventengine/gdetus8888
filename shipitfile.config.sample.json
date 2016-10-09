@@ -1,0 +1,16 @@
+{
+	"app": {
+		"name": "gdetus",
+		"folder": "gdetus",
+		"repository": "https://github.com/*****/*****"
+	},
+	"default": {
+		"ignores": [".git", "shipitfile.js"],
+		"keepReleases": 3,
+		"key": "*****/id_rsa",
+		"shallowClone": true
+	},
+	"gdetus": {
+		"servers": "root@*****"
+	}
+};
