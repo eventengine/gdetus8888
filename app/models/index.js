@@ -7,4 +7,9 @@ var models = {
 	tokensRememberMe: require("./tokensRememberMe")
 };
 
-module.exports = models;
+module.exports = {
+	init(configDatabase) {
+		require("./db").configure(configDatabase);
+		return models;
+	}
+};

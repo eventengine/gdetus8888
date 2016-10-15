@@ -1,5 +1,9 @@
 'use strict';
 
+
+alert(0)
+
+
 /* Controllers */
 
 angular.module('app')

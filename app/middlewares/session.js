@@ -31,7 +31,7 @@ var sessionConfig = {
 
 	
 module.exports = {
-	create: function(config) {
+	init: function(config) {
 		sessionConfig.store = Object.assign({}, sessionConfig.store, config.database);
 		sessionConfig.store = new MySQLStore(sessionConfig.store);
 		return session(sessionConfig);

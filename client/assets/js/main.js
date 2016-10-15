@@ -59,18 +59,17 @@ angular.module('app')
     
 /**
  * Первоначальная проверка авторизации пользователя.
+ * Проверка куки isAuthenticated на предмет был ли авторизован пользователь или нет.
+ * Указание страницы для редиректа пользователя по итогу проверки авторизации.
  */
-angular.module('app').run(['$http', function($http) {
-	
+angular.module('app').run(['$http', '$cookies', function($http, $cookies) {
 	console.log("Проверка авторизации");
-	
-	
-	
-	console.log("Авторизация пройдена успешно.");
-	document.location = "#/app/dashboard";
-	
-	console.log("Авторизация не пройдена.");
-	document.location = "#/access/login";
-	
+	if ($cookies.isAuthenticated == "true") {
+		console.log("Авторизация пройдена успешно.");
+		document.location = "#/app/dashboard";
+	} else {
+		console.log("Авторизация не пройдена.");
+		document.location = "#/access/login";
+	}
 }]);
 

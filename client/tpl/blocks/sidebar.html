@@ -53,11 +53,11 @@
             <span class="icon-thumbnail "><i class="pg-social"></i></span>
           </li>
           <li class="" ui-sref-active="active">
-            <a ui-sref="app.social"><span class="title">Social</span></a>
+            <a ui-sref="app.social"><span class="title">Профиль</span></a>
             <span class="icon-thumbnail "><i class="pg-mail"></i></span>
           </li>
           <li class="" ui-sref-active="active">
-            <a ui-sref="app.calendar"><span class="title">Calendar</span></a>
+            <a ui-sref="app.calendar"><span class="title">Календарь</span></a>
             <span class="icon-thumbnail"><i class="pg-calender"></i></span>
           </li>
           <li class="" ui-sref-active="active">
@@ -67,16 +67,16 @@
             <span class="icon-thumbnail"><i class="pg-layouts"></i></span>
           </li>
           <li ng-class="{'open active':includes('app.layouts')}">
-            <a href="javascript:;"><span class="title">Layouts</span>
+            <a href="javascript:;"><span class="title">Слои</span>
             <span class=" arrow" ng-class="{'active open':$state.includes('app.layouts')}"></span></a>
             <span class="icon-thumbnail"><i class="pg-layouts2"></i></span>
             <ul class="sub-menu">
               <li ui-sref-active="active">
-                <a ui-sref="app.layouts.default">Default</a>
+                <a ui-sref="app.layouts.default">Дефолт</a>
                 <span class="icon-thumbnail">dl</span>
               </li>
               <li ui-sref-active="active">
-                <a ui-sref="app.layouts.secondary">Secondary</a>
+                <a ui-sref="app.layouts.secondary">Вторичное</a>
                 <span class="icon-thumbnail">sl</span>
               </li>
               <li ui-sref-active="active">
@@ -84,13 +84,13 @@
                 <span class="icon-thumbnail">bl</span>
               </li>
               <li ui-sref-active="active">
-                <a ui-sref="app.builder">Columns</a>
+                <a ui-sref="app.builder">Столбцы</a>
                 <span class="icon-thumbnail">cl</span>
               </li>
             </ul>
           </li>
           <li ng-class="{'open active':includes('app.ui')}">
-            <a href="javascript:;"><span class="title">UI Elements</span>
+            <a href="javascript:;"><span class="title">ЮИ элементы</span>
             <span class=" arrow" ng-class="{'active open':$state.includes('app.ui')}"></span></a>
             <span class="icon-thumbnail">Ui</span>
             <ul class="sub-menu">
@@ -162,11 +162,11 @@
             <span class="icon-thumbnail "><i class="pg-map"></i></span>
             <ul class="sub-menu">
               <li ui-sref-active="active">
-                <a ui-sref="app.maps">найти</a>
+                <a ui-sref="app.maps.google">Гуглокарта</a>
                 <span class="icon-thumbnail"><i class="pg-bag"></i></span>
               </li>
               <li ui-sref-active="active">
-                <a ui-sref="app.maps.vector">создать</a>
+                <a ui-sref="app.maps.vector">Векторкарта</a>
                 <span class="icon-thumbnail"><i class="pg-bag"></i></span>
               </li>
             </ul>

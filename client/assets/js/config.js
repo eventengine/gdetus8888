@@ -537,7 +537,15 @@ angular.module('app')
                 })
                 .state('access.login', {
                     url: '/login',
-                    templateUrl: 'tpl/extra_login.html'
+                    templateUrl: 'tpl/extra_login.html',
+                    controller: 'LoginCtrl',
+                    resolve: {
+                        deps: ['$ocLazyLoad', function($ocLazyLoad) {
+                            return $ocLazyLoad.load([
+                                'assets/js/controllers/login.js'
+                            ]);
+                        }]
+                    }
                 })
                 .state('access.register', {
                     url: '/register',
