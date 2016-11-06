@@ -2,16 +2,16 @@
     <!-- Nav tabs -->
     <ul class="nav nav-tabs nav-tabs-linetriangle nav-tabs-separator nav-stack-sm">
         <li ng-class="{'active': getCurrentStep() == 1 }">
-            <a data-toggle="tab" ng-click="goToStep(1)"><i class="fa fa-shopping-cart tab-icon"></i> <span>Your cart</span></a>
+            <a data-toggle="tab" ng-click="goToStep(1)"><i class="fa fa-shopping-cart tab-icon"></i> <span>Ваша корзина</span></a>
         </li>
         <li ng-class="{'active': getCurrentStep() == 2 }">
-            <a data-toggle="tab" ng-click="goToStep(2)"><i class="fa fa-truck tab-icon"></i> <span>Shipping information</span></a>
+            <a data-toggle="tab" ng-click="goToStep(2)"><i class="fa fa-truck tab-icon"></i> <span>Информация о доставке</span></a>
         </li>
         <li ng-class="{'active': getCurrentStep() == 3 }">
-            <a data-toggle="tab" ng-click="goToStep(3)"><i class="fa fa-credit-card tab-icon"></i> <span>Payment details</span></a>
+            <a data-toggle="tab" ng-click="goToStep(3)"><i class="fa fa-credit-card tab-icon"></i> <span>Детали оплаты</span></a>
         </li>
         <li ng-class="{'active': getCurrentStep() == 4 }">
-            <a data-toggle="tab" ng-click="goToStep(4)"><i class="fa fa-check tab-icon"></i> <span>Summary</span></a>
+            <a data-toggle="tab" ng-click="goToStep(4)"><i class="fa fa-check tab-icon"></i> <span>Итог</span></a>
         </li>
     </ul>
     <wizard on-finish="finished()" class="bg-white" hide-indicators="true">
@@ -20,7 +20,7 @@
                 <div class="col-md-5 b-r b-dashed b-grey sm-b-b">
                     <div class="padding-30 m-t-50">
                         <i class="fa fa-shopping-cart fa-2x hint-text"></i>
-                        <h2>Your Bags are ready to check out!</h2>
+                        <h2>Ваш заказ готов к оплате!</h2>
                         <p>Discover goods you'll love from brands that inspire. The easiest way to open your own online store. Discover amazing stuff or open your own store for free!</p>
                         <p class="small hint-text">Below is a sample page for your cart , Created using pages design UI Elementes</p>
                     </div>
@@ -31,14 +31,14 @@
                             <tr>
                                 <td class="col-lg-8 col-md-6 col-sm-7 ">
                                     <a href="" class="remove-item"><i class="pg-close"></i></a>
-                                    <span class="m-l-10 font-montserrat fs-18 all-caps">Webarch UI Framework</span>
-                                    <span class="m-l-10 ">Dashboard UI Pack</span>
+                                    <span class="m-l-10 font-montserrat fs-18 all-caps"> Success party @ клуб Грибоедов (1.1.2017)</span>
+                                    <span class="m-l-10 ">Билет на drum and bass вечеринку</span>
                                 </td>
                                 <td class=" col-lg-2 col-md-3 col-sm-3 text-right">
                                     <span>Qty 1</span>
                                 </td>
                                 <td class=" col-lg-2 col-md-3 col-sm-2 text-right">
-                                    <h4 class="text-primary no-margin font-montserrat">$27</h4>
+                                    <h4 class="text-primary no-margin font-montserrat"><i class="fa fa-ruble"></i> 2700</h4>
                                 </td>
                             </tr>
                             <tr>
@@ -55,12 +55,12 @@
                                 </td>
                             </tr>
                         </table>
-                        <h5>Donation</h5>
+                        <h5>Доступные скидки</h5>
                         <div class="row">
                             <div class="col-lg-7 col-md-6">
                                 <p class="no-margin">Donate now and give clean, safe water to those in need. </p>
                                 <p class="small hint-text">
-                                    100% of your donation goes to the field, and you can track the progress of every dollar spent. <a href="">Click Here</a>
+                                    100% of your donation goes to the field, and you can track the progress of every dollar spent. <a ui-sref="app.extra.invoice">Счёт-фактура</a>
                                 </p>
                             </div>
                             <div class="col-lg-5 col-md-6">
@@ -89,7 +89,7 @@
                                     <p class="no-margin">$0</p>
                                 </div>
                                 <div class="col-sm-2 text-right bg-primary col-sm-height col-middle padding-10">
-                                    <h5 class="font-montserrat all-caps small no-margin hint-text text-white bold">Total</h5>
+                                    <h5 class="font-montserrat all-caps small no-margin hint-text text-white bold">Итого</h5>
                                     <h4 class="no-margin text-white">$44</h4>
                                 </div>
                             </div>
@@ -101,12 +101,12 @@
                 <ul class="pager wizard">
                     <li class="next">
                         <button type="button" class="btn btn-primary btn-cons btn-animated from-left fa fa-truck pull-right" wz-next>
-                            <span>Next</span>
+                            <span>Далее</span>
                         </button>
                     </li>
                     <li class="previous disabled">
                         <button type="button" class="btn btn-default btn-cons pull-right">
-                            <span>Previous</span>
+                            <span>Вернуться</span>
                         </button>
                     </li>
                 </ul>
@@ -124,7 +124,7 @@
                 <div class="col-md-7">
                     <div class="padding-30">
                         <form role="form">
-                            <p>Name and Email Address</p>
+                            <p>Имя и email</p>
                             <div class="form-group-attached">
                                 <div class="row clearfix">
                                     <div class="col-sm-6">
@@ -141,7 +141,7 @@
                                     </div>
                                 </div>
                                 <div pg-form-group class="form-group form-group-default required">
-                                    <label>Email</label>
+                                    <label>Почта</label>
                                     <input type="text" class="form-control" required>
                                 </div>
                             </div>
@@ -149,7 +149,7 @@
                             <p>Billing Address</p>
                             <div class="form-group-attached">
                                 <div pg-form-group class="form-group form-group-default required">
-                                    <label>Address</label>
+                                    <label>Адрес</label>
                                     <input type="text" class="form-control" placeholder="Current address" required>
                                 </div>
                                 <div class="row clearfix">
@@ -663,12 +663,12 @@
                 <ul class="pager wizard">
                     <li class="next">
                         <button type="button" class="btn btn-primary btn-cons btn-animated from-left fa fa-truck pull-right" wz-next>
-                            <span>Next</span>
+                            <span>Далее</span>
                         </button>
                     </li>
                     <li class="previous">
                         <button type="button" class="btn btn-default btn-cons pull-right" wz-previous>
-                            <span>Previous</span>
+                            <span>Вернуться</span>
                         </button>
                     </li>
                 </ul>
@@ -678,7 +678,7 @@
             <div class="row row-same-height">
                 <div class="col-md-5 b-r b-dashed b-grey ">
                     <div class="padding-30 m-t-50">
-                        <h2>We Secured Your Line</h2>
+                        <h2>Все операции защищены</h2>
                         <p>Below is a sample page for your cart , Created using pages design UI Elementes</p>
                         <p class="small hint-text">Below is a sample page for your cart , Created using pages design UI Elementes</p>
                         <table class="table table-condensed">
@@ -714,16 +714,16 @@
                 <div class="col-md-7">
                     <div class="padding-30">
                         <ul class="list-unstyled list-inline m-l-30">
-                            <li><a href="" class="p-r-30 text-black">Credit card</a>
+                            <li><a href="" class="p-r-30 text-black">Кредитная карта</a>
                             </li>
                             <li><a href="" class="p-r-30 text-black  hint-text">PayPal</a>
                             </li>
-                            <li><a href="" class="p-r-30 text-black  hint-text">Wire transfer</a>
+                            <li><a href="" class="p-r-30 text-black  hint-text">Иной метод оплаты</a>
                             </li>
                         </ul>
                         <form role="form">
                             <div class="bg-master-light padding-30 b-rad-lg">
-                                <h2 class="pull-left no-margin">Credit Card</h2>
+                                <h2 class="pull-left no-margin">Кредитная карта</h2>
                                 <ul class="list-unstyled pull-right list-inline no-margin">
                                     <li>
                                         <a href="">
@@ -752,21 +752,21 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <label>Expiration</label>
+                                        <label>Действительна до</label>
                                         <br>
                                         <select class="cs-select cs-skin-slide" cs-select>
-                                            <option selected>Jan (01)</option>
-                                            <option>Feb (02)</option>
-                                            <option>Mar (03)</option>
-                                            <option>Apr (04)</option>
-                                            <option>May (05)</option>
-                                            <option>Jun (06)</option>
-                                            <option>Jul (07)</option>
-                                            <option>Aug (08)</option>
-                                            <option>Sep (09)</option>
-                                            <option>Oct (10)</option>
-                                            <option>Nov (11)</option>
-                                            <option>Dec (12)</option>
+                                            <option selected>Янв (01)</option>
+                                            <option>Фев (02)</option>
+                                            <option>Март (03)</option>
+                                            <option>Апр (04)</option>
+                                            <option>Май (05)</option>
+                                            <option>Июнь (06)</option>
+                                            <option>Июль (07)</option>
+                                            <option>Авг (08)</option>
+                                            <option>Сент (09)</option>
+                                            <option>Окт (10)</option>
+                                            <option>Ноя (11)</option>
+                                            <option>Дек (12)</option>
                                         </select>
                                         <select class="cs-select cs-skin-slide" cs-select>
                                             <option value="2014">2014</option>
@@ -790,7 +790,7 @@
                                     </div>
                                     <div class="col-md-2 col-md-offset-4">
                                         <div class="form-group required">
-                                            <label>CVC Code</label>
+                                            <label>код CVC</label>
                                             <input type="text" class="form-control" placeholder="000" required>
                                         </div>
                                     </div>
@@ -804,12 +804,12 @@
                 <ul class="pager wizard">
                     <li class="next">
                         <button type="button" class="btn btn-primary btn-cons btn-animated from-left fa fa-truck pull-right" wz-next>
-                            <span>Next</span>
+                            <span>Далее</span>
                         </button>
                     </li>
                     <li class="previous">
                         <button type="button" class="btn btn-default btn-cons pull-right" wz-previous>
-                            <span>Previous</span>
+                            <span>Вернуться</span>
                         </button>
                     </li>
                 </ul>
@@ -817,18 +817,18 @@
         </wz-step>
         <wz-step title="Summary">
             <div class="padding-30">
-                <h1 class="text-center">Thank you.</h1>
+                <h1 class="text-center">Спасибо за покупку!</h1>
             </div>
             <div class="padding-20 bg-white">
                 <ul class="pager wizard">
                     <li class="next">
                         <button type="button" class="btn btn-primary btn-cons btn-animated from-left fa fa-truck pull-right" ng-click="finish()" wz-finish>
-                            <span>Finish</span>
+                            <span>Завершить оплату</span>
                         </button>
                     </li>
                     <li class="previous">
                         <button type="button" class="btn btn-default btn-cons pull-right" wz-previous>
-                            <span>Previous</span>
+                            <span>Вернуться</span>
                         </button>
                     </li>
                 </ul>
@@ -840,7 +840,7 @@
             The Top Content Is Soley Created using pages UI Elements such as Invoice, Tabs, Form Layouts etc. and are prior for representation Purpose Only.
         </p>
         <div class="pull-right">
-            <img width="78" height="22" ui-jq="unveil" data-src-retina="assets/img/logo_2x.png" data-src="assets/img/logo.png" alt="logo" src="assets/img/logo_2x.png">
+            <img width="140" height="34" ui-jq="unveil" data-src-retina="assets/img/logon.png" data-src="assets/img/logon.png" alt="logo" src="assets/img/logon.png">
         </div>
         <div class="clearfix"></div>
     </div>

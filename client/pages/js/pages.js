@@ -11,9 +11,9 @@
      * @property {object}  $body - Cache Body.
      */
     var Pages = function() {
-        this.VERSION = "2.1.2";
-        this.AUTHOR = "Revox";
-        this.SUPPORT = "support@revox.io";
+        this.VERSION = "2.1.3";
+        this.AUTHOR = "gdetus";
+        this.SUPPORT = "support@gdetus.io";
 
         this.pageScrollElement = 'html, body';
         this.$body = $('body');

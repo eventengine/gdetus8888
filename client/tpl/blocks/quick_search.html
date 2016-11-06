@@ -5,7 +5,7 @@
         <!-- BEGIN Overlay Header !-->
         <div class="container-fluid">
           <!-- BEGIN Overlay Logo !-->
-          <img class="overlay-brand" src="assets/img/logo.png" alt="logo" data-src="assets/img/logo.png" ui-jq="unveil" data-src-retina="assets/img/logo_2x.png" width="78" height="22">
+          <img class="overlay-brand" src="assets/img/logon.png" alt="logo" data-src="assets/img/logon.png" ui-jq="unveil" data-src-retina="assets/img/logo_2x.png" width="140" height="34">
           <!-- END Overlay Logo !-->
           <!-- BEGIN Overlay Close !-->
           <a href="" class="close-icon-light overlay-close text-black fs-16" data-search="closeButton">
@@ -16,7 +16,7 @@
         <!-- END Overlay Header !-->
         <div class="container-fluid">
           <!-- BEGIN Overlay Controls !-->
-          <input data-search="searchField" id="overlay-search" class="no-border overlay-search bg-transparent" placeholder="Search..." autocomplete="off" spellcheck="false" ng-model="search.query" ng-change="liveSearch()" ng-model-options="{ updateOn: 'default blur', debounce: { default: 500, blur: 0 } }">
+          <input data-search="searchField" id="overlay-search" class="no-border overlay-search bg-transparent" placeholder="помоги мне найти..." autocomplete="off" spellcheck="false" ng-model="search.query" ng-change="liveSearch()" ng-model-options="{ updateOn: 'default blur', debounce: { default: 500, blur: 0 } }">
           <br>
           <div class="inline-block">
           	
@@ -28,9 +28,6 @@
         </div>
         <!-- BEGIN Overlay Search Results, This part is for demo purpose, you can add anything you like !-->
         <div class="container-fluid">
-          
-          <span id="overlay-suggestions">{{search.query}}</span>
-          <br>
           <div class="search-results m-t-40">
             <p class="bold">Вот что нашлось на просторах gdetus'а:</p>
             <div class="row">
@@ -83,7 +80,7 @@
                 <div class="">
                   <!-- BEGIN Search Result Item Thumbnail !-->
                   <div class="thumbnail-wrapper d48 circular bg-info text-white inline m-t-10">
-                    <div><i class="fa fa-facebook large-text "></i>
+                    <div><i class="fa fa-facebook large-text"></i>
                     </div>
                   </div>
                   <!-- END Search Result Item Thumbnail !-->
@@ -124,7 +121,6 @@
               </div>
             </div>
           </div>
-        </div>
         <!-- END Overlay Search Results !-->
       </div>
       <!-- END Overlay Content !-->

@@ -20,11 +20,6 @@ const cookieParser = require('cookie-parser');
 const expressValidator = require('express-validator');
 
 
-
-
-
-
-
 /**
  * Приложение Express.
  */
@@ -46,7 +41,6 @@ module.exports = {
 		app.use(bodyParser.json());
 		app.use(bodyParser.urlencoded({ extended: true }));
 		app.use(require(path.join(paths.middlewares, "session")).init(config));
-		
 		
 		app.use(express.static(config.client.path));
 		

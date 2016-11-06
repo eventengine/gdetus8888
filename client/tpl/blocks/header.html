@@ -15,7 +15,7 @@
       <div class="pull-center hidden-md hidden-lg">
         <div class="header-inner">
           <div class="brand inline">
-            <img src="assets/img/logo.png" alt="logo" data-src="assets/img/logo.png" data-src-retina="assets/img/logo_2x.png" width="78" height="22">
+            <img src="assets/img/logon.png" alt="logo" data-src="assets/img/logon.png" data-src-retina="assets/img/logo_2x.png" width="140" height="34">
           </div>
         </div>
       </div>
@@ -37,7 +37,7 @@
     <div class=" pull-left sm-table hidden-xs hidden-sm">
         <div class="header-inner">
             <div class="brand inline">
-                <img src="assets/img/logo.png" alt="logo" data-src="assets/img/logo.png" ui-jq="unveil" data-src-retina="assets/img/logo_2x.png" width="78" height="22">
+                <a ui-sref="app.dashboard"><img src="assets/img/logon.png" alt="logo" data-src="assets/img/logon.png" ui-jq="unveil" data-src-retina="assets/img/logo_2x.png" width="140" height="34"></a>
             </div>
             <!-- START NOTIFICATION LIST -->
             <ul class="notification-list no-margin hidden-sm hidden-xs b-grey b-l b-r no-style p-l-30 p-r-20">
@@ -113,7 +113,7 @@
                               <span class="bold">Warning Notification</span>
                               <span class="fs-12 m-l-10">Buy Now</span>
                             </a>
-                            <span class="pull-right time">yesterday</span>
+                            <span class="pull-right time">вчера</span>
                           </div>
                           <!-- START Notification Item Right Side-->
                           <div class="option">
@@ -130,7 +130,7 @@
                             </div>
                             <a href="#" class="text-complete pull-left">
                               <span class="bold">Revox Design Labs</span>
-                              <span class="fs-12 m-l-10">Owners</span>
+                              <span class="fs-12 m-l-10">Владельцы</span>
                             </a>
                             <span class="pull-right time">11:00pm</span>
                           </div>
@@ -178,7 +178,7 @@
         <!-- START User Info-->
         <div class="visible-lg visible-md m-t-10">
             <div class="pull-left p-r-10 p-t-10 fs-16 font-heading">
-                <span class="semi-bold">Александр </span> <span class="text-master">Новиков</span>
+                <a ui-sref="app.social"><span class="semi-bold">Александр </span> <span class="text-master">Новиков</span></a>
             </div>
             <div class="dropdown pull-right">
                 <button class="profile-dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -187,15 +187,15 @@
             </span>
                 </button>
                 <ul class="dropdown-menu profile-dropdown" role="menu">
-				        <li><a href="/map"><i class="pg-map"></i> Карта</a>
+				<li><a ui-sref="app.map"><i class="pg-map"></i> Карта</a>
                 </li>
-                <li><a href="/im"><i class="pg-social"></i> Сообщения</a>
+                <li><a ui-sref="app.im.inbox"><i class="pg-social"></i> Сообщения</a>
                 </li>
-                <li><a href="/payment"><i class="fa fa-ruble"></i>  Баланс  <span class="badge badge-inverse">7.777.777</span></a>
+                <li><a ui-sref="app.forms.wizard"><i class="fa fa-ruble"></i>  Баланс  <span class="badge badge-inverse">7.777.777</span></a>
                 </li>
-				<li><a href="/edit"><i class="pg-settings_small"></i> Настройки</a>
+				<li><a ui-sref="app.im.inbox"><i class="pg-settings_small"></i> Настройки</a>
                 </li>
-                <li><a href="#"><i class="pg-signals"></i> Трансляция</a>
+                <li><a ui-sref="app.im.inbox"><i class="pg-signals"></i> Трансляция</a>
                 </li>
                 <li class="bg-master-lighter">
                   <a ng-click="onLogoutButtonClick()" class="clearfix">

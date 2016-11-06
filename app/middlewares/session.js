@@ -2,8 +2,6 @@
 var session = require('express-session');
 var MySQLStore = require('express-mysql-session')(session);
 
-
-
 var sessionConfig = {
     store: {
 		expiration: 86400000, // Максимальный срок жизни сессии; в миллисекундах.
@@ -26,7 +24,6 @@ var sessionConfig = {
         maxAge: null
     }
 };
-
 
 
 	

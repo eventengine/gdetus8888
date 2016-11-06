@@ -42,18 +42,59 @@
           <li class="m-t-30 open" ui-sref-active="active">
             <a ui-sref="app.social" class="detailed">
               <span class="title">Мой гдетус</span>
-            </a>
-            <span class="icon-thumbnail"><i class="pg-home"></i></span>
+            <span class=" arrow" ng-class="{'active open':$state.includes('app.layouts')}"></span></a>
+            <span class="icon-thumbnail"><a ui-sref="app.social"><i class="pg-home"></i></a></span>
+            <ul class="sub-menu">
+              <li ui-sref-active="active">
+                <a ui-sref="app.layouts.default">Мои друзья</a>
+                <span class="icon-thumbnail"><i class="fa fa-group"></i></span>
+              </li>
+              <li ui-sref-active="active">
+                <a ui-sref="app.im.inbox">Мои сообщения</a>
+                <span class="icon-thumbnail"><i class="pg-social"></i></span>
+              </li>
+              <li ui-sref-active="active">
+                <a ui-sref="boxed">Мои фото</a>
+                <span class="icon-thumbnail"><i class="pg-camera"></i></span>
+              </li>
+              <li ui-sref-active="active">
+                <a ui-sref="app.builder">Мои аудио</a>
+                <span class="icon-thumbnail"><i class="fa fa-music"></i></span>
+              </li>
+              <li ui-sref-active="active">
+                <a ui-sref="app.layouts.default">Мои видео</a>
+                <span class="icon-thumbnail"><i class="pg-movie"></i></span>
+              </li>
+              <li ui-sref-active="active">
+                <a ui-sref="app.layouts.secondary">Мои сообщества</a>
+                <span class="icon-thumbnail"><i class="pg-layouts3"></i></span>
+              </li>
+              <li ui-sref-active="active">
+                <a ui-sref="boxed">Мои файлы</a>
+                <span class="icon-thumbnail"><i class="fa fa-paperclip"></i></span>
+              </li>
+              <li ui-sref-active="active">
+                <a ui-sref="app.builder">Мои настройки</a>
+                <span class="icon-thumbnail"><i class="pg-settings_small"></i></span>
+              </li>
+              <li ui-sref-active="active">
+                <a ui-sref="app.builder">Мои заметки</a>
+                <span class="icon-thumbnail"><i class="fa fa-pencil"></i></span>
+              </li>
+              <li ui-sref-active="active">
+                <a ui-sref="app.builder">Мои симпатии</a>
+                <span class="icon-thumbnail"><i class="pg-like"></i></span>
+              </li>
+            </ul>
           </li>
           <li class="" ui-sref-active="active">
-            <a ui-sref="app.email.inbox" class="detailed">
-              <span class="title">Сообщения</span>
-              <span class="details">234 новых сообщений</span>
+            <a ui-sref="app.maps.vector" class="detailed">
+              <span class="title">Моя карта</span>
             </a>
-            <span class="icon-thumbnail "><i class="pg-social"></i></span>
+            <span class="icon-thumbnail "><i class="pg-map"></i></span>
           </li>
           <li class="" ui-sref-active="active">
-            <a ui-sref="app.social"><span class="title">Профиль</span></a>
+            <a ui-sref="app.email.inbox"><span class="title">Моя почта</span></a>
             <span class="icon-thumbnail "><i class="pg-mail"></i></span>
           </li>
           <li class="" ui-sref-active="active">
@@ -72,7 +113,7 @@
             <span class="icon-thumbnail"><i class="pg-layouts2"></i></span>
             <ul class="sub-menu">
               <li ui-sref-active="active">
-                <a ui-sref="app.layouts.default">Дефолт</a>
+                <a ui-sref="app.im.inbox">АиМ</a>
                 <span class="icon-thumbnail">dl</span>
               </li>
               <li ui-sref-active="active">
@@ -157,16 +198,12 @@
             </ul>
           </li>
           <li ng-class="{'open active':includes('app.maps')}">
-            <a href="javascript:;"><span class="title">Моя карта</span> 
+            <a href="javascript:;"><span class="title">Гуглокарта</span> 
             <span class=" arrow" ng-class="{'active open':$state.includes('app.maps')}"></span></a>
             <span class="icon-thumbnail "><i class="pg-map"></i></span>
             <ul class="sub-menu">
               <li ui-sref-active="active">
                 <a ui-sref="app.maps.google">Гуглокарта</a>
-                <span class="icon-thumbnail"><i class="pg-bag"></i></span>
-              </li>
-              <li ui-sref-active="active">
-                <a ui-sref="app.maps.vector">Векторкарта</a>
                 <span class="icon-thumbnail"><i class="pg-bag"></i></span>
               </li>
             </ul>

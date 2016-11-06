@@ -74,6 +74,34 @@ angular.module('app')
                 url: '/compose',
                 templateUrl: 'tpl/apps/email/email_compose.html'
             })
+            
+            // IM app
+            .state('app.im', {
+                    abstract: true,
+                    url: '/im',
+                    templateUrl: 'tpl/apps/im/im.html',
+                    resolve: {
+                        deps: ['$ocLazyLoad', function($ocLazyLoad) {
+                            return $ocLazyLoad.load([
+                                    'menuclipper',
+                                    'wysihtml5'
+                                ], {
+                                    insertBefore: '#lazyload_placeholder'
+                                })
+                                .then(function() {
+                                    return $ocLazyLoad.load([
+                                        'assets/js/apps/im/service.js',
+                                        'assets/js/apps/im/im.js'
+                                    ])
+                                });
+                        }]
+                    }
+                })
+            .state('app.im.inbox', {
+                url: '/inbox/:emailId',
+                templateUrl: 'tpl/apps/im/im_inbox.html'
+            })
+            
             // Social app
             .state('app.social', {
                 url: '/social',
@@ -554,6 +582,10 @@ angular.module('app')
                 .state('access.lock_screen', {
                     url: '/lock_screen',
                     templateUrl: 'tpl/extra_lock_screen.html'
+                })
+                .state('extra.invoice', {
+                    url: '/extra_invoice',
+                    templateUrl: 'tpl/extra_invoice.html'
                 })
 
             // Сообщение о проверке авторизации пользователя при первом запуске приложения.
