@@ -50,6 +50,9 @@ module.exports = {
 		app.use(passport.authenticate("remember-me"));
 		
 		app.use(function(req, res, next) {
+			
+			console.log(req)
+			
 			res.cookie("isAuthenticated", req.isAuthenticated());
 			next();
 		});

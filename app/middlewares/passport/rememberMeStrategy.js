@@ -34,6 +34,3 @@ module.exports = {
 		});
 	}
 };
-
-
-	
