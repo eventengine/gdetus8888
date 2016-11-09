@@ -21,7 +21,7 @@ const expressValidator = require('express-validator');
 
 
 /**
- * Приложение Express.
+ * Приложение Express
  */
 
 module.exports = {
