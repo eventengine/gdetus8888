@@ -17,9 +17,11 @@ apiRouter.post("/login", require("./login").post, function(req, res, next) {
 		next(err);
 	});
 }, function(req, res, next) {
+	const user = {};
+	["email", "firstname", "lastname", "useruri"].forEach(fieldName => user[fieldName] = req.user[fieldName]);
 	res.send({
 		success: true,
-		user: req.user
+		user: user
 	});
 });
 
