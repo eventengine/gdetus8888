@@ -42,20 +42,20 @@ module.exports = {
 		app.use(bodyParser.urlencoded({ extended: true }));
 		app.use(require(path.join(paths.middlewares, "session")).init(config));
 		
-		app.use(express.static(config.client.path));
-		
 		// Подключаем мидлвар Паспорта.
 		app.use(passport.initialize());
 		app.use(passport.session());
 		app.use(passport.authenticate("remember-me"));
 		
 		app.use(function(req, res, next) {
-			
-			console.log(req)
-			
 			res.cookie("isAuthenticated", req.isAuthenticated());
 			next();
 		});
+		
+		app.use(express.static(config.client.path));
+		
+		
+		
 		
 		app.use("/api", require(paths.api));
 		
