@@ -6,7 +6,7 @@ module.exports = {
 		return new RememberMeStrategy({
 			key: 'remember_me',
 			cookie: {
-				maxAge: 604800000 // maxAge: 7 days
+				maxAge: 604800000 // maxAge: 7 days в миллисекундах.
 			}
 		}, function(token, done) {
 			
