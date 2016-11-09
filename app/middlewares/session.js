@@ -4,7 +4,7 @@ var MySQLStore = require('express-mysql-session')(session);
 
 var sessionConfig = {
     store: {
-		expiration: 604800000, // maxAge: 7 days в миллисекундах.
+		expiration: 604800000, // maxAge: 7 дней в миллисекундах.
 		createDatabaseTable: true,
 		schema: {
 			tableName: 'sessions',
