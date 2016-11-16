@@ -1,0 +1,100 @@
+<!-- START PAGE-CONTAINER -->
+<div class="login-wrapper ">
+    <!-- START Login Background Pic Wrapper-->
+    <div class="bg-pic">
+        <!-- START Background Pic-->
+        <img src="assets/img/m.jpg" data-src="assets/img/m.jpg" ui-jq="unveil" data-src-retina="assets/img/m.jpg" alt="" class="lazy">
+        <!-- END Background Pic-->
+        <!-- START Background Caption-->
+        <div class="bg-caption pull-bottom sm-pull-bottom text-white p-l-20 m-b-20">
+          <div class="fit">
+          <h2 class="m-t-5  text-left text-white">
+		  <i class="fa fa-quote-left"></i>
+		  Не забывай, что даже за самыми серыми тучами скрывается яркое солнышко, готовое пригреть каждого :)
+         <i class="fa fa-quote-right"></i></h2>
+        </div>
+          <p class="small">
+            кто: <a href="https://gdetus.io/otiu.m" class="warning-info">@otiu.m</a></p>
+			<p class="small">
+			где: <a href="/search-results/cities/" class="warning-info"><i class="fa fa-map-marker"></i> Россия, Красноярск</a></p>
+          <p class="small">
+		    когда: <a href="https://gdetus.io/search-results" class="warning-info">5.09.2К16</a></p>
+		  <p class="small">
+            *сюда попадают фотографии с хэштегом <a href="https://gdetus.io/hashtag/девушка_месяца">#девушка_месяца</a>, которые загружают пользователи сервиса и набравшие наибольшее количество лайков</p>
+		  <p class="small">
+			© 2016 #gdetus
+          </p>
+        </div>
+        <!-- END Background Caption-->
+    </div>
+    <!-- END Login Background Pic Wrapper-->
+    <!-- START Login Right Container-->
+    <div class="login-container bg-white">
+        <div class="p-l-50 m-l-20 p-r-50 m-r-20 p-t-50 m-t-30 sm-p-l-15 sm-p-r-15 sm-p-t-40">
+            <img src="assets/img/logon.png" alt="logo" data-src="assets/img/logon.png" ui-jq="unveil" data-src-retina="assets/img/logo_2x.png" width="140" height="34">
+            <span class="badge badge-primary">βeta v. 0.1.8.10_wetwork</span>
+            <p class="p-t-35">Открой свою страницу!</p>
+            
+            <!-- START Login Form -->
+            <form id="form-login" name="loginForm" class="p-t-15" role="form" novalidate>
+                <!-- START Form Control-->
+                <div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error' : loginForm.username.$invalid && !loginForm.username.$pristine }">
+                    <label>Логин</label>
+                    <div class="controls">
+                        <input type="text" name="username" placeholder="Введите свою почту" class="form-control" ng-model="user.username" required>
+                    </div>
+                </div>
+                <label class="error" for="username" ng-show="loginForm.username.$invalid && !loginForm.username.$pristine">Это поле необходимо заполнить</label>
+                <!-- END Form Control-->
+                <!-- START Form Control-->
+                <div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error' : loginForm.password.$invalid && !loginForm.password.$pristine }">
+                    <label>Пароль</label>
+                    <div class="controls">
+                        <input type="password" class="form-control" name="password" placeholder="Введите свой пароль" ng-model="user.password" required>
+                    </div>
+                </div>
+                <label class="error" for="password" ng-show="loginForm.password.$invalid && !loginForm.password.$pristine">Это поле необходимо заполнить</label>
+                <!-- START Form Control-->
+                <div class="row">
+                    <div class="col-md-6 no-padding">
+                        <div class="checkbox check-primary">
+                            <input type="checkbox" value="1" id="checkbox1" name="rememberme" ng-model="user.rememberme">
+                            <label for="checkbox1">Запомнить меня</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6 text-right">
+                       <button class="btn btn-green btn-lg pull-right" data-target="#modalRegister" data-toggle="modal" id="btnFillSizeToggler2">Я забыл пароль :(</button>
+                    </div>
+                </div>
+                <!-- END Form Control-->
+                <button class="btn btn-primary btn-cons m-t-10" type="submit" ng-disabled="loginForm.$invalid" ng-click="onLoginButtonClick(user, loginForm)">Войти</button>
+            </form>
+            <!--END Login Form-->
+            <div class="pull-bottom sm-pull-bottom">
+            <div class="m-b-30 p-r-60 sm-m-t-20 sm-p-r-15 sm-p-b-20 clearfix">
+              <div class="col-sm-20 no-padding m-t-15">
+                <p>
+                  <small>
+					Сервис находится <strong>в тестовом режиме</strong> и регистрация новых пользователей пока недоступна, но вы можете узнать что у нас нового зайдя к нам <a href="https://vk.com/gdetusio" target="blank">ВКонтакте</a>, в <a href="https://instagram.com/gdetus" target="blank">Инстаграм</a> или <a href="https://twitter.com/gdetus" target="blank">Твиттер</a>
+				 </small>
+                </p>
+				<p>
+		         <small> 
+          <a href="#" class="" data-target="#about" data-toggle="modal">о нас</a>
+          <a href="#" class="m-l-10" data-target="#digits" data-toggle="modal">цифры</a>
+          <a href="#" class="m-l-10" data-target="#terms" data-toggle="modal">правила</a>
+          <a href="#" class="m-l-10" data-target="#ads" data-toggle="modal">реклама</a>
+          <a href="#" class="m-l-10" data-target="#vac" data-toggle="modal">вакансии</a>
+          <a href="#" class="m-l-10" data-target="#accreq" data-toggle="modal">регистрация</a>
+				</small>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    <!-- END Login Right Container-->
+</div>
+<!-- END PAGE CONTAINER -->
+
+<div ng-if="includes('access.login')" ng-include src=" 'tpl/blocks/modals/register.modal.html' " include-replace></div>

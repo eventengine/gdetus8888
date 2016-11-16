@@ -3,6 +3,9 @@ const express = require('express');
 
 const apiRouter = module.exports = express.Router();
 
+/**
+ * Контроллер авторизации.
+ */
 apiRouter.post("/login", require("./login").post, function(req, res, next) {
 	// Issue a remember me cookie if the option was checked
 	const models = req.app.get("models");
@@ -25,4 +28,7 @@ apiRouter.post("/login", require("./login").post, function(req, res, next) {
 	});
 });
 
+/**
+ * Контроллер отмены авторизации.
+ */
 apiRouter.get("/logout", require("./logout").get);

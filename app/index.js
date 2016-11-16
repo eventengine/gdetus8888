@@ -52,9 +52,10 @@ module.exports = {
 			next();
 		});
 		
-		app.use(express.static(config.client.path));
-		
-		
+		// Подключение клиентской части.
+		app.use(express.static(path.join(config.client.path, "www")));
+		app.use("/prev", express.static(path.join(config.client.path, "prev")));
+		app.use("/demo", express.static(path.join(config.client.path, "demo")));
 		
 		
 		app.use("/api", require(paths.api));
