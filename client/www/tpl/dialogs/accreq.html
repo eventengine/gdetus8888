@@ -1,80 +1,121 @@
-<div class="register-container full-height sm-p-t-30">
-    <div class="container-sm-height full-height">
-        <div class="row row-sm-height">
-            <div class="col-sm-12 col-sm-height col-middle">
-                <img src="assets/img/logo.png" alt="logo" data-src="assets/img/logo.png" ui-jq="unveil" data-src-retina="assets/img/logo_2x.png" width="78" height="22">
-                <h3>Pages makes it easy to enjoy what matters the most in your life</h3>
-                <p>
-                    <small>
-        Create a pages account. If you have a facebook account, log into it for this process. Sign in with <a href="" class="text-info">Facebook</a> or <a href="" class="text-info">Google</a>
-              </small>
-                </p>
-                <form id="form-register" class="p-t-15" role="form" name="register" novalidate>
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error': register.fname.$invalid && !register.fname.$pristine }">
-                                <label>First Name</label>
-                                <input type="text" name="fname" placeholder="John" class="form-control" ng-model="user.fname" required>
-                            </div>
-                            <label class="error" for="fname" ng-show="register.fname.$invalid && !register.fname.$pristine">This field is required.</label>
-                        </div>
-                        <div class="col-sm-6">
-                            <div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error': register.lname.$invalid && !register.lname.$pristine }">
-                                <label>Last Names</label>
-                                <input type="text" name="lname" placeholder="Smith" class="form-control" ng-model="user.lname" required>
-                            </div>
-                            <label class="error" for="lname" ng-show="register.lname.$invalid && !register.lname.$pristine">This field is required.</label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error': register.uname.$invalid && !register.uname.$pristine }">
-                                <label>Pages User name</label>
-                                <input type="text" name="uname" placeholder="yourname.pages.com (this can be changed later)" class="form-control" ng-model="user.username" required>
-                            </div>
-                            <label class="error" for="uname" ng-show="register.uname.$invalid && !register.uname.$pristine">This field is required.</label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error': register.pass.$invalid && !register.pass.$pristine }">
-                                <label>Password</label>
-                                <input type="password" name="pass" placeholder="Minimum of 4 Charactors" class="form-control" ng-minlength="4" ng-model="user.password" required>
-                            </div>
-                            <label class="error" for="pass" ng-show="register.pass.$invalid && !register.pass.$pristine">This field is required.</label>
-                            <label class="error" for="pass" ng-show="register.pass.$error.minlength">Password should have at least 4 characters</label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error': register.email.$invalid && !register.email.$pristine }">
-                                <label>Email</label>
-                                <input type="email" name="email" placeholder="We will send loging details to you" class="form-control" ng-model="user.email" required>
-                            </div>
-                            <label class="error" for="email" ng-show="register.email.$invalid && !register.email.$pristine">Enter a valid email.</label>
-                        </div>
-                    </div>
-                    <div class="row m-t-10">
-                        <div class="col-md-6">
-                            <p>I agree to the <a href="" class="text-info small">Pages Terms</a> and <a href="" class="text-info small">Privacy</a>.</p>
-                        </div>
-                        <div class="col-md-6 text-right">
-                            <a href="" class="text-info small">Help? Contact Support</a>
-                        </div>
-                    </div>
-                    <button class="btn btn-primary btn-cons m-t-10" type="submit" ng-disabled="register.$invalid">Create a new account</button>
-                </form>
-            </div>
-        </div>
-    </div>
+
+<div class="modal fade fill-in" id="modalAccountRequest" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			
+			<div class="modal-header">
+				<!-- Для верстки см. документацию к Bootstrap (оформление заголовка хедера модального окна)-->
+				<!-- http://getbootstrap.com/javascript/#modals -->
+				<!-- http://getbootstrap.com/css/#grid -->
+			</div>
+			
+			<div class="modal-body">
+				
+
+				<div class="register-container full-height sm-p-t-30">
+					<div class="container-sm-height full-height">
+						<div class="row row-sm-height">
+							<div class="col-sm-12 col-sm-height col-middle">
+								<h3>Pages makes it easy to enjoy what matters the most in your life</h3>
+								<p>
+									<small>
+										Create a pages account. If you have a facebook account, 
+										log into it for this process. Sign in with
+									</small>
+								</p>
+								<form id="form-register" class="p-t-15" role="form" name="register" novalidate>
+									<div class="row">
+										<div class="col-sm-6">
+											<div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error': register.fname.$invalid && !register.fname.$pristine }">
+												<label>Имя</label>
+												<input type="text" name="fname" placeholder="Дарт" class="form-control" ng-model="user.fname" required>
+											</div>
+											<label class="error" for="fname" ng-show="register.fname.$invalid && !register.fname.$pristine">This field is required.</label>
+										</div>
+										<div class="col-sm-6">
+											<div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error': register.lname.$invalid && !register.lname.$pristine }">
+												<label>Фамилия</label>
+												<input type="text" name="lname" placeholder="Вэйдер" class="form-control" ng-model="user.lname" required>
+											</div>
+											<label class="error" for="lname" ng-show="register.lname.$invalid && !register.lname.$pristine">This field is required.</label>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-sm-12">
+											<div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error': register.uname.$invalid && !register.uname.$pristine }">
+												<label>Адрес страницы</label>
+												<input type="text" name="uname" placeholder="yourname.pages.com (this can be changed later)" class="form-control" ng-model="user.username" required>
+											</div>
+											<label class="error" for="uname" ng-show="register.uname.$invalid && !register.uname.$pristine">This field is required.</label>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-sm-12">
+											<div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error': register.pass.$invalid && !register.pass.$pristine }">
+												<label>Пароль</label>
+												<input type="password" name="pass" placeholder="Minimum of 4 Charactors" class="form-control" ng-minlength="4" ng-model="user.password" required>
+											</div>
+											<label class="error" for="pass" ng-show="register.pass.$invalid && !register.pass.$pristine">This field is required.</label>
+											<label class="error" for="pass" ng-show="register.pass.$error.minlength">Password should have at least 4 characters</label>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-sm-12">
+											<div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error': register.email.$invalid && !register.email.$pristine }">
+												<label>Почта</label>
+												<input type="email" name="email" placeholder="We will send loging details to you" class="form-control" ng-model="user.email" required>
+											</div>
+											<label class="error" for="email" ng-show="register.email.$invalid && !register.email.$pristine">Enter a valid email.</label>
+										</div>
+									</div>
+									<div class="row m-t-10">
+										<div class="col-md-7">
+											<div class="checkbox check-primary">
+												<input type="checkbox" value="1" id="checkbox1111" name="checkbox1111" ng-model="user.termsagree"/>
+												<label for="checkbox1111">
+													Я согласен <a href="" class="text-info small">с правилами</a> блаблабла 
+													<a href="" class="text-info small">Privacy</a>.
+												</label>
+											</div>
+										</div>
+										<div class="col-md-5 text-right">
+											<a href="" class="text-info small">Нужна помощь?</a>
+										</div>
+									</div>
+									<button class="btn btn-primary btn-cons m-t-10" type="submit" ng-disabled="register.$invalid">Создать аккаунт</button>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+			
+			<div class="modal-footer">
+				<!-- Для верстки см. документацию к Bootstrap (оформление заголовка хедера модального окна)-->
+				<!-- http://getbootstrap.com/javascript/#modals -->
+				<!-- http://getbootstrap.com/css/#grid -->
+			</div>
+			
+		</div>
+	</div>
 </div>
-<div class=" full-width">
-    <div class="register-container m-b-10 clearfix">
-        <div class="inline pull-left">
-            <img src="assets/img/demo/pages_icon.png" alt="" class="m-t-5 " data-src="assets/img/demo/pages_icon.png" ui-jq="unveil" data-src-retina="assets/img/demo/pages_icon_2x.png" width="60" height="60">
-        </div>
-        <div class="col-md-10 m-t-15">
-            <p class="hinted-text small inline ">No part of this website or any of its contents may be reproduced, copied, modified or adapted, without the prior written consent of the author, unless otherwise indicated for stand-alone materials.</p>
-        </div>
-    </div>
-</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

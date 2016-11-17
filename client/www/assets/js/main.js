@@ -11,7 +11,7 @@ angular.module('app')
         // App globals
         $scope.app = {
             name: 'Gdetus 8888',
-            description: 'Admin Dashboard UI kit',
+            description: 'геолокационный сервис',
             layout: {
                 menuPin: false,
                 menuBehind: false,

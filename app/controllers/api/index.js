@@ -32,3 +32,8 @@ apiRouter.post("/login", require("./login").post, function(req, res, next) {
  * Контроллер отмены авторизации.
  */
 apiRouter.get("/logout", require("./logout").get);
+
+/**
+ * Контроллер восстановления пароля.
+ */
+apiRouter.post("/passrestore", require("./passrestore").post);
