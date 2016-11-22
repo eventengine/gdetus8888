@@ -37,3 +37,8 @@ apiRouter.get("/logout", require("./logout").get);
  * Контроллер восстановления пароля.
  */
 apiRouter.post("/passrestore", require("./passrestore").post);
+
+/**
+ * Контроллер регистрации пользователя.
+ */
+apiRouter.post("/register", require("./register").post);

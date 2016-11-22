@@ -42,6 +42,9 @@ module.exports = {
 		app.use(bodyParser.json());
 		app.use(bodyParser.urlencoded({ extended: true }));
 		app.use(require(path.join(paths.middlewares, "session")).init(config));
+		app.use(expressValidator({
+			customValidators: require(path.join(paths.models, "validators"))
+		}));
 		
 		// Подключаем мидлвар Паспорта.
 		app.use(passport.initialize());

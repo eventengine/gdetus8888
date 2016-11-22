@@ -17,7 +17,7 @@ angular.module('app')
                 menuBehind: false,
                 theme: 'pages/css/pages.css'
             },
-            author: 'Revox'
+            author: '#NothingPersonalCorp'
         };
 
         // Checks if the given state is the current state
@@ -92,3 +92,22 @@ angular.module('app').run(['$http', '$cookies', '$location', function($http, $co
 		$location.path("login");
 	}
 }]);
+
+
+/**
+ * accreq-agree-terms
+ * Директива валидации контрольного элемента для формы регистрации "Согласен с условиями".
+ * https://code.angularjs.org/1.3.15/docs/guide/forms (раздел Custom Validation)
+ */
+angular.module('app')
+	.directive("accreqAgreeTerms", function() {
+		return {
+			require: "ngModel",
+			link: function(scope, elm, attrs, ctrl) {
+				ctrl.$validators.accreqAgreeTerms = function(modelValue, viewValue) {
+					//if (ctrl.$isEmpty(modelValue)) return true;
+					return viewValue;
+				};
+			}
+		};
+	});

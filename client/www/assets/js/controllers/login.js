@@ -9,20 +9,20 @@
  */
 angular.module("app").controller("LoginCtrl", ["$scope", "$http", "$location", function($scope, $http, $location) {
 	
-	function info(message) {
-		noti("info", message);
+	function info(message, selector) {
+		noti("info", message, selector);
 	}
 	
-	function warning(message) {
-		noti("warning", message);
+	function warning(message, selector) {
+		noti("warning", message, selector);
 	}
 	
-	function error(message) {
-		noti("error", message);
+	function error(message, selector) {
+		noti("error", message, selector);
 	}
 	
-	function noti(type, message) {
-		$(".login-container").pgNotification({
+	function noti(type, message, selector) {
+		$(selector || ".login-container").pgNotification({
 			style: "flip",
 			type: type,
 			timeout: 0,
@@ -86,6 +86,34 @@ angular.module("app").controller("LoginCtrl", ["$scope", "$http", "$location", f
 			});
 		}
 	};
+	
+	/**
+	 * Обработчик диалога регистрации пользователя.
+	 * 
+	 */
+	$scope.onAccountRequestSendButtonClick = function(user, registerForm) {
+		if (registerForm.$valid) {
+			$http.post("/api/register", user)
+			.success(function(data, status, headers, config) {
+				if (data.success) {
+					info("Регистрация пройдена успешно!", "#modalAccountRequest");
+					registerForm.$setPristine(); // https://code.angularjs.org/1.3.15/docs/api/ng/type/form.FormController
+				} else {
+	                var message = [];
+	                message.push("<b>Внимание, ошибк" + (data.errors.length == 1 ? "а" : "и") + " при регистрации пользователя:</b>");
+	                data.errors.forEach(function(error) {
+	                    message.push("<li>" + (error.value ? "<b>" + error.value + ": " + "</b>" : "") + error.msg + "</li>");
+	                });
+					error(message.join("\n"), "#modalAccountRequest");
+				}
+			})
+			.error(function(data, status, headers, config) {
+				error("Ошибка при отправке формы. См. подробности в консоли браузера.", "#modalAccountRequest");
+				console.error("Ошибка при отправке формы регистрации пользователя.");
+				console.error(status, data);
+			});
+		}
+	}
 	
 }]);
 

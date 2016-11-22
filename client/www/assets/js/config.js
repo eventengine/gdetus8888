@@ -14,7 +14,7 @@ angular.module("app").config(["$stateProvider", "$urlRouterProvider", "$ocLazyLo
 		$stateProvider
 			.state("app", {
 				abstract: true,
-				url: "/app",
+				//url: "/app",
 				templateUrl: "tpl/app.html"
 			})
 			.state("app.dashboard", {
@@ -48,6 +48,18 @@ angular.module("app").config(["$stateProvider", "$urlRouterProvider", "$ocLazyLo
 					deps: ["$ocLazyLoad", function($ocLazyLoad) {
 						return $ocLazyLoad.load([
 							"assets/js/controllers/login.js"
+						]);
+					}]
+				}
+			})
+			.state("app.user", {
+				url: "/user",
+				templateUrl: "tpl/user.html",
+				controller: "UserCtrl",
+				resolve: {
+					deps: ["$ocLazyLoad", function($ocLazyLoad) {
+						return $ocLazyLoad.load([
+							"assets/js/controllers/user.js"
 						]);
 					}]
 				}

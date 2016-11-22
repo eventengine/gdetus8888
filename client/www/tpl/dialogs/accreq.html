@@ -11,7 +11,6 @@
 			
 			<div class="modal-body">
 				
-
 				<div class="register-container full-height sm-p-t-30">
 					<div class="container-sm-height full-height">
 						<div class="row row-sm-height">
@@ -23,63 +22,68 @@
 									тусовками и вписками своих друзей и заведений города на карте, но и создавать свои собственные!
 									</small>
 								</p>
-								<form id="form-register" class="p-t-15" role="form" name="register" novalidate>
+								<form id="form-register" class="p-t-15" role="form" name="registerForm" novalidate>
 									<div class="row">
 										<div class="col-sm-6">
-											<div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error': register.fname.$invalid && !register.fname.$pristine }">
+											<div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error': registerForm.firstname.$invalid && !registerForm.firstname.$pristine }">
 												<label>Твоё имя</label>
-												<input type="text" name="fname" placeholder="Дарт" class="form-control" ng-model="user.fname" required>
+												<input type="text" name="firstname" placeholder="Дарт" class="form-control" ng-model="user.firstname" required>
 											</div>
-											<label class="error" for="fname" ng-show="register.fname.$invalid && !register.fname.$pristine">У тебя нет имени? Сириусли? -__-</label>
+											<label class="error" for="fname" ng-show="registerForm.firstname.$invalid && !registerForm.firstname.$pristine">У тебя нет имени? Сириусли?</label>
 										</div>
 										<div class="col-sm-6">
-											<div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error': register.lname.$invalid && !register.lname.$pristine }">
+											<div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error': registerForm.lastname.$invalid && !registerForm.lastname.$pristine }">
 												<label>Твоя фамилия</label>
-												<input type="text" name="lname" placeholder="Вэйдер" class="form-control" ng-model="user.lname" required>
+												<input type="text" name="lastname" placeholder="Вэйдер" class="form-control" ng-model="user.lastname" required>
 											</div>
-											<label class="error" for="lname" ng-show="register.lname.$invalid && !register.lname.$pristine">Как? У тебя нет фамилии? Совсем?  0.о</label>
+											<label class="error" for="lname" ng-show="registerForm.lastname.$invalid && !registerForm.lastname.$pristine">Как? У тебя нет фамилии? Совсем?  0.о</label>
 										</div>
 									</div>
 									<div class="row">
 										<div class="col-sm-12">
-											<div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error': register.uname.$invalid && !register.uname.$pristine }">
+											<div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error': registerForm.useruri.$invalid && !registerForm.useruri.$pristine }">
 												<label>Адрес твоей страницы</label>
-												<input type="text" name="uname" placeholder="например: dartvader (ты сможешь изменить этот адрес позже)" class="form-control" ng-model="user.username" >
+												<input type="text" name="useruri" placeholder="например: dartvader (ты сможешь изменить этот адрес позже)" class="form-control" ng-model="user.useruri" >
 											</div>
 										</div>
 									</div>
 									<div class="row">
 										<div class="col-sm-12">
-											<div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error': register.pass.$invalid && !register.pass.$pristine }">
+											<div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error': registerForm.password.$invalid && !registerForm.password.$pristine }">
 												<label>Твой пароль</label>
-												<input type="password" name="pass" placeholder="не менее 8 символов, включая буквы A-z, цифры и спецсимволы" class="form-control" ng-minlength="4" ng-model="user.password" required>
+												<input type="password" name="password" placeholder="не менее 8 символов, включая буквы A-z, цифры и спецсимволы" class="form-control" ng-minlength="8" ng-model="user.password" required>
 											</div>
-												<label class="error" for="pass" ng-show="register.pass.$invalid && !register.pass.$pristine">Нет пароля - нет регистрации. Такие дела.</label>
-											<label class="error" for="pass" ng-show="register.pass.$error.minlength">Не меньше ВОСЬМИ символов, Карл!</label>
+											<label class="error" for="password" ng-show="registerForm.password.$invalid && !registerForm.password.$pristine">Нет пароля - нет регистрации. Такие дела.</label>
+											<label class="error" for="password" ng-show="registerForm.password.$error.minlength">Не меньше ВОСЬМИ символов, Карл!</label>
 										</div>
 									</div>
 									<div class="row">
 										<div class="col-sm-12">
-											<div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error': register.email.$invalid && !register.email.$pristine }">
+											<div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error': registerForm.email.$invalid && !registerForm.email.$pristine }">
 												<label>Твоя почта</label>
 												<input type="email" name="email" placeholder="мы вышлем тебе сверхсекретное послание ;))" class="form-control" ng-model="user.email" required>
 											</div>
-											<label class="error" for="email" ng-show="register.email.$invalid && !register.email.$pristine">Нужна действующая почта.</label>
+											<label class="error" for="email" ng-show="registerForm.email.$invalid && !registerForm.email.$pristine">Нужна действующая почта.</label>
 										</div>
 									</div>
 									<div class="row m-t-10">
 										<div class="col-md-7">
 											<div class="checkbox check-primary">
-												<input type="checkbox" value="1" id="checkbox1111" name="checkbox1111" ng-model="user.termsagree"/>
-												<label for="checkbox1111">Я прочитал <a href="http://gdetus.io/terms">правила</a> и согласен на всё! ;)
-												</label>
+												<input type="checkbox" value="1" id="checkboxAgreeTerms" name="checkboxAgreeTerms" ng-model="user.agreeterms" accreq-agree-terms/>
+												<label for="checkboxAgreeTerms">Я прочитал <a href="http://gdetus.io/terms">правила</a> и согласен на всё! ;)</label>
 											</div>
 										</div>
 										<div class="col-md-5 text-right">
-											<a href="https://new.vk.com/im?media=&sel=-108146224" target= "blank" class="text-info small">Нужна помощь?</a>
+											<a href="https://vk.com/im?media=&sel=-108146224" target= "blank" class="text-info small">Нужна помощь?</a>
 										</div>
 									</div>
-									<button class="btn btn-primary btn-cons m-t-10" type="submit" ng-disabled="register.$invalid">Создать аккаунт</button>
+									<button 
+										class="btn btn-primary btn-cons m-t-10" 
+										type="submit" 
+										ng-disabled="registerForm.$invalid" 
+										ng-click="onAccountRequestSendButtonClick(user, registerForm)">
+										Создать аккаунт
+									</button>
 								</form>
 							</div>
 						</div>
