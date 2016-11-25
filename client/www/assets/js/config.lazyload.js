@@ -4,12 +4,19 @@
  * vendor libraries. 
  * ============================================================ */
 
+/* global angular */
+
 angular.module('app')
     .config(['$ocLazyLoadProvider', function($ocLazyLoadProvider) {
         $ocLazyLoadProvider.config({
             debug: true,
             events: true,
             modules: [{
+                    name: '2gisMapApi',
+                    files: [
+                        'https://maps.api.2gis.ru/2.0/loader.js?pkg=full&lazy=true'
+                    ]
+                }, {
                     name: 'isotope',
                     files: [
                         'assets/plugins/imagesloaded/imagesloaded.pkgd.min.js',

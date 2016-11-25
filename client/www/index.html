@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-ng-app="app" ng-controller="AppCtrl">
+<html lang="ru" data-ng-app="app" ng-controller="AppCtrl">
 
 <head>
     <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
@@ -13,8 +13,8 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-touch-fullscreen" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <meta content="{{app.description}}" name="description" />
-    <meta content="{{app.author}}" name="author" />
+    <meta name="description" content="{{app.description}}" />
+    <meta name="author" content="{{app.author}}" />
     <!-- BEGIN Vendor CSS-->
     <link href="assets/plugins/pace/pace-theme-flash.css" rel="stylesheet" type="text/css" />
     <link href="assets/plugins/bootstrapv3/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -40,10 +40,10 @@
 </head>
 
 <body class="fixed-header" ng-class="{
-'bg-master-lighter': is('app.extra.timeline'),
-'no-header': is('app.social') || is('app.calendar') || is('app.maps.vector') || is('app.maps.google'),
-'menu-pin' : app.layout.menuPin,
-'menu-behind' : app.layout.menuBehind
+	'bg-master-lighter': is('app.extra.timeline'),
+	'no-header': is('app.user') || is('app.calendar') || is('app.map'),
+	'menu-pin' : app.layout.menuPin,
+	'menu-behind' : app.layout.menuBehind
  }">
     <div class="full-height" ui-view></div>
     <!-- BEGIN VENDOR JS -->

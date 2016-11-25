@@ -5,6 +5,18 @@
 
 /* global angular */
 
+
+
+/*
+
+возможно вместо 
+$location.path("login");
+надо использовать
+$state.go("login");
+
+*/
+
+
 angular.module('app')
     .controller('AppCtrl', ['$scope', '$rootScope', '$state', '$http', '$location', function($scope, $rootScope, $state, $http, $location) {
 
@@ -57,16 +69,19 @@ angular.module('app')
 	        console.error("Возникли непредвиденные ошибки при отмене авторизации.");
 	        console.error(status, data);
 		}
+		
+		$scope.gotoUserPage = function(user) {
+			
+		};
 
     }]);
 
-
+/**
+ * include-replace
+ * Use this directive together with ng-include to include a 
+ * template file by replacing the placeholder element
+ */
 angular.module('app')
-    /*
-        Use this directive together with ng-include to include a 
-        template file by replacing the placeholder element
-    */
-    
     .directive('includeReplace', function() {
         return {
             require: 'ngInclude',
@@ -82,16 +97,37 @@ angular.module('app')
  * Проверка куки isAuthenticated на предмет того, был ли авторизован пользователь или нет.
  * Указание страницы для редиректа пользователя по итогу проверки авторизации.
  */
-angular.module('app').run(['$http', '$cookies', '$location', function($http, $cookies, $location) {
-	console.log("Проверка авторизации");
-	if ($cookies.isAuthenticated == "true") {
-		console.log("Авторизация пройдена успешно.");
-		if (!$location.url()) $location.path("app/home"); // feed
-	} else {
-		console.log("Авторизация не пройдена.");
-		$location.path("login");
-	}
-}]);
+angular.module('app')
+	.run(['$http', '$cookies', '$location', function($http, $cookies, $location) {
+		console.log("Проверка авторизации");
+		if ($cookies.isAuthenticated == "true") {
+			console.log("Авторизация пройдена успешно.");
+			if (!$location.url()) $location.path("/feed"); // feed
+		} else {
+			console.log("Авторизация не пройдена.");
+			$location.path("login");
+		}
+	}]);
+    
+/**
+ * Загрузка данных аутентифицированного пользователя.
+ */
+angular.module('app')
+	.run(['$rootScope', '$http', function($rootScope, $http) {
+		$http.get("/api/user/authenticated")
+		.success(function(data, status, headers, config) {
+			if (data.success) {
+				$rootScope.authenticated = data.user;
+			} else {
+				console.error("Ошибка при загрузке данных аутентифицированного пользователя.");
+				console.error(status, data);
+			}
+		})
+		.error(function(data, status, headers, config) {
+			console.error("Ошибка при загрузке данных аутентифицированного пользователя.");
+			console.error(status, data);
+		});
+	}]);
 
 
 /**

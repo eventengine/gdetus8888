@@ -42,3 +42,8 @@ apiRouter.post("/passrestore", require("./passrestore").post);
  * Контроллер регистрации пользователя.
  */
 apiRouter.post("/register", require("./register").post);
+
+/**
+ * Контроллер доступа к профилям пользователей (и к возможности издевательств над ними).
+ */
+apiRouter.get("/user/:id", require("./user").get);

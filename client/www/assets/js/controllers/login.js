@@ -42,7 +42,7 @@ angular.module("app").controller("LoginCtrl", ["$scope", "$http", "$location", f
 			})
 			.success(function(data, status, headers, config) {
 				if (data.success) {
-					$location.path("app/home"); // feed
+					$location.path("/feed"); // feed
 				} else {
 					warning("Внимание! Вы ввели неправильный логин или пароль!");
 				}
