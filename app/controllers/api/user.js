@@ -1,18 +1,27 @@
 
+
 module.exports = {
 	
+	/**
+	 * Команда API GET user для получения публичных данных пользователей.
+	 */
 	get: function(req, res) {
 		
 		if (req.params.id == "authenticated") {
-			
-			const result = { success: true };
-			
-			if (req.isAuthenticated()) result.user = publicUser(req.user);
-			
-			res.send(result);
-			
+			// Получение данных текущего аутентифицированного пользователя
+			if (req.isAuthenticated()) {
+				res.send({
+					success: true,
+					user: publicUser(req.user)
+				});
+			} else {
+				res.send({
+					success: false,
+					message: "Пользователь не аутентифицирован."
+				});
+			}
 		} else {
-			
+			// Получение данных пользователя по его id или useruri
 		}
 		
 	}
@@ -21,12 +30,15 @@ module.exports = {
 
 
 const publicFields = [
+	"id",
+	"useruri",
 	"email",
 	"firstname",
 	"lastname", 
 	"useruri",
 	"avatar_id",
-	"avatar_bg_id"
+	"avatar_bg_id",
+	"chevron"
 ];
 
 

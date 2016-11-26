@@ -1,5 +1,5 @@
 
-/* global $, angular */
+/* global angular */
 
 "use strict";
 
@@ -7,50 +7,23 @@
  * Контроллер страницы ввода логина 
  * и пароля для авторизации пользователя.
  */
-angular.module("app").controller("LoginCtrl", ["$scope", "$http", "$location", function($scope, $http, $location) {
-	
-	function info(message, selector) {
-		noti("info", message, selector);
-	}
-	
-	function warning(message, selector) {
-		noti("warning", message, selector);
-	}
-	
-	function error(message, selector) {
-		noti("error", message, selector);
-	}
-	
-	function noti(type, message, selector) {
-		$(selector || ".login-container").pgNotification({
-			style: "flip",
-			type: type,
-			timeout: 0,
-			message: message
-		}).show();
-	}
-	
+ 
+angular.module("app").controller("LoginCtrl", ["$q", "$scope", "$http", "$location", "$rootScope", "$state", "notification", "passport", function($q, $scope, $http, $location, $rootScope, $state, notification, passport) {
+
 	/**
 	 * Обработчик формы авторизации пользователя.
 	 */
 	$scope.onLoginButtonClick = function(user, loginForm) {
 		if (loginForm.$valid) {
-			$http.post("/api/login", {
-				email: user.username,
-				password: user.password,
-				rememberme: user.rememberme
-			})
-			.success(function(data, status, headers, config) {
-				if (data.success) {
-					$location.path("/feed"); // feed
+			passport.login(user.username, user.password, user.rememberme).then(function(result) {
+				if (result.success) {
+					$state.go("app.feed");
+					passport.getAuthenticated().then(function(authenticated) {
+						$rootScope.authenticated = authenticated;
+					});
 				} else {
-					warning("Внимание! Вы ввели неправильный логин или пароль!");
+					notification.warning(result.message);
 				}
-			})
-			.error(function(data, status, headers, config) {
-				error("Ошибка при отправке формы. См. подробности в консоли браузера.");
-				console.error("Ошибка при отправке формы авторизации пользователя.");
-				console.error(status, data);
 			});
 		}
 	};
@@ -67,22 +40,16 @@ angular.module("app").controller("LoginCtrl", ["$scope", "$http", "$location", f
 	 */
 	$scope.onPasswordRestoreButtonClick = function(passwordRestore, passwordRestoreForm) {
 		if (passwordRestoreForm.$valid) {
-			$http.post("/api/passrestore", {
-				email: passwordRestore.email
-			})
-			.success(function(data, status, headers, config) {
-				if (data.success) {
-					info("Письмо для восстановления пароля отправлено успешно!");
-					$scope.passwordRestore.email = "";
-					passwordRestoreForm.$setPristine(); // https://code.angularjs.org/1.3.15/docs/api/ng/type/form.FormController
-				} else {
-					error(data.message);
-				}
-			})
-			.error(function(data, status, headers, config) {
-				error("Ошибка при отправке формы. См. подробности в консоли браузера.");
-				console.error("Ошибка при отправке формы авторизации пользователя.");
-				console.error(status, data);
+			passport.passwordRestore(passwordRestore.email).then(function() {
+				$scope.passwordRestore.email = "";
+				passwordRestoreForm.$setPristine(); // https://code.angularjs.org/1.3.15/docs/api/ng/type/form.FormController
+				notification.info("Письмо для восстановления пароля отправлено успешно!");
+			}).catch(function(err) {
+				notification.error(err.message);
+				console.group("Ошибка при отправке формы восстановления пароля пользователя.");
+				console.error(err);
+				console.log(err.res);
+				console.groupEnd();
 			});
 		}
 	};
@@ -96,7 +63,7 @@ angular.module("app").controller("LoginCtrl", ["$scope", "$http", "$location", f
 			$http.post("/api/register", user)
 			.success(function(data, status, headers, config) {
 				if (data.success) {
-					info("Регистрация пройдена успешно!", "#modalAccountRequest");
+					notification.info("Регистрация пройдена успешно!", "#modalAccountRequest");
 					registerForm.$setPristine(); // https://code.angularjs.org/1.3.15/docs/api/ng/type/form.FormController
 				} else {
 	                var message = [];
@@ -104,16 +71,16 @@ angular.module("app").controller("LoginCtrl", ["$scope", "$http", "$location", f
 	                data.errors.forEach(function(error) {
 	                    message.push("<li>" + (error.value ? "<b>" + error.value + ": " + "</b>" : "") + error.msg + "</li>");
 	                });
-					error(message.join("\n"), "#modalAccountRequest");
+					notification.error(message.join("\n"), "#modalAccountRequest");
 				}
 			})
 			.error(function(data, status, headers, config) {
-				error("Ошибка при отправке формы. См. подробности в консоли браузера.", "#modalAccountRequest");
+				notification.error("Ошибка при отправке формы. См. подробности в консоли браузера.", "#modalAccountRequest");
 				console.error("Ошибка при отправке формы регистрации пользователя.");
 				console.error(status, data);
 			});
 		}
-	}
+	};
 	
 }]);
 

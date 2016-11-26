@@ -6,8 +6,7 @@
 const paths = {
 	controllers: `${__dirname}/controllers`,
 	middlewares: `${__dirname}/middlewares`,
-	models: `${__dirname}/models`,
-	api: `${__dirname}/controllers/api`
+	models: `${__dirname}/models`
 };
 
 const path = require('path');
@@ -62,7 +61,12 @@ module.exports = {
 		app.use("/demo", express.static(path.join(config.client.path, "demo")));
 		
 		
-		app.use("/api", require(paths.api));
+		
+		app.use("/api", require(path.join(paths.controllers, "api")));
+		app.use("/file/:id", require(path.join(paths.controllers, "file")));
+		
+		
+		
 		
 		// Контроллеры обработки ошибок.
 		app.use(require(path.join(paths.controllers, '404')));

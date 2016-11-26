@@ -12,10 +12,10 @@ module.exports = {
 					if (models.user.checkPassword(user, password)) {
 						done(null, user);
 					} else {
-						done(null, false, { message: 'Incorrect password.' });
+						done(null, false, { message: 'Неправильный пароль.' });
 					}
 				} else {
-					done(null, false, { message: 'Incorrect username.' });
+					done(null, false, { message: 'Неправильный логин.' });
 				}
 			}).catch(function(err) {
 				done(err);

@@ -5,76 +5,50 @@
 
 /* global angular */
 
-
-
-/*
-
-возможно вместо 
-$location.path("login");
-надо использовать
-$state.go("login");
-
-*/
-
-
 angular.module('app')
-    .controller('AppCtrl', ['$scope', '$rootScope', '$state', '$http', '$location', function($scope, $rootScope, $state, $http, $location) {
+	.controller('AppCtrl', ['$scope', '$rootScope', '$state', '$http', '$location', 'passport', function($scope, $rootScope, $state, $http, $location, passport) {
 
-        // App globals
-        $scope.app = {
-            name: 'Gdetus 8888',
-            description: 'геолокационный сервис',
-            layout: {
-                menuPin: false,
-                menuBehind: false,
-                theme: 'pages/css/pages.css'
-            },
-            author: '#NothingPersonalCorp'
-        };
+		// Глобальные данные приложения.
+		$scope.app = {
+			name: 'Gdetus 8888',
+			description: 'геолокационный сервис',
+			author: '#NothingPersonalCorp',
+			layout: {
+				menuPin: false,
+				menuBehind: false,
+				theme: 'pages/css/pages.css'
+			}
+		};
 
-        // Checks if the given state is the current state
-        $scope.is = function(name) {
-            return $state.is(name);
-        };
+		// Checks if the given state is the current state
+		$scope.is = function(name) {
+			return $state.is(name);
+		};
 
-        // Checks if the given state/child states are present
-        $scope.includes = function(name) {
-            return $state.includes(name);
-        };
+		// Checks if the given state/child states are present
+		$scope.includes = function(name) {
+			return $state.includes(name);
+		};
 
-        // Broadcasts a message to pgSearch directive to toggle search overlay
-        $scope.showSearchOverlay = function() {
-            $scope.$broadcast('toggleSearchOverlay', {
-                show: true
-            });
-        };
-        
-        $scope.logout = function() {
-	        $http.get("/api/logout")
-	        .success(function(data, status, headers, config) {
-	            if (data.success) {
-	                //document.location = "#/access/login";
-	                $location.path("login");
-	            } else {
-	                onLogoutError(data, status, headers, config);
-	            }
-	        })
-	        .error(function(data, status, headers, config) {
-	            onLogoutError(data, status, headers, config);
-	        });
-        };
-        
-        function onLogoutError(data, status, headers, config) {
-	        alert("Возникли непредвиденные ошибки при отмене авторизации. См. подробности в консоли браузера.");
-	        console.error("Возникли непредвиденные ошибки при отмене авторизации.");
-	        console.error(status, data);
-		}
+		// Broadcasts a message to pgSearch directive to toggle search overlay
+		$scope.showSearchOverlay = function() {
+			$scope.$broadcast('toggleSearchOverlay', {
+				show: true
+			});
+		};
+		
+		$scope.onAppLogoutButtonClick = function() {
+			passport.logout().then(function() {
+				//$location.path("login");
+				$state.go("login");
+			});
+		};
 		
 		$scope.gotoUserPage = function(user) {
 			
 		};
 
-    }]);
+	}]);
 
 /**
  * include-replace
@@ -82,53 +56,32 @@ angular.module('app')
  * template file by replacing the placeholder element
  */
 angular.module('app')
-    .directive('includeReplace', function() {
-        return {
-            require: 'ngInclude',
-            restrict: 'A',
-            link: function(scope, el, attrs) {
-                el.replaceWith(el.children());
-            }
-        };
-    });  
-    
+	.directive('includeReplace', function() {
+		return {
+			require: 'ngInclude',
+			restrict: 'A',
+			link: function(scope, el, attrs) {
+				el.replaceWith(el.children());
+			}
+		};
+	});  
+	
 /**
  * Первоначальная проверка авторизации пользователя.
  * Проверка куки isAuthenticated на предмет того, был ли авторизован пользователь или нет.
  * Указание страницы для редиректа пользователя по итогу проверки авторизации.
  */
 angular.module('app')
-	.run(['$http', '$cookies', '$location', function($http, $cookies, $location) {
-		console.log("Проверка авторизации");
+	.run(['$http', '$cookies', '$location', '$state', '$rootScope', 'passport', function($http, $cookies, $location, $state, $rootScope, passport) {
 		if ($cookies.isAuthenticated == "true") {
-			console.log("Авторизация пройдена успешно.");
-			if (!$location.url()) $location.path("/feed"); // feed
+			if (!$location.url()) $state.go("app.feed"); //$location.path("/feed");
+			passport.getAuthenticated().then(function(authenticated) {
+				$rootScope.authenticated = authenticated;
+			});
 		} else {
-			console.log("Авторизация не пройдена.");
-			$location.path("login");
+			$state.go("login");
 		}
 	}]);
-    
-/**
- * Загрузка данных аутентифицированного пользователя.
- */
-angular.module('app')
-	.run(['$rootScope', '$http', function($rootScope, $http) {
-		$http.get("/api/user/authenticated")
-		.success(function(data, status, headers, config) {
-			if (data.success) {
-				$rootScope.authenticated = data.user;
-			} else {
-				console.error("Ошибка при загрузке данных аутентифицированного пользователя.");
-				console.error(status, data);
-			}
-		})
-		.error(function(data, status, headers, config) {
-			console.error("Ошибка при загрузке данных аутентифицированного пользователя.");
-			console.error(status, data);
-		});
-	}]);
-
 
 /**
  * accreq-agree-terms
@@ -147,3 +100,4 @@ angular.module('app')
 			}
 		};
 	});
+	

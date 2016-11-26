@@ -25,7 +25,7 @@
 	<div class=" pull-left sm-table">
 		<div class="header-inner">
 			<div class="brand inline">
-				<img src="assets/img/logo.png" alt="logo" data-src="assets/img/logo.png" ui-jq="unveil" data-src-retina="assets/img/logo_2x.png" width="78" height="22">
+				<a href="#/feed"><img src="assets/img/logon.png" alt="logo" data-src="assets/img/logon.png" ui-jq="unveil" data-src-retina="assets/img/logo_2x.png" width="140" height="34"></a>
 			</div>
 			<!-- BEGIN NOTIFICATION DROPDOWN -->
 			<ul class="notification-list no-margin hidden-sm hidden-xs b-grey b-l b-r no-style p-l-30 p-r-20">
@@ -80,14 +80,19 @@
 	</div>
 	<div class=" pull-right">
 		<div class="header-inner">
-			<a href="" class="btn-link icon-set menu-hambuger-plus m-l-20 sm-no-margin hidden-sm hidden-xs" data-toggle="quickview" data-toggle-element="#quickview"></a>
+			<a 
+				href="" 
+				class="btn-link icon-set menu-hambuger-plus m-l-20 sm-no-margin hidden-sm hidden-xs" 
+				data-toggle="quickview" 
+				data-toggle-element="#quickview">
+			</a>
 		</div>
 	</div>
 	<div class=" pull-right">
 		<!-- START User Info-->
 		<div class="visible-lg visible-md m-t-10">
 			<div class="pull-left p-r-10 p-t-10 fs-16 font-heading">
-				<a href="" ng-click="gotoUserPage(authenticated)">
+				<a href="" ui-sref="app.user({ id: authenticated.getHref() })">
 					<span class="semi-bold">
 						{{authenticated.firstname}}
 						{{authenticated.lastname}}
@@ -95,20 +100,30 @@
 				</a>
 			</div>
 			<div class="dropdown pull-right">
-				<button class="profile-dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				<button 
+					class="profile-dropdown-toggle" 
+					type="button" 
+					data-toggle="dropdown" 
+					aria-haspopup="true" 
+					aria-expanded="false">
 					<span class="thumbnail-wrapper d32 circular inline m-t-5">
-				<img src="assets/img/profiles/avatar.jpg" alt="" data-src="assets/img/profiles/avatar.jpg" ui-jq="unveil" data-src-retina="assets/img/profiles/avatar_small2x.jpg" width="32" height="32">
-			</span>
+						<img 
+							alt="" 
+							ui-jq="unveil" 
+							width="32" 
+							height="32"
+							ng-src="{{authenticated.getAvatarHref()}}"
+							src="assets/img/profiles/avatar.jpg"
+							data-src="assets/img/profiles/avatar.jpg" 
+							data-src-retina="assets/img/profiles/avatar_small2x.jpg" />
+					</span>
 				</button>
 				<ul class="dropdown-menu profile-dropdown" role="menu">
-					<li><a href="#/map"><i class="pg-map"></i> Карта</a>
-					</li>
-					<li><a href=""><i class="pg-outdent"></i> Feedback</a>
-					</li>
-					<li><a href=""><i class="pg-signals"></i> Help</a>
-					</li>
+					<li><a href="#/map"><i class="pg-map"></i> Карта</a></li>
+					<li><a href=""><i class="pg-outdent"></i> Feedback</a></li>
+					<li><a href=""><i class="pg-signals"></i> Help</a></li>
 					<li class="bg-master-lighter">
-						<a href="" class="clearfix" ng-click="logout()">
+						<a href="" class="clearfix" ng-click="onAppLogoutButtonClick()">
 							<span class="pull-left">Выход</span>
 							<span class="pull-right"><i class="pg-power"></i></span>
 						</a>
