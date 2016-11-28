@@ -7,11 +7,12 @@
 		<span class="hint-text">Мы вас любим! :3</span>
 		<span class="sm-block m-l-10">
 		<a href="#" class="" data-target="#modalAbout" data-toggle="modal">о нас</a>
-		<a href="#" class="m-l-10">помощь</a>
+		<a href="/sup" class="m-l-10">помощь</a>
 		<a href="#" class="m-l-10" data-target="#modalTerms" data-toggle="modal">правила</a>
-		<a href="#/ads" class="m-l-10" data-target="#modalAds" data-toggle="modal">реклама</a>
-		<a href="#/dev" class="m-l-10" data-target="#modalDev" data-toggle="modal">разработчикам</a>
+		<a href="#" class="m-l-10" data-target="#modalAds" data-toggle="modal">реклама</a>
+		<a href="#" class="m-l-10" data-target="#modalDev" data-toggle="modal">разработчикам</a>
 		<a href="#" class="m-l-10" data-target="#modalVac" data-toggle="modal">вакансии</a>
+		<a href="#" class="m-l-10">новости</a>
 		</span>
 	</p>
 	<p class="small no-margin pull-right sm-pull-reset">
@@ -21,3 +22,7 @@
   </div>
 </div>
 <!-- END FOOTER -->
+
+<div ng-include src=" 'tpl/dialogs/about.html' " include-replace></div>
+
+<div ng-include src=" 'tpl/dialogs/vac.html' " include-replace></div>

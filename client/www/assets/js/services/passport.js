@@ -5,7 +5,7 @@
  * Служба для работы с аутентификацией пользователя.
  */
 angular.module("app")
-	.factory("passport", ["$http", "$rootScope", function($http, $rootScope) {
+	.factory("passport", ["$http", "$rootScope", "$q", function($http, $rootScope, $q) {
 		
 		return {
 			
@@ -63,7 +63,7 @@ angular.module("app")
 					if (!res.data.success) {
 						var err = new Error(res.data.message);
 						err.res = res;
-						throw err;
+						return $q.reject(err); // http://goo.gl/T4jKxW
 					}
 					return;
 				});

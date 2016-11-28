@@ -9,6 +9,7 @@ const paths = {
 	models: `${__dirname}/models`
 };
 
+const fs = require('fs');
 const path = require('path');
 
 const vhost = require('vhost');
@@ -55,21 +56,24 @@ module.exports = {
 			next();
 		});
 		
-		// Подключение клиентской части.
-		app.use(express.static(path.join(config.client.path, "www")));
+		// Временное подключение демо-версии фреймворка и пред. версии клиента.
 		app.use("/prev", express.static(path.join(config.client.path, "prev")));
 		app.use("/demo", express.static(path.join(config.client.path, "demo")));
 		
-		
-		
+		// Основные контроллеры.
 		app.use("/api", require(path.join(paths.controllers, "api")));
 		app.use("/file/:id", require(path.join(paths.controllers, "file")));
 		
-		
-		
+		// Подключение клиентской части.
+		const clientAngularAppPath = "www";
+		app.use(express.static(path.join(config.client.path, clientAngularAppPath)));
+		app.use((req, res, next) => {
+			res.set("Content-Type", "text/html; charset=UTF-8");
+			res.send(fs.readFileSync(path.join(config.client.path, clientAngularAppPath, "index.html")));
+		});
 		
 		// Контроллеры обработки ошибок.
-		app.use(require(path.join(paths.controllers, '404')));
+		//app.use(require(path.join(paths.controllers, '404')));
 		app.use(require(path.join(paths.controllers, '500')));
 		
 		return app;

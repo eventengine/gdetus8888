@@ -12,6 +12,7 @@ angular.module("app").config(["$stateProvider", "$urlRouterProvider", "$ocLazyLo
 		//$urlRouterProvider.otherwise("/app/home");
 
 		$stateProvider
+		
 			.state("login", {
 				url: "/login",
 				templateUrl: "tpl/login.html",
@@ -24,10 +25,12 @@ angular.module("app").config(["$stateProvider", "$urlRouterProvider", "$ocLazyLo
 					}]
 				}
 			})
+			
 			.state("app", {
 				abstract: true,
 				templateUrl: "tpl/app.html"
 			})
+			
 			.state("app.home", {
 				url: "/home",
 				templateUrl: "tpl/home.html",
@@ -51,18 +54,79 @@ angular.module("app").config(["$stateProvider", "$urlRouterProvider", "$ocLazyLo
 					}]
 				}
 			})
-			.state("app.user", {
-				url: "/user/:id",
-				templateUrl: "tpl/user.html",
-				controller: "UserCtrl",
+			
+			.state("app.edit", {
+				url: "/edit",
+				templateUrl: "tpl/edit.html",
+				controller: "EditCtrl",
 				resolve: {
 					deps: ["$ocLazyLoad", function($ocLazyLoad) {
 						return $ocLazyLoad.load([
-							"assets/js/controllers/user.js"
-						]);
+							/* 
+								Load any ocLazyLoad module here
+								ex: "wysihtml5"
+								Open config.lazyload.js for available modules
+							*/
+						], {
+							insertBefore: "#lazyload_placeholder"
+						})
+						.then(function() {
+							return $ocLazyLoad.load([
+								"assets/js/controllers/edit.js"
+							]);
+						});
 					}]
 				}
 			})
+			
+			.state("app.settings", {
+				url: "/settings",
+				templateUrl: "tpl/settings.html",
+				controller: "SettingsCtrl",
+				resolve: {
+					deps: ["$ocLazyLoad", function($ocLazyLoad) {
+						return $ocLazyLoad.load([
+							/* 
+								Load any ocLazyLoad module here
+								ex: "wysihtml5"
+								Open config.lazyload.js for available modules
+							*/
+						], {
+							insertBefore: "#lazyload_placeholder"
+						})
+						.then(function() {
+							return $ocLazyLoad.load([
+								"assets/js/controllers/settings.js"
+							]);
+						});
+					}]
+				}
+			})
+			
+			.state("app.sup", {
+				url: "/sup",
+				templateUrl: "tpl/sup.html",
+				controller: "SupCtrl",
+				resolve: {
+					deps: ["$ocLazyLoad", function($ocLazyLoad) {
+						return $ocLazyLoad.load([
+							/* 
+								Load any ocLazyLoad module here
+								ex: "wysihtml5"
+								Open config.lazyload.js for available modules
+							*/
+						], {
+							insertBefore: "#lazyload_placeholder"
+						})
+						.then(function() {
+							return $ocLazyLoad.load([
+								"assets/js/controllers/sup.js"
+							]);
+						});
+					}]
+				}
+			})
+			
 			.state("app.feed", {
 				url: "/feed",
 				templateUrl: "tpl/feed.html",
@@ -102,6 +166,18 @@ angular.module("app").config(["$stateProvider", "$urlRouterProvider", "$ocLazyLo
 								"assets/js/controllers/map.js"
 							]);
 						});
+					}]
+				}
+			})
+			.state("app.user", {
+				url: "/{id:.+}",
+				templateUrl: "tpl/user.html",
+				controller: "UserCtrl",
+				resolve: {
+					deps: ["$ocLazyLoad", function($ocLazyLoad) {
+						return $ocLazyLoad.load([
+							"assets/js/controllers/user.js"
+						]);
 					}]
 				}
 			});

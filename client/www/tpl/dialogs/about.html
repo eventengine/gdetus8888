@@ -1,0 +1,107 @@
+
+<div class="modal fade fill-in" id="modalAbout" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			
+			<div class="modal-header">
+				<!-- Для верстки см. документацию к Bootstrap (оформление заголовка хедера модального окна)-->
+				<!-- http://getbootstrap.com/javascript/#modals -->
+				<!-- http://getbootstrap.com/css/#grid -->
+			</div>
+			
+			<div class="modal-body">
+				
+
+				<div class="register-container full-height sm-p-t-30">
+					<div class="container-sm-height full-height">
+						<div class="row row-sm-height">
+							<div class="col-sm-12 col-sm-height col-middle">
+								<h5 class="text-center p-b-5">Привеllll! Хочешь попробовать свои силы в крупной компании или интересном проекте,
+								но мало опыта? Тогда тебе сюда!</h5>
+								<p class="text-center">
+									<small>
+									Выбери должность, в которой ты хотел бы попробовать свои силы, заполни несложную анкету и мы обязательно тебя найдём!
+									Мы не смотрим на возраст, опыт работы или наличие диплома - главное, чтобы ты горел своим любимым делом днём и ночью
+									и шёл за своими мечтами!
+									</small>
+								</p>
+								<form id="form-register" class="p-t-15" role="form" name="register" novalidate>
+									<div class="row">
+										<div class="col-sm-6">
+											<div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error': register.fname.$invalid && !register.fname.$pristine }">
+												<label>Твоё имя</label>
+												<input type="text" name="fname" placeholder="Дарт" class="form-control" ng-model="user.fname" required>
+											</div>
+											<label class="error" for="fname" ng-show="register.fname.$invalid && !register.fname.$pristine">У тебя нет имени? Сириусли? -__-</label>
+										</div>
+										<div class="col-sm-6">
+											<div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error': register.lname.$invalid && !register.lname.$pristine }">
+												<label>Твоя фамилия</label>
+												<input type="text" name="lname" placeholder="Вэйдер" class="form-control" ng-model="user.lname" required>
+											</div>
+											<label class="error" for="lname" ng-show="register.lname.$invalid && !register.lname.$pristine">Как? У тебя нет фамилии? Совсем?  0.о</label>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-sm-12">
+											<div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error': register.uname.$invalid && !register.uname.$pristine }">
+												<label>Твой пол</label>
+												<input type="text" name="uname" placeholder="например: dartvader (ты сможешь изменить этот адрес позже)" class="form-control" ng-model="user.username" >
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-sm-12">
+											<div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error': register.pass.$invalid && !register.pass.$pristine }">
+												<label>Твой пароль</label>
+												<input type="password" name="pass" placeholder="не менее 8 символов, включая буквы A-z, цифры и спецсимволы" class="form-control" ng-minlength="4" ng-model="user.password" required>
+											</div>
+												<label class="error" for="pass" ng-show="register.pass.$invalid && !register.pass.$pristine">Нет пароля - нет регистрации. Такие дела.</label>
+											<label class="error" for="pass" ng-show="register.pass.$error.minlength">Не меньше ВОСЬМИ символов, Карл!</label>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-sm-12">
+											<div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error': register.email.$invalid && !register.email.$pristine }">
+												<label>Твоя почта</label>
+												<input type="email" name="email" placeholder="мы вышлем тебе сверхсекретное послание ;))" class="form-control" ng-model="user.email" required>
+											</div>
+											<label class="error" for="email" ng-show="register.email.$invalid && !register.email.$pristine">Нужна действующая почта.</label>
+										</div>
+									</div>
+									<div class="row m-t-10">
+										<div class="col-md-7">
+											<div class="checkbox check-primary">
+												<input type="checkbox" value="1" id="checkbox1" name="checkbox1" ng-model="user.termsagree"/>
+												<label for="checkbox1">Я прочитал <a href="http://gdetus.io/terms">правила сервиса</a> на обработку моих персональных данных.
+												</label>
+											</div>
+										</div>
+									</div>
+									<button class="btn btn-primary btn-cons m-t-10" type="submit" ng-disabled="register.$invalid">Отправить заявку</button>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+			
+			<div class="modal-footer">
+				<!-- Для верстки см. документацию к Bootstrap (оформление заголовка хедера модального окна)-->
+				<!-- http://getbootstrap.com/javascript/#modals -->
+				<!-- http://getbootstrap.com/css/#grid -->
+			</div>
+			
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+

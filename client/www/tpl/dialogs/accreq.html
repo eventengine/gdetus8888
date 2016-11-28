@@ -25,14 +25,14 @@
 								<form id="form-register" class="p-t-15" role="form" name="registerForm" novalidate>
 									<div class="row">
 										<div class="col-sm-6">
-											<div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error': registerForm.firstname.$invalid && !registerForm.firstname.$pristine }">
+											<div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error': registerForm.firstname.$invalid && !registerForm.firstname.$pristine }" required>
 												<label>Твоё имя</label>
 												<input type="text" name="firstname" placeholder="Дарт" class="form-control" ng-model="user.firstname" required>
 											</div>
 											<label class="error" for="fname" ng-show="registerForm.firstname.$invalid && !registerForm.firstname.$pristine">У тебя нет имени? Сириусли?</label>
 										</div>
 										<div class="col-sm-6">
-											<div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error': registerForm.lastname.$invalid && !registerForm.lastname.$pristine }">
+											<div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error': registerForm.lastname.$invalid && !registerForm.lastname.$pristine }" required>
 												<label>Твоя фамилия</label>
 												<input type="text" name="lastname" placeholder="Вэйдер" class="form-control" ng-model="user.lastname" required>
 											</div>
@@ -49,7 +49,7 @@
 									</div>
 									<div class="row">
 										<div class="col-sm-12">
-											<div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error': registerForm.password.$invalid && !registerForm.password.$pristine }">
+											<div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error': registerForm.password.$invalid && !registerForm.password.$pristine }" required>
 												<label>Твой пароль</label>
 												<input type="password" name="password" placeholder="не менее 8 символов, включая буквы A-z, цифры и спецсимволы" class="form-control" ng-minlength="8" ng-model="user.password" required>
 											</div>
@@ -59,7 +59,7 @@
 									</div>
 									<div class="row">
 										<div class="col-sm-12">
-											<div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error': registerForm.email.$invalid && !registerForm.email.$pristine }">
+											<div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error': registerForm.email.$invalid && !registerForm.email.$pristine }" required>
 												<label>Твоя почта</label>
 												<input type="email" name="email" placeholder="мы вышлем тебе сверхсекретное послание ;))" class="form-control" ng-model="user.email" required>
 											</div>

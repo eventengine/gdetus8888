@@ -16,11 +16,13 @@
 					<div class="container-sm-height full-height">
 						<div class="row row-sm-height">
 							<div class="col-sm-12 col-sm-height col-middle">
-								<h5 class="text-center p-b-5">Создай свой собственный Гдетус! Это очень просто! :)</h5>
+								<h5 class="text-center p-b-5">Привет! Хочешь попробовать свои силы в крупной компании или интересном проекте,
+								но мало опыта? Тогда тебе сюда!</h5>
 								<p class="text-center">
 									<small>
-									Ты сможешь не только в реальном времени следить за мероприятиями, событиями, квестами,
-									тусовками и вписками своих друзей и заведений города на карте, но и создавать свои собственные!
+									Выбери должность, в которой ты хотел бы попробовать свои силы, заполни несложную анкету и мы обязательно тебя найдём!
+									Мы не смотрим на возраст, опыт работы или наличие диплома - главное, чтобы ты горел своим любимым делом днём и ночью
+									и шёл за своими мечтами!
 									</small>
 								</p>
 								<form id="form-register" class="p-t-15" role="form" name="register" novalidate>
@@ -43,7 +45,7 @@
 									<div class="row">
 										<div class="col-sm-12">
 											<div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error': register.uname.$invalid && !register.uname.$pristine }">
-												<label>Адрес твоей страницы</label>
+												<label>Твой пол</label>
 												<input type="text" name="uname" placeholder="например: dartvader (ты сможешь изменить этот адрес позже)" class="form-control" ng-model="user.username" >
 											</div>
 										</div>
@@ -70,16 +72,13 @@
 									<div class="row m-t-10">
 										<div class="col-md-7">
 											<div class="checkbox check-primary">
-												<input type="checkbox" value="1" id="checkbox1111" name="checkbox1111" ng-model="user.termsagree"/>
-												<label for="checkbox1111">Я прочитал <a href="http://gdetus.io/terms">правила</a> и согласен на всё! ;)
+												<input type="checkbox" value="1" id="checkbox1" name="checkbox1" ng-model="user.termsagree"/>
+												<label for="checkbox1">Я прочитал <a href="http://gdetus.io/terms">правила сервиса</a> на обработку моих персональных данных.
 												</label>
 											</div>
 										</div>
-										<div class="col-md-5 text-right">
-											<a href="https://new.vk.com/im?media=&sel=-108146224" target= "blank" class="text-info small">Нужна помощь?</a>
-										</div>
 									</div>
-									<button class="btn btn-primary btn-cons m-t-10" type="submit" ng-disabled="register.$invalid">Создать аккаунт</button>
+									<button class="btn btn-primary btn-cons m-t-10" type="submit" ng-disabled="register.$invalid">Отправить заявку</button>
 								</form>
 							</div>
 						</div>

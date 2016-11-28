@@ -1,0 +1,176 @@
+<!-- START PAGE COVER -->
+<div class="container-fluid container-fixed-lg ">
+    <ul class="breadcrumb">
+        <li>
+            <a class="active" href="#/edit">настройки страницы</a>
+        </li>
+        <li><a href="#/settings">настройки сервиса</a>
+        </li>
+    </ul>
+    <!-- END BREADCRUMB -->
+    <h3 class="page-title">Edit</h3>
+</div>
+<div class="register-container full-height sm-p-t-50">
+    <!-- YOU CAN REMOVE .container-fixed-lg TO DISABLE THE FEATURE WHERE THE CONTENT
+         ALIGNS TO THE CENTER WITHOUT STRECTHING UNGLY ON 1800PX(1080P & 4/5K MONITORS) UP WORDS SCREEN -->
+    <!-- CONTENT GOES HERE -->
+    
+    <div class="col-sm-12">
+		<div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error': register..$invalid && !register..$pristine }">
+		<input type="text" name="" placeholder="Задайте свой вопрос" class="form-control" ng-model="" >
+		</div>
+	
+	<!-- START PANEL -->
+    
+                    <div class="panel panel-transparent">
+                        <ul class="nav nav-tabs nav-tabs-simple nav-tabs-right bg-white" id="tab-3" role="tablist" >
+                            <li class="active"><a href="#tab" data-toggle="tab" pg-tab role="tab">Основное</a>
+                            </li>
+                            <li><a href="#tab2" data-toggle="tab2" pg-tab role="tab2">Two</a>
+                            </li>
+                            <li><a href="#tab3" data-toggle="tab3" pg-tab role="tab3">Three</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content bg-white">
+                            <div class="tab-pane active" id="tab">
+                                <div class="row column-seperation">
+                                	<!-- форма смены имени -->
+                                    <div class="col-sm-12">
+											<div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error': register.fname.$invalid && !register.fname.$pristine }">
+												<label>Твоё имя</label>
+												<input type="text" name="fname" placeholder="{{authenticated.firstname}}" class="form-control" ng-model="user.fname" required>
+											</div>
+											<label class="error" for="fname" ng-show="register.fname.$invalid && !register.fname.$pristine">У тебя нет имени? Сириусли? -__-</label>
+									</div>
+									<!-- форма смены фамилии -->
+									<div class="col-sm-12">
+											<div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error': register.fname.$invalid && !register.fname.$pristine }">
+												<label>Твоя фамилия</label>
+												<input type="text" name="fname" placeholder="{{authenticated.lastname}}" class="form-control" ng-model="user.fname" required>
+											</div>
+											<label class="error" for="fname" ng-show="register.fname.$invalid && !register.fname.$pristine">У тебя нет имени? Сириусли? -__-</label>
+									</div>
+									<!-- форма выбора пола -->
+									<div class="col-sm-12">
+											<div pg-form-group class="form-group form-group-default form-group-default-select ">
+                            					<label class="">Твой пол</label>
+                            					<select id="gender" class="full-width" data-init-plugin="select" style="">
+						                            <option value="unknown">не указан</option>
+						                            <option value="male">мужской</option>
+							              			<option value="female">женский</option>
+                        						</select>
+                        					</div>
+									</div>
+									<!-- форма смены адреса профиля -->
+									<div class="col-sm-12">
+											<div pg-form-group class="form-group form-group-default input-group">
+					                            <label>Адрес страницы</label>
+					                            <input type="text" name="fname" placeholder="{{authenticated.lastname}}" class="form-control" ng-model="user.fname" required>
+					                            <span class="input-group-addon primary">gdetus.io/</span>
+                        					</div>
+                        					<label class="error" for="fname" ng-show="register.fname.$invalid && !register.fname.$pristine">У тебя нет имени? Сириусли? -__-</label>
+									</div>
+									<!-- форма выбора даты рождения -->
+									<div class="col-sm-12">
+											<div pg-form-group class="form-group form-group-default input-group">
+						                        <label>Твоя дата рождения</label>
+						                        <input type="email" class="form-control" placeholder="Выбери дату" id="datepicker-component2" ui-jq="datepicker">
+						                        <span class="input-group-addon primary"><i class="fa fa-calendar"></i></span>
+                    						</div>
+                    						<!-- форма выбора отображения даты рождения -->
+                    						<div class="radio radio-success">
+								                <input type="radio" value="yes" name="optionyes" id="yes">
+								                <label for="yes">не показывать дату</label>
+								                <input type="radio" checked="checked" value="no" name="optionyes" id="no">
+								                <label for="no">показывать день и месяц</label>
+								                <input type="radio" value="no" name="optionyes" id="no">
+								                <label for="no">показывать</label>
+                    						</div>
+									</div>
+									<!-- форма выбора родного города-->
+									<div class="col-sm-12">
+											<div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error': register.fname.$invalid && !register.fname.$pristine }">
+					                            <label>Твой родной город</label>
+					                            <input type="email" class="form-control">
+                        					</div>
+                        						<label class="error" for="fname" ng-show="register.fname.$invalid && !register.fname.$pristine">У тебя нет имени? Сириусли? -__-</label>
+									</div>
+									<!-- форма кнопки применения изменений-->
+									<div class="col-sm-12">
+											<div class=" text-right">
+					   							<button class="btn btn-primary btn-xs " data-target="#" data-toggle="">Применить изменения</button>
+											</div>
+									</div>
+									
+                                </div>
+                            </div>
+                            <div class="tab-pane " id="tab2">
+                                <div class="row">
+                                    <!-- первая форма второй вкладки-->
+									<div class="col-sm-12">
+											<div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error': register.fname.$invalid && !register.fname.$pristine }">
+					                            <label>Твой родной форма</label>
+					                            <input type="email" class="form-control">
+                        					</div>
+                        						<label class="error" for="fname" ng-show="register.fname.$invalid && !register.fname.$pristine">У тебя нет имени? Сириусли? -__-</label>
+									</div>
+									<!-- вторая форма второй вкладки-->
+									<div class="col-sm-12">
+											<div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error': register.fname.$invalid && !register.fname.$pristine }">
+					                            <label>Твой родной форма два</label>
+					                            <input type="email" class="form-control">
+                        					</div>
+                        						<label class="error" for="fname" ng-show="register.fname.$invalid && !register.fname.$pristine">У тебя нет имени? Сириусли? -__-</label>
+									</div>
+									<!-- 2 форма кнопки применения изменений-->
+									<div class="col-sm-12">
+											<div class=" text-right">
+					   							<button class="btn btn-primary btn-xs " data-target="#" data-toggle="">Применить изменения</button>
+											</div>
+									</div>
+									
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="tab3">
+                                <div class="row">
+                                    <!-- первая форма третьей вкладки-->
+									<div class="col-sm-12">
+											<div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error': register.fname.$invalid && !register.fname.$pristine }">
+					                            <label>Твой три  родной форма</label>
+					                            <input type="email" class="form-control">
+                        					</div>
+                        						<label class="error" for="fname" ng-show="register.fname.$invalid && !register.fname.$pristine">У тебя нет имени? Сириусли? -__-</label>
+									</div>
+									<!-- вторая форма третьей вкладки-->
+									<div class="col-sm-12">
+											<div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error': register.fname.$invalid && !register.fname.$pristine }">
+					                            <label>Твой родной форма три</label>
+					                            <input type="email" class="form-control">
+                        					</div>
+                        						<label class="error" for="fname" ng-show="register.fname.$invalid && !register.fname.$pristine">У тебя нет имени? Сириусли? -__-</label>
+									</div>
+									<!-- 3 форма кнопки применения изменений-->
+									<div class="col-sm-12">
+											<div class=" text-right">
+					   							<button class="btn btn-primary btn-xs " data-target="#" data-toggle="">Применить изменения</button>
+											</div>
+									</div>
+									
+									
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END PANEL -->
+	
+	</div>
+    
+    
+    
+</div>
+
+<div ng-include src=" 'tpl/dialogs/vac.html' " include-replace></div>

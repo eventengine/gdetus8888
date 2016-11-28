@@ -36,7 +36,7 @@ angular.module('app', ['ngSanitize', 'ui.select', 'summernote', 'ngDropzone', 'd
 
         $scope.person = {};
         $scope.people = [
-            { name: 'Adam', email: 'adam@email.com', age: 12, country: 'United States' },
+            { name: 'жесть', email: 'adam@email.com', age: 12, country: 'United States' },
             { name: 'Amalie', email: 'amalie@email.com', age: 12, country: 'Argentina' },
             { name: 'Estefanía', email: 'estefania@email.com', age: 21, country: 'Argentina' },
             { name: 'Adrian', email: 'adrian@email.com', age: 21, country: 'Ecuador' },

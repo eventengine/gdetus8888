@@ -8,6 +8,6 @@
 angular.module("app")
 	.controller("FeedCtrl", ["$scope", function($scope) {
 
-		$scope.message = "How are you doing today?";
+		$scope.message = "Болванка страницы фида";
 
 	}]);

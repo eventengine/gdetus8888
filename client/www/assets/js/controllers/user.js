@@ -7,4 +7,6 @@ angular.module('app')
 
     	console.log('UserCtrl', $stateParams.id)
 
+
+
     }]);

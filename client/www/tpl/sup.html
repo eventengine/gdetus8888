@@ -1,0 +1,175 @@
+<!-- START PAGE COVER -->
+<div class="container-fluid container-fixed-lg col-md-12">
+    <ul class="breadcrumb">
+        <li>
+            <a href="#">Home</a>
+        </li>
+        <li><a class="active" href="#">Plain template</a>
+        </li>
+    </ul>
+    <!-- END BREADCRUMB -->
+    <h3 class="page-title">Sup</h3>
+</div>
+<div class="register-container sm-p-t-50">
+    <!-- YOU CAN REMOVE .container-fixed-lg TO DISABLE THE FEATURE WHERE THE CONTENT
+         ALIGNS TO THE CENTER WITHOUT STRECTHING UNGLY ON 1800PX(1080P & 4/5K MONITORS) UP WORDS SCREEN -->
+    <!-- CONTENT GOES HERE -->
+    
+    <!-- ниже заккоментирована альтернативная версия строки поиска (отдельный див) -->
+    
+    <!--  <div class="col-sm-12">
+		<div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error': register.fname.$invalid && !register.fname.$pristine }">
+		<input type="text" name="fname" placeholder="Задайте свой вопрос" class="form-control" ng-model="user.fname">
+		
+		</div> -->
+		
+	<div class="input-group transparent col-md-12 center-margin">
+                <span class="input-group-addon ">
+                    <i class="pg-search"></i> 
+                </span>
+                <input type="text" class="form-control" placeholder="Задайте свой вопрос" id="icon-filter" name="icon-filter" ng-keyup="filterIcons($event)">
+                
+    </div>
+	
+	<!-- START PANEL -->
+    
+                    <div class="panel panel-transparent">
+                        <ul class="nav nav-tabs nav-tabs-simple nav-tabs-right bg-white" id="tab-3" role="tablist">
+                            <li><a href="#tab1" data-toggle="tab1" pg-tab role="tab">One1</a>
+                            </li>
+                            <li><a href="#tab4FollowUs" data-toggle="tab" pg-tab role="tab">Two2</a>
+                            </li>
+                            <li class="active"><a href="#tab4Inspire" data-toggle="tab" pg-tab role="tab">Three3</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content bg-white">
+                            <div class="tab-pane" id="tab1">
+                                <div class="row column-seperation">
+                                    <div class="col-md-12">
+                                        
+                                        <div class="panel panel-transparent" ng-controller="DetailedTableCtrl">
+                <div class="panel-body">
+                    <div class="table-responsive">
+                        <table class="table table-hover table-condensed table-detailed" id="detailedTable" ui-jq="dataTable" ui-options="options">
+                            <tbody>
+                                <tr ng-click="expand($event)">
+                                    <td class="v-align-middle semi-bold">Revolution Begins</td>
+                                </tr>
+                                <tr ng-click="expand($event)">
+                                    <td class="v-align-middle semi-bold">Revolution Begins</td>
+                                </tr>
+                                <tr ng-click="expand($event)">
+                                    <td class="v-align-middle semi-bold">Revolution Begins</td>
+                                </tr>
+                                <tr ng-click="expand($event)">
+                                    <td class="v-align-middle semi-bold">Revolution Begins</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane " id="tab4FollowUs">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <h3>“ Nothing is
+                                                    <span class="semi-bold">impossible</span>, the word itself says 'I'm
+                                                    <span class="semi-bold">possible</span>'! ”</h3>
+                                        <p>A style represents visual customizations on top of a layout. By editing a style, you can use Squarespace's visual interface to customize your...</p>
+                                        <br>
+                                        <p class="pull-right">
+                                            <button type="button" class="btn btn-default btn-cons">White</button>
+                                            <button type="button" class="btn btn-success btn-cons">Success</button>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane active" id="tab4Inspire">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <h3>Follow us &amp; get updated!</h3>
+                                        <p>Instantly connect to what's most important to you. Follow your friends, experts, favorite celebrities, and breaking news.</p>
+                                        <br>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END PANEL -->
+	
+	
+                    
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="alert alert-info visible-xs m-r-5 m-l-5" role="alert">
+                      <button class="close" data-dismiss="alert"></button>
+                      <strong>Info: </strong> On mobile the tab will be come a Accorian by using data-init-reponsive-tabs="collapse"
+                    </div>
+            <div class="panel">
+                <ul class="nav nav-tabs nav-tabs-simple" role="tablist" ui-jq="tabCollapse">
+                    <li class="active"><a href="#tab2hellowWorld" data-toggle="tab" pg-tab role="tab">Hello World</a>
+                    </li>
+                    <li><a href="#tab2FollowUs" data-toggle="tab" pg-tab role="tab">Hello Two</a>
+                    </li>
+                    <li><a href="#tabMyQuestions" data-toggle="tab" pg-tab role="tab">Мои вопросы</a>
+                    </li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="tab2hellowWorld">
+                        <div class="row column-seperation">
+                            <div class="col-md-6">
+                                <h3>
+                                            <span class="semi-bold">Sometimes</span> Small things in life means the most</h3>
+                            </div>
+                            <div class="col-md-6">
+                                <h3 class="semi-bold">great tabs</h3>
+                                <p>Native boostrap tabs customized to Pages look and feel, simply changing class name you can change color as well as its animations</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane " id="tab2FollowUs">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h3>“ Nothing isяяяя
+                                            <span class="semi-bold">impossible</span>, the word itself says 'I'm
+                                            <span class="semi-bold">possible</span>'! ”</h3>
+                                <p>A style represents visual customizations on top of a layout. By editing a style, you can use Squarespace's visual interface to customize your...</p>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="tabMyQuestions">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h3>Follow us &amp; get updated!</h3>
+                                <p>типа мои вопросы будут тут</p>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	
+	
+	
+	<!-- не трогать нижний див -->
+	</div>
+    
+    
+    
+</div>
+
+
+<div ng-include src=" 'tpl/dialogs/vac.html' " include-replace></div>

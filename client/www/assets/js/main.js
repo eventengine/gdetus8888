@@ -74,7 +74,7 @@ angular.module('app')
 angular.module('app')
 	.run(['$http', '$cookies', '$location', '$state', '$rootScope', 'passport', function($http, $cookies, $location, $state, $rootScope, passport) {
 		if ($cookies.isAuthenticated == "true") {
-			if (!$location.url()) $state.go("app.feed"); //$location.path("/feed");
+			if (!$location.path() || $location.path() == "/") $state.go("app.feed"); //$location.path("/feed");
 			passport.getAuthenticated().then(function(authenticated) {
 				$rootScope.authenticated = authenticated;
 			});
@@ -99,5 +99,14 @@ angular.module('app')
 				};
 			}
 		};
-	});
+	}); 
+	
+/**
+ * html5Mode
+ * Включаем, чтобы убрать из URL знак решетки.
+ */
+angular.module('app')
+	.config(['$locationProvider', function($locationProvider) {
+		$locationProvider.html5Mode(true);
+	}]);
 	
