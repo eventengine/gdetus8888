@@ -56,6 +56,9 @@ module.exports = {
 			next();
 		});
 		
+		// Подключение JS-библиотек.
+		app.use("/assets/plugins/ng-meta", express.static(path.join(path.dirname(require.resolve("ng-meta/package.json")), "dist")));
+		
 		// Временное подключение демо-версии фреймворка и пред. версии клиента.
 		app.use("/prev", express.static(path.join(config.client.path, "prev")));
 		app.use("/demo", express.static(path.join(config.client.path, "demo")));

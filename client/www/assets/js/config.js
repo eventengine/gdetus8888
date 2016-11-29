@@ -23,6 +23,11 @@ angular.module("app").config(["$stateProvider", "$urlRouterProvider", "$ocLazyLo
 							"assets/js/controllers/login.js"
 						]);
 					}]
+				},
+				data: {
+					meta: {
+						title: "Добро пожаловать домой!"
+					}
 				}
 			})
 			
@@ -76,6 +81,11 @@ angular.module("app").config(["$stateProvider", "$urlRouterProvider", "$ocLazyLo
 							]);
 						});
 					}]
+				},
+				data: {
+					meta: {
+						title: "Редактирование страницы"
+					}
 				}
 			})
 			
@@ -100,6 +110,11 @@ angular.module("app").config(["$stateProvider", "$urlRouterProvider", "$ocLazyLo
 							]);
 						});
 					}]
+				},
+				data: {
+					meta: {
+						title: "Настройки сервиса"
+					}
 				}
 			})
 			
@@ -124,6 +139,11 @@ angular.module("app").config(["$stateProvider", "$urlRouterProvider", "$ocLazyLo
 							]);
 						});
 					}]
+				},
+				data: {
+					meta: {
+						title: "Помощь"
+					}
 				}
 			})
 			
@@ -148,8 +168,14 @@ angular.module("app").config(["$stateProvider", "$urlRouterProvider", "$ocLazyLo
 							]);
 						});
 					}]
+				},
+				data: {
+					meta: {
+						title: "Лента"
+					}
 				}
 			})
+			
 			.state("app.map", {
 				url: "/map",
 				templateUrl: "tpl/map.html",
@@ -167,18 +193,35 @@ angular.module("app").config(["$stateProvider", "$urlRouterProvider", "$ocLazyLo
 							]);
 						});
 					}]
+				},
+				data: {
+					meta: {
+						title: "Карта"
+					}
 				}
 			})
+			
 			.state("app.user", {
 				url: "/{id:.+}",
 				templateUrl: "tpl/user.html",
 				controller: "UserCtrl",
 				resolve: {
+					user: ['$state', '$stateParams', 'passport', function($state, $stateParams, passport) {
+						return passport.getUser($stateParams.id).catch(function(err) {
+							console.error(err);
+							$state.go("login"); // 404
+						});
+					}],
 					deps: ["$ocLazyLoad", function($ocLazyLoad) {
 						return $ocLazyLoad.load([
 							"assets/js/controllers/user.js"
 						]);
 					}]
+				},
+				data: {
+					meta: {
+						title: "Профиль"
+					}
 				}
 			});
 			

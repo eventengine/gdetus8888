@@ -5,20 +5,44 @@
 
 /* global angular */
 
+/**
+ * Глобальные данные приложения.
+ */
 angular.module('app')
-	.controller('AppCtrl', ['$scope', '$rootScope', '$state', '$http', '$location', 'passport', function($scope, $rootScope, $state, $http, $location, passport) {
+	.constant("appData", {
+		name: '#gdetus',
+		description: 'геолокационный сервис для SMM-хулиганов',
+		author: '#NothingPersonalCorp',
+		layout: {
+			menuPin: false,
+			menuBehind: false,
+			theme: 'pages/css/pages.css'
+		}
+	});
+
+/**
+ * Настройка и запуск модуля ng-meta.
+ */
+angular.module('app')
+	.config(['ngMetaProvider', '$stateProvider', 'appData', function (ngMetaProvider, $stateProvider, appData) {
+		$stateProvider.decorator('data', ngMetaProvider.mergeNestedStateData);
+		ngMetaProvider.useTitleSuffix(true);
+		ngMetaProvider.setDefaultTitle(appData.name);
+		ngMetaProvider.setDefaultTitleSuffix(' | ' + appData.name);
+	}])
+	.run(['ngMeta', function(ngMeta) { 
+		ngMeta.init();
+	}]);
+
+
+/**
+ * Глобальный контроллер приложения.
+ */
+angular.module('app')
+	.controller('AppCtrl', ['$scope', '$rootScope', '$state', '$http', '$location', 'passport', 'appData', function($scope, $rootScope, $state, $http, $location, passport, appData) {
 
 		// Глобальные данные приложения.
-		$scope.app = {
-			name: 'Gdetus 8888',
-			description: 'геолокационный сервис',
-			author: '#NothingPersonalCorp',
-			layout: {
-				menuPin: false,
-				menuBehind: false,
-				theme: 'pages/css/pages.css'
-			}
-		};
+		$scope.app = appData;
 
 		// Checks if the given state is the current state
 		$scope.is = function(name) {
@@ -110,3 +134,7 @@ angular.module('app')
 		$locationProvider.html5Mode(true);
 	}]);
 	
+
+
+
+

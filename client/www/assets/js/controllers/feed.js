@@ -9,5 +9,7 @@ angular.module("app")
 	.controller("FeedCtrl", ["$scope", function($scope) {
 
 		$scope.message = "Болванка страницы фида";
+		
+		
 
 	}]);

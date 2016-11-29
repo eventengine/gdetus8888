@@ -7,7 +7,7 @@
 angular.module("app")
 	.factory("notification", function() {
 		
-		function notification(type, message, selector) {
+		function notification(type, selector, message) {
 			$(selector || ".login-container").pgNotification({
 				style: "flip",
 				type: type,
@@ -18,16 +18,19 @@ angular.module("app")
 		
 		return {
 			
-			info: function(message, selector) {
-				notification("info", message, selector);
+			info: function(selector, message) {
+				if (arguments.length == 1) { message = selector; selector = null; }
+				notification("info", selector, message);
 			},
 			
-			warning: function(message, selector) {
-				notification("warning", message, selector);
+			warning: function(selector, message) {
+				if (arguments.length == 1) { message = selector; selector = null; }
+				notification("warning", selector, message);
 			},
 			
-			error: function(message, selector) {
-				notification("error", message, selector);
+			error: function(selector, message) {
+				if (arguments.length == 1) { message = selector; selector = null; }
+				notification("error", selector, message);
 			}
 			
 		};

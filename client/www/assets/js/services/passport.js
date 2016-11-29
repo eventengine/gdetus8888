@@ -7,7 +7,27 @@
 angular.module("app")
 	.factory("passport", ["$http", "$rootScope", "$q", function($http, $rootScope, $q) {
 		
+		function addUserProfileMethods(user) {
+			
+			user.getHref = function() {
+				return this.useruri ? this.useruri : "id" + this.id;
+			};
+			user.getAvatarHref = function() {
+				return "/file/" + this.avatar_id;
+			};
+			
+			return user;
+		}
+		
 		return {
+			
+			/**
+			 * Получить данные пользователя по его id или useruri.
+			 */
+			getUser: function(id) {
+				// TODO доделать
+				return this.getAuthenticated();
+			},
 			
 			/**
 			 * Получить данные аутентифицированного пользователя.
@@ -17,15 +37,9 @@ angular.module("app")
 					if (!res.data.success) {
 						var err = new Error("Ошибка при загрузке данных аутентифицированного пользователя.");
 						err.res = res;
-						throw err;
+						return $q.reject(err); // http://goo.gl/T4jKxW
 					}
-					res.data.user.getHref = function() {
-						return this.useruri ? this.useruri : "id" + this.id;
-					};
-					res.data.user.getAvatarHref = function() {
-						return "/file/" + this.avatar_id;
-					};
-					return res.data.user;
+					return addUserProfileMethods(res.data.user);
 				}).catch(function(err) {
 					console.error(err);
 				});
@@ -48,7 +62,7 @@ angular.module("app")
 					if (!res.data.success) {
 						var err = new Error("Ошибка при отмене аутентификации пользователя.");
 						err.res = res;
-						throw err;
+						return $q.reject(err); // http://goo.gl/T4jKxW
 					}
 					return;
 		        }).catch(function(err) {
@@ -69,8 +83,16 @@ angular.module("app")
 				});
 	        },
 	        
-	        accountRequest: function() {
-	        	
+	        accountRequest: function(user) {
+	        	return $http.post("/api/register", user).then(function(res) {
+	        		if (!res.data.success) {
+						var err = new Error(res.data.message);
+						err.errors = res.data.errors;
+						err.res = res;
+						return $q.reject(err); // http://goo.gl/T4jKxW
+					}
+					return;
+	        	});
 	        }
 			
 		};

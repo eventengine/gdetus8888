@@ -1,5 +1,5 @@
 
-/* global angular */
+/* global angular, $ */
 
 "use strict";
 
@@ -59,25 +59,30 @@ angular.module("app").controller("LoginCtrl", ["$q", "$scope", "$http", "$locati
 	 * 
 	 */
 	$scope.onAccountRequestSendButtonClick = function(user, registerForm) {
+		
+    	function toHtml(message, errors) {
+            var result = [];
+            result.push("<div><b>" + message + "</b></div>");
+            result.push("<ul>");
+            errors.forEach(function(error) {
+                result.push("<li>" + (error.value ? "<b>" + error.value + ": " + "</b>" : "") + error.msg + "</li>");
+            });
+            result.push("</ul>");
+			return result.join("\n");
+    	}
+		
 		if (registerForm.$valid) {
-			$http.post("/api/register", user)
-			.success(function(data, status, headers, config) {
-				if (data.success) {
-					notification.info("Регистрация пройдена успешно!", "#modalAccountRequest");
-					registerForm.$setPristine(); // https://code.angularjs.org/1.3.15/docs/api/ng/type/form.FormController
-				} else {
-	                var message = [];
-	                message.push("<b>Внимание, ошибк" + (data.errors.length == 1 ? "а" : "и") + " при регистрации пользователя:</b>");
-	                data.errors.forEach(function(error) {
-	                    message.push("<li>" + (error.value ? "<b>" + error.value + ": " + "</b>" : "") + error.msg + "</li>");
-	                });
-					notification.error(message.join("\n"), "#modalAccountRequest");
-				}
-			})
-			.error(function(data, status, headers, config) {
-				notification.error("Ошибка при отправке формы. См. подробности в консоли браузера.", "#modalAccountRequest");
-				console.error("Ошибка при отправке формы регистрации пользователя.");
-				console.error(status, data);
+			passport.accountRequest(user).then(function() {
+				registerForm.$setPristine(); // https://code.angularjs.org/1.3.15/docs/api/ng/type/form.FormController
+				$("#modalAccountRequest").modal("hide");
+				notification.info("Регистрация пройдена успешно!");
+			}).catch(function(err) {
+				console.group(err.message);
+				console.error(err);
+				console.log("Ошибки:", err.errors.length == 1 ? err.errors[0] : err.errors);
+				console.log("Ответ сервера:", err.res);
+				console.groupEnd();
+				notification.error("#modalAccountRequest", toHtml(err.message, err.errors));
 			});
 		}
 	};

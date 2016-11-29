@@ -26,7 +26,7 @@ User.getPasswordValidator = function(fieldName = "Поле пароль") {
             errorMessage: `${fieldName} должен быть длиной не менее 8-и символов.`
         },
         isGdetusPassword: {
-            errorMessage: `${fieldName} должно содержать латиница (большие маленькие), цифирица, спецсимволица.` 
+            errorMessage: `${fieldName} должно содержать латиница (большие, маленькие), цифирица, спецсимволица.` 
         }
     };
 };
@@ -47,7 +47,7 @@ User.getPasswordValidateSchema = function(req) {
         repeatNewPassword: Object.assign({}, this.getPasswordValidator(), {
             isValidRepeatedPassword: {
                 options: [req],
-                errorMessage: "Повтор пароля не совпадает со значением поля Новый пароль."
+                errorMessage: "Пароли не совпадают."
             }
         })
     };
@@ -64,18 +64,18 @@ User.getValidateSchema = function() {
                 errorMessage: "Поле с адресом почты не должно быть пустым."
             },
             isEmail: {
-                errorMessage: "Адрес электронной почты написан с ошибкой или пустой."
+                errorMessage: "Адрес электронной почты написан с ошибкой или пуст."
             },
             isUnique: {
                 options: ["users", "email"],
-                errorMessage: "Почта с таким адресом уже существует."
+                errorMessage: "Этот почтовый адрес уже используется."
             }
         },
         useruri: {
             optional: true,
             matches: {
                 options: [/^[a-z0-9_\.]*$/],
-                errorMessage: "Адрес может содержать ТОЛЬКО маленькие английские буквы, цифры, а также знаки подчёркивания и точки."
+                errorMessage: "Может содержать ТОЛЬКО маленькие английские буквы, цифры, а также знаки подчёркивания и точки."
             },
             isLength: {
                 options: [{ min: 4, max: 21, zeroEnable: true }],
@@ -87,25 +87,25 @@ User.getValidateSchema = function() {
             },
             checkBlackList: {
                 options: ["forbidden_useruri"],
-                errorMessage: "Аккаунт с таким адресом зарезервирован."
+                errorMessage: "Этот адрес зарезервирован или уничтожен нахер."
             },
             isFirstLetter: {
                 options: ["^\."],
-                errorMessage: "Первым символом адреса не может быть точка."
+                errorMessage: "Точка не может быть первым символом адреса. "
             }
         },
         firstname: {
             optional: true,
             isAlpha: {
                 options: ["ru-RU", "en-US"],
-                errorMessage: "Имя может содержать только русские или латинские буквы."
+                errorMessage: "Только русские или латинские буквы."
             }
         },
         lastname: {
             optional: true,
             isAlpha: {
                 options: ["ru-RU", "en-US"],
-                errorMessage: "Фамилия может содержать только русские или латинские буквы."
+                errorMessage: "Только русские или латинские буквы."
             }
         },
         password: this.getPasswordValidator()
