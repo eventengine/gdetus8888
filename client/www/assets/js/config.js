@@ -26,6 +26,7 @@ angular.module("app").config(["$stateProvider", "$urlRouterProvider", "$ocLazyLo
 				},
 				data: {
 					meta: {
+						titleSuffix: "",
 						title: "Добро пожаловать домой!"
 					}
 				}
@@ -207,7 +208,7 @@ angular.module("app").config(["$stateProvider", "$urlRouterProvider", "$ocLazyLo
 				controller: "UserCtrl",
 				resolve: {
 					user: ['$state', '$stateParams', 'passport', function($state, $stateParams, passport) {
-						return passport.getUser($stateParams.id).catch(function(err) {
+						return passport.getUserByIdOrUseruri($stateParams.id).catch(function(err) {
 							console.error(err);
 							$state.go("login"); // 404
 						});

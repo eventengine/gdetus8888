@@ -5,6 +5,12 @@ var db = require('../db');
 
 var User = module.exports = {};
 
+function userNotFoundError(message) {
+	const err = new Error(message);
+    err.type = "user-not-found";
+    return err;
+}
+
 /**
  * Получить количество пользователей.
  */
@@ -33,11 +39,12 @@ User.getUser = function(email) {
 };
 
 /**
- * Получение пользователя по ID
+ * Получение пользователя по id
  */
 User.getUserById = function(id) {
     id = isNaN(id) ? "nan" : id;
     return db.query('select * from users where id = ?', [id]).spread(function(rows) {
+    	if (!rows[0]) throw userNotFoundError(`Пользователь с id = '${id}' не найден.`);
         return rows[0];
     });
 };
@@ -65,6 +72,7 @@ User.getUserByLastName = function(lastname) {
  */
 User.getUserByUserUri = function(useruri) {
     return db.query('select * from users where useruri = ?', [useruri]).spread(function(rows) {
+    	if (!rows[0]) throw userNotFoundError(`Пользователь с useruri = '${useruri}' не найден.`);
         return rows[0];
     });
 };

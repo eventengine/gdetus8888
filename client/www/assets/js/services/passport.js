@@ -13,7 +13,10 @@ angular.module("app")
 				return this.useruri ? this.useruri : "id" + this.id;
 			};
 			user.getAvatarHref = function() {
-				return "/file/" + this.avatar_id;
+				return this.avatar_id ? "/file/" + this.avatar_id : null;
+			};
+			user.getAvatarBackgroundHref = function() {
+				return this.avatar_bg_id ? "/file/" + this.avatar_bg_id : null;
 			};
 			
 			return user;
@@ -23,10 +26,18 @@ angular.module("app")
 			
 			/**
 			 * Получить данные пользователя по его id или useruri.
+			 * Если по id, то в формате id<номер>.
 			 */
-			getUser: function(id) {
-				// TODO доделать
-				return this.getAuthenticated();
+			getUserByIdOrUseruri: function(id) {
+				return $http.get(`/api/user/${id}`).then(function(res) {
+	        		if (!res.data.success) {
+						var err = new Error(res.data.message);
+						err.errors = res.data.errors;
+						err.res = res;
+						return $q.reject(err); // http://goo.gl/T4jKxW
+					}
+					return addUserProfileMethods(res.data.user);
+				});
 			},
 			
 			/**

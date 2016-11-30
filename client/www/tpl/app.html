@@ -7,19 +7,20 @@
 
 <!-- START PAGE-CONTAINER -->
 <div class="page-container">
-    <!-- START PAGE HEADER WRAPPER -->
-    <div ng-include=" 'tpl/blocks/header.html' "></div>
-    <!-- END PAGE HEADER WRAPPER -->
-    <!-- START PAGE CONTENT WRAPPER -->
-    <div class="page-content-wrapper">
-        <!-- START PAGE CONTENT -->
-        <div class="content" ng-class="{ 'overlay-footer top-left bottom-right': is('app.map') }">
-            <div class="full-height full-width" ui-view></div>
-            <div ng-include=" 'tpl/blocks/footer.html' "></div>
-        </div>
-        <!-- END PAGE CONTENT -->
-    </div>
-    <!-- END PAGE CONTENT WRAPPER -->
+	<!-- START PAGE HEADER WRAPPER -->
+	<div ng-include=" 'tpl/blocks/header.html' "></div>
+	<!-- END PAGE HEADER WRAPPER -->
+	<!-- START PAGE CONTENT WRAPPER -->
+	<div class="page-content-wrapper">
+		<!-- START PAGE CONTENT -->
+		<div class="content" ng-class="{ 'overlay-footer top-left bottom-right': is('app.map') }">
+			<div class="full-height full-width" ui-view></div>
+			<div ng-if="is('app.map')" ng-include=" 'tpl/blocks/footer.html' "></div>
+		</div>
+		<!-- END PAGE CONTENT -->
+		<div ng-if="!is('app.map')" ng-include=" 'tpl/blocks/footer.html' "></div>
+	</div>
+	<!-- END PAGE CONTENT WRAPPER -->
 </div>
 <!-- END PAGE CONTAINER -->
 

@@ -7,7 +7,10 @@ module.exports = {
 	 */
 	get: function(req, res) {
 		
-		if (req.params.id == "authenticated") {
+		const models = req.app.get("models");
+		let id = req.params.id;
+		
+		if (id == "authenticated") {
 			// Получение данных текущего аутентифицированного пользователя
 			if (req.isAuthenticated()) {
 				res.send({
@@ -22,6 +25,43 @@ module.exports = {
 			}
 		} else {
 			// Получение данных пользователя по его id или useruri
+			
+			let mode = "useruri";
+			if (id.substr(0, 2).toLowerCase() == "id") {
+				mode = "id";
+				// Удаляем префикс id (id<что угодно> превращаем в <что угодно>)
+				id = Number(id.replace("id", ""));
+			}
+			
+			let promiseResult = null;
+			switch (mode) {
+				case "useruri":
+					// <что угодно> ищем среди useruri
+					promiseResult = models.user.getUserByUserUri(id).then(function(user) {
+						res.send({
+							success: true,
+							user: publicUser(user)
+						});
+					});
+					break;
+				case "id":
+					// <что угодно> ищем среди id
+					promiseResult = models.user.getUserById(id).then(function(user) {
+						res.send({
+							success: true,
+							user: publicUser(user)
+						});
+					});
+					break;
+			}
+			promiseResult.catch(err => {
+				res.send({
+					success: false,
+					message: err.message,
+					err
+				});
+			});
+			
 		}
 		
 	}

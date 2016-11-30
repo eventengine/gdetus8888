@@ -2,13 +2,13 @@
     <div class="social " data-pages="social" pg-social>
         <!-- START JUMBOTRON -->
         <div class="jumbotron" data-pages="parallax" data-social="cover">
-            <div class="cover-photo">
-                <img alt="Cover photo" src="assets/img/social/cover.jpg" />
+            <div class="cover-photo" ng-style="userAvatarBackgroundStyle">
+                <img alt="Cover photo" src="assets/img/demo/cover.png" ng-src="{{user.getAvatarBackgroundHref()}}" />
             </div>
             <div class="container-fluid container-fixed-lg sm-p-l-20 sm-p-r-20">
                 <div class="inner">
                     <div class="pull-bottom bottom-left m-b-90">
-                        <h1 class="text-white no-margin"><span class="semi-bold">{{authenticated.firstname}}</span> {{authenticated.lastname}}</h1>
+                        <h1 class="text-white no-margin"><span class="semi-bold">{{user.firstname}}</span> {{user.lastname}}</h1>
                         <h6 class="text-white no-margin">Распиздяй, коих ещё поискать. Но, сука, распиздяй при этом гениальный, что характерно 
 														 и по совместительству изрядно временами доставляет. Как-то так :))</h6>
                     </div>
@@ -31,7 +31,7 @@
                         <div class="container-fluid p-t-30 p-b-30 ">
                             <div class="row">
                                 <div class="col-md-4">
-                                    <p class="m-b-5 small">у {{authenticated.firstname}} 35 друзей</p>
+                                    <p class="m-b-5 small">у {{user.firstname}} 35 друзей</p>
                                     <ul class="list-unstyled ">
                                         <li class="m-r-10">
                                             <div class="thumbnail-wrapper d32 circular b-white m-r-5 b-a b-white">
@@ -217,7 +217,7 @@
                     <div class="card status col2" data-social="item">
                         <div class="circle" data-toggle="tooltip" title="Label" data-container="body">
                         </div>
-                        <h5>{{authenticated.firstname}} изменил свой статус
+                        <h5>{{user.firstname}} изменил свой статус
                             <span class="hint-text">несколько секунд назад</span></h5>
                         <h2>Earned my first salary bonus for the best design of the year award.</h2>
                         <ul class="reactions">

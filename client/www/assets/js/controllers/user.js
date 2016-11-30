@@ -10,6 +10,11 @@ angular.module('app').controller('UserCtrl', ['$scope', 'ngMeta', 'user', functi
 
 	// TODO отображение данных пользователя
 	
+	$scope.user = user;
 	
+	$scope.userAvatarBackgroundStyle = {
+		backgroundImage: "url(" + user.getAvatarBackgroundHref() + ")",
+		transform: "translateY(0px)"
+	};
 
 }]);
