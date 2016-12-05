@@ -13,6 +13,16 @@ angular.module("app").config(["$stateProvider", "$urlRouterProvider", "$ocLazyLo
 
 		$stateProvider
 		
+			.state("404", {
+				templateUrl: "tpl/404.html",
+				data: {
+					meta: {
+						titleSuffix: "",
+						title: "404"
+					}
+				}
+			})
+		
 			.state("login", {
 				url: "/login",
 				templateUrl: "tpl/login.html",
@@ -25,6 +35,7 @@ angular.module("app").config(["$stateProvider", "$urlRouterProvider", "$ocLazyLo
 					}]
 				},
 				data: {
+					isPublic: true, // Публичная страница, аутентификация не требуется
 					meta: {
 						titleSuffix: "",
 						title: "Добро пожаловать домой!"
@@ -210,7 +221,7 @@ angular.module("app").config(["$stateProvider", "$urlRouterProvider", "$ocLazyLo
 					user: ['$state', '$stateParams', 'passport', function($state, $stateParams, passport) {
 						return passport.getUserByIdOrUseruri($stateParams.id).catch(function(err) {
 							console.error(err);
-							$state.go("login"); // 404
+							$state.go("404"); 
 						});
 					}],
 					deps: ["$ocLazyLoad", function($ocLazyLoad) {

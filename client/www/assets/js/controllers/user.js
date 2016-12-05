@@ -12,7 +12,7 @@ angular.module('app').controller('UserCtrl', ['$scope', 'ngMeta', 'user', functi
 	
 	$scope.user = user;
 	
-	$scope.userAvatarBackgroundStyle = {
+	$scope.user.avatarBackgroundStyle = {
 		backgroundImage: "url(" + user.getAvatarBackgroundHref() + ")",
 		transform: "translateY(0px)"
 	};

@@ -50,23 +50,26 @@
 	  </li>
 	  
 	  <li class="">
+		<a href="" ui-sref="app.map({param1:111})" ui-sref-opts="{location: true}">
+		  <span class="title">Тест ссылка</span>
+		</a>
+		<span class="icon-thumbnail "><i class="pg-map"></i></span>
+	  </li>
+	  
+	  <li class="">
 		<a href="javascript:;">
-		  <span class="title">Page 3</span>
+		  <span class="title">Мои настройки</span>
 		  <span class=" arrow"></span>
 		</a>
-		<span class="icon-thumbnail"><i class="pg-grid"></i></span>
+		<span class="icon-thumbnail"><i class="pg-settings"></i></span>
 		<ul class="sub-menu">
 		  <li class="">
-			<a href="" ui-sref="app.user({ id: 'hiremind' })">User hiremind</a>
-			<span class="icon-thumbnail">sp</span>
+			<a href="/edit">редактировать страницу</a>
+			<span class="icon-thumbnail"><i class="pg-settings"></i></span>
 		  </li>
 		  <li class="">
-			<a href="#">Sub Page 2</a>
-			<span class="icon-thumbnail">sp</span>
-		  </li>
-		  <li class="">
-			<a href="#">Sub Page 3</a>
-			<span class="icon-thumbnail">sp</span>
+			<a href="/settings">настройки сервиса</a>
+			<span class="icon-thumbnail"><i class="fa fa-cogs"></i></span>
 		  </li>
 		</ul>
 	  </li>

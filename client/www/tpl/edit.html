@@ -1,24 +1,21 @@
 <!-- START PAGE COVER -->
 
-
-
 <div class="container-fluid container-fixed-lg ">
     <ul class="breadcrumb">
         <li>
-            <a class="active" href="#/edit">настройки страницы</a>
+            <a class="active" href="/edit">настройки страницы</a>
         </li>
-        <li><a href="#/settings">настройки сервиса</a>
+        <li><a href="/settings">настройки сервиса</a>
         </li>
     </ul>
     <!-- END BREADCRUMB -->
-    <h3 class="page-title">Edit</h3>
 </div>
-
 
 
 <div class="register-container full-height">
     <!-- YOU CAN REMOVE .container-fixed-lg TO DISABLE THE FEATURE WHERE THE CONTENT
          ALIGNS TO THE CENTER WITHOUT STRECTHING UNGLY ON 1800PX(1080P & 4/5K MONITORS) UP WORDS SCREEN -->
+         
     <!-- CONTENT GOES HERE -->
     
     <div class="col-sm-12">
@@ -32,12 +29,15 @@
                         <ul class="nav nav-tabs nav-tabs-simple nav-tabs-right bg-white" id="tab-3" role="tablist" >
                             <li class="active"><a href="#tab" data-toggle="tab" pg-tab role="tab">Основное</a>
                             </li>
-                            <li><a href="#tab2" data-toggle="tab2" pg-tab role="tab2">Two</a>
+                            <li><a href="#tab2" data-toggle="tab2" pg-tab role="tab2">Контакты</a>
                             </li>
                             <li><a href="#tab3" data-toggle="tab3" pg-tab role="tab3">Three</a>
                             </li>
+                            <li><a href="#tab4" data-toggle="tab4" pg-tab role="tab4">четыре</a>
+                            </li>
                         </ul>
                         <div class="tab-content bg-white">
+                        	<!-- НАЧАЛО ПЕРВОГО ТАБА -->
                             <div class="tab-pane active" id="tab">
                                 <div class="row column-seperation">
                                 	<!-- форма смены имени -->
@@ -110,12 +110,13 @@
 									
                                 </div>
                             </div>
+                            <!-- НАЧАЛО ВТОРОГО ТАБА -->
                             <div class="tab-pane " id="tab2">
                                 <div class="row">
                                     <!-- первая форма второй вкладки-->
 									<div class="col-sm-12">
 											<div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error': register.fname.$invalid && !register.fname.$pristine }">
-					                            <label>Твой родной форма</label>
+					                            <label>Страна</label>
 					                            <input type="email" class="form-control">
                         					</div>
                         						<label class="error" for="fname" ng-show="register.fname.$invalid && !register.fname.$pristine">У тебя нет имени? Сириусли? -__-</label>
@@ -123,7 +124,7 @@
 									<!-- вторая форма второй вкладки-->
 									<div class="col-sm-12">
 											<div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error': register.fname.$invalid && !register.fname.$pristine }">
-					                            <label>Твой родной форма два</label>
+					                            <label>Город</label>
 					                            <input type="email" class="form-control">
                         					</div>
                         						<label class="error" for="fname" ng-show="register.fname.$invalid && !register.fname.$pristine">У тебя нет имени? Сириусли? -__-</label>
@@ -137,6 +138,7 @@
 									
                                 </div>
                             </div>
+                            <!-- НАЧАЛО ТРЕТЬЕГО ТАБА -->
                             <div class="tab-pane" id="tab3">
                                 <div class="row">
                                     <!-- первая форма третьей вкладки-->
@@ -162,9 +164,65 @@
 											</div>
 									</div>
 									
-									
                                 </div>
                             </div>
+                            <!-- НАЧАЛО ЧЕТВЕРТОГО ТАБА -->
+                            <div class="tab-pane" id="tab4">
+                                <div class="row">
+                                    <!-- первая форма четвертой вкладки-->
+									<div class="col-sm-12">
+											<div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error': register.fname.$invalid && !register.fname.$pristine }">
+					                            <label>Твой три  родной форма4</label>
+					                            <input type="email" class="form-control">
+                        					</div>
+                        						<label class="error" for="fname" ng-show="register.fname.$invalid && !register.fname.$pristine">У тебя нет имени? Сириусли? -__-</label>
+									</div>
+									<!-- вторая форма третьей вкладки-->
+									<div class="col-sm-12">
+											<div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error': register.fname.$invalid && !register.fname.$pristine }">
+					                            <label>Твой родной форма три</label>
+					                            <input type="email" class="form-control">
+                        					</div>
+                        						<label class="error" for="fname" ng-show="register.fname.$invalid && !register.fname.$pristine">У тебя нет имени? Сириусли? -__-</label>
+									</div>
+									<!-- 4 форма кнопки применения изменений-->
+									<div class="col-sm-12">
+											<div class=" text-right">
+					   							<button class="btn btn-primary btn-xs " data-target="#" data-toggle="">Применить изменения</button>
+											</div>
+									</div>
+									
+								</div>
+							</div>
+							<!-- НАЧАЛО ПЯТОГО ТАБА -->
+                            <div class="tab-pane" id="tab4">
+                                <div class="row">
+                                    <!-- первая форма четвертой вкладки-->
+									<div class="col-sm-12">
+											<div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error': register.fname.$invalid && !register.fname.$pristine }">
+					                            <label>Твой три  родной форма4</label>
+					                            <input type="email" class="form-control">
+                        					</div>
+                        						<label class="error" for="fname" ng-show="register.fname.$invalid && !register.fname.$pristine">У тебя нет имени? Сириусли? -__-</label>
+									</div>
+									<!-- вторая форма третьей вкладки-->
+									<div class="col-sm-12">
+											<div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error': register.fname.$invalid && !register.fname.$pristine }">
+					                            <label>Твой родной форма три</label>
+					                            <input type="email" class="form-control">
+                        					</div>
+                        						<label class="error" for="fname" ng-show="register.fname.$invalid && !register.fname.$pristine">У тебя нет имени? Сириусли? -__-</label>
+									</div>
+									<!-- 5 форма кнопки применения изменений-->
+									<div class="col-sm-12">
+											<div class=" text-right">
+					   							<button class="btn btn-primary btn-xs " data-target="#" data-toggle="">Применить изменения</button>
+											</div>
+									</div>
+									
+								</div>
+							</div>
+							<!-- НАЧАЛО ШЕСТОГО ТАБА -->
                         </div>
                     </div>
                     

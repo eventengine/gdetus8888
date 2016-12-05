@@ -51,8 +51,6 @@ angular.module("app")
 						return $q.reject(err); // http://goo.gl/T4jKxW
 					}
 					return addUserProfileMethods(res.data.user);
-				}).catch(function(err) {
-					console.error(err);
 				});
 			},
 			
