@@ -48,6 +48,7 @@ angular.module("app")
 					if (!res.data.success) {
 						var err = new Error("Ошибка при загрузке данных аутентифицированного пользователя.");
 						err.res = res;
+						err.isAuthenticationError = true;
 						return $q.reject(err); // http://goo.gl/T4jKxW
 					}
 					return addUserProfileMethods(res.data.user);
@@ -102,6 +103,14 @@ angular.module("app")
 					}
 					return;
 	        	});
+	        },
+	        
+	        isAuthenticated: function() {
+	        	
+	        },
+	        
+	        isAuthorized: function() {
+	        	
 	        }
 			
 		};

@@ -25,146 +25,153 @@
 		
 		</div> -->
 		
-	<div class="input-group transparent col-md-12 center-margin">
-                <span class="input-group-addon ">
-                    <i class="pg-search"></i> 
-                </span>
-                <input type="text" class="form-control" placeholder="Задайте свой вопрос" id="icon-filter" name="icon-filter" ng-keyup="filterIcons($event)">
-                
-    </div>
+				<div class="input-group transparent col-md-12 center-margin m-b-20">
+		                <span class="input-group-addon">
+		                    <i class="pg-search"></i> 
+		                </span>
+		                <input type="text"
+		                	   class="form-control"
+		                	   placeholder="Задайте свой вопрос"
+		                	   id="faq-filter"
+		                	   name="faq-filter"
+		                	   ng-keyup="filterFaq($event)">
+		                </input>
+		                
+		    	</div>
 	
-	<!-- START PANEL -->
-    
-                    <div class="panel panel-transparent">
-                        <ul class="nav nav-tabs nav-tabs-simple nav-tabs-right bg-white" id="tab-3" role="tablist">
-                            <li><a href="#tab1" data-toggle="tab1" pg-tab role="tab">Доступ к странице</a>
-                            </li>
-                            <li><a href="#tab4FollowUs" data-toggle="tab" pg-tab role="tab">Two2</a>
-                            </li>
-                            <li class="active"><a href="#tab4Inspire" data-toggle="tab" pg-tab role="tab">Three3</a>
-                            </li>
-                        </ul>
-                        <div class="tab-content bg-white">
-                            <div class="tab-pane" id="tab1">
-                                <div class="row column-seperation">
-                                    <div class="col-md-12">
-                                        
-                                        <div class="panel panel-transparent" ng-controller="DetailedTableCtrl">
-                <div class="panel-body">
-                    <div class="table-responsive">
-                        <table class="table table-hover table-condensed table-detailed" id="detailedTable" ui-jq="dataTable" ui-options="options">
-                            <tbody>
-                                <tr ng-click="expand($event)">
-                                    <td class="semi-bold">Revolution Begins</td>
-                                </tr>
-                                <tr ng-click="expand($event)">
-                                    <td class="v-align-middle semi-bold">Revolution Begins</td>
-                                </tr>
-                                <tr ng-click="expand($event)">
-                                    <td class="v-align-middle semi-bold">Revolution Begins</td>
-                                </tr>
-                                <tr ng-click="expand($event)">
-                                    <td class="v-align-middle semi-bold">Revolution Begins</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane " id="tab4FollowUs">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <h3>“ Nothing is
-                                                    <span class="semi-bold">impossible</span>, the word itself says 'I'm
-                                                    <span class="semi-bold">possible</span>'! ”</h3>
-                                        <p>A style represents visual customizations on top of a layout. By editing a style</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane active" id="tab4Inspire">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <h3>Follow us &amp; get updated!</h3>
-                                        <p>Instantly connect to what's most important to you. Follow your friends, experts, favorite celebrities, and breaking news.</p>
-                                        <br>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- END PANEL -->
-	
-	
-                    
-                </div>
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="alert alert-info visible-xs m-r-5 m-l-5" role="alert">
-                      <button class="close" data-dismiss="alert"></button>
-                      <strong>Info: </strong> On mobile the tab will be come a Accorian by using data-init-reponsive-tabs="collapse"
-                    </div>
             <div class="panel">
                 <ul class="nav nav-tabs nav-tabs-simple" role="tablist" ui-jq="tabCollapse">
-                    <li class="active"><a href="#tab2hellowWorld" data-toggle="tab" pg-tab role="tab">Hello World</a>
+                    <li class="active"><a href="#tab1main" data-toggle="tab1main" pg-tab role="tab1main">Помощь</a>
                     </li>
-                    <li><a href="#tab2FollowUs" data-toggle="tab" pg-tab role="tab">Hello Two</a>
+                    <li><a href="#tab2main" data-toggle="tab2main" pg-tab role="tab2main">Список вопросов</a>
                     </li>
-                    <li><a href="#tabMyQuestions" data-toggle="tab" pg-tab role="tab">Мои вопросы</a>
+                    <li><a href="#tab3main" data-toggle="tab3main" pg-tab role="tab3main">Мои вопросы (??)</a>
                     </li>
                 </ul>
                 <div class="tab-content">
-                    <div class="tab-pane active" id="tab2hellowWorld">
-                        <div class="row column-seperation">
+                	<!-- НАЧАЛО ТАБА "ПОМОЩЬ" -->
+                    <div class="tab-pane active" id="tab1main">
+                        <div class="row column-seperation align-center">
                             <div class="col-md-6">
-                                <h3>
-                                            <span class="semi-bold">Sometimes</span> Small things in life means the most</h3>
+                                <ol><h5 class="semi-bold"> <span class="label label-inverse"><i class="fa fa-key"></i></span> Доступ к странице (1)</h5>
+                                <p>Мою страницу заблокировали!</p>
+                                <p>Как удалить страницу, к которой нет доступа?</p>
+                                <p><a href="">Мой номер кем-то занят, как мне привязать его к своей странице?</a></p>
+                                <p><a href=""><strong>Посмотреть все вопросы этого раздела</strong> <i class="fa fa-chevron-right"></i></a></p>
+                                </ol>
                             </div>
                             <div class="col-md-6">
-                                <h3 class="semi-bold">great tabs</h3>
-                                <p>Native boostrap tabs customized to Pages look and feel, simply changing class name you can change color as well as its animations</p>
+                                <ol><h5 class="semi-bold"> <span class="label label-inverse"><i class="fa fa-star"></i></span> Общие вопросы (2)</h5>
+                                <p>Можно ли посмотреть гостей моей страницы?</p>
+                                <p>Новый вид сайта</p>
+                                <p>Как мне стать агентом поддержки?</p>
+                                <p><a href=""><strong>Посмотреть все вопросы этого раздела</strong> <i class="fa fa-chevron-right"></i></a></p>
+                                </ol>
                             </div>
+                            <div class="col-md-6">
+                                <ol><h5 class="semi-bold"> <span class="label label-inverse"><i class="fa  fa-newspaper-o"></i></span> Страница (3)</h5>
+                                <p>Как удалить свою страницу?</p>
+                                <p>Как мне изменить имя и фамилию?</p>
+                                <p>Как указать свое имя на латинице?</p>
+                                <p><a href=""><strong>Посмотреть все вопросы этого раздела</strong> <i class="fa fa-chevron-right"></i></a></p>
+                                </ol>
+                            </div>
+                            <div class="col-md-6">
+                                <ol><h5 class="semi-bold"> <span class="label label-inverse"><i class="fa fa-lock"></i></span> Настройки приватности (4)</h5>
+                                <p>Как закрыть мою страницу от других пользователей?</p>
+                                <p>Как добавить пользователя в черный список?</p>
+                                <p>Как скрыть список друзей?</p>
+                                <p><a href=""><strong>Посмотреть все вопросы этого раздела</strong> <i class="fa fa-chevron-right"></i></a></p>
+                                </ol>
+                            </div>
+                            <div class="col-md-6">
+                                <ol><h5 class="semi-bold"> <span class="label label-inverse"><i class="fa fa-male"></i></span> Друзья и подписчики (5)</h5>
+                                <p>Как узнать, кто удалился из друзей?</p>
+                                <p>Я не понимаю, как оказался подписан на кого-то!</p>
+                                <p>Как пригласить друга на сайт?</p>
+                                <p><a href=""><strong>Посмотреть все вопросы этого раздела</strong> <i class="fa fa-chevron-right"></i></a></p>
+                                </ol>
+                            </div>
+                            <div class="col-md-6">
+                                <ol><h5 class="semi-bold"> <span class="label label-inverse"><i class="fa fa-camera"></i></span> Фотографии (6)</h5>
+                                <p>Не загружаются фотографии, видеозаписи или аудио!</p>
+                                <p>Как загрузить фотографию в альбом?</p>
+                                <p>Как закрыть мои фотографии от других пользователей?</p>
+                                <p><a href=""><strong>Посмотреть все вопросы этого раздела</strong> <i class="fa fa-chevron-right"></i></a></p>
+                                </ol>
+                            </div>
+                            <div class="col-md-6">
+                                <ol><h5 class="semi-bold"> <span class="label label-inverse"><i class="pg-movie"></i></span> Видеозаписи (7)</h5>
+                                <p>Как скачать музыку или видеозаписи?</p>
+                                <p>Как отправить песню, фото и другие материалы другу?</p>
+                                <p>Как мне загрузить на сайт видеозапись?</p>
+                                <p><a href=""><strong>Посмотреть все вопросы этого раздела</strong> <i class="fa fa-chevron-right"></i></a></p>
+                                </ol>
+                            </div>
+                            <div class="col-md-6">
+                                <ol><h5 class="semi-bold"> <span class="label label-inverse"><i class="fa fa-music"></i></span> Аудиозаписи (8)</h5>
+                                <p>Почему из ВКонтакте удаляется музыка?</p>
+                                <p>Раздел «Популярная музыка»</p>
+                                <p>Как удалить мои аудиозаписи?</p>
+                                <p><a href=""><strong>Посмотреть все вопросы этого раздела</strong> <i class="fa fa-chevron-right"></i></a></p>
+                                </ol>
+                            </div>
+                            <div class="col-md-6">
+                                <ol><h5 class="semi-bold"> <span class="label label-inverse"><i class="fa fa-comments-o"></i></span> Сообщения (9)</h5>
+                                <p>Я удалил сообщения, как восстановить?</p>
+                                <p>Как удалить все свои сообщения?</p>
+                                <p>Показывает новые сообщения, а их нет!</p>
+                                <p><a href=""><strong>Посмотреть все вопросы этого раздела</strong> <i class="fa fa-chevron-right"></i></a></p>
+                                </ol>
+                            </div>
+                            <div class="col-md-6">
+                                <ol><h5 class="semi-bold"> <span class="label label-inverse"><i class="fa fa-group"></i></span> Сообщества, каналы, паблики (10)</h5>
+                                <p>Как мне создать свою группу, публичную страницу, встречу?</p>
+                                <p>Как удалить свое сообщество (группу, публичную страницу, встречу)?</p>
+                                <p>Как пожаловаться на группу?</p>
+                                <p><a href=""><strong>Посмотреть все вопросы этого раздела</strong> <i class="fa fa-chevron-right"></i></a></p>
+                                </ol>
+                            </div>
+                            <div class="col-md-6">
+                                <ol><h5 class="semi-bold"> <span class="label label-inverse"><i class="fa fa-fire"></i></span> Новости (11)</h5>
+                                <p>Как поделиться записью с друзьями или участниками сообщества?</p>
+                                <p>Как убрать назойливую рекламу?</p>
+                                <p>Как убрать из ленты новости определённого друга или сообщества?</p>
+                                <p><a href=""><strong>Посмотреть все вопросы этого раздела</strong> <i class="fa fa-chevron-right"></i></a></p>
+                                </ol>
+                            </div>
+                            <div class="col-md-6">
+                                <ol><h5 class="semi-bold"> <span class="label label-inverse"><i class="fa fa-gift"></i></span> Голоса, платежи, подарки (12)</h5>
+                                <p>Что такое голоса и как их купить?</p>
+                                <p>Как получить голоса бесплатно?</p>
+                                <p>Проблема с покупкой голосов, виджетов или стикеров</p>
+                                <p><a href=""><strong>Посмотреть все вопросы этого раздела</strong> <i class="fa fa-chevron-right"></i></a></p>
+                                </ol>
+                            </div>    
                         </div>
                     </div>
-                    <div class="tab-pane " id="tab2FollowUs">
+                    <!-- НАЧАЛО ТАБА "СПИСОК ВОПРОСОВ"-->
+                    <div class="tab-pane" id="tab2main">
                         <div class="row">
                             <div class="col-md-12">
-                                <h3>“ Nothing isяяяя
-                                            <span class="semi-bold">impossible</span>, the word itself says 'I'm
-                                            <span class="semi-bold">possible</span>'! ”</h3>
-                                <p>A style represents visual customizations on top of a layout. By editing a style, you can use Squarespace's visual interface to customize your...</p>
-                                
+                                ыыы
                             </div>
-                        </div>
+                         </div>
                     </div>
-                    <div class="tab-pane" id="tabMyQuestions">
+                    <!-- НАЧАЛО ТАБА "МОИ ВОПРОСЫ"-->
+                    <div class="tab-pane" id="tab3main">
                         <div class="row">
                             <div class="col-md-12">
-                                <h3>Follow us &amp; get updated!</h3>
-                                <p>типа мои вопросы будут тут</p>
-                                
+                                <h3>Follow us get updated!</h3>
+                                <p>Instantly connect to what's most important to you. Follow your friends, experts.</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-	
-	
 	
 	<!-- не трогать нижний див -->
-	</div>
-    
-    
+	
     
 </div>
 

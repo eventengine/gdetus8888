@@ -44,17 +44,17 @@
                                     <div class="col-sm-12">
 											<div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error': register.fname.$invalid && !register.fname.$pristine }">
 												<label>Твоё имя</label>
-												<input type="text" name="fname" placeholder="{{authenticated.firstname}}" class="form-control" ng-model="user.fname" required>
+												<input type="text" name="fname" placeholder="Введите ваше имя" class="form-control" ng-model="user.fname" required>
 											</div>
 											<label class="error" for="fname" ng-show="register.fname.$invalid && !register.fname.$pristine">У тебя нет имени? Сириусли? -__-</label>
 									</div>
 									<!-- форма смены фамилии -->
 									<div class="col-sm-12">
-											<div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error': register.fname.$invalid && !register.fname.$pristine }">
+											<div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error': register.lname.$invalid && !register.lname.$pristine }">
 												<label>Твоя фамилия</label>
-												<input type="text" name="fname" placeholder="{{authenticated.lastname}}" class="form-control" ng-model="user.fname" required>
+												<input type="text" name="lname" placeholder="Введите вашу фамилию" class="form-control" ng-model="user.lname" required>
 											</div>
-											<label class="error" for="fname" ng-show="register.fname.$invalid && !register.fname.$pristine">У тебя нет имени? Сириусли? -__-</label>
+											<label class="error" for="fname" ng-show="register.fname.$invalid && !register.fname.$pristine">У тебя нет имени?</label>
 									</div>
 									<!-- форма выбора пола -->
 									<div class="col-sm-12">

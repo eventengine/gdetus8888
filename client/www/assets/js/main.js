@@ -34,20 +34,12 @@ angular.module('app')
 		ngMeta.init();
 	}]);
 
-
-
-
-
 /**
  * Глобальный контроллер приложения.
  */
 angular.module('app')
 	.controller('AppCtrl', ['$scope', '$rootScope', '$state', '$http', '$location', 'passport', 'appData', 
 		function($scope, $rootScope, $state, $http, $location, passport, appData) {
-
-
-
-
 
 			// Глобальные данные приложения.
 			$scope.app = appData;
@@ -69,15 +61,12 @@ angular.module('app')
 				});
 			};
 			
+			// 
 			$scope.onAppLogoutButtonClick = function() {
 				passport.logout().then(function() {
 					//$location.path("login");
 					$state.go("login");
 				});
-			};
-			
-			$scope.gotoUserPage = function(user) {
-				
 			};
 			
 		}
@@ -118,27 +107,31 @@ angular.module('app')
 
 
 /**
- * ???
+ * Обработчики событий $stateChangeStart, $stateChangeError.
+ * Перед началом маршрутизации в ui-router проверяем аутентификацию пользователя.
+ * В обработчике события $stateChangeError ловим ошибку проверки аутентификации 
+ * и в случае провала переходим на страницу login.
+ * Схема обработки взята из следующей статьи:
+ * http://erraticdev.blogspot.ru/2015/10/angular-ngroute-routing-authorization.html
  */
 angular.module('app')
-	.run(['$state', '$rootScope', 'passport', function($state, $rootScope, passport) {
+	.run(['$q', '$state', '$rootScope', 'passport', function($q, $state, $rootScope, passport) {
 		$rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams, options) {
-			
 			if (!toState.data.isPublic) {
-				
-				/*event.preventDefault();
-				
-				passport.getAuthenticated().then(function(authenticated) {
-					$rootScope.authenticated = authenticated;
-					toParams._next = true;
-					$state.go(toState.name, toParams);
-				}).catch(function(err) {
-					console.log(err);
-					$state.go("login");
-				});*/
+				toState.resolve = toState.resolve || {};
+				if (!toState.resolve.authenticationResolver) {
+					toState.resolve.authenticationResolver = [function() {
+						return passport.getAuthenticated().then(function(authenticated) {
+							$rootScope.authenticated = authenticated;
+							return authenticated;
+						});
+					}];
+				}
 				
 			}
-			
+		});
+		$rootScope.$on('$stateChangeError', function(event, toState, toParams, fromState, fromParams, err) {
+			if (err.isAuthenticationError) $state.go("login");
 		});
 	}]);
 

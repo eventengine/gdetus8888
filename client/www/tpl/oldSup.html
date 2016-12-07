@@ -1,0 +1,58 @@
+<!-- START PANEL -->
+    
+                    <div class="panel panel-transparent">
+                        <ul class="nav nav-tabs nav-tabs-simple nav-tabs-right bg-white" id="tab-3" role="tablist">
+                            <li class="active"><a href="#tab1" data-toggle="tab1" pg-tab role="tab1">Доступ к странице</a>
+                            </li>
+                            <li><a href="#tab2" data-toggle="tab2" pg-tab role="tab2">Two2</a>
+                            </li>
+                            <li><a href="#tab3" data-toggle="tab3" pg-tab role="tab3">Three3</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content bg-white">
+                        	<!-- НАЧАЛО ПЕРВОГО ТАБА -->
+                            <div class="tab-pane" id="tab1">
+                                <div class="row column-seperation">
+                                    <div class="col-md-12">
+                                        <div class="panel panel-transparent" ng-controller="DetailedTableCtrl">
+							                <div class="panel-body">
+							                    <div class="table-responsive">
+							                        <table class="table table-hover table-condensed table-detailed" id="detailedTable" ui-jq="dataTable" ui-options="options">
+							                            <tbody>
+							                                <tr ng-click="expand($event)">
+							                                    <td class="semi-bold">Revolution Begins</td>
+							                                </tr>
+							                                <tr ng-click="expand($event)">
+							                                    <td class="v-align-middle semi-bold">Revolution Begins</td>
+							                                </tr>
+							                                <tr ng-click="expand($event)">
+							                                    <td class="v-align-middle semi-bold">Revolution Begins</td>
+							                                </tr>
+							                                <tr ng-click="expand($event)">
+							                                    <td class="v-align-middle semi-bold">Revolution Begins</td>
+							                                </tr>
+							                            </tbody>
+							                        </table>
+							                    </div>
+							                </div>
+            							</div>
+                                    </div>
+                                </div>
+                            </div>
+                        	<div class="tab-pane " id="tab2">
+                            	<div class="row">
+                                	<div class="col-md-12">
+                                        A style represents visual customizations on top of a layout. By editing a style
+                                	</div>
+                            	</div>
+                        	</div>
+                        	<div class="tab-pane active" id="tab3">
+                            	<div class="row">
+                                	<div class="col-md-12">
+                                        <p>Instantly connect to what's most imreaking news.</p>
+                                	</div>
+                            	</div>
+                        	</div>
+                    	</div>
+                    </div>
+    <!-- END PANEL -->
