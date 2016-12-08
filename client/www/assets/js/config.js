@@ -80,9 +80,9 @@ angular.module("app").config(["$stateProvider", "$urlRouterProvider", "$ocLazyLo
 				resolve: {
 					deps: ["$ocLazyLoad", function($ocLazyLoad) {
 						return $ocLazyLoad.load([
-							    'datepicker',
-                                'daterangepicker',
-                                'select',
+						    'datepicker',
+                            'daterangepicker',
+                            'select',
 						], {
 							insertBefore: "#lazyload_placeholder"
 						})

@@ -41,7 +41,7 @@
 			</li>
 		</ul>
 	<div class="tab-content bg-white">
-	<!-- НАЧАЛО ПЕРВОГО ТАБА -->
+				<!-- НАЧАЛО ПЕРВОГО ТАБА -->
 				<div class="tab-pane active" id="tab">
 					<div class="row">
 						<!-- первая форма 1 вкладки-->
@@ -91,11 +91,10 @@
 								</div>
 								<!-- форма выбора отображения даты рождения -->
 								<div class="form-group ">
-									<ui-select ng-model="person.selected" theme="bootstrap" search-enabled="false">
-										<ui-select-match placeholder="не показывать дату рождения">{{$select.selected.name}}</ui-select-match>
-										<ui-select-choices repeat="item in people | filter: $select.search">
-											<div ng-bind-html="trustAsHtml((item.name | highlight: $select.search))"></div>
-											<small ng-bind-html="trustAsHtml((item.email | highlight: $select.search))"></small>
+									<ui-select ng-model="user.birthdayDateMuted" theme="bootstrap" search-enabled="false"> 
+										<ui-select-match>{{$select.selected.title}}</ui-select-match>
+										<ui-select-choices repeat="birthdayDateMuted.id as birthdayDateMuted in birthdayDateMutedValues">
+											<div ng-bind-html="trustAsHtml(birthdayDateMuted.title)"></div>
 										</ui-select-choices>
 									</ui-select>
 								</div>
@@ -125,8 +124,8 @@
 						</div>
 					</div>
 				</div>
-<!-- КОНЕЦ ПЕРВОГО ТАБА -->
-<!-- НАЧАЛО ВТОРОГО ТАБА -->
+				<!-- КОНЕЦ ПЕРВОГО ТАБА -->
+				<!-- НАЧАЛО ВТОРОГО ТАБА -->
 				<div class="tab-pane" id="tab2">
 					<div class="row">
 						<!-- первая форма 2 вкладки-->
@@ -187,8 +186,8 @@
 						</div>
 					</div>
 				</div>
-<!-- КОНЕЦ ВТОРОГО ТАБА -->
-<!-- НАЧАЛО ТРЕТЬЕГО ТАБА -->
+				<!-- КОНЕЦ ВТОРОГО ТАБА -->
+				<!-- НАЧАЛО ТРЕТЬЕГО ТАБА -->
 				<div class="tab-pane" id="tab3">
 					<div class="row">
 						<!-- первая форма 3 вкладки-->
@@ -249,8 +248,8 @@
 						</div>
 					</div>
 				</div>
-<!-- КОНЕЦ ТРЕТЬЕГО ТАБА -->
-<!-- НАЧАЛО ЧЕТВЕРТОГО ТАБА -->
+				<!-- КОНЕЦ ТРЕТЬЕГО ТАБА -->
+				<!-- НАЧАЛО ЧЕТВЕРТОГО ТАБА -->
 				<div class="tab-pane" id="tab4">
 					<div class="row">
 						<!-- первая форма 4 вкладки-->
@@ -311,8 +310,8 @@
 						</div>
 					</div>
 				</div>
-<!-- КОНЕЦ 4 ТАБА -->
-<!-- НАЧАЛО ПЯТОГО ТАБА -->
+				<!-- КОНЕЦ ЧЕРТВЕРТОГО ТАБА -->
+				<!-- НАЧАЛО ПЯТОГО ТАБА -->
 				<div class="tab-pane" id="tab5">
 					<div class="row">
 						<!-- первая форма 5 вкладки-->
@@ -373,8 +372,8 @@
 						</div>
 					</div>
 				</div>
-<!-- КОНЕЦ ПЯТОГО ТАБА -->
-<!-- НАЧАЛО ШЕСТОГО ТАБА -->
+				<!-- КОНЕЦ ПЯТОГО ТАБА -->
+				<!-- НАЧАЛО ШЕСТОГО ТАБА -->
 				<div class="tab-pane" id="tab6">
 					<div class="row">
 						<!-- первая форма шестой вкладки-->
@@ -481,7 +480,7 @@
 						</div>
 					</div>
 				</div>
-<!-- КОНЕЦ ШЕСТОГО ТАБА -->
+			<!-- КОНЕЦ ШЕСТОГО ТАБА -->
 		</div>
 	</div>
 
