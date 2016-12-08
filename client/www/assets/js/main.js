@@ -111,13 +111,13 @@ angular.module('app')
  * Перед началом маршрутизации в ui-router проверяем аутентификацию пользователя.
  * В обработчике события $stateChangeError ловим ошибку проверки аутентификации 
  * и в случае провала переходим на страницу login.
- * Схема обработки взята из следующей статьи:
+ * Схема обработки взята из:
  * http://erraticdev.blogspot.ru/2015/10/angular-ngroute-routing-authorization.html
  */
 angular.module('app')
 	.run(['$q', '$state', '$rootScope', 'passport', function($q, $state, $rootScope, passport) {
 		$rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams, options) {
-			if (!toState.data.isPublic) {
+			if (!toState.data || !toState.data.isPublic) {
 				toState.resolve = toState.resolve || {};
 				if (!toState.resolve.authenticationResolver) {
 					toState.resolve.authenticationResolver = [function() {

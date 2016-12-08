@@ -16,6 +16,7 @@ angular.module("app").config(["$stateProvider", "$urlRouterProvider", "$ocLazyLo
 			.state("404", {
 				templateUrl: "tpl/404.html",
 				data: {
+					isPublic: true,
 					meta: {
 						titleSuffix: "",
 						title: "404"
@@ -79,11 +80,9 @@ angular.module("app").config(["$stateProvider", "$urlRouterProvider", "$ocLazyLo
 				resolve: {
 					deps: ["$ocLazyLoad", function($ocLazyLoad) {
 						return $ocLazyLoad.load([
-							/* 
-								Load any ocLazyLoad module here
-								ex: "wysihtml5"
-								Open config.lazyload.js for available modules
-							*/
+							    'datepicker',
+                                'daterangepicker',
+                                'select',
 						], {
 							insertBefore: "#lazyload_placeholder"
 						})
@@ -96,7 +95,7 @@ angular.module("app").config(["$stateProvider", "$urlRouterProvider", "$ocLazyLo
 				},
 				data: {
 					meta: {
-						title: "Редактирование страницы"
+						title: "Редактирование"
 					}
 				}
 			})

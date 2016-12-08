@@ -155,12 +155,15 @@ angular.module('app')
 					'assets/plugins/angular-nestable/angular-nestable.js'
 				]
 			}, {
-				//https://github.com/angular-ui/ui-select
+				// https://github.com/angular-ui/ui-select
+				// Заменили 0.19.3 на 0.19.5 для исправления https://github.com/angular-ui/ui-select/issues/453
+				// Но это не помогло из-за https://github.com/angular-ui/ui-select/issues/1867
+				// Поэтому в angular-ui-select-0.19.5 находится модифицированная версия и в будущем ее надо заменить на 0.19.6
 				name: 'select',
 				files: [
 					'assets/plugins/bootstrap-select2/select2.css',
-					'assets/plugins/angular-ui-select/select.min.css',
-					'assets/plugins/angular-ui-select/select.min.js'
+					'assets/plugins/angular-ui-select-0.19.5/select.min.css',
+					'assets/plugins/angular-ui-select-0.19.5/select.min.js'
 				]
 			}, {
 				name: 'datepicker',
