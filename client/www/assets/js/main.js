@@ -97,9 +97,10 @@ angular.module('app')
 	.run(['$http', '$cookies', '$location', '$state', '$rootScope', 'passport', function($http, $cookies, $location, $state, $rootScope, passport) {
 		if ($cookies.isAuthenticated == "true") {
 			if (!$location.path() || $location.path() == "/") $state.go("app.feed"); //$location.path("/feed");
-			passport.getAuthenticated().then(function(authenticated) {
+			/*passport.getAuthenticated().then(function(authenticated) {
 				$rootScope.authenticated = authenticated;
-			});
+			});*/
+			passport.updateAuthenticated();
 		} else {
 			$state.go("login");
 		}
@@ -108,11 +109,11 @@ angular.module('app')
 
 /**
  * Обработчики событий $stateChangeStart, $stateChangeError.
- * Перед началом маршрутизации в ui-router проверяем аутентификацию пользователя.
+ * Перед началом маршрутизации в ui-router проверяем аутентификацию пользователя (она 
+ * могла в любой момент поменяться на сервере, поэтому перед маршрутизацией нужна актуальная ее копия).
  * В обработчике события $stateChangeError ловим ошибку проверки аутентификации 
  * и в случае провала переходим на страницу login.
- * Схема обработки взята из:
- * http://erraticdev.blogspot.ru/2015/10/angular-ngroute-routing-authorization.html
+ * Схема обработки взята из: http://erraticdev.blogspot.ru/2015/10/angular-ngroute-routing-authorization.html
  */
 angular.module('app')
 	.run(['$q', '$state', '$rootScope', 'passport', function($q, $state, $rootScope, passport) {
@@ -121,13 +122,13 @@ angular.module('app')
 				toState.resolve = toState.resolve || {};
 				if (!toState.resolve.authenticationResolver) {
 					toState.resolve.authenticationResolver = [function() {
-						return passport.getAuthenticated().then(function(authenticated) {
+						/*return passport.getAuthenticated().then(function(authenticated) {
 							$rootScope.authenticated = authenticated;
 							return authenticated;
-						});
+						});*/
+						return passport.updateAuthenticated();
 					}];
 				}
-				
 			}
 		});
 		$rootScope.$on('$stateChangeError', function(event, toState, toParams, fromState, fromParams, err) {

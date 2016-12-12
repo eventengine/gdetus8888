@@ -4,6 +4,7 @@ module.exports = {
 	
 	/**
 	 * Команда API GET user для получения публичных данных пользователей.
+	 * @params {Mixed} id Идентификатор пользователя. Может иметь значения: authenticated | <useruri> | id<id>.
 	 */
 	get: function(req, res) {
 		
@@ -64,6 +65,59 @@ module.exports = {
 			
 		}
 		
+	},
+	
+	/**
+	 * Команда API POST user для обновления данных аутентифицированного пользователя.
+	 */
+	post: function(req, res) {
+		const models = req.app.get("models");
+		
+		
+		//var newProfileData = {};
+		
+		// описание функции preValidation:
+		// функция ищет пользователя с указанным id
+		// и удаляет из req.body поля, которые совпали
+		// с теми, которые уже есть в бд
+		
+		models.user.preValidation(req.user.id, req.body).then(function() {
+			
+			/*models.user.fieldNames.forEach(function(n) {
+				newProfileData[n] = req[n in req.body ? "body" : "user"][n];
+			});*/
+			
+			req.checkBody(models.user.getValidateSchema());
+			
+			req.asyncValidationErrors().then(function() {
+				models.user.update(req.user.id, req.body).then(function(updatedUser) {
+					// Релогин мы делаем для обновления данных пользователя в сессии, 
+					// так как у passportjs нет специальной функции для обновления данных
+					// пользователя без отмены аутентификации.
+					req.relogin(updatedUser, function(err) {
+						if (err) {
+							res.send({
+								success: false,
+								errors: err
+							});
+						} else {
+							res.send({
+								success: true,
+								updatedUser: publicUser(updatedUser)
+							});
+						}
+					});
+				});
+			}).catch(function(errors) {
+				res.send({
+					success: false,
+					errors: errors
+				});
+			});
+	
+		});
+		
+		
 	}
 	
 };
@@ -74,7 +128,10 @@ const publicFields = [
 	"useruri",
 	"email",
 	"firstname",
-	"lastname", 
+	"lastname",
+	"gender",
+	"birthday_date",
+	"birthday_date_muted",
 	"useruri",
 	"avatar_id",
 	"avatar_bg_id",

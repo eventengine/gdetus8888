@@ -55,6 +55,16 @@ angular.module("app")
 				});
 			},
 			
+			/**
+			 * Обновить данные аутентифицированного пользователя в глобальном $rootScope.
+			 */
+			updateAuthenticated: function() {
+				return this.getAuthenticated().then(function(authenticated) {
+					$rootScope.authenticated = authenticated;
+					return authenticated;
+				});
+			},
+			
 			login: function(login, password, rememberme) {
 				return $http.post("/api/login", {
 					email: login,

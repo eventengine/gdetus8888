@@ -95,7 +95,7 @@ angular.module("app").config(["$stateProvider", "$urlRouterProvider", "$ocLazyLo
 				},
 				data: {
 					meta: {
-						title: "Редактирование"
+						title: "Редактирование профиля"
 					}
 				}
 			})

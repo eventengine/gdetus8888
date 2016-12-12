@@ -39,13 +39,15 @@
 		                
 		    	</div>
 	
-            <div class="panel">
+            <div class="panel panel-default">
                 <ul class="nav nav-tabs nav-tabs-simple" role="tablist" ui-jq="tabCollapse">
                     <li class="active"><a href="#tab1main" data-toggle="tab1main" pg-tab role="tab1main">Помощь</a>
                     </li>
                     <li><a href="#tab2main" data-toggle="tab2main" pg-tab role="tab2main">Список вопросов</a>
                     </li>
                     <li><a href="#tab3main" data-toggle="tab3main" pg-tab role="tab3main">Мои вопросы (??)</a>
+                    </li>
+                    <li><a href="#tab4main" data-toggle="tab4main" pg-tab role="tab4main" "disabled">Задать вопрос</a>
                     </li>
                 </ul>
                 <div class="tab-content">
@@ -154,9 +156,329 @@
                     <div class="tab-pane" id="tab2main">
                         <div class="row">
                             <div class="col-md-12">
-                                ыыы
+                                <!-- НАЧАЛО ТАБА (список вопросов) -->
+                            	<ul class="nav nav-tabs nav-tabs-simple nav-tabs-right bg-white" id="tab-3" role="tablist" >
+									<li class="active"><a href="#tab" data-toggle="tab" pg-tab role="tab">Популярные вопросы</a>
+									</li>
+									<li><a href="#tab2" data-toggle="tab2" pg-tab role="tab2">Доступ к странице</a>
+									</li>
+									<li><a href="#tab3" data-toggle="tab3" pg-tab role="tab3">Общие вопросы</a>
+									</li>
+									<li><a href="#tab4" data-toggle="tab4" pg-tab role="tab4">Страница</a>
+									</li>
+									<li><a href="#tab5" data-toggle="tab5" pg-tab role="tab5">Настройки приватности</a>
+									</li>
+									<li><a href="#tab6" data-toggle="tab6" pg-tab role="tab6">Друзья и подписчики</a>
+									</li>
+									<li><a href="#tab7" data-toggle="tab7" pg-tab role="tab7">Фотографии</a>
+									</li>
+									<li><a href="#tab8" data-toggle="tab8" pg-tab role="tab8">Видеозаписи</a>
+									</li>
+									<li><a href="#tab9" data-toggle="tab9" pg-tab role="tab9">Аудиозаписи</a>
+									</li>
+									<li><a href="#tab10" data-toggle="tab10" pg-tab role="tab10">Сообщения</a>
+									</li>
+									<li><a href="#tab11" data-toggle="tab11" pg-tab role="tab11">Сообщества</a>
+									</li>
+									<li><a href="#tab12" data-toggle="tab12" pg-tab role="tab12">Новости</a>
+									</li>
+									<li><a href="#tab13" data-toggle="tab13" pg-tab role="tab13">Голоса, платежи, подарки, виджеты</a>
+									</li>
+								</ul>
+								<div class="tab-content <!--bg-white-->">
+									<!-- НАЧАЛО ТАБА (популярные вопросы) -->
+									<div class="tab-pane active" id="tab">
+										<div class="row">
+											<!-- форма (популярные вопросы) (1) -->
+											<div class="col-sm-12">
+													<h5 class="semi-bold"> <span class="label label-inverse"><i class="fa fa-fire"></i></span> Популярные вопросы (1)</h5>
+												<table class="table table-hover table-condensed table-detailed" id="detailedTable" ui-jq="dataTable" ui-options="options">	
+													<tbody>
+						                                <tr ng-click="expand($event)">
+						                                    <td class="v-align-middle semi-bold">Я удалил сообщения, как их восстановить?</td>
+						                                </tr>
+						                                <tr ng-click="expand($event)">
+						                                    <td class="v-align-middle semi-bold">Как удалить страницу, к которой нет доступа?</td>
+						                                </tr>
+						                                <tr ng-click="expand($event)">
+						                                    <td class="v-align-middle semi-bold">Мой номер занят каким-то пользователем, как мне привязать его к своей странице?</td>
+						                                </tr>
+						                                <tr ng-click="expand($event)">
+						                                    <td class="v-align-middle semi-bold">Мою страницу заблокировали!</td>
+						                                </tr>
+						                                <tr ng-click="expand($event)">
+						                                    <td class="v-align-middle semi-bold">Мою страницу взломали!</td>
+						                                </tr>
+						                                <tr ng-click="expand($event)">
+						                                    <td class="v-align-middle semi-bold">Новый вид сайта</td>
+						                                </tr>
+						                                <tr ng-click="expand($event)">
+						                                    <td class="v-align-middle semi-bold">Как вернуть прежний вид сайта?</td>
+						                                </tr>
+						                            </tbody>
+						                        </table>
+											</div>
+										</div>
+									</div>
+									<!-- НАЧАЛО ТАБА (доступ к странице) -->
+									<div class="tab-pane" id="tab2">
+										<div class="row">
+											<!-- форма (доступ к странице) (2) -->
+											<div class="col-sm-12">
+													<h5 class="semi-bold"> <span class="label label-inverse"><i class="fa fa-key"></i></span> Доступ к странице (2)</h5>
+												<table class="table table-hover table-condensed table-detailed" id="detailedTable" ui-jq="dataTable" ui-options="options">	
+													<tbody>
+						                                <tr ng-click="expand($event)">
+						                                    <td class="v-align-middle semi-bold">Мою страницу заблокировали!</td>
+						                                </tr>
+						                                <tr ng-click="expand($event)">
+						                                    <td class="v-align-middle semi-bold">Как удалить страницу, к которой нет доступа?</td>
+						                                </tr>
+						                                <tr ng-click="expand($event)">
+						                                    <td class="v-align-middle semi-bold">Мой номер занят каким-то пользователем, как мне привязать его к своей странице?</td>
+						                                </tr>
+						                                <tr ng-click="expand($event)">
+						                                    <td class="v-align-middle semi-bold">Как изменить пароль?</td>
+						                                </tr>
+						                                <tr ng-click="expand($event)">
+						                                    <td class="v-align-middle semi-bold">Как зарегистрироваться на сайте?</td>
+						                                </tr>
+						                                <tr ng-click="expand($event)">
+						                                    <td class="v-align-middle semi-bold">Что делать, если я забыл пароль?</td>
+						                                </tr>
+						                                <tr ng-click="expand($event)">
+						                                    <td class="v-align-middle semi-bold">Как мне привязать номер телефона к своей странице?</td>
+						                                </tr>
+						                                <tr ng-click="expand($event)">
+						                                    <td class="v-align-middle semi-bold">Как отвязать номер, чтобы создать на него новую страницу?</td>
+						                                </tr>
+						                                <tr ng-click="expand($event)">
+						                                    <td class="v-align-middle semi-bold">Как мне изменить логин?</td>
+						                                </tr>
+						                                <tr ng-click="expand($event)">
+						                                    <td class="v-align-middle semi-bold">Мой номер привязан к двум страницам, что делать?</td>
+						                                </tr>
+						                                <tr ng-click="expand($event)">
+						                                    <td class="v-align-middle semi-bold">Как закрыть страницу человека, которого нет в живых?</td>
+						                                </tr>
+						                                <tr ng-click="expand($event)">
+						                                    <td class="v-align-middle semi-bold">Забыл и логин, и пароль. Что делать?</td>
+						                                </tr>
+						                                <tr ng-click="expand($event)">
+						                                    <td class="v-align-middle semi-bold">Не могу зайти на сайт — требуется валидация страницы!</td>
+						                                </tr>
+						                                <tr ng-click="expand($event)">
+						                                    <td class="v-align-middle semi-bold">Что такое анонимайзер?</td>
+						                                </tr>
+						                                <tr ng-click="expand($event)">
+						                                    <td class="v-align-middle semi-bold">Как убрать автосохранение пароля в браузере?</td>
+						                                </tr>
+						                                <tr ng-click="expand($event)">
+						                                    <td class="v-align-middle semi-bold">Настройки приложений</td>
+						                                </tr>
+						                            </tbody>
+						                        </table>
+											</div>
+										</div>
+									</div>
+									<!-- НАЧАЛО ТАБА (общие вопросы) -->
+									<div class="tab-pane" id="tab3">
+										<div class="row">
+											<!-- форма (общие вопросы) (3) -->
+											<div class="col-sm-12">
+													<h5 class="semi-bold"> <span class="label label-inverse"><i class="fa fa-star"></i></span> Общие вопросы (3)</h5>
+												<table class="table table-hover table-condensed table-detailed" id="detailedTable" ui-jq="dataTable" ui-options="options">	
+													<tbody>
+						                                <tr ng-click="expand($event)">
+						                                    <td class="v-align-middle semi-bold">Можно ли посмотреть гостей моей страницы?</td>
+						                                </tr>
+						                                <tr ng-click="expand($event)">
+						                                    <td class="v-align-middle semi-bold">Мою страницу заблокировали!</td>
+						                                </tr>
+						                                <tr ng-click="expand($event)">
+						                                    <td class="v-align-middle semi-bold">Новый вид сайта</td>
+						                                </tr>
+						                                <tr ng-click="expand($event)">
+						                                    <td class="v-align-middle semi-bold">Как мне стать агентом поддержки?</td>
+						                                </tr>
+						                                <tr ng-click="expand($event)">
+						                                    <td class="v-align-middle semi-bold">Не загружаются фотографии, видеозаписи или аудио!</td>
+						                                </tr>
+						                                <tr ng-click="expand($event)">
+						                                    <td class="v-align-middle semi-bold">Правда ли, что этот сайт скоро закроют?</td>
+						                                </tr>
+						                                <tr ng-click="expand($event)">
+						                                    <td class="v-align-middle semi-bold">Я удалил сообщения, как их восстановить?</td>
+						                                </tr>
+						                                <tr ng-click="expand($event)">
+						                                    <td class="v-align-middle semi-bold">Почему с сайта удаляется музыка?</td>
+						                                </tr>
+						                                <tr ng-click="expand($event)">
+						                                    <td class="v-align-middle semi-bold">Мой номер занят каким-то пользователем, как мне привязать его к своей странице?</td>
+						                                </tr>
+						                                <tr ng-click="expand($event)">
+						                                    <td class="v-align-middle semi-bold">Как изменить пароль?</td>
+						                                </tr>
+						                                <tr ng-click="expand($event)">
+						                                    <td class="v-align-middle semi-bold">Как скачать музыку или видеозаписи?</td>
+						                                </tr>
+						                                <tr ng-click="expand($event)">
+						                                    <td class="v-align-middle semi-bold">Почему мне не отвечают?</td>
+						                                </tr>
+						                                <tr ng-click="expand($event)">
+						                                    <td class="v-align-middle semi-bold">Как пригласить друга на сайт?</td>
+						                                </tr>
+						                                <tr ng-click="expand($event)">
+						                                    <td class="v-align-middle semi-bold">Как мне сменить фон страницы?</td>
+						                                </tr>
+						                                <tr ng-click="expand($event)">
+						                                    <td class="v-align-middle semi-bold">Как зарегистрироваться на сайте?</td>
+						                                </tr>
+						                                <tr ng-click="expand($event)">
+						                                    <td class="v-align-middle semi-bold">Что делать, если я забыл пароль?</td>
+						                                </tr>
+						                                <tr ng-click="expand($event)">
+						                                    <td class="v-align-middle semi-bold">Как пожаловаться на человека?</td>
+						                                </tr>
+						                                <tr ng-click="expand($event)">
+						                                    <td class="v-align-middle semi-bold">Почему у меня не работает виджет?</td>
+						                                </tr>
+						                                <tr ng-click="expand($event)">
+						                                    <td class="v-align-middle semi-bold">Как вернуть прежний вид сайта?</td>
+						                                </tr>
+						                                <tr ng-click="expand($event)">
+						                                    <td class="v-align-middle semi-bold">Как скрыть статус «онлайн», есть ли здесь «невидимка»?</td>
+						                                </tr>
+						                                <tr ng-click="expand($event)">
+						                                    <td class="v-align-middle semi-bold">Проблема с покупкой голосов или стикеров</td>
+						                                </tr>
+						                                <tr ng-click="expand($event)">
+						                                    <td class="v-align-middle semi-bold">Как создать стикер или виджет?</td>
+						                                </tr>
+						                                <tr ng-click="expand($event)">
+						                                    <td class="v-align-middle semi-bold">Как пожаловаться на паблик или канал?</td>
+						                                </tr>
+						                                <tr ng-click="expand($event)">
+						                                    <td class="v-align-middle semi-bold">Сколько нужно жалоб, чтобы заблокировали страницу?</td>
+						                                </tr>
+						                                <tr ng-click="expand($event)">
+						                                    <td class="v-align-middle semi-bold">Можно ли посмотреть, у кого я в чёрном списке?</td>
+						                                </tr>
+						                                <tr ng-click="expand($event)">
+						                                    <td class="v-align-middle semi-bold">Мой номер привязан к двум страницам, что делать?</td>
+						                                </tr>
+						                                <tr ng-click="expand($event)">
+						                                    <td class="v-align-middle semi-bold">Как попасть на мобильную версию сайта?</td>
+						                                </tr>
+						                                <tr ng-click="expand($event)">
+						                                    <td class="v-align-middle semi-bold">Сайт медленно работает</td>
+						                                </tr>
+						                                <tr ng-click="expand($event)">
+						                                    <td class="v-align-middle semi-bold">Мои данные используются на чужой странице!</td>
+						                                </tr>
+						                                <tr ng-click="expand($event)">
+						                                    <td class="v-align-middle semi-bold">Как получить голоса на день рождения?</td>
+						                                </tr>
+						                                <tr ng-click="expand($event)">
+						                                    <td class="v-align-middle semi-bold">Не могу зайти на сайт — требуется валидация страницы!</td>
+						                                </tr>
+						                                <tr ng-click="expand($event)">
+						                                    <td class="v-align-middle semi-bold">Я случайно удалил материалы со страницы, помогите восстановить!</td>
+						                                </tr>
+						                                <tr ng-click="expand($event)">
+						                                    <td class="v-align-middle semi-bold">Что такое анонимайзер?</td>
+						                                </tr>
+						                                <tr ng-click="expand($event)">
+						                                    <td class="v-align-middle semi-bold">Можно ли просматривать гостей страницы с помощью виджетов?</td>
+						                                </tr>
+						                                <tr ng-click="expand($event)">
+						                                    <td class="v-align-middle semi-bold">Вопрос о рекламе на сайте</td>
+						                                </tr>
+						                                <tr ng-click="expand($event)">
+						                                    <td class="v-align-middle semi-bold">Как вернуться в беседу, если я покинул её и удалил историю сообщений?</td>
+						                                </tr>
+						                                <tr ng-click="expand($event)">
+						                                    <td class="v-align-middle semi-bold">Как изменить размер страницы или шрифта?</td>
+						                                </tr>
+						                                <tr ng-click="expand($event)">
+						                                    <td class="v-align-middle semi-bold">Добавьте кнопку «Мне не нравится». Она очень-очень нужна!</td>
+						                                </tr>
+						                                <tr ng-click="expand($event)">
+						                                    <td class="v-align-middle semi-bold">Почему всё время приходится вводить коды с картинок?</td>
+						                                </tr>
+						                                <tr ng-click="expand($event)">
+						                                    <td class="v-align-middle semi-bold">Как задать свой собственный вопрос в Поддержку?</td>
+						                                </tr>
+						                                
+						                                <tr ng-click="expand($event)">
+						                                    <td class="v-align-middle semi-bold">Моя фамилия склоняется неправильно!</td>
+						                                </tr>
+						                                <tr ng-click="expand($event)">
+						                                    <td class="v-align-middle semi-bold">Как узнать дату регистрации профиля?</td>
+						                                </tr>
+						                                <tr ng-click="expand($event)">
+						                                    <td class="v-align-middle semi-bold">Как сделать официальное сообщество? Верификация сообществ.</td>
+						                                </tr>
+						                                <tr ng-click="expand($event)">
+						                                    <td class="v-align-middle semi-bold">Где получить ссылку на страницу?</td>
+						                                </tr>
+						                                <tr ng-click="expand($event)">
+						                                    <td class="v-align-middle semi-bold">Как найти раздел «Настройки»?</td>
+						                                </tr>
+						                                <tr ng-click="expand($event)">
+						                                    <td class="v-align-middle semi-bold">Как найти человека по его id?</td>
+						                                </tr>
+						                            </tbody>
+						                        </table>
+											</div>
+										</div>
+									</div>
+									<!-- НАЧАЛО ТАБА (страница) -->
+									<div class="tab-pane" id="tab4">
+										<div class="row">
+											<!-- первая форма 1 вкладки-->
+											<div class="col-sm-12">
+												<table class="table table-hover table-condensed table-detailed" id="detailedTable" ui-jq="dataTable" ui-options="options">	
+													<tbody>
+						                                <tr ng-click="expand($event)">
+						                                    <td class="v-align-middle semi-bold">4Revolution Begins</td>
+						                                </tr>
+						                                <tr ng-click="expand($event)">
+						                                    <td class="v-align-middle semi-bold">4Revolution Begins</td>
+						                                </tr>
+						                                <tr ng-click="expand($event)">
+						                                    <td class="v-align-middle semi-bold">4Revolution Begins</td>
+						                                </tr>
+						                                <tr ng-click="expand($event)">
+						                                    <td class="v-align-middle semi-bold">4Revolution Begins</td>
+						                                </tr>
+						                                <tr ng-click="expand($event)">
+						                                    <td class="v-align-middle semi-bold">4Revolution Begins</td>
+						                                </tr>
+						                                <tr ng-click="expand($event)">
+						                                    <td class="v-align-middle semi-bold">4Revolution Begins</td>
+						                                </tr>
+						                                <tr ng-click="expand($event)">
+						                                    <td class="v-align-middle semi-bold">4Revolution Begins</td>
+						                                </tr>
+						                                <tr ng-click="expand($event)">
+						                                    <td class="v-align-middle semi-bold">4Revolution Begins</td>
+						                                </tr>
+						                                <tr ng-click="expand($event)">
+						                                    <td class="v-align-middle semi-bold">4Revolution Begins</td>
+						                                </tr>
+						                            </tbody>
+						                        </table>
+											</div>
+										</div>
+									</div>
+									
+									
+									
+								</div>	
+
                             </div>
-                         </div>
+                        </div>
                     </div>
                     <!-- НАЧАЛО ТАБА "МОИ ВОПРОСЫ"-->
                     <div class="tab-pane" id="tab3main">

@@ -25,158 +25,175 @@
 		</div>-->
 
 	<!-- НАЧАЛО БЛОКА ТАБУЛЯЦИИ -->
-	<div class="panel panel-transparent">
+	<div class="panel panel-default">
 		<ul class="nav nav-tabs nav-tabs-simple nav-tabs-right bg-white" id="tab-3" role="tablist" >
 			<li class="active"><a href="#tab" data-toggle="tab" pg-tab role="tab">Основное</a>
 			</li>
-			<li><a href="#tab2" data-toggle="tab2" pg-tab role="tab2">Контакты</a>
+			<li><a href="#tab2" data-toggle="tab2" pg-tab role="tab">Контакты</a>
 			</li>
-			<li><a href="#tab3" data-toggle="tab3" pg-tab role="tab3">Интересы</a>
+			<li><a href="#tab3" data-toggle="tab3" pg-tab role="tab">Интересы</a>
 			</li>
-			<li><a href="#tab4" data-toggle="tab4" pg-tab role="tab4">Стиль жизни</a>
+			<li><a href="#tab4" data-toggle="tab4" pg-tab role="tab">Стиль жизни</a>
 			</li>
-			<li><a href="#tab5" data-toggle="tab5" pg-tab role="tab5">пять</a>
+			<li><a href="#tab5" data-toggle="tab5" pg-tab role="tab">пять</a>
 			</li>
-			<li><a href="#tab6" data-toggle="tab6" pg-tab role="tab6">шесть</a>
+			<li><a href="#tab6" data-toggle="tab6" pg-tab role="tab">шесть</a>
 			</li>
 		</ul>
 	<div class="tab-content bg-white">
-				<!-- НАЧАЛО ПЕРВОГО ТАБА -->
+				<!-- НАЧАЛО ПЕРВОГО ТАБА (основное) -->
 				<div class="tab-pane active" id="tab">
-					<div class="row">
-						<!-- первая форма 1 вкладки-->
-						<div class="col-sm-12">
-							<div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error': register.fname.$invalid && !register.fname.$pristine }">
-							<label>Твоё имя</label>
-							<input type="fname" class="form-control" placeholder="{{authenticated.firstname}}">
-							</div>
-							<label class="error" for="fname" ng-show="register.fname.$invalid && !register.fname.$pristine">У тебя нет имени?</label>
-						</div>
-						<!-- вторая форма 1 вкладки-->
-						<div class="col-sm-12">
-							<div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error': register.lname.$invalid && !register.lname.$pristine }">
-							<label>Твоя фамилия</label>
-							<input type="lname" class="form-control" placeholder="{{authenticated.lastname}}">
-							</div>
-							<label class="error" for="lname" ng-show="register.lname.$invalid && !register.lname.$pristine">У тебя нет фамилии?</label>
-						</div>
-						<!-- 3 форма 1 вкладки-->
-						<div class="col-sm-12">
-							<div pg-form-group class="form-group form-group-default form-group-default-select">
-								<label class="">Твой пол</label>
-								<ui-select ng-model="user.gender" theme="bootstrap" search-enabled="false"> 
-									<ui-select-match>{{$select.selected.title}}</ui-select-match>
-									<ui-select-choices repeat="gender.id as gender in genders">
-										<div ng-bind-html="trustAsHtml(gender.title)"></div>
-									</ui-select-choices>
-								</ui-select>
-							</div>
-							<label class="error" for="fname" ng-show="register.fname.$invalid && !register.fname.$pristine">У тебя нет имени? Сириусли? -__-</label>
-						</div>
-						<!-- 4 форма 1 вкладки-->
-						<div class="col-sm-12">
-							<div pg-form-group class="form-group form-group-default input-group">
-									<label>Адрес страницы</label>
-									<input type="text" name="fname" placeholder="" class="form-control" ng-model="user.fname" required>
-									<span class="input-group-addon primary">gdetus.io/</span>
-							</div>
-							<label class="error" for="fname" ng-show="register.fname.$invalid && !register.fname.$pristine">У тебя нет имени? Сириусли? -__-</label>
-						</div>
-						<!-- 5 форма 1 вкладки-->
-						<div class="col-sm-12">
-							<div pg-form-group class="form-group form-group-default input-group">
+					<form name="editMainOptionsForm" role="form" novalidate>
+						<div class="row">
+							<div class="col-sm-12">
+								<!-- первая форма 1 вкладки-->
+								<div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error': editMainOptionsForm.firstname.$invalid && !editMainOptionsForm.firstname.$pristine }">
+									<label>Твоё имя</label>
+									<input type="text" name="firstname" class="form-control" placeholder="Имя пользователя" ng-model="user.firstname">
+								</div>
+								<label class="error" for="firstname" ng-show="editMainOptionsForm.firstname.$invalid && !editMainOptionsForm.firstname.$pristine">У тебя нет имени?</label>
+								<!-- вторая форма 1 вкладки-->
+								<div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error': editMainOptionsForm.lastname.$invalid && !editMainOptionsForm.lastname.$pristine }">
+									<label>Твоя фамилия</label>
+									<input type="text" name="lastname" class="form-control" placeholder="Фамилия пользователя" ng-model="user.lastname">
+								</div>
+								<label class="error" for="lastname" ng-show="editMainOptionsForm.lastname.$invalid && !editMainOptionsForm.lastname.$pristine">У тебя нет фамилии?</label>
+								<!-- 3 форма 1 вкладки-->
+								<div pg-form-group class="form-group form-group-default form-group-default-select">
+									<label class="">Твой пол</label>
+									<ui-select ng-model="user.gender" theme="bootstrap" search-enabled="false"> 
+										<ui-select-match>{{$select.selected.title}}</ui-select-match>
+										<ui-select-choices repeat="gender.id as gender in genders">
+											<div ng-bind-html="trustAsHtml(gender.title)"></div>
+										</ui-select-choices>
+									</ui-select>
+								</div>
+								<label class="error" for="gender" ng-show="editMainOptionsForm.gender.$invalid && !editMainOptionsForm.gender.$pristine">У тебя нет имени? Сириусли?</label>
+								<!-- 4 форма 1 вкладки-->
+								<div pg-form-group class="form-group form-group-default input-group">
+										<label>Адрес страницы</label>
+										<input type="text" name="useruri" placeholder="" class="form-control" ng-model="user.useruri">
+										<span class="input-group-addon primary">gdetus.io/</span>
+								</div>
+								<label class="error" for="useruri" ng-show="editMainOptionsForm.useruri.$invalid && !editMainOptionsForm.useruri.$pristine">У тебя нет имени? Сириусли?</label>
+								<!-- 5 форма 1 вкладки-->
+								<div pg-form-group class="form-group form-group-default input-group">
 									<label>Дата рождения</label>
-									<input type="email" class="form-control" placeholder="Выбери дату" id="datepicker-component2" ui-jq="datepicker">
+									<input type="text" ng-model="user.birthday_date" class="form-control" placeholder="Выбери дату" id="datepicker-component2" ui-jq="datepicker">
 									<span class="input-group-addon primary"><i class="fa fa-calendar"></i></span>
 								</div>
 								<!-- форма выбора отображения даты рождения -->
 								<div class="form-group ">
-									<ui-select ng-model="user.birthdayDateMuted" theme="bootstrap" search-enabled="false"> 
+									<ui-select ng-model="user.birthday_date_muted" theme="bootstrap" search-enabled="false"> 
 										<ui-select-match>{{$select.selected.title}}</ui-select-match>
 										<ui-select-choices repeat="birthdayDateMuted.id as birthdayDateMuted in birthdayDateMutedValues">
 											<div ng-bind-html="trustAsHtml(birthdayDateMuted.title)"></div>
 										</ui-select-choices>
 									</ui-select>
 								</div>
-							<label class="error" for="fname" ng-show="register.fname.$invalid && !register.fname.$pristine">У тебя нет имени? Сириусли? -__-</label>
-						</div>
-						<!-- 6 форма 1 вкладки-->
-						<div class="col-sm-12">
-							<div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error': register.fname.$invalid && !register.fname.$pristine }">
-							<label>Семейное положение</label>
-							<input type="email" class="form-control">
+								<label class="error" for="birthday_date_muted" ng-show="editMainOptionsForm.birthday_date_muted.$invalid && !editMainOptionsForm.birthday_date_muted.$pristine">У тебя нет имени? Сириусли?</label>
+								<!-- 6 форма 1 вкладки-->
+								<div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error': editMainOptionsForm.marital_status.$invalid && !editMainOptionsForm.marital_status.$pristine }">
+									<label>Семейное положение</label>
+									<input type="marital_status" class="form-control">
+								</div>
+								<label class="error" for="fname" ng-show="editMainOptionsForm.marital_status.$invalid && !editMainOptionsForm.marital_status.$pristine">У тебя нет имени? Сириусли?</label>
+								<!-- 7 форма 1 вкладки-->
+								<div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error': editMainOptionsForm.city.$invalid && !register.city.$pristine }">
+									<label>Родной город</label>
+									<input type="city" class="form-control">
+								</div>
+								<label class="error" for="city" ng-show="editMainOptionsForm.city.$invalid && !editMainOptionsForm.city.$pristine">У тебя нет имени? Сириусли?</label>
+								<!-- 1 кнопки применения изменений-->
+								<div class=" text-right">
+									<button
+										type="submit"
+										class="btn btn-primary btn-xs"
+										ng-disabled="editMainOptionsForm.$invalid"
+										ng-click="onEditMainOptionsButtonClick(user, editMainOptionsForm)">
+										Применить изменения
+									</button>
+								</div>
 							</div>
-							<label class="error" for="fname" ng-show="register.fname.$invalid && !register.fname.$pristine">У тебя нет имени? Сириусли? -__-</label>
 						</div>
-						<!-- 7 форма 1 вкладки-->
-						<div class="col-sm-12">
-							<div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error': register.fname.$invalid && !register.fname.$pristine }">
-							<label>Родной город</label>
-							<input type="email" class="form-control">
-							</div>
-							<label class="error" for="fname" ng-show="register.fname.$invalid && !register.fname.$pristine">У тебя нет имени? Сириусли? -__-</label>
-						</div>
-						<!-- 1 форма кнопки применения изменений-->
-						<div class="col-sm-12">
-						  <div class=" text-right">
-							<button class="btn btn-primary btn-xs " data-target="#" data-toggle="">Применить изменения</button>
-						  </div>
-						</div>
-					</div>
+					</form>
 				</div>
-				<!-- КОНЕЦ ПЕРВОГО ТАБА -->
-				<!-- НАЧАЛО ВТОРОГО ТАБА -->
+				<!-- КОНЕЦ ПЕРВОГО ТАБА (основное) -->
+				<!-- НАЧАЛО ВТОРОГО ТАБА (контакты) -->
 				<div class="tab-pane" id="tab2">
 					<div class="row">
 						<!-- первая форма 2 вкладки-->
 						<div class="col-sm-12">
-							<div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error': register.fname.$invalid && !register.fname.$pristine }">
-							<label>Твой родной форма 2</label>
-							<input type="email" class="form-control">
+							<div pg-form-group class="form-group form-group-default form-group-default-select">
+								<label class="">Страна</label>
+								<ui-select ng-model="user.countryV" theme="bootstrap" search-enabled="false"> 
+									<ui-select-match>{{$select.selected.title}}</ui-select-match>
+									<ui-select-choices repeat="countryV.id as countryV in countryValues">
+										<div ng-bind-html="trustAsHtml(countryV.title)"></div>
+									</ui-select-choices>
+								</ui-select>
 							</div>
-							<label class="error" for="fname" ng-show="register.fname.$invalid && !register.fname.$pristine">У тебя нет имени? Сириусли? -__-</label>
+							<label class="error" for="fname" ng-show="editMainOptionsForm.fname.$invalid && !editMainOptionsForm.fname.$pristine">У тебя нет имени? Сириусли? -__-</label>
 						</div>
 						<!-- вторая форма 2 вкладки-->
 						<div class="col-sm-12">
-							<div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error': register.fname.$invalid && !register.fname.$pristine }">
+							<div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error': editMainOptionsForm.fname.$invalid && !editMainOptionsForm.fname.$pristine }">
 							<label>Твой родной форма 2</label>
 							<input type="email" class="form-control">
 							</div>
-							<label class="error" for="fname" ng-show="register.fname.$invalid && !register.fname.$pristine">У тебя нет имени? Сириусли? -__-</label>
+							<label class="error" for="fname" ng-show="editMainOptionsForm.fname.$invalid && !editMainOptionsForm.fname.$pristine">У тебя нет имени? Сириусли? -__-</label>
 						</div>
-						
 						<!-- 3 форма 2 вкладки-->
 						<div class="col-sm-12">
-							<div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error': register.fname.$invalid && !register.fname.$pristine }">
+							<div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error': editMainOptionsForm.fname.$invalid && !editMainOptionsForm.fname.$pristine }">
 							<label>Твой родной форма 2</label>
 							<input type="email" class="form-control">
 							</div>
-							<label class="error" for="fname" ng-show="register.fname.$invalid && !register.fname.$pristine">У тебя нет имени? Сириусли? -__-</label>
+							<label class="error" for="fname" ng-show="editMainOptionsForm.fname.$invalid && !editMainOptionsForm.fname.$pristine">У тебя нет</label>
 						</div>
 						<!-- 4 форма 2 вкладки-->
 						<div class="col-sm-12">
-							<div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error': register.fname.$invalid && !register.fname.$pristine }">
-							<label>Твой родной форма 2</label>
-							<input type="email" class="form-control">
+							<div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error': editMainOptionsForm.fname.$invalid && !editMainOptionsForm.fname.$pristine }">
+							<label>Мобильный телефон</label>
+							<input type="phone" class="form-control">
 							</div>
-							<label class="error" for="fname" ng-show="register.fname.$invalid && !register.fname.$pristine">У тебя нет имени? Сириусли? -__-</label>
+							<label class="error" for="phone" ng-show="editMainOptionsForm.fname.$invalid && !editMainOptionsForm.fname.$pristine">У тебя нет име</label>
 						</div>
-						
 						<!-- 5 форма 2 вкладки-->
-						<div class="col-sm-12">
-							<div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error': register.fname.$invalid && !register.fname.$pristine }">
-							<label>Твой родной форма 2</label>
-							<input type="email" class="form-control">
+						<div class="col-sm-10">
+							<div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error': editMainOptionsForm.fname.$invalid && !editMainOptionsForm.fname.$pristine }">
+							<label>Доп. телефон</label>
+							<input type="phone" class="form-control">
 							</div>
-							<label class="error" for="fname" ng-show="register.fname.$invalid && !register.fname.$pristine">У тебя нет имени? Сириусли? -__-</label>
+							<label class="error" for="phone" ng-show="editMainOptionsForm.fname.$invalid && !register.fname.$pristine">У тебя нет имени? </label>
 						</div>
+						<!-- форма выбора видимости номера телефона -->
+						<div class="btn-group dropdown-default col-sm-2" pg-dropdown>
+                            <button class="btn dropdown-toggle" data-toggle="dropdown"> <i class="fa fa-lock"></i> <span class="caret"></span> </button>
+                            <ul class="dropdown-menu ">
+                                <li><a href="">1</a>
+                                </li>
+                                <li><a href="">2</a>
+                                </li>
+                                <li><a href="">3</a>
+                                </li>
+                            </ul>
+                        </div>
 						<!-- 6 форма 2 вкладки-->
 						<div class="col-sm-12">
-							<div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error': register.fname.$invalid && !register.fname.$pristine }">
-							<label>Твой родной форма 2</label>
+							<div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error': editMainOptionsForm.fname.$invalid && !editMainOptionsForm.fname.$pristine }">
+							<label>Skype</label>
+							<input type="text" class="form-control">
+							</div>
+							<label class="error" for="fname" ng-show="editMainOptionsForm.fname.$invalid && !editMainOptionsForm.fname.$pristine">У тебя нет имени?</label>
+						</div>
+						<!-- 7 форма 2 вкладки-->
+						<div class="col-sm-12">
+							<div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error': editMainOptionsForm.fname.$invalid && !editMainOptionsForm.fname.$pristine }">
+							<label>Личный сайт</label>
 							<input type="email" class="form-control">
 							</div>
-							<label class="error" for="fname" ng-show="register.fname.$invalid && !register.fname.$pristine">У тебя нет имени? Сириусли? -__-</label>
+							<label class="error" for="fname" ng-show="register.fname.$invalid && !editMainOptionsForm.fname.$pristine">У тебя нет имени? Сириусли? -__-</label>
 						</div>
 						<!-- 2 форма кнопки применения изменений-->
 						<div class="col-sm-12">
@@ -186,14 +203,14 @@
 						</div>
 					</div>
 				</div>
-				<!-- КОНЕЦ ВТОРОГО ТАБА -->
-				<!-- НАЧАЛО ТРЕТЬЕГО ТАБА -->
+				<!-- КОНЕЦ ВТОРОГО ТАБА (контакты) -->
+				<!-- НАЧАЛО ТРЕТЬЕГО ТАБА (интересы) -->
 				<div class="tab-pane" id="tab3">
 					<div class="row">
 						<!-- первая форма 3 вкладки-->
 						<div class="col-sm-12">
 							<div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error': register.fname.$invalid && !register.fname.$pristine }">
-							<label>Твой родной форма 3</label>
+							<label>Любимая музыка</label>
 							<input type="email" class="form-control">
 							</div>
 							<label class="error" for="fname" ng-show="register.fname.$invalid && !register.fname.$pristine">У тебя нет имени? Сириусли? -__-</label>
@@ -201,7 +218,7 @@
 						<!-- вторая форма 3 вкладки-->
 						<div class="col-sm-12">
 							<div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error': register.fname.$invalid && !register.fname.$pristine }">
-							<label>Твой родной форма 3</label>
+							<label>Любимые занятия</label>
 							<input type="email" class="form-control">
 							</div>
 							<label class="error" for="fname" ng-show="register.fname.$invalid && !register.fname.$pristine">У тебя нет имени? Сириусли? -__-</label>
@@ -210,7 +227,7 @@
 						<!-- 3 форма 3 вкладки-->
 						<div class="col-sm-12">
 							<div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error': register.fname.$invalid && !register.fname.$pristine }">
-							<label>Твой родной форма 3</label>
+							<label>Мне нравится</label>
 							<input type="email" class="form-control">
 							</div>
 							<label class="error" for="fname" ng-show="register.fname.$invalid && !register.fname.$pristine">У тебя нет имени? Сириусли? -__-</label>
@@ -218,12 +235,11 @@
 						<!-- 4 форма 3 вкладки-->
 						<div class="col-sm-12">
 							<div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error': register.fname.$invalid && !register.fname.$pristine }">
-							<label>Твой родной форма 3</label>
+							<label>Увлечения и хобби</label>
 							<input type="email" class="form-control">
 							</div>
 							<label class="error" for="fname" ng-show="register.fname.$invalid && !register.fname.$pristine">У тебя нет имени? Сириусли? -__-</label>
 						</div>
-						
 						<!-- 5 форма 3 вкладки-->
 						<div class="col-sm-12">
 							<div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error': register.fname.$invalid && !register.fname.$pristine }">
