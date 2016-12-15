@@ -126,10 +126,10 @@
 						<div class="col-sm-12">
 							<div pg-form-group class="form-group form-group-default form-group-default-select">
 								<label class="">Страна</label>
-								<ui-select ng-model="user.countryV" theme="bootstrap" search-enabled="false"> 
+								<ui-select ng-model="user.ownCountry" theme="bootstrap" search-enabled="false"> 
 									<ui-select-match>{{$select.selected.title}}</ui-select-match>
-									<ui-select-choices repeat="countryV.id as countryV in countryValues">
-										<div ng-bind-html="trustAsHtml(countryV.title)"></div>
+									<ui-select-choices repeat="ownCountry.id as ownCountry in ownCountryValues">
+										<div ng-bind-html="trustAsHtml(ownCountry.title)"></div>
 									</ui-select-choices>
 								</ui-select>
 							</div>

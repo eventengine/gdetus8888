@@ -100,6 +100,33 @@ angular.module("app").config(["$stateProvider", "$urlRouterProvider", "$ocLazyLo
 				}
 			})
 			
+			.state("app.im", {
+				url: "/im",
+				templateUrl: "tpl/im.html",
+				controller: "ImCtrl",
+				resolve: {
+					deps: ["$ocLazyLoad", function($ocLazyLoad) {
+						return $ocLazyLoad.load([
+						    'datepicker',
+                            'daterangepicker',
+                            'select',
+						], {
+							insertBefore: "#lazyload_placeholder"
+						})
+						.then(function() {
+							return $ocLazyLoad.load([
+								"assets/js/controllers/im.js"
+							]);
+						});
+					}]
+				},
+				data: {
+					meta: {
+						title: "Диалоги"
+					}
+				}
+			})
+			
 			.state("app.settings", {
 				url: "/settings",
 				templateUrl: "tpl/settings.html",

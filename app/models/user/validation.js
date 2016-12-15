@@ -5,7 +5,8 @@ var User = module.exports = {};
 
 /**
  * Удаление полей формы, которые не изменены.
- * Не забывать в схеме для каждого поля прописывать optional: true.
+ * Не забывать в схеме для каждого поля прописывать optional: true. 
+ * TODO потом выяснить и сюда прописать почему надо прописывать  optional: true
  */
 User.preValidation = function(userId, data) {
     return this.getUserById(userId).then(function(user) {

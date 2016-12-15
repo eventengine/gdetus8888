@@ -1,30 +1,16 @@
 
-/* global $, angular */
+/* global angular */
 
 /**
  * Служба для работы с аутентификацией пользователя.
  */
 angular.module("app")
-	.factory("passport", ["$http", "$rootScope", "$q", function($http, $rootScope, $q) {
-		
-		function addUserProfileMethods(user) {
-			
-			user.getHref = function() {
-				return this.useruri ? this.useruri : "id" + this.id;
-			};
-			user.getAvatarHref = function() {
-				return this.avatar_id ? "/file/" + this.avatar_id : null;
-			};
-			user.getAvatarBackgroundHref = function() {
-				return this.avatar_bg_id ? "/file/" + this.avatar_bg_id : null;
-			};
-			
-			return user;
-		}
+	.factory("passport", ["$http", "$rootScope", "$q", "User", function($http, $rootScope, $q, User) {
 		
 		return {
 			
 			/**
+			 * DEPRECATED (перенесено в userService в планах, но не реализовано)
 			 * Получить данные пользователя по его id или useruri.
 			 * Если по id, то в формате id<номер>.
 			 */
@@ -36,7 +22,7 @@ angular.module("app")
 						err.res = res;
 						return $q.reject(err); // http://goo.gl/T4jKxW
 					}
-					return addUserProfileMethods(res.data.user);
+					return new User(res.data.user);
 				});
 			},
 			
@@ -51,7 +37,7 @@ angular.module("app")
 						err.isAuthenticationError = true;
 						return $q.reject(err); // http://goo.gl/T4jKxW
 					}
-					return addUserProfileMethods(res.data.user);
+					return new User(res.data.user);
 				});
 			},
 			

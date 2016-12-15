@@ -9,8 +9,11 @@
  */
  
 angular.module("app")
-	.controller("LoginCtrl", ["$q", "$scope", "$http", "$location", "$rootScope", "$state", "notification", "passport",
-		function($q, $scope, $http, $location, $rootScope, $state, notification, passport) {
+	.controller("LoginCtrl", ["$q", "$scope", "$http", "$location", "$rootScope", "$state", "Notify", "passport",
+		function($q, $scope, $http, $location, $rootScope, $state, Notify, passport) {
+		
+			var notify = new Notify(".login-container");
+			var modalAccountRequestNotify = new Notify("#modalAccountRequest");
 		
 			/**
 			 * Обработчик формы авторизации пользователя.
@@ -24,7 +27,7 @@ angular.module("app")
 								$rootScope.authenticated = authenticated;
 							});
 						} else {
-							notification.warning(result.message);
+							notify.warning(result.message);
 						}
 					});
 				}
@@ -45,9 +48,9 @@ angular.module("app")
 					passport.passwordRestore(passwordRestore.email).then(function() {
 						$scope.passwordRestore.email = "";
 						passwordRestoreForm.$setPristine(); // https://code.angularjs.org/1.3.15/docs/api/ng/type/form.FormController
-						notification.info("Письмо для восстановления пароля отправлено успешно!");
+						notify.info("Письмо для восстановления пароля отправлено успешно!");
 					}).catch(function(err) {
-						notification.error(err.message);
+						notify.error(err.message);
 						console.group("Ошибка при отправке формы восстановления пароля пользователя.");
 						console.error(err);
 						console.log(err.res);
@@ -77,14 +80,14 @@ angular.module("app")
 					passport.accountRequest(user).then(function() {
 						registerForm.$setPristine(); // https://code.angularjs.org/1.3.15/docs/api/ng/type/form.FormController
 						$("#modalAccountRequest").modal("hide");
-						notification.info("Регистрация пройдена успешно!");
+						notify.info("Регистрация пройдена успешно!");
 					}).catch(function(err) {
 						console.group(err.message);
 						console.error(err);
 						console.log("Ошибки:", err.errors.length == 1 ? err.errors[0] : err.errors);
 						console.log("Ответ сервера:", err.res);
 						console.groupEnd();
-						notification.error("#modalAccountRequest", toHtml(err.message, err.errors));
+						modalAccountRequestNotify.error(toHtml(err.message, err.errors));
 					});
 				}
 			};
