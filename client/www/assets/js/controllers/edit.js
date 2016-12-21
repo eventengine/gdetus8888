@@ -40,9 +40,41 @@ angular.module("app", ['ngSanitize', 'daterangepicker', 'ui.select'])
 				{ id: null, title: 'родная страна не выбрана' }
 			];
 			
+			/**
+			 * Вспомогательная функция для получения списка полей из контроллера формы form.FormController.
+			 * https://code.angularjs.org/1.3.15/docs/api/ng/type/form.FormController
+			 * Поля в контроллере формы начинаются не с доллара.
+			 */
+			function getFormControllerFields(formController) {
+				var result = [];
+				for (var key in formController) {
+					if (key[0] != "$") result.push(key);
+				}
+				return result;
+			}
+			
+			function parseErrorsToHtml(message, errors) {
+	            var result = [];
+	            result.push("<div><b>" + message + "</b></div>");
+	            result.push("<ul>");
+	            errors.forEach(function(error) {
+	                result.push("<li>" + (error.value ? "<b>" + error.value + ": " + "</b>" : "") + error.msg + "</li>");
+	            });
+	            result.push("</ul>");
+				return result.join("\n");
+	    	}
+			
 			$scope.onEditMainOptionsButtonClick = function(user, editMainOptionsForm) {
 				if (editMainOptionsForm.$valid) {
-					userService.updateUser(user.id, user).then(function() {
+					
+					// Отправляем на сервер значения только полей данной формы.
+					// Так как в user содержатся все поля профиля пользователя.
+					var data = {};
+					getFormControllerFields(editMainOptionsForm).forEach(function(fieldName) {
+						data[fieldName] = user[fieldName];
+					});
+					
+					userService.updateUser(user.id, data).then(function() {
 						passport.updateAuthenticated().then(function() {
 							Notify.info("Данные пользователя обновлены.");
 						});
@@ -52,7 +84,10 @@ angular.module("app", ['ngSanitize', 'daterangepicker', 'ui.select'])
 						console.log("Ошибки:", err.errors.length == 1 ? err.errors[0] : err.errors);
 						console.log("Ответ сервера:", err.res);
 						console.groupEnd();
-						Notify.error("Обновить данные не удалось. См. консоль браузера.");
+						Notify.error(
+							"<div><b>Ошибки при обновлении формы:</b></div>" + 
+							parseErrorsToHtml(err.message, err.errors)
+						);
 					});
 				}
 			};

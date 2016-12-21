@@ -29,57 +29,57 @@
   <div class="sidebar-menu">
 	<ul class="menu-items">
 		
-	  <li class="m-t-30">
+	  <li class="m-t-30" ui-sref-active="active">
 		<a href="" ui-sref="app.user({ id: authenticated.getHref() })" class="detailed"> 
 		  <span class="title">Мой гдетус</span>
 		  <span class="details">?? событий</span>
 		</a>
-		<span class="icon-thumbnail ">
+		<span class="icon-thumbnail" ng-class="{'bg-success': is('app.user')}">
 			<a href="" ui-sref="app.user({ id: authenticated.getHref() })">
 				<i class="pg-home"></i>
 			</a>
 		</span>
 	  </li>
 	  
-	  <li class="">
+	  <li class="" ui-sref-active="active">
 		<a href="" ui-sref="app.map" class="detailed">
 		  <span class="title">Моя карта</span>
 		  <span class="details">?? событий</span>
 		</a>
-		<span class="icon-thumbnail "><i class="pg-map"></i></span>
+		<span class="icon-thumbnail"><i class="pg-map"></i></span>
 	  </li>
 	  
-	  <li class="">
-		<a href="" ui-sref="app.im" ui-sref-opts="{location: true}">
+	  <li class="" ui-sref-active="active">
+		<a href="" ui-sref="app.im">
 		  <span class="title">Мои сообщения</span>
 		</a>
-		<span class="icon-thumbnail "><i class="pg-comment"></i></span>
+		<span class="icon-thumbnail" ><i class="pg-comment"></i></span>
 	  </li>
 	  
-	  <li class="">
+	  <li class="" ui-sref-active="active">
 		<a href="javascript:;">
 		  <span class="title">Мои настройки</span>
 		  <span class=" arrow"></span>
 		</a>
 		<span class="icon-thumbnail"><i class="pg-settings"></i></span>
 		<ul class="sub-menu">
-		  <li class="">
-			<a href="/edit">настройки профиля</a>
-			<span class="icon-thumbnail"><i class="fa fa-wrench"></i></span>
+		  <li class="" ui-sref-active="active">
+			<a href="" ui-sref="app.edit">настройки профиля</a>
+			<span class="icon-thumbnail" ><i class="fa fa-wrench"></i></span>
 		  </li>
-		  <li class="">
-			<a href="/settings">настройки сервиса</a>
+		  <li class="" ui-sref-active="active">
+			<a href="" ui-sref="app.settings">настройки сервиса</a>
 			<span class="icon-thumbnail"><i class="fa fa-cogs"></i></span>
 		  </li>
 		</ul>
 	  </li>
 	  
-	  <li class="">
+	  <li class="" ui-sref-active="active">
 		<a href="" ui-sref="app.sup" class="detailed">
 		  <span class="title">Помощь</span>
 		  <span class="details">?? событий</span>
 		</a>
-		<span class="icon-thumbnail "><i class="fa fa-question"></i></span>
+		<span class="icon-thumbnail"><i class="fa fa-question"></i></span>
 	  </li>
 
 	</ul>

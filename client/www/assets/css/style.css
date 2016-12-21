@@ -3,3 +3,71 @@
 * Override Pages default styles or create your own styles here
 
 */
+
+/*@import url(//db.onlinewebfonts.com/c/fa2ea18afd661747039df6c78c4d7f2f?family=Days);
+
+@font-face {font-family: "Days";
+    src: url("//db.onlinewebfonts.com/t/fa2ea18afd661747039df6c78c4d7f2f.eot");
+    src: url("//db.onlinewebfonts.com/t/fa2ea18afd661747039df6c78c4d7f2f.eot?#iefix") format("embedded-opentype"),
+    url("//db.onlinewebfonts.com/t/fa2ea18afd661747039df6c78c4d7f2f.woff2") format("woff2"),
+    url("//db.onlinewebfonts.com/t/fa2ea18afd661747039df6c78c4d7f2f.woff") format("woff"),
+    url("//db.onlinewebfonts.com/t/fa2ea18afd661747039df6c78c4d7f2f.ttf") format("truetype"),
+    url("//db.onlinewebfonts.com/t/fa2ea18afd661747039df6c78c4d7f2f.svg#Days") format("svg");
+}
+
+.social-wrapper .social .jumbotron {
+    height: 300px;
+}
+.jumbotron .cover-photo {
+    height: inherit;
+}
+
+
+ul.breadcrumb > li > a {
+    font-family: "days";
+    font-size: 9px;
+    font-weight: 300;
+}
+
+
+ul.breadcrumb > li > a:hover {
+    color: #6d5cae;
+}
+
+.breadcrumb a {
+    font-size: 10px !important;
+    letter-spacing: -0.05px;
+    color: lightgrey;
+}
+.breadcrumb a.active {
+    color: #6d5cae;
+}
+
+.nav-tabs > li > a:hover,
+.nav-tabs > li > a:focus {
+    font-family: "Days";
+} 
+
+
+.nav-tabs > li.active > a, 
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus {
+    font-family: "Days";
+} 
+
+.nav-tabs > li > a:hover {
+    background-color: #f3f3f3;
+}
+
+
+.nav-tabs > li > a {
+    font-family: none;
+    font-family: Days;
+    
+}
+
+
+.nav-tabs-simple > li:after {
+    background-color: none;
+    background-color: #6d5cae;
+}*/

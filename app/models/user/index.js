@@ -32,7 +32,8 @@ User.fieldNames = [
     "avatar_bg_id", 
     "location_lon", 
     "location_lat", 
-    "chevron"
+    "chevron", 
+    "gender"
 ];
 
 /**
@@ -60,7 +61,6 @@ User.update = function(userId, data) {
             value = new Date(value);
             value = isNaN(value.getFullYear()) ? null : value;
         }
-        if (fieldName == "birthday_date_muted") value = value == "on" ? 1 : 0;
         values.push(value);
     });
     values.push(userId);

@@ -42,82 +42,7 @@
 		</ul>
 	<div class="tab-content bg-white">
 				<!-- НАЧАЛО ПЕРВОГО ТАБА (основное) -->
-				<div class="tab-pane active" id="tab">
-					<form name="editMainOptionsForm" role="form" novalidate>
-						<div class="row">
-							<div class="col-sm-12">
-								<!-- первая форма 1 вкладки-->
-								<div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error': editMainOptionsForm.firstname.$invalid && !editMainOptionsForm.firstname.$pristine }">
-									<label>Твоё имя</label>
-									<input type="text" name="firstname" class="form-control" placeholder="Имя пользователя" ng-model="user.firstname">
-								</div>
-								<label class="error" for="firstname" ng-show="editMainOptionsForm.firstname.$invalid && !editMainOptionsForm.firstname.$pristine">У тебя нет имени?</label>
-								<!-- вторая форма 1 вкладки-->
-								<div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error': editMainOptionsForm.lastname.$invalid && !editMainOptionsForm.lastname.$pristine }">
-									<label>Твоя фамилия</label>
-									<input type="text" name="lastname" class="form-control" placeholder="Фамилия пользователя" ng-model="user.lastname">
-								</div>
-								<label class="error" for="lastname" ng-show="editMainOptionsForm.lastname.$invalid && !editMainOptionsForm.lastname.$pristine">У тебя нет фамилии?</label>
-								<!-- 3 форма 1 вкладки-->
-								<div pg-form-group class="form-group form-group-default form-group-default-select">
-									<label class="">Твой пол</label>
-									<ui-select ng-model="user.gender" theme="bootstrap" search-enabled="false"> 
-										<ui-select-match>{{$select.selected.title}}</ui-select-match>
-										<ui-select-choices repeat="gender.id as gender in genders">
-											<div ng-bind-html="trustAsHtml(gender.title)"></div>
-										</ui-select-choices>
-									</ui-select>
-								</div>
-								<label class="error" for="gender" ng-show="editMainOptionsForm.gender.$invalid && !editMainOptionsForm.gender.$pristine">У тебя нет имени? Сириусли?</label>
-								<!-- 4 форма 1 вкладки-->
-								<div pg-form-group class="form-group form-group-default input-group">
-										<label>Адрес страницы</label>
-										<input type="text" name="useruri" placeholder="" class="form-control" ng-model="user.useruri">
-										<span class="input-group-addon primary">gdetus.io/</span>
-								</div>
-								<label class="error" for="useruri" ng-show="editMainOptionsForm.useruri.$invalid && !editMainOptionsForm.useruri.$pristine">У тебя нет имени? Сириусли?</label>
-								<!-- 5 форма 1 вкладки-->
-								<div pg-form-group class="form-group form-group-default input-group">
-									<label>Дата рождения</label>
-									<input type="text" ng-model="user.birthday_date" class="form-control" placeholder="Выбери дату" id="datepicker-component2" ui-jq="datepicker">
-									<span class="input-group-addon primary"><i class="fa fa-calendar"></i></span>
-								</div>
-								<!-- форма выбора отображения даты рождения -->
-								<div class="form-group ">
-									<ui-select ng-model="user.birthday_date_muted" theme="bootstrap" search-enabled="false"> 
-										<ui-select-match>{{$select.selected.title}}</ui-select-match>
-										<ui-select-choices repeat="birthdayDateMuted.id as birthdayDateMuted in birthdayDateMutedValues">
-											<div ng-bind-html="trustAsHtml(birthdayDateMuted.title)"></div>
-										</ui-select-choices>
-									</ui-select>
-								</div>
-								<label class="error" for="birthday_date_muted" ng-show="editMainOptionsForm.birthday_date_muted.$invalid && !editMainOptionsForm.birthday_date_muted.$pristine">У тебя нет имени? Сириусли?</label>
-								<!-- 6 форма 1 вкладки-->
-								<div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error': editMainOptionsForm.marital_status.$invalid && !editMainOptionsForm.marital_status.$pristine }">
-									<label>Семейное положение</label>
-									<input type="marital_status" class="form-control">
-								</div>
-								<label class="error" for="fname" ng-show="editMainOptionsForm.marital_status.$invalid && !editMainOptionsForm.marital_status.$pristine">У тебя нет имени? Сириусли?</label>
-								<!-- 7 форма 1 вкладки-->
-								<div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error': editMainOptionsForm.city.$invalid && !register.city.$pristine }">
-									<label>Родной город</label>
-									<input type="city" class="form-control">
-								</div>
-								<label class="error" for="city" ng-show="editMainOptionsForm.city.$invalid && !editMainOptionsForm.city.$pristine">У тебя нет имени? Сириусли?</label>
-								<!-- 1 кнопки применения изменений-->
-								<div class=" text-right">
-									<button
-										type="submit"
-										class="btn btn-primary btn-xs"
-										ng-disabled="editMainOptionsForm.$invalid"
-										ng-click="onEditMainOptionsButtonClick(user, editMainOptionsForm)">
-										Применить изменения
-									</button>
-								</div>
-							</div>
-						</div>
-					</form>
-				</div>
+				<div class="tab-pane active" id="tab" ng-include src=" 'tpl/forms/edit/mainOptions.html' "></div>
 				<!-- КОНЕЦ ПЕРВОГО ТАБА (основное) -->
 				<!-- НАЧАЛО ВТОРОГО ТАБА (контакты) -->
 				<div class="tab-pane" id="tab2">
@@ -195,7 +120,7 @@
 							</div>
 							<label class="error" for="fname" ng-show="register.fname.$invalid && !editMainOptionsForm.fname.$pristine">У тебя нет имени? Сириусли? -__-</label>
 						</div>
-						<!-- 2 форма кнопки применения изменений-->
+						<!-- 2 форма кнопки применения измене��ий-->
 						<div class="col-sm-12">
 						  <div class=" text-right">
 							<button class="btn btn-primary btn-xs " data-target="#" data-toggle="">Применить изменения</button>

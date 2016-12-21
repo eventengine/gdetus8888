@@ -73,7 +73,11 @@ module.exports = {
 	post: function(req, res) {
 		const models = req.app.get("models");
 		
-		
+		let id = req.params.id;
+		if (id.substr(0, 2).toLowerCase() == "id") {
+			// Удаляем префикс id (id<что угодно> превращаем в <что угодно>)
+			id = Number(id.replace("id", ""));
+		}
 		//var newProfileData = {};
 		
 		// описание функции preValidation:
@@ -81,7 +85,7 @@ module.exports = {
 		// и удаляет из req.body поля, которые совпали
 		// с теми, которые уже есть в бд
 		
-		models.user.preValidation(req.user.id, req.body).then(function() {
+		models.user.preValidation(id, req.body).then(function() {
 			
 			/*models.user.fieldNames.forEach(function(n) {
 				newProfileData[n] = req[n in req.body ? "body" : "user"][n];
@@ -90,7 +94,7 @@ module.exports = {
 			req.checkBody(models.user.getValidateSchema());
 			
 			req.asyncValidationErrors().then(function() {
-				models.user.update(req.user.id, req.body).then(function(updatedUser) {
+				models.user.update(id, req.body).then(function(updatedUser) {
 					// Релогин мы делаем для обновления данных пользователя в сессии, 
 					// так как у passportjs нет специальной функции для обновления данных
 					// пользователя без отмены аутентификации.
