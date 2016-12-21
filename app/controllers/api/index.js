@@ -46,5 +46,6 @@ apiRouter.post("/register", require("./register").post);
 /**
  * Контроллер доступа к профилям пользователей (и к возможности издевательств над ними).
  */
+apiRouter.get("/user", require("./user").get);
 apiRouter.get("/user/:id", require("./user").get);
 apiRouter.post("/user/:id", require("./user").post);

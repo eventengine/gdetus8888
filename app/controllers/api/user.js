@@ -11,12 +11,14 @@ module.exports = {
 		const models = req.app.get("models");
 		let id = req.params.id;
 		
-		if (id == "authenticated") {
+		if (!id) {
+			getAllUsers(req, res);
+		} else if (id == "authenticated") {
 			// Получение данных текущего аутентифицированного пользователя
 			if (req.isAuthenticated()) {
 				res.send({
 					success: true,
-					user: publicUser(req.user)
+					user: models.user.getPublicFields(req.user)
 				});
 			} else {
 				res.send({
@@ -41,7 +43,7 @@ module.exports = {
 					promiseResult = models.user.getUserByUserUri(id).then(function(user) {
 						res.send({
 							success: true,
-							user: publicUser(user)
+							user: models.user.getPublicFields(user)
 						});
 					});
 					break;
@@ -50,7 +52,7 @@ module.exports = {
 					promiseResult = models.user.getUserById(id).then(function(user) {
 						res.send({
 							success: true,
-							user: publicUser(user)
+							user: models.user.getPublicFields(user)
 						});
 					});
 					break;
@@ -107,7 +109,7 @@ module.exports = {
 						} else {
 							res.send({
 								success: true,
-								updatedUser: publicUser(updatedUser)
+								updatedUser: models.user.getPublicFields(updatedUser)
 							});
 						}
 					});
@@ -127,26 +129,27 @@ module.exports = {
 };
 
 
-const publicFields = [
-	"id",
-	"useruri",
-	"email",
-	"firstname",
-	"lastname",
-	"gender",
-	"birthday_date",
-	"birthday_date_muted",
-	"useruri",
-	"avatar_id",
-	"avatar_bg_id",
-	"chevron"
-];
-
-
-function publicUser(user) {
-	const publicUser = {};
-	publicFields.forEach(fieldName => publicUser[fieldName] = user[fieldName]);
-	return publicUser;
+	
+function getAllUsers(req, res) {
+	if (req.isAuthenticated()) {
+		var models = req.app.get("models");
+		models.user.getAllUsers().then(function(users) {
+			res.json({
+				success: true,
+				users
+			});
+		}).catch(err => {
+			res.status(500).json({
+				success: true,
+				error: err
+			});
+		});
+	} else {
+		// Ответы сервера оформляем по стандартам Гитхаба https://developer.github.com/v3
+		res.status(401).json({
+			success: false,
+			message: "Нет аутентификации пользователя."
+		});
+	}
 }
-
 

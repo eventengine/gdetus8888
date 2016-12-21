@@ -1,0 +1,46 @@
+
+<!-- START Login Form -->
+<form id="form-login" name="loginForm" class="p-t-15" role="form" novalidate>
+	
+	<!-- START Form Control -->
+	<div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error' : loginForm.username.$invalid && !loginForm.username.$pristine }">
+		<label>Логин</label>
+		<div class="controls">
+			<input type="text" name="username" placeholder="Введите свою почту" class="form-control" ng-model="user.username" required>
+		</div>
+	</div>
+	<label class="error" for="username" ng-show="loginForm.username.$invalid && !loginForm.username.$pristine">Это поле необходимо заполнить</label>
+	<!-- END Form Control-->
+	
+	<!-- START Form Control-->
+	<div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error' : loginForm.password.$invalid && !loginForm.password.$pristine }">
+		<label>Пароль</label>
+		<div class="controls">
+			<input type="password" class="form-control" name="password" placeholder="Введите свой пароль" ng-model="user.password" required>
+		</div>
+	</div>
+	<label class="error" for="password" ng-show="loginForm.password.$invalid && !loginForm.password.$pristine">Это поле необходимо заполнить</label>
+	<!-- END Form Control-->
+	
+	<!-- START Form Control-->
+	<div class="row">
+		<div class="col-md-6 no-padding">
+			<div class="checkbox check-primary">
+				<input type="checkbox" value="1" id="checkbox1" name="rememberme" ng-model="user.rememberme">
+				<label for="checkbox1">Запомнить меня</label>
+			</div>
+		</div>
+		<div class="col-md-6 text-right">
+		   <button class="btn btn-green btn-lg pull-right" data-target="#modalPasswordRestore" data-toggle="modal">Я забыл пароль :(</button>
+		</div>
+	</div>
+	<!-- END Form Control-->
+	
+	<button 
+		type="submit" 
+		ng-disabled="loginForm.$invalid" 
+		class="btn btn-primary btn-cons m-t-10" 
+		ng-click="onLoginButtonClick(user, loginForm)">
+		Войти
+	</button>
+</form>

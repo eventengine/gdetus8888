@@ -11,16 +11,24 @@ angular.module("app")
 			angular.extend(this, user);
 		}
 		
-		User.prototype.getHref = function() {
+		User.prototype.getCalculatedUseruri = function() {
 			return this.useruri ? this.useruri : "id" + this.id;
 		};
 		
 		User.prototype.getAvatarHref = function() {
-			return this.avatar_id ? "/file/" + this.avatar_id : null;
+			return this.avatar_id ? "/file/" + this.avatar_id : "/assets/img/profiles/avatar.jpg";
 		};
 		
 		User.prototype.getAvatarBackgroundHref = function() {
 			return this.avatar_bg_id ? "/file/" + this.avatar_bg_id : null;
+		};
+		
+		User.prototype.getCoord = function() {
+			return this.location_lat && this.location_lon ? [this.location_lat, this.location_lon] : null;
+		};
+		
+		User.prototype.getFullName = function() {
+			return `${this.firstname} ${this.lastname}`;
 		};
 		
 		return User;

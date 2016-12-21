@@ -15,6 +15,9 @@ angular.module("app")
 			 * Если по id, то в формате id<номер>.
 			 */
 			getUserByIdOrUseruri: function(id) {
+				
+				if (!id) return $q.reject();
+				
 				return $http.get(`/api/user/${id}`).then(function(res) {
 	        		if (!res.data.success) {
 						var err = new Error(res.data.message);

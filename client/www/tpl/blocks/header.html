@@ -94,7 +94,7 @@
 		<!-- START User Info-->
 		<div class="visible-lg visible-md m-t-10">
 			<div class="pull-left p-r-10 p-t-10 fs-16 font-heading">
-				<a href="" ui-sref="app.user({ id: authenticated.getHref() })">
+				<a href="" ui-sref="app.user({ useruri: authenticated.getCalculatedUseruri() })">
 					<span class="semi-bold">
 						{{authenticated.firstname}}
 						{{authenticated.lastname}}

@@ -37,6 +37,33 @@ User.fieldNames = [
 ];
 
 /**
+ * Перечисление полей, значения которых доступны всем, 
+ * кто знает id пользователя.
+ */
+User.publicFieldNames = [
+	"id",
+	"useruri",
+	"email",
+	"firstname",
+	"lastname",
+	"gender",
+	"birthday_date",
+	"birthday_date_muted",
+	"useruri",
+	"avatar_id",
+	"avatar_bg_id", 
+    "location_lon", 
+    "location_lat", 
+	"chevron"
+];
+
+User.getPublicFields = function(user) {
+	const publicUser = {};
+	this.publicFieldNames.forEach(fieldName => publicUser[fieldName] = user[fieldName]);
+	return publicUser;
+};
+
+/**
  * Обновление данных пользователя.
  */
 User.update = function(userId, data) {

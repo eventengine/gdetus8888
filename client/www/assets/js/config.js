@@ -240,12 +240,12 @@ angular.module("app").config(["$stateProvider", "$urlRouterProvider", "$ocLazyLo
 			})
 			
 			.state("app.user", {
-				url: "/{id:.+}",
+				url: "/{useruri:.+}",
 				templateUrl: "tpl/user.html",
 				controller: "UserCtrl",
 				resolve: {
 					user: ['$state', '$stateParams', 'passport', function($state, $stateParams, passport) {
-						return passport.getUserByIdOrUseruri($stateParams.id).catch(function(err) {
+						return passport.getUserByIdOrUseruri($stateParams.useruri).catch(function(err) {
 							console.error(err);
 							$state.go("404"); 
 						});

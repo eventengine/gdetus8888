@@ -37,6 +37,16 @@ angular.module("app")
 			};
 			
 			/**
+			 * Получить локации всех пользователей.
+			 */
+			UserService.prototype.getAllUsers = function() {
+				return $http.get("/api/user").then(function(res) {
+					if (!res.data.success) return $q.reject(new UserServiceError(res));
+					return res.data.users;
+				});
+			};
+			
+			/**
 			 * Служба оформляется в виде синглтона.
 			 */
 			return new UserService();

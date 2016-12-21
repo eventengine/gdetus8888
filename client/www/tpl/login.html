@@ -34,58 +34,26 @@
 			<img src="assets/img/logon.png" alt="logo" data-src="assets/img/logon.png" ui-jq="unveil" data-src-retina="assets/img/logo_2x.png" width="140" height="34">
 			<span class="badge badge-primary">βeta v. 0.219.11_ngoolah</span>
 			<p class="p-t-35">Открой свою страницу!</p>
-			
-			<!-- START Login Form -->
-			<form id="form-login" name="loginForm" class="p-t-15" role="form" novalidate>
-				<!-- START Form Control -->
-				<div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error' : loginForm.username.$invalid && !loginForm.username.$pristine }">
-					<label>Логин</label>
-					<div class="controls">
-						<input type="text" name="username" placeholder="Введите свою почту" class="form-control" ng-model="user.username" required>
-					</div>
-				</div>
-				<label class="error" for="username" ng-show="loginForm.username.$invalid && !loginForm.username.$pristine">Это поле необходимо заполнить</label>
-				<!-- END Form Control-->
-				<!-- START Form Control-->
-				<div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error' : loginForm.password.$invalid && !loginForm.password.$pristine }">
-					<label>Пароль</label>
-					<div class="controls">
-						<input type="password" class="form-control" name="password" placeholder="Введите свой пароль" ng-model="user.password" required>
-					</div>
-				</div>
-				<label class="error" for="password" ng-show="loginForm.password.$invalid && !loginForm.password.$pristine">Это поле необходимо заполнить</label>
-				<!-- START Form Control-->
-				<div class="row">
-					<div class="col-md-6 no-padding">
-						<div class="checkbox check-primary">
-							<input type="checkbox" value="1" id="checkbox1" name="rememberme" ng-model="user.rememberme">
-							<label for="checkbox1">Запомнить меня</label>
-						</div>
-					</div>
-					<div class="col-md-6 text-right">
-					   <button class="btn btn-green btn-lg pull-right" data-target="#modalPasswordRestore" data-toggle="modal">Я забыл пароль :(</button>
-					</div>
-				</div>
-				<!-- END Form Control-->
-				<button class="btn btn-primary btn-cons m-t-10" type="submit" ng-disabled="loginForm.$invalid" ng-click="onLoginButtonClick(user, loginForm)">Войти</button>
-			</form>
+			<div include-replace ng-include src=" 'tpl/forms/login/loginForm.html' "></div>
 			<!--END Login Form-->
 			<div class="pull-bottom sm-pull-bottom">
 			<div class="m-b-30 p-r-60 sm-m-t-20 sm-p-r-15 sm-p-b-20 clearfix">
 			  <div class="col-sm-20 no-padding m-t-15">
 				<p>
 				  <small>
-					Сервис находится <strong>в тестовом режиме</strong> и регистрация новых пользователей пока недоступна, но вы можете узнать что у нас нового зайдя к нам <a href="https://vk.com/gdetusio" target="blank">ВКонтакте</a>, в <a href="https://instagram.com/gdetus" target="blank">Инстаграм</a> или <a href="https://twitter.com/gdetus" target="blank">Твиттер</a>
+					Сервис находится <strong>в тестовом режиме</strong> и регистрация новых пользователей пока недоступна, 
+					но вы можете узнать что у нас нового зайдя к нам <a href="https://vk.com/gdetusio" target="blank">ВКонтакте</a>, 
+					в <a href="https://instagram.com/gdetus" target="blank">Инстаграм</a> или <a href="https://twitter.com/gdetus" target="blank">Твиттер</a>
 				 </small>
 				</p>
 				<p>
 				 <small> 
-		  <a href="#" class="" data-target="#modalAbout" data-toggle="modal">о нас</a>
-		  <a href="#" class="m-l-10" data-target="#modalDigits" data-toggle="modal">цифры</a>
-		  <a href="#" class="m-l-10" data-target="#modalTerms" data-toggle="modal">правила</a>
-		  <a href="#" class="m-l-10" data-target="#modalAds" data-toggle="modal">реклама</a>
-		  <a href="#" class="m-l-10" data-target="#modalVac" data-toggle="modal">вакансии</a>
-		  <a href="#" class="m-l-10" data-target="#modalAccountRequest" data-toggle="modal">регистрация</a>
+				  <a href="#" class="" data-target="#modalAbout" data-toggle="modal">о нас</a>
+				  <a href="#" class="m-l-10" data-target="#modalDigits" data-toggle="modal">цифры</a>
+				  <a href="#" class="m-l-10" data-target="#modalTerms" data-toggle="modal">правила</a>
+				  <a href="#" class="m-l-10" data-target="#modalAds" data-toggle="modal">реклама</a>
+				  <a href="#" class="m-l-10" data-target="#modalVac" data-toggle="modal">вакансии</a>
+				  <a href="#" class="m-l-10" data-target="#modalAccountRequest" data-toggle="modal">регистрация</a>
 				</small>
 				</p>
 			  </div>

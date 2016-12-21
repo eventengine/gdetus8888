@@ -24,8 +24,8 @@ User.getCount = function() {
  * Получение всех юзеров из бд
  */
 User.getAllUsers = function() {
-    return db.query('select * from users').spread(function(rows) {
-        return rows[0];
+    return db.query('select * from users').spread(rows => {
+        return rows.map(this.getPublicFields.bind(this));
     });
 };
 
