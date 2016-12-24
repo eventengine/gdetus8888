@@ -13,10 +13,17 @@
 														 и по совместительству изрядно временами доставляет. Как-то так :))</h6>
                     </div>
                     <div class="pull-bottom bottom-left m-b-20">
-                        <button class="btn btn-primary btn-xs btn-small" type="button" data-target="#privateMessage" data-toggle="modal">Добавить в друзья</button>
+                        <button class="btn btn-primary btn-xs btn-small" type="button" data-target="#modalAddAvatar" data-toggle="modal">Загрузить аватар</button>
                         <button class="btn btn-primary btn-xs btn-small" type="button" data-target="#modalGreetIm" data-toggle="modal" >Написать сообщение</button>
-                        <button class="btn btn-primary btn-xs btn-small" type="button"><i class="pg-more"><a href="#" class="dropdown-toggle" data-toggle="dropdown"></a></i></button>
+                        <button class="btn btn-primary btn-xs btn-small" type="button"><i class="pg-more"><a href="#" class="dropdown-toggle" data-toggle="dropdown"></a></i></button> 
                      </div>
+                     
+                     <!--иконка соцсетей пользователя, в случае если он их пристягнул или иным способом объявил в профиле
+                     	на данный момент верстка неопределена -->
+                     <!--<div class="thumbnail-wrapper d32 circular b-white">
+							<div class="bg-master text-center text-white"><span><i class="fa fa-vk"/></span></div>
+					</div>-->
+                     
                 </div>
             </div>
         </div>
@@ -478,3 +485,4 @@
 
 
 <div ng-include src=" 'tpl/dialogs/user/greetim.html' " include-replace></div>
+<div ng-include src=" 'tpl/dialogs/user/add-avatar.html' " include-replace></div>

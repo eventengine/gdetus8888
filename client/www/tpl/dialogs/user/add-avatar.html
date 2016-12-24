@@ -1,0 +1,78 @@
+
+<div class="modal fade slide-up disable-scroll" id="modalAddAvatar" tabindex="-1" role="dialog" aria-hidden="false" ng-controller="UserDialogAddAvatarCtrl">
+    <div class="modal-dialog">
+        <div class="modal-content-wrapper">
+        	<div class="modal-content">
+        		
+	            <div class="modal-header clearfix text-left">
+	            	<!-- Для верстки см. документацию к Bootstrap (оформление заголовка хедера модального окна)-->
+	            	<!-- http://getbootstrap.com/javascript/#modals -->
+	            	<!-- http://getbootstrap.com/css/#grid -->
+	            	<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="pg-close fs-14"></i></button>
+					<h5 class="text-primary ">Загрузка аватара</h5>
+					<p class="p-b-10">Киньте файл в серую зону или кликните по ней.</p>
+	            </div>
+	            
+	            <div class="modal-body">
+	            	
+					<div class="fileupload">
+					
+						<div class="dropzone" style="height: 300px; background-color: #efefef;"></div>
+						<div class="progress">
+							<div class="progress-bar progress-bar-primary" style="width: 0;"></div>
+						</div>
+						
+						<input type="file" name="files[]" multiple />
+
+
+
+					</div>
+						
+					<!--<form id="passwordRestoreForm" name="passwordRestoreForm" class="p-t-15" role="form" novalidate>-->
+						
+						
+						
+						<!--<div pg-form-group 
+							class="form-group form-group-default" 
+							ng-class="{ 'has-error' : passwordRestoreForm.email.$invalid && !passwordRestoreForm.email.$pristine }">
+							<label>Адрес почты</label>
+							<div class="controls">
+								<input  
+									required
+									type="text" 
+									name="email" 
+									placeholder="Введите свою почту" 
+									class="form-control" 
+									ng-model="passwordRestore.email">
+							</div>
+							<label 
+								class="error" 
+								for="email" 
+								ng-show="passwordRestoreForm.email.$invalid && !passwordRestoreForm.email.$pristine">
+								Это поле необходимо заполнить
+							</label>
+						</div>-->
+						
+						<button
+							type="submit" 
+							class="btn btn-primary btn-xs btn-small"
+							data-dismiss="modal"
+							ng-disabled="passwordRestoreForm.$invalid" 
+							ng-click="onPasswordRestoreButtonClick(passwordRestore, passwordRestoreForm)">
+							Загрузить фотографию
+						</button>
+						
+					<!--</form>-->
+	            	
+	            </div>
+	            
+	            <div class="modal-footer">
+	            	<!-- Для верстки см. документацию к Bootstrap (оформление заголовка хедера модального окна)-->
+	            	<!-- http://getbootstrap.com/javascript/#modals -->
+	            	<!-- http://getbootstrap.com/css/#grid -->
+	            </div>
+	            
+            </div>
+        </div>
+    </div>
+</div>

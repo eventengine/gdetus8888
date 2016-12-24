@@ -13,8 +13,15 @@ angular.module('app')
 			
 			debug: true,
 			events: true,
-			
+		
 			modules: [{
+				name: 'blueimpFileUpload',
+				files: [
+					"assets/plugins/blueimp-file-upload/js/vendor/jquery.ui.widget.js",
+					"assets/plugins/blueimp-file-upload/js/jquery.iframe-transport.js",
+					"assets/plugins/blueimp-file-upload/js/jquery.fileupload.js"
+				]
+			}, {
 				name: '2gisMapApi',
 				files: [
 					'https://maps.api.2gis.ru/2.0/loader.js?pkg=full&lazy=true'

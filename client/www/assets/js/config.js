@@ -252,8 +252,16 @@ angular.module("app").config(["$stateProvider", "$urlRouterProvider", "$ocLazyLo
 					}],
 					deps: ["$ocLazyLoad", function($ocLazyLoad) {
 						return $ocLazyLoad.load([
-							"assets/js/controllers/user.js"
-						]);
+							"blueimpFileUpload"
+						], {
+							insertBefore: "#lazyload_placeholder"
+						})
+						.then(function() {
+							return $ocLazyLoad.load([
+								"assets/js/controllers/user/userCtrl.js",
+								"assets/js/controllers/user/dialogAddAvatarCtrl.js"
+							]);
+						});
 					}]
 				},
 				data: {

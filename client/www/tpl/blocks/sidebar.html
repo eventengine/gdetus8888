@@ -35,7 +35,7 @@
 		  <span class="details">?? событий</span>
 		</a>
 		<span class="icon-thumbnail" ng-class="{'bg-success': is('app.user')}">
-			<a href="" ui-sref="app.user({ id: authenticated.getHref() })">
+			<a href="" ui-sref="app.user({ useruri: authenticated.getCalculatedUseruri() })">
 				<i class="pg-home"></i>
 			</a>
 		</span>

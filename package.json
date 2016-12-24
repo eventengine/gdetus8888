@@ -21,7 +21,7 @@
   "dependencies": {
     "2gis-maps": "^2.2.6",
     "bluebird": "^3.4.1",
-    "blueimp-file-upload": "^9.12.5",
+    "blueimp-file-upload": "^9.14.2",
     "body-parser": "^1.15.2",
     "commander": "^2.9.0",
     "cookie-parser": "^1.4.3",

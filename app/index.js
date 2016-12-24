@@ -57,7 +57,9 @@ module.exports = {
 		});
 		
 		// Подключение JS-библиотек.
-		app.use("/assets/plugins/ng-meta", express.static(path.join(path.dirname(require.resolve("ng-meta/package.json")), "dist")));
+		function getPackageDir(packageName) { return path.dirname(require.resolve(`${packageName}/package.json`)); }
+		app.use("/assets/plugins/ng-meta", express.static(path.join(getPackageDir("ng-meta"), "dist")));
+		app.use("/assets/plugins/blueimp-file-upload", express.static(getPackageDir("blueimp-file-upload")));
 		
 		// Временное подключение демо-версии фреймворка и пред. версии клиента.
 		app.use("/demo", express.static(path.join(config.client.path, "demo")));
