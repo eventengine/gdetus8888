@@ -124,8 +124,10 @@ angular.module('app')
 					case "selectAvatarPreview":
 						modalAddAvatar.modal("hide");
 						$http.put("/api/user/avatar", {
-							avatar: $scope.cropConfig.avatar,
-							avatarPreview: $scope.cropConfig.avatarPreview
+							
+							// TODO всюду выше перепутано avatar и avatarPreview (позже просто вышестоящий код переименовать avatar в avatarPreview и обратно)
+							avatarPreview: $scope.cropConfig.avatar,
+							avatar: $scope.cropConfig.avatarPreview
 						}).then(function(result) {
 							Notify.info("Аватар загружен.");
 						});

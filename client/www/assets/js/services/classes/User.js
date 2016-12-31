@@ -20,7 +20,7 @@ angular.module("app")
 		};
 		
 		User.prototype.getAvatarBackgroundHref = function() {
-			return this.avatar_bg_id ? "/file/" + this.avatar_bg_id : null;
+			return this.avatar_preview_id ? "/file/" + this.avatar_preview_id : null;
 		};
 		
 		User.prototype.getCoord = function() {

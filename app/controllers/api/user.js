@@ -23,8 +23,13 @@ module.exports = {
 		
 		function cropAndSave(cropOptions) {
 			return models.file.getFile(cropOptions.id).then(function(file) {
-				// TODO операция ресайз есть, осталось доделать операцию кроп
-				return sharp(file.content).resize(cropOptions.width, cropOptions.height).jpeg().toBuffer().then(buffer => {
+				var extractOpt = { 
+					left: Math.round(Number(cropOptions.x)), 
+					top: Math.round(Number(cropOptions.y)), 
+					width: Math.round(Number(cropOptions.width)), 
+					height: Math.round(Number(cropOptions.height))
+				};
+				return sharp(file.content).extract(extractOpt).jpeg().toBuffer().then(buffer => {
 					return models.file.insertOneFileFromBuffer(buffer, "jpg").then(file => file.id);
 				});
 			});
@@ -34,11 +39,15 @@ module.exports = {
 			cropAndSave(req.body.avatar),
 			cropAndSave(req.body.avatarPreview)
 		]).then(([avatarId, avatarPreviewId]) => {
-			// TODO Сделать привязку загруженных аватар и аватарПревью к пользователю.
-			res.send({
-				success: true,
-				avatarId,
-				avatarPreviewId
+			models.user.update(req.user.id, {
+				avatar_id: avatarId,
+				avatar_preview_id: avatarPreviewId
+			}).then(user => {
+				res.send({
+					success: true,
+					avatarId,
+					avatarPreviewId
+				});
 			});
 		}).catch(next);
 		

@@ -29,7 +29,7 @@ User.fieldNames = [
     "birthday_date",
     "birthday_date_muted", 
     "avatar_id", 
-    "avatar_bg_id", 
+    "avatar_preview_id", 
     "location_lon", 
     "location_lat", 
     "chevron", 
@@ -51,7 +51,7 @@ User.publicFieldNames = [
 	"birthday_date_muted",
 	"useruri",
 	"avatar_id",
-	"avatar_bg_id", 
+	"avatar_preview_id", 
     "location_lon", 
     "location_lat", 
 	"chevron"
