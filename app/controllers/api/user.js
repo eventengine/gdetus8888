@@ -1,6 +1,48 @@
 
+var sharp = require('sharp');
 
 module.exports = {
+
+	/**
+	 * Команда API PUT user/avatar для сохранения 
+	 * аватара (СТРАААААШНАЯ рожа пользователя и УЖААААСНАЯ фоновая картина с этой рожей).
+	 * @param {Object} avatar
+	 * @param {Object} avatarPreview
+	 * @param avatar.id Номер файла для кроппинга.
+	 * @param avatar.x
+	 * @param avatar.y
+	 * @param avatar.width
+	 * @param avatar.height
+	 * @param avatar.rotate
+	 * @param avatar.scaleX
+	 * @param avatar.scaleY
+	 */
+	putAvatar: function(req, res, next) {
+		// https://github.com/lovell/sharp
+		var models = req.app.get("models");
+		
+		function cropAndSave(cropOptions) {
+			return models.file.getFile(cropOptions.id).then(function(file) {
+				// TODO операция ресайз есть, осталось доделать операцию кроп
+				return sharp(file.content).resize(cropOptions.width, cropOptions.height).jpeg().toBuffer().then(buffer => {
+					return models.file.insertOneFileFromBuffer(buffer, "jpg").then(file => file.id);
+				});
+			});
+		}
+		
+		Promise.all([
+			cropAndSave(req.body.avatar),
+			cropAndSave(req.body.avatarPreview)
+		]).then(([avatarId, avatarPreviewId]) => {
+			// TODO Сделать привязку загруженных аватар и аватарПревью к пользователю.
+			res.send({
+				success: true,
+				avatarId,
+				avatarPreviewId
+			});
+		}).catch(next);
+		
+	},
 	
 	/**
 	 * Команда API GET user для получения публичных данных пользователей.

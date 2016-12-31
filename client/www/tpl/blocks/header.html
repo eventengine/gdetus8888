@@ -23,6 +23,22 @@
 	</div>
 	<!-- END MOBILE CONTROLS -->
 	<div class=" pull-left sm-table">
+		
+		<!-- START SEARCH FORM -->
+         <!-- 
+               в этом же месте, сразу после .hidden-xs, .hidden-sm 
+               копирнуть в /tpl/blocks/header.html
+         --> 
+         
+         <!-- это блок с формой поиска [класс 'asset-form-search-input' 
+         - мое название, к движку не имеет отношение] -->
+          	<div class="asset-form-search-input">
+                  <i class="pg-search"/>
+                <input type="text" class="form-search-input" name="search" placeholder="Нажмите для ввода..." />
+            </div>
+             
+             <!-- END SEARCH FORM -->
+		
 		<div class="header-inner">
 			<div class="brand inline">
 				<a href="" ui-sref="app.feed">
@@ -77,7 +93,7 @@
 				</li>
 			</ul>
 			<!-- END NOTIFICATION DROPDOWN -->
-			<a class="search-link" ng-click="showSearchOverlay()"><i class="pg-search"></i>Кто ищет - <span class="bold">тот найдёт!</span></a>
+			<!--<a class="search-link" ng-click="showSearchOverlay()"><i class="pg-search"></i>Кто ищет - <span class="bold">тот найдёт!</span></a>-->
 		</div>
 	</div>
 	<div class=" pull-right">

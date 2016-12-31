@@ -103,6 +103,9 @@ User.update = function(userId, data) {
 
 /**
  * Обновление аватара и фона на странице пользователя.
+ * @param {Number} userId
+ * @param {String} fileType = Avatar | AvatarBackground
+ * @param {String} filepath
  */
 User.updateFile = function(userId, fileType, filepath) {
     var fileIdFieldName = { Avatar: "avatar_id", AvatarBackground: "avatar_bg_id" }[fileType];

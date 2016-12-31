@@ -252,7 +252,8 @@ angular.module("app").config(["$stateProvider", "$urlRouterProvider", "$ocLazyLo
 					}],
 					deps: ["$ocLazyLoad", function($ocLazyLoad) {
 						return $ocLazyLoad.load([
-							"blueimpFileUpload"
+							"blueimpFileUpload",
+							"cropper"
 						], {
 							insertBefore: "#lazyload_placeholder"
 						})

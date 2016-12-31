@@ -49,3 +49,10 @@ apiRouter.post("/register", require("./register").post);
 apiRouter.get("/user", require("./user").get);
 apiRouter.get("/user/:id", require("./user").get);
 apiRouter.post("/user/:id", require("./user").post);
+apiRouter.put("/user/avatar", require("./user").putAvatar);
+
+/**
+ * Контроллер доступа к файловому хранилищу.
+ */
+apiRouter.post("/file", require("./file").post);
+//apiRouter.put("/file/crop", require("./file").crop);

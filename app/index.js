@@ -39,8 +39,8 @@ module.exports = {
 		app.set('passport', passport);
 		
 		app.use(cookieParser());
+		app.use(bodyParser.urlencoded({ extended: true, limit: "5mb" }));
 		app.use(bodyParser.json());
-		app.use(bodyParser.urlencoded({ extended: true }));
 		app.use(require(path.join(paths.middlewares, "session")).init(config));
 		app.use(expressValidator({
 			customValidators: require(path.join(paths.models, "validators"))
@@ -60,13 +60,14 @@ module.exports = {
 		function getPackageDir(packageName) { return path.dirname(require.resolve(`${packageName}/package.json`)); }
 		app.use("/assets/plugins/ng-meta", express.static(path.join(getPackageDir("ng-meta"), "dist")));
 		app.use("/assets/plugins/blueimp-file-upload", express.static(getPackageDir("blueimp-file-upload")));
+		app.use("/assets/plugins/cropper", express.static(path.join(getPackageDir("cropper"), "dist")));
 		
 		// Временное подключение демо-версии фреймворка и пред. версии клиента.
 		app.use("/demo", express.static(path.join(config.client.path, "demo")));
 		
 		// Основные контроллеры.
 		app.use("/api", require(path.join(paths.controllers, "api")));
-		app.use("/file/:id", require(path.join(paths.controllers, "file")));
+		app.get("/file/:id", require(path.join(paths.controllers, "file")));
 		
 		// Подключение клиентской части.
 		const clientAngularAppPath = "www";

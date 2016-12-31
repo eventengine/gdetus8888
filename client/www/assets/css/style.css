@@ -1,30 +1,119 @@
+
 /*
-
-* Override Pages default styles or create your own styles here
-
+* Override Pages framework default styles or create your own styles here
 */
 
-/*@import url(//db.onlinewebfonts.com/c/fa2ea18afd661747039df6c78c4d7f2f?family=Days);
 
-@font-face {font-family: "Days";
-    src: url("//db.onlinewebfonts.com/t/fa2ea18afd661747039df6c78c4d7f2f.eot");
-    src: url("//db.onlinewebfonts.com/t/fa2ea18afd661747039df6c78c4d7f2f.eot?#iefix") format("embedded-opentype"),
-    url("//db.onlinewebfonts.com/t/fa2ea18afd661747039df6c78c4d7f2f.woff2") format("woff2"),
-    url("//db.onlinewebfonts.com/t/fa2ea18afd661747039df6c78c4d7f2f.woff") format("woff"),
-    url("//db.onlinewebfonts.com/t/fa2ea18afd661747039df6c78c4d7f2f.ttf") format("truetype"),
-    url("//db.onlinewebfonts.com/t/fa2ea18afd661747039df6c78c4d7f2f.svg#Days") format("svg");
+/* Стили для шаблона диалогового окна загрузки аватара dialogs/user/add-avatar.html */
+
+.stepSelectAvatarPreview .cropper-view-box,
+.stepSelectAvatarPreview .cropper-face {
+	border-radius: 50%;
 }
 
-.social-wrapper .social .jumbotron {
-    height: 300px;
-}
-.jumbotron .cover-photo {
-    height: inherit;
+
+/* подключение шрифта Days One */
+
+@font-face {
+  font-family: "Days One";
+  src: url("DaysOne/eaa51b950bb3574bb53c524950f5f581.eot"); /* IE9*/
+  src: url("DaysOne/eaa51b950bb3574bb53c524950f5f581.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+  url("DaysOne/eaa51b950bb3574bb53c524950f5f581.woff2") format("woff2"), /* chrome、firefox */
+  url("DaysOne/eaa51b950bb3574bb53c524950f5f581.woff") format("woff"), /* chrome、firefox */
+  url("DaysOne/eaa51b950bb3574bb53c524950f5f581.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+  url("DaysOne/eaa51b950bb3574bb53c524950f5f581.svg#Days One") format("svg"); /* iOS 4.1- */
 }
 
+/* сдвиг логотипа в шапке сайта */
+.header-inner .inline {
+    margin-left: 15px;
+}
+
+
+
+/* форма поиска в шапке сайта */
+
+.asset-form-search-input {
+    position: absolute;
+    z-index: 300;
+    width: 20%;
+    height: auto;
+    padding: 0px;
+    margin-top: 10px;
+    margin-left: 100%;
+}
+
+/* иконка в форме поиска  */
+.pg-search {
+    position: absolute;
+    margin-left: 30px;
+    margin-top: 10px;
+    z-index: 501;
+}
+
+
+/* поле ввода */
+
+input.form-search-input {
+    padding: 7px 10px;
+    padding-left: 10px;
+    padding-left: 35px;
+    border: none;
+    font-size: 10pt;
+    border-radius: 3px;
+    position: relative;
+    color: #333;
+    background-color: #fff;
+    z-index: 500;
+    margin-left: 20px;
+    margin-top: 0px;
+    opacity: 0.7;
+}
+
+
+/* подсказка в form-search-input  */
+
+::-webkit-input-placeholder {
+    color: red;
+    font-size: 10pt;
+    color: #777;
+    transition: linear all 0.2s;
+}
+:focus::-webkit-input-placeholder {
+    opacity: 0.3;
+}
+
+input.form-search-input:hover {
+    opacity: 1;
+    color: #333;
+        transition: linear all 0.2s;
+
+}
+
+input.form-search-input:focus {
+    background: #fff;
+    opacity: 1;
+    transition: linear all 0.2s;
+    border-radius: 3px;
+    box-shadow: 0px 2px 5px lightgrey inset, 0px -1px 3px lightgrey inset;
+}
+
+
+/* текст над формами в настройках */
+.form-group-default label {
+    font-family: "Days One", sans-serif;
+}
+
+.form-group label:not(.error) {
+    font-family: "Days One", sans-serif;
+}
+
+
+
+/* стилизация правого меню в настройках профиля */
 
 ul.breadcrumb > li > a {
-    font-family: "days";
+    font-family: "Days One";
     font-size: 9px;
     font-weight: 300;
 }
@@ -33,6 +122,41 @@ ul.breadcrumb > li > a {
 ul.breadcrumb > li > a:hover {
     color: #6d5cae;
 }
+
+
+/* подключение шрифта Days One к меню */
+
+.nav-tabs > li > a:hover,
+.nav-tabs > li > a:focus {
+    font-family: "Days One";
+} 
+
+
+.nav-tabs > li.active > a, 
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus {
+    font-family: "Days One";
+} 
+
+.nav-tabs > li > a:hover {
+    background-color: #f3f3f3;
+}
+
+
+.nav-tabs > li > a {
+    font-family: none;
+    font-family: "Days One";
+    
+}
+
+
+.nav-tabs-simple > li:after {
+    background-color: none;
+    background-color: #6d5cae;
+}
+
+
+/* хлебные крошки (навигация по сайту) [покраска] */
 
 .breadcrumb a {
     font-size: 10px !important;
@@ -43,31 +167,19 @@ ul.breadcrumb > li > a:hover {
     color: #6d5cae;
 }
 
-.nav-tabs > li > a:hover,
-.nav-tabs > li > a:focus {
-    font-family: "Days";
-} 
 
+/* управление высотой jumbotron на странице профиля пользователя  */
 
-.nav-tabs > li.active > a, 
-.nav-tabs > li.active > a:hover,
-.nav-tabs > li.active > a:focus {
-    font-family: "Days";
-} 
-
-.nav-tabs > li > a:hover {
-    background-color: #f3f3f3;
+.social-wrapper .social .jumbotron {
+    height: 400px;
+}
+.jumbotron .cover-photo {
+    height: inherit;
 }
 
 
-.nav-tabs > li > a {
-    font-family: none;
-    font-family: Days;
-    
-}
+/* применение шрифта Days One к имени и фамилии пользователя в хедере и джамботроне */
 
-
-.nav-tabs-simple > li:after {
-    background-color: none;
-    background-color: #6d5cae;
+/*span.semi-bold, span.text-master {
+    font-family: "Days One", sans-serif;
 }*/

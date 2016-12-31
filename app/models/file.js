@@ -4,6 +4,7 @@
 var fs = require('fs');
 var path = require('path');
 var mime = require('mime');
+var _ = require('lodash');
 var db = require('./db');
 
 var File = module.exports = {};
@@ -38,14 +39,60 @@ File.getFile = function(id) {
     });
 };
 
-File.insert = function(filepath) {
-    return loadFile(filepath).then(function(buffer) {
-        var ext = path.extname(filepath);
-        var sql = `insert into files set content = ?, ext = ?`;
-        return db.query(sql, [buffer, ext]).spread(function(result) {
-            return result.insertId;
-        });
+/**
+ * Вставить пачку файлов (или один файл).
+ * Файлы вставляются с диска.
+ * @param {Object[] | Object} files
+ * @param file.fieldName - same as name - the field name for this file
+ * @param file.originalFilename - the filename that the user reports for the file
+ * @param file.path - the absolute path of the uploaded file on disk
+ * @param file.headers - the HTTP headers that were sent along with this file
+ * @param file.size - size of the file in bytes
+ * Взято из https://www.npmjs.com/package/multiparty
+ * @return Promise(files) | Object(file)
+ * @return file.field_name
+ * @return file.original_filename
+ * @return file.size
+ * @return file.id
+ */
+File.insert = function(files) {
+	let result;
+	if (_.isArray(files)) {
+		result = [];
+		files.forEach(file => {
+	    	result.push(this.insertOneFile(file));
+	    });
+	    result = Promise.all(result);
+	} else {
+		result = this.insertOneFile(files);
+	}
+    return result;
+};
+
+File.insertOneFile = function(file) {
+    return loadFile(file.path).then(buffer => {
+    	file.ext = path.extname(file.path);
+    	return this.insertOneFileFromBuffer(buffer, file);
     });
+};
+
+File.insertOneFileFromBuffer = function(buffer, options) {
+	options = typeof options == "string" ? { ext: options } : options;
+    return db.query(`
+    	insert into files set 
+    	content = ?, 
+    	ext = ?, 
+    	field_name = ?, 
+    	original_filename = ?, 
+    	size = ?
+    `, [buffer, options.ext, options.fieldName || "", options.originalFilename || "", options.size || buffer.length])
+    	.spread(result => result.insertId)
+    	.then(insertId => {
+    		return db.query(`
+    			select * from files 
+    			where id = ?
+    		`, [insertId]).spread(file => file[0]);
+    	});
 };
 
 File.update = function(id, filepath) {

@@ -52,16 +52,16 @@ httpServer.on("error", onServerError.bind(httpServer));
 
 if (config.https) {
 	// http://stackoverflow.com/questions/5998694/how-to-create-an-https-server-in-node-js
-	var keyFileNames = app.locals.config.https.keys;
-	var privateKey  = fs.readFileSync(path.join(app.locals.config.homedir, keyFileNames.private), 'utf8');
-	var certificateKey = fs.readFileSync(path.join(app.locals.config.homedir, keyFileNames.public), 'utf8');
-	var rootKey = fs.readFileSync(path.join(app.locals.config.homedir, keyFileNames.root), 'utf8');
+	var keyFileNames = config.https.keys;
+	var privateKey  = fs.readFileSync(path.join(config.homedir, keyFileNames.private), 'utf8');
+	var certificateKey = fs.readFileSync(path.join(config.homedir, keyFileNames.public), 'utf8');
+	var rootKey = fs.readFileSync(path.join(config.homedir, keyFileNames.root), 'utf8');
 	
 	var credentials = { key: privateKey, cert: certificateKey, ca: rootKey, requestCert: false, rejectUnauthorized: false };
 	
 	var httpsServer = https.createServer(credentials, app);
-	httpsServer.listen(app.locals.config.https.port, function () {
-		console.log('HTTPS-сервер Gdetus запущен на порту: ' + app.locals.config.https.port);
+	httpsServer.listen(config.https.port, function () {
+		console.log('HTTPS-сервер Gdetus запущен на порту: ' + config.https.port);
 	});
 	httpsServer.on("error", onServerError.bind(httpsServer));
 }

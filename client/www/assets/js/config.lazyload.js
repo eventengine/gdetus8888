@@ -15,6 +15,12 @@ angular.module('app')
 			events: true,
 		
 			modules: [{
+				name: 'cropper',
+				files: [
+					"assets/plugins/cropper/cropper.min.css",
+					"assets/plugins/cropper/cropper.min.js"
+				]
+			}, {
 				name: 'blueimpFileUpload',
 				files: [
 					"assets/plugins/blueimp-file-upload/js/vendor/jquery.ui.widget.js",
