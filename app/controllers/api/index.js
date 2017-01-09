@@ -50,9 +50,22 @@ apiRouter.get("/user", require("./user").get);
 apiRouter.get("/user/:id", require("./user").get);
 apiRouter.post("/user/:id", require("./user").post);
 apiRouter.put("/user/avatar", require("./user").putAvatar);
+//apiRouter.get("/friend/:userId", require("./user/friend").get);
+//apiRouter.post("/friend", require("./user/friend").post);
+//apiRouter.delete("/friend", require("./user/friend").delete);
+
+
+apiRouter.get("/user/:user/friend", require("./user/friend").get);
+apiRouter.post("/user/:user/friend", require("./user/friend").post);
+apiRouter.delete("/user/:user/friend/:friend", require("./user/friend").delete);
+
+
+//apiRouter.get("/user/friendship/:userId", require("./user/friendship").get);
+
 
 /**
  * Контроллер доступа к файловому хранилищу.
  */
 apiRouter.post("/file", require("./file").post);
 //apiRouter.put("/file/crop", require("./file").crop);
+

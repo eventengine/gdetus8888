@@ -55,7 +55,7 @@ module.exports = {
 	
 	/**
 	 * Команда API GET user для получения публичных данных пользователей.
-	 * @params {Mixed} id Идентификатор пользователя. Может иметь значения: authenticated | <useruri> | id<id>.
+	 * @param {Mixed} id Идентификатор пользователя. Может иметь значения: authenticated | <useruri> | id<id>.
 	 */
 	get: function(req, res) {
 		

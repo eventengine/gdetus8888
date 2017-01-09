@@ -22,7 +22,7 @@ User.changePassword = function(user, newPassword) {
  * и возвращается в виде строки вызываемой функции.
  */
 User.generatePassword = function(user) {
-    var password = generatePassword(8, false);
+    var password = generatePassword(11, false);
     var salt = this.makeSalt();
     var encryptedPassword = this.encryptPassword(password, salt);
     return db.query(`

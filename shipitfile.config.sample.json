@@ -5,7 +5,12 @@
 		"repository": "https://github.com/*****/*****"
 	},
 	"default": {
-		"ignores": [".git", "shipitfile.js"],
+		"ignores": [
+			".git", 
+			"shipitfile.js", 
+			"shipitfile.config.sample.json", 
+			"client/demo"
+		],
 		"keepReleases": 3,
 		"key": "*****/id_rsa",
 		"shallowClone": true

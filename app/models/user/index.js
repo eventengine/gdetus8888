@@ -1,12 +1,11 @@
 
-"use strict";
-
 var Promise = require('bluebird');
 
 var fs = require('fs');
 var path = require('path');
 var db = require('../db');
 var File = require('../file');
+var Friend = require('../friend');
 
 var User = module.exports = {};
 Object.assign(User, require("./validation"));

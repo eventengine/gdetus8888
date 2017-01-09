@@ -127,6 +127,33 @@ angular.module("app").config(["$stateProvider", "$urlRouterProvider", "$ocLazyLo
 				}
 			})
 			
+			.state("app.friends", {
+				url: "/friends",
+				templateUrl: "tpl/friends.html",
+				controller: "FriendsCtrl",
+				resolve: {
+					deps: ["$ocLazyLoad", function($ocLazyLoad) {
+						return $ocLazyLoad.load([
+						    'datepicker',
+                            'daterangepicker',
+                            'select',
+						], {
+							insertBefore: "#lazyload_placeholder"
+						})
+						.then(function() {
+							return $ocLazyLoad.load([
+								"assets/js/controllers/friends.js"
+							]);
+						});
+					}]
+				},
+				data: {
+					meta: {
+						title: "Друзья"
+					}
+				}
+			})
+			
 			.state("app.settings", {
 				url: "/settings",
 				templateUrl: "tpl/settings.html",

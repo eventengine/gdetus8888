@@ -1,5 +1,6 @@
 <div class="social-wrapper">
     <div class="social " data-pages="social" pg-social>
+    	
         <!-- START JUMBOTRON -->
         <div class="jumbotron" data-pages="parallax" data-social="cover">
             <div class="cover-photo" ng-style="user.avatarBackgroundStyle">
@@ -8,14 +9,53 @@
             <div class="container-fluid container-fixed-lg sm-p-l-20 sm-p-r-20">
                 <div class="inner">
                     <div class="pull-bottom bottom-left m-b-90">
-                        <h1 class="text-white no-margin"><span class="semi-bold">{{user.firstname}}</span> {{user.lastname}}</h1> <span class="badge badge-inverse"> {{user.chevron}} </span> 
-                        <h6 class="text-white no-margin">Распиздяй, коих ещё поискать. Но, сука, распиздяй при этом гениальный, что характерно 
-														 и по совместительству изрядно временами доставляет. Как-то так :))</h6>
+                        <h1 class="text-white no-margin">
+                        	<span class="semi-bold">{{user.firstname}}</span> 
+                        	{{user.lastname}}
+                        </h1> 
+                        <span class="badge badge-inverse"> {{user.chevron}} </span> 
+                        <h6 class="text-white no-margin">
+                        	Распиздяй, коих ещё поискать. Но, сука, распиздяй при этом гениальный, что характерно 
+							и по совместительству изрядно временами доставляет. Как-то так :))
+						</h6>
                     </div>
                     <div class="pull-bottom bottom-left m-b-20">
-                        <button class="btn btn-primary btn-xs btn-small" type="button" data-target="#modalAddAvatar" data-toggle="modal">Загрузить аватар</button>
-                        <button class="btn btn-primary btn-xs btn-small" type="button" data-target="#modalGreetIm" data-toggle="modal" >Написать сообщение</button>
-                        <button class="btn btn-primary btn-xs btn-small" type="button"><i class="pg-more"><a href="#" class="dropdown-toggle" data-toggle="dropdown"></a></i></button> 
+                        <button 
+                        	ng-show="user.id == authenticated.id"
+                        	class="btn btn-primary btn-xs btn-small" 
+                        	type="button" 
+                        	data-target="#modalAddAvatar" 
+                        	data-toggle="modal">
+                        	Загрузить аватар
+                        </button>
+                        <button 
+                        	ng-show="addFriendButtonVisibled"
+                        	ng-click="onAddFriendButtonClick(user)"
+                        	class="btn btn-primary btn-xs btn-small" 
+                        	type="button">
+                        	Добавить в друзья
+                        </button>
+                        <button 
+                        	ng-show="removeFriendButtonVisibled"
+                        	ng-click="onRemoveFriendButtonClick(user)"
+                        	class="btn btn-primary btn-xs btn-small" 
+                        	type="button">
+                        	Удалить из друзей
+                        </button>
+                        <button 
+                        	class="btn btn-primary btn-xs btn-small" 
+                        	type="button" 
+                        	data-target="#modalGreetIm" 
+                        	data-toggle="modal" >
+                        	Написать сообщение
+                        </button>
+                        <button 
+                        	class="btn btn-primary btn-xs btn-small" 
+                        	type="button">
+                        	<i class="pg-more">
+                        		<a href="#" class="dropdown-toggle" data-toggle="dropdown"></a>
+                        	</i>
+                        </button> 
                      </div>
                      
                      <!--иконка соцсетей пользователя, в случае если он их пристягнул или иным способом объявил в профиле.
@@ -28,6 +68,7 @@
             </div>
         </div>
         <!-- END JUMBOTRON -->
+        
         <div class="container-fluid container-fixed-lg sm-p-l-20 sm-p-r-20">
             <div class="feed">
                 <!-- START DAY -->
@@ -38,46 +79,24 @@
                         <div class="container-fluid p-t-30 p-b-30 ">
                             <div class="row">
                                 <div class="col-md-4">
-                                    <p class="m-b-5 small">у {{user.firstname}} 35 друзей</p>
-                                    <ul class="list-unstyled ">
-                                        <li class="m-r-10">
-                                            <div class="thumbnail-wrapper d32 circular b-white m-r-5 b-a b-white">
-                                                <img width="35" height="35" ui-jq="unveil" data-src-retina="assets/img/profiles/1x.jpg" data-src="assets/img/profiles/1.jpg" alt="Profile Image" src="assets/img/profiles/1.jpg">
-                                            </div>
-                                        </li>
+                                    <p class="m-b-5 small">У {{user.firstname}} {{countFriends}}</p>
+                                    <ul class="list-unstyled" ng-repeat="friend in friends">
                                         <li>
                                             <div class="thumbnail-wrapper d32 circular b-white m-r-5 b-a b-white">
-                                                <img width="35" height="35" ui-jq="unveil" data-src-retina="assets/img/profiles/2x.jpg" data-src="assets/img/profiles/2.jpg" alt="Profile Image" src="assets/img/profiles/2.jpg">
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="thumbnail-wrapper d32 circular b-white m-r-5 b-a b-white">
-                                                <img width="35" height="35" ui-jq="unveil" data-src-retina="assets/img/profiles/3x.jpg" data-src="assets/img/profiles/3.jpg" alt="Profile Image" src="assets/img/profiles/3.jpg">
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="thumbnail-wrapper d32 circular b-white m-r-5 b-a b-white">
-                                                <img width="35" height="35" ui-jq="unveil" data-src-retina="assets/img/profiles/4x.jpg" data-src="assets/img/profiles/4.jpg" alt="Profile Image" src="assets/img/profiles/4.jpg">
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="thumbnail-wrapper d32 circular b-white m-r-5 b-a b-white">
-                                                <img width="35" height="35" ui-jq="unveil" data-src-retina="assets/img/profiles/5x.jpg" data-src="assets/img/profiles/5.jpg" alt="Profile Image" src="assets/img/profiles/5.jpg">
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="thumbnail-wrapper d32 circular b-white m-r-5 b-a b-white">
-                                                <img width="35" height="35" ui-jq="unveil" data-src-retina="assets/img/profiles/6x.jpg" data-src="assets/img/profiles/6.jpg" alt="Profile Image" src="assets/img/profiles/6.jpg">
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="thumbnail-wrapper d32 circular b-white m-r-5 b-a b-white">
-                                                <img width="35" height="35" ui-jq="unveil" data-src-retina="assets/img/profiles/7x.jpg" data-src="assets/img/profiles/7.jpg" alt="Profile Image" src="assets/img/profiles/7.jpg">
+                                            	<a ui-sref="app.user({ useruri: friend.getCalculatedUseruri() })">
+	                                                <img 
+	                                                	width="35" 
+	                                                	height="35" 
+	                                                	ui-jq="unveil" 
+	                                                	alt="{{friend.getFullName()}}" 
+	                                                	title="{{friend.getFullName()}}" 
+	                                                	ng-src="{{friend.getAvatarHref()}}"/>
+                                            	</a>
                                             </div>
                                         </li>
                                     </ul>
                                     <br>
-                                    <p class="m-t-5 small"><a href="/friends">посмотреть всех друзей</a></p>
+                                    <p class="m-t-5 small"><a href="" ui-sref="app.friends">посмотреть всех друзей</a></p>
                                 </div>
                                 
                                 <div class="col-md-4">
