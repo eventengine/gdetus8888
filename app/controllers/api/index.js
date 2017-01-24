@@ -43,25 +43,6 @@ apiRouter.post("/passrestore", require("./passrestore").post);
  */
 apiRouter.post("/register", require("./register").post);
 
-/**
- * Контроллер доступа к профилям пользователей (и к возможности издевательств над ними).
- */
-apiRouter.get("/user", require("./user").get);
-apiRouter.get("/user/:id", require("./user").get);
-apiRouter.post("/user/:id", require("./user").post);
-apiRouter.put("/user/avatar", require("./user").putAvatar);
-//apiRouter.get("/friend/:userId", require("./user/friend").get);
-//apiRouter.post("/friend", require("./user/friend").post);
-//apiRouter.delete("/friend", require("./user/friend").delete);
-
-
-apiRouter.get("/user/:user/friend", require("./user/friend").get);
-apiRouter.post("/user/:user/friend", require("./user/friend").post);
-apiRouter.delete("/user/:user/friend/:friend", require("./user/friend").delete);
-
-
-//apiRouter.get("/user/friendship/:userId", require("./user/friendship").get);
-
 
 /**
  * Контроллер доступа к файловому хранилищу.
@@ -69,3 +50,23 @@ apiRouter.delete("/user/:user/friend/:friend", require("./user/friend").delete);
 apiRouter.post("/file", require("./file").post);
 //apiRouter.put("/file/crop", require("./file").crop);
 
+
+/**
+ * Контроллер доступа к профилям пользователей (и к возможности издевательств над ними).
+ */
+apiRouter.get("/user", require("./user").get);
+apiRouter.get("/user/:id", require("./user").get);
+apiRouter.post("/user/:id", require("./user").post);
+apiRouter.put("/user/avatar", require("./user").putAvatar);
+
+
+
+/**
+ * Контроллеры друзей, заявок в друзья и подписок.
+ */
+apiRouter.get("/user/:user/friends", require("./user/friend").get);
+apiRouter.delete("/user/:user/friends/:friend", require("./user/friend").delete);
+apiRouter.get("/user/:user/friend-request/users", require("./user/friendRequestUsers").get);
+apiRouter.post("/user/:user/friend-requests", require("./user/friendRequests").post);
+apiRouter.patch("/user/:user/friend-requests", require("./user/friendRequests").patch);
+apiRouter.delete("/user/:user/subscribes/:subscribed", require("./user/subscribes").delete);

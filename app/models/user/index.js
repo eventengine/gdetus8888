@@ -5,7 +5,6 @@ var fs = require('fs');
 var path = require('path');
 var db = require('../db');
 var File = require('../file');
-var Friend = require('../friend');
 
 var User = module.exports = {};
 Object.assign(User, require("./validation"));
@@ -13,6 +12,7 @@ Object.assign(User, require("./password"));
 Object.assign(User, require("./geoLocation"));
 Object.assign(User, require("./registration"));
 Object.assign(User, require("./get"));
+Object.assign(User, require("./friendship"));
 
 /**
  * Перечисление всех полей в профиле пользователя.

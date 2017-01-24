@@ -30,6 +30,7 @@ module.exports = {
 		
 		const models = require(paths.models).init(config.database);
 		const passport = require(path.join(paths.middlewares, 'passport'))(config, models);
+		const httpsRedirect = require(path.join(paths.middlewares, 'httpsRedirect')).create(config);
 		
 		app.disable('x-powered-by');
 		app.set('views', path.join(__dirname, 'views'));
@@ -38,6 +39,7 @@ module.exports = {
 		app.set('models', models);
 		app.set('passport', passport);
 		
+		app.use(httpsRedirect);
 		app.use(cookieParser());
 		app.use(bodyParser.urlencoded({ extended: true, limit: "5mb" }));
 		app.use(bodyParser.json());

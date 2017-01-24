@@ -1,0 +1,183 @@
+
+/*
+* Override Pages framework default styles or create your own styles here
+*/
+
+
+@font-face {
+    
+  font-family: "Days One";
+  src: url("DaysOne/eaa51b950bb3574bb53c524950f5f581.eot"); /* IE9*/
+  src: url("DaysOne/eaa51b950bb3574bb53c524950f5f581.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+  url("DaysOne/eaa51b950bb3574bb53c524950f5f581.woff2") format("woff2"), /* chrome、firefox */
+  url("DaysOne/eaa51b950bb3574bb53c524950f5f581.woff") format("woff"), /* chrome、firefox */
+  url("DaysOne/eaa51b950bb3574bb53c524950f5f581.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+  url("DaysOne/eaa51b950bb3574bb53c524950f5f581.svg#Days One") format("svg"); /* iOS 4.1- */
+}
+
+/* сдвиг логотипа в шапке сайта */
+
+.header .notification-list {
+    margin-left: 00px;
+    padding: 0px;
+}
+
+
+.header .brand {
+    width: 280px;
+}
+
+.header-inner .inline img {
+    margin-left: 55px;
+}
+
+.p-r-20 {
+    padding-right: 0px !important;
+}
+.p-l-30 {
+    padding-left: 10px !important;
+}
+
+
+/* форма поиска в шапке сайта */
+.asset-form-search-input {
+    position: absolute;
+    z-index: 300;
+    width: 20%;
+    height: auto;
+    padding: 0px;
+    margin-top: 10px;
+    margin-left: 100%;
+}
+
+/* иконка в форме поиска  */
+.pg-search {
+    position: absolute;
+    margin-left: 30px;
+    margin-top: 10px;
+    z-index: 501;
+}
+
+
+/* поле ввода */
+input.form-search-input {
+    padding: 7px 10px;
+    padding-left: 10px;
+    padding-left: 35px;
+    border: none;
+    font-size: 10pt;
+    border-radius: 3px;
+    position: relative;
+    color: #333;
+    background-color: #fff;
+    z-index: 500;
+    margin-left: 20px;
+    margin-top: 0px;
+    opacity: 0.7;
+}
+
+/* подсказка в инпут-боксе  */
+::-webkit-input-placeholder {
+    color: red;
+    font-size: 10pt;
+    color: #777;
+    transition: linear all 0.2s;
+}
+:focus::-webkit-input-placeholder {
+    opacity: 0.3;
+}
+
+input.form-search-input:hover {
+    opacity: 1;
+    color: #333;
+        transition: linear all 0.2s;
+
+}
+
+input.form-search-input:focus {
+    background: #fff;
+    opacity: 1;
+    transition: linear all 0.2s;
+    border-radius: 3px;
+    box-shadow: 0px 2px 5px lightgrey inset, 0px -1px 3px lightgrey inset;
+}
+
+/* текст над формами в настройках */
+.form-group-default label {
+    font-family: "Days One", sans-serif;
+}
+
+.form-group label:not(.error) {
+    font-family: "Days One", sans-serif;
+}
+/* 
+    стилизация правого меню в настройках профиля 
+*/
+
+ul.breadcrumb > li > a {
+    font-family: "Days One";
+    font-size: 8pt;
+    font-weight: 300;
+}
+
+
+ul.breadcrumb > li > a:hover {
+    color: #6d5cae;
+}
+
+/* подключение шрифта days к меню */
+
+.nav-tabs > li > a:hover,
+.nav-tabs > li > a:focus {
+    font-family: "Days One";
+} 
+
+
+.nav-tabs > li.active > a, 
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus {
+    font-family: "Days One";
+    font-size: 10px;
+} 
+
+.nav-tabs > li > a:hover {
+}
+
+
+.nav-tabs > li > a {
+    font-family: none;
+    font-size: 10px;
+    font-family: "Days One";
+    
+}
+
+
+.nav-tabs-simple > li:after {
+    background-color: none;
+    background-color: #6d5cae;
+}
+
+
+/* хлебные крошки (навигация по сайту) [покраска] */
+
+.breadcrumb a {
+    font-size: 10px !important;
+    letter-spacing: -0.05px;
+    color: lightgrey;
+}
+.breadcrumb a.active {
+    color: #6d5cae;
+}
+
+
+/* уменьшение высоты jumbotron на странице профиля в разделе social  */
+
+.social-wrapper .social .jumbotron {
+    height: 300px;
+}
+.jumbotron .cover-photo {
+    height: inherit;
+}
+
+/* имя и фамилия в шапке (шрифт) */
+

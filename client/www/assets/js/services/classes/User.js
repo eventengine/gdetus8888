@@ -1,16 +1,17 @@
 
+"use strict";
+
 /* global angular */
 
 /**
  * Класс пользователя.
  */
 angular.module("app")
-	.factory("User", ["$q", "$http", "HttpError", "Friendship", 
-		function($q, $http, HttpError, Friendship) {
+	.factory("User", ["$q", "$http", "ApiService", "HttpError", "Friendship", 
+		function($q, $http, ApiService, HttpError, Friendship) {
 			
 			function User(user) {
 				angular.extend(this, user);
-				this.friends = null;
 			}
 			
 			/**
@@ -46,84 +47,82 @@ angular.module("app")
 				});
 			};
 			
-			/**
-			 * Получить с сервера данные о друзьях пользователя.
-			 * @static
-			 */
-			User.loadFriendData = function(userId) {
-				return $http.get("/api/user/" + userId + "/friend").then(function(res) {
+			User.prototype.loadFriends = function(params) {
+				return $http.get("/api/user/" + this.id + "/friend", {
+					params: params
+				}).then(function(res) {
 					if (!res.data.success) return $q.reject(new HttpError(res));
-					return res.data.friends;
+					return {
+						friends: res.data.friends,
+						total: res.data.total
+					};
+				}).then(function(data) {
+					return {
+						friends: data.friends.map(function(item) {
+							return new User(item);
+						}),
+						total: data.total
+					};
 				});
 			};
 			
-			/**
-			 * Получить с сервера данные о дружбе пользователя.
-			 * @static
-			 */
-			User.getFriendshipData = function(userId) {
-				/*return $http.get("/api/user/friend/" + userId).then(function(res) {
+			User.prototype.loadFriendRequestUsers = function(filter) {
+				return $http.get("/api/user/" + this.id + "/friend-request-users/" + filter).then(function(res) {
 					if (!res.data.success) return $q.reject(new HttpError(res));
-					return res.data.friends;
-				});*/
-			};
-			
-			User.prototype.loadFriends = function() {
-				return User.loadFriendData(this.id).then(function(data) {
-					return data.map(function(item) {
-						return new User(item);
+					return res.data.friendRequestUsers.map(function(user) {
+						return new User(user);
 					});
+				}).then(function(users) {
+					return {
+						users: users,
+						total: users.total
+					};
 				});
 			};
 			
-			User.prototype.getFriends = function() {
-				var me = this;
-				if (!me.friends) {
-					return me.loadFriends().then(function(friends) {
-						return me.friends = friends;
-					});
-				} else {
-					return $q.when(me.friends); // https://habrahabr.ru/post/221111/
-				}
-			};
-			
-			User.prototype.getFriendship = function() {
-				return User.getFriendshipData().then(function(data) {
-					return data.map(function(item) {
-						return new Friendship(item);
-					});
+			User.prototype.loadFriendship = function(checkedUser) {
+				return $http.get("/api/user/" + this.id + "/friendship/" + checkedUser.id).then(function(res) {
+					if (!res.data.success) return $q.reject(new HttpError(res));
+					return res.data.friendship ? new Friendship(res.data.friendship) : null;
 				});
 			};
 			
 			User.prototype.hasFriend = function(checkedUser) {
-				return this.getFriends().then(function(friends) {
+				return this.loadFriends().then(function(data) {
 					var hasFriend = false;
-					friends.forEach(function(friend) {
+					data.friends.forEach(function(friend) {
 						hasFriend = hasFriend || friend.id == checkedUser.id;
 					});
 					return hasFriend;
 				});
-			},
+			};
 			
 			User.prototype.addFriend = function(friend) {
 				var me = this;
 				return $http.post("/api/user/" + me.id + "/friend/", friend).then(function(res) {
 					if (!res.data.success) return $q.reject(new HttpError(res));
-					me.friends.push(friend);
 					return res.data;
 				});
-			},
+			};
 			
 			User.prototype.removeFriend = function(friend) {
 				var me = this;
 				return $http.delete("/api/user/" + me.id + "/friend/" + friend.id).then(function(res) {
 					if (!res.data.success) return $q.reject(new HttpError(res));
-					me.friends.forEach(function(_friend, index) {
-						if (_friend.id == friend.id) delete me.friends[index];
-					});
 					return res.data;
 				});
-			},
+			};
+			
+			User.prototype.confirmFriend = function(friend) {
+				var me = this;
+				return ApiService.patch("/user/:user/friendship/:friend/in", {
+					user: me.id,
+					friend: friend.id,
+					data: {
+						status: "confirmed"
+					}
+				});
+			};
 			
 			User.prototype.getCalculatedUseruri = function() {
 				return this.useruri ? this.useruri : "id" + this.id;

@@ -1,8 +1,10 @@
 
+const mysql = require('mysql');
+
 // определение моделей пользователя из архитектуры mvc
-var models = {
+const models = {
 	file: require("./file"),
-	friend: require("./friend"),
+	friendship: require("./friendship"),
 	user: require("./user"),
 	digits: require("./digits"),
 	tokensRememberMe: require("./tokensRememberMe")
@@ -10,7 +12,8 @@ var models = {
 
 module.exports = {
 	init(configDatabase) {
-		require("./db").configure(configDatabase);
+		require("./db").configure(configDatabase, mysql);
+		require("./db").mysql = mysql;
 		return models;
 	}
 };

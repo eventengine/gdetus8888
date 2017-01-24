@@ -3,8 +3,8 @@
 /* global angular */
 
 angular.module('app')
-	.controller('UserCtrl', ['$rootScope', '$scope', 'ngMeta', 'user', 
-		function($rootScope, $scope, ngMeta, user) {
+	.controller('UserCtrl', ['$scope', 'ngMeta', 'user', 
+		function($scope, ngMeta, user) {
 			$scope.user = user;
 			
 			// Меняем заголовок страницы на имя пользователя.
@@ -19,64 +19,52 @@ angular.module('app')
 			
 			// Склонение числительных.
 			// http://htmler.ru/2013/11/22/sklonenie-chislitelnah-na-javascript/
-			function declOfNum(n, titles) {  
+			function numeralDecline(n, titles) {  
 				titles = [].slice.call(arguments, 1);
 			    var cases = [2, 0, 1, 1, 1, 2];  
-			    return titles[(n % 100 > 4 && n % 100 < 20)? 2 : cases[(n % 10 < 5) ? n % 10 : 5]];  
+			    return titles[(n % 100 > 4 && n % 100 < 20) ? 2 : cases[(n % 10 < 5) ? n % 10 : 5]];  
 			}
 			
 			
 			
-			$scope.user.getFriends().then(function(friends) {
-				$scope.countFriends = (friends.length ? friends.length : "нет") + " " + declOfNum(friends.length, 'друг', 'друга', 'друзей');
+			
+			
+			$scope.user.loadFriends({
+				limit: 6
+			}).then(function(data) {
+				var friends = data.friends;
+				var countFriends = data.total;
+				$scope.countFriends = (countFriends ? countFriends : "ещё нет") + " " + numeralDecline(countFriends, 'друг', 'друга', 'друзей');
 				$scope.friends = friends;
 			});
 			
-			refreshFriendButtonVisibility();
 			
-			function refreshFriendButtonVisibility() {
-				$scope.authenticated.hasFriend(user).then(function(hasFriend) {
-					$scope.addFriendButtonVisibled = user.id != $scope.authenticated.id && !hasFriend; 
-					$scope.removeFriendButtonVisibled = user.id != $scope.authenticated.id && hasFriend;
+			refresh();
+			
+			function refresh() {
+				$scope.authenticated.loadFriendship(user).then(function(friendship) {
+					$scope.friendship = friendship;
 				});
 			}
 			
 			
 			$scope.onAddFriendButtonClick = function(user) {
-				$scope.authenticated.addFriend(user).then(refreshFriendButtonVisibility);
+				$scope.authenticated.addFriend(user).then(refresh);
 			};
 			
 			
 			$scope.onRemoveFriendButtonClick = function() {
-				$scope.authenticated.removeFriend(user).then(refreshFriendButtonVisibility);
+				$scope.authenticated.removeFriend(user).then(refresh);
 			};
 			
+			$scope.getAddFriendButtonVisibled = function(status) {
+				return user.id != $scope.authenticated.id && !$scope.friendship;
+			};
 			
-			// Определение видимости кнопки Добавить в друзья
-			/*$scope.buttonAddFriendVisibled = function() {
-				var authenticated = $scope.authenticated;
-				return (
-					authenticated.hasFriend(user)
-						.then(function(hasFriend) { 
-							return user.id != authenticated.id && !hasFriend; 
-						})
-				);
-			};*/
+			$scope.getRemoveFriendButtonVisibled = function(status) {
+				return user.id != $scope.authenticated.id && $scope.friendship && $scope.friendship.status == status;
+			};
 			
-			// Определение видимости кнопки Удалить из друзей
-			/*$scope.buttonRemoveFriendVisibled = function() {
-				var authenticated = $scope.authenticated;
-				return (
-					authenticated.hasFriend(user)
-						.then(function(hasFriend) { 
-							return user.id != authenticated.id && hasFriend; 
-						})
-				);
-			};*/
-		
 		}
+		
 	]);
-
-
-
-

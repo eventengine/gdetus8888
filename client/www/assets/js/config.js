@@ -154,6 +154,33 @@ angular.module("app").config(["$stateProvider", "$urlRouterProvider", "$ocLazyLo
 				}
 			})
 			
+			.state("app.achievements", {
+				url: "/achievements",
+				templateUrl: "tpl/achievements.html",
+				controller: "AchievementsCtrl",
+				resolve: {
+					deps: ["$ocLazyLoad", function($ocLazyLoad) {
+						return $ocLazyLoad.load([
+						    'datepicker',
+                            'daterangepicker',
+                            'select',
+						], {
+							insertBefore: "#lazyload_placeholder"
+						})
+						.then(function() {
+							return $ocLazyLoad.load([
+								"assets/js/controllers/achievements.js"
+							]);
+						});
+					}]
+				},
+				data: {
+					meta: {
+						title: "Достижения"
+					}
+				}
+			})
+			
 			.state("app.settings", {
 				url: "/settings",
 				templateUrl: "tpl/settings.html",

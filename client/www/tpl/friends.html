@@ -1,21 +1,71 @@
 
-<!-- START PAGE COVER -->
-<div class="container-fluid container-fixed-lg ">
-    <ul class="breadcrumb">
-        <li>
-            <a href="#">Home</a>
-        </li>
-        <li><a class="active" href="#">Plain template</a>
-        </li>
-    </ul>
-    <!-- END BREADCRUMB -->
-    <h3 class="page-title">Friends</h3>
-</div>
 
 <div class="container-fluid container-fixed-lg">
-    <!-- YOU CAN REMOVE .container-fixed-lg TO DISABLE THE FEATURE WHERE THE CONTENT
-         ALIGNS TO THE CENTER WITHOUT STRECTHING UNGLY ON 1800PX(1080P & 4/5K MONITORS) UP WORDS SCREEN -->
-    <!-- CONTENT GOES HERE -->
-    <h1>Hey there!</h1>
-    <h2>{{message}}</h2>
+	<ul class="breadcrumb">
+		<li><a class="active" href="/edit">Редактировать страницу</a></li>
+		<li><a href="/settings">Настройки сервиса</a></li>
+	</ul>
+	<h3 class="page-title">Друзья</h3>
 </div>
+
+
+<div class="container-fluid register-container full-height">
+
+	<div class="panel panel-default">
+		<ul class="nav nav-tabs nav-tabs-simple nav-tabs-right bg-white" role="tablist" >
+			<li class="active"><a href="#friends" data-toggle="friends" pg-tab role="tab">Мои друзья</a></li>
+			<li><a href="#friend-requests" data-toggle="friend-requests" pg-tab role="tab">Заявки в друзья</a></li>
+		</ul>
+		<div class="tab-content bg-white">
+			
+			<div class="tab-pane active" id="friends">
+				<div class="row">
+					<div class="col-sm-12">
+						<div 
+							ng-repeat="friend in friends track by $index" 
+							ng-init="friendType = 'friend'" 
+							ng-include="'/tpl/blocks/friends/friend-item.html'">
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="tab-pane" id="friend-requests">
+				<div class="row">
+					<div class="col-sm-12">
+						<ul class="nav nav-tabs nav-tabs-simple bg-white" role="tablist" >
+							<li class="active"><a href="#friend-requests-in" data-toggle="friend-requests-in" pg-tab role="tab">Входящие</a></li>
+							<li><a href="#friend-requests-out" data-toggle="friend-requests-out" pg-tab role="tab">Исходящие</a></li>
+						</ul>
+						<div class="tab-content bg-white">
+							<div class="tab-pane active" id="friend-requests-in">
+								<div 
+									ng-repeat="friend in inFriendRequestUsers track by $index" 
+									ng-init="friendType = 'in'" 
+									ng-include="'/tpl/blocks/friends/friend-item.html'">
+								</div>
+							</div>
+							<div class="tab-pane" id="friend-requests-out">
+								<div 
+									ng-repeat="friend in outFriendRequestUsers track by $index" 
+									ng-init="friendType = 'out'" 
+									ng-include="'/tpl/blocks/friends/friend-item.html'">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+
+</div>
+
+
+
+
+
+
+
+

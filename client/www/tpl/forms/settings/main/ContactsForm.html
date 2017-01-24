@@ -1,0 +1,86 @@
+
+<form name="editMainContactsForm" role="form" novalidate>
+	<div class="row">
+		<div class="col-sm-12">
+			<!-- первая форма 2 вкладки-->
+			<!--<div class="col-sm-12">-->
+				<div pg-form-group class="form-group form-group-default form-group-default-select">
+					<label class="">Страна</label>
+					<ui-select ng-model="user.ownCountry" theme="bootstrap" search-enabled="false"> 
+						<ui-select-match>{{$select.selected.title}}</ui-select-match>
+						<ui-select-choices repeat="ownCountry.id as ownCountry in ownCountryValues">
+							<div ng-bind-html="trustAsHtml(ownCountry.title)"></div>
+						</ui-select-choices>
+					</ui-select>
+				</div>
+				<label class="error" for="fname" ng-show="editMainContactsForm.fname.$invalid && !editMainContactsForm.fname.$pristine">У тебя нет имени? Сириусли? -__-</label>
+			<!--</div>-->
+			<!-- вторая форма 2 вкладки-->
+			<!--<div class="col-sm-12">-->
+				<div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error': editMainContactsForm.fname.$invalid && !editMainOptionsForm.fname.$pristine }">
+				<label>Твой родной форма 2</label>
+				<input type="email" class="form-control">
+				</div>
+				<label class="error" for="fname" ng-show="editMainContactsForm.fname.$invalid && !editMainContactsForm.fname.$pristine">У тебя нет имени? Сириусли? -__-</label>
+			<!--</div>-->
+			<!-- 3 форма 2 вкладки-->
+			<!--<div class="col-sm-12">-->
+				<div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error': editMainContactsForm.fname.$invalid && !editMainOptionsForm.fname.$pristine }">
+				<label>Твой родной форма 2</label>
+				<input type="email" class="form-control">
+				<!--</div>-->
+				<label class="error" for="fname" ng-show="editMainContactsForm.fname.$invalid && !editMainContactsForm.fname.$pristine">У тебя нет</label>
+			</div>
+			<!-- 4 форма 2 вкладки-->
+			<!--<div class="col-sm-12">-->
+				<div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error': editMainContactsForm.fname.$invalid && !editMainOptionsForm.fname.$pristine }">
+				<label>Мобильный телефон</label>
+				<input type="phone" class="form-control">
+				</div>
+				<label class="error" for="phone" ng-show="editMainContactsForm.fname.$invalid && !editMainContactsForm.fname.$pristine">У тебя нет име</label>
+			<!--</div>-->
+			<!-- 5 форма 2 вкладки-->
+			<div class="col-sm-10">
+				<div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error': editMainContactsForm.fname.$invalid && !editMainOptionsForm.fname.$pristine }">
+				<label>Доп. телефон</label>
+				<input type="phone" class="form-control">
+				</div>
+				<label class="error" for="phone" ng-show="editMainContactsForm.fname.$invalid && !register.fname.$pristine">У тебя нет имени? </label>
+			</div>
+			<!-- форма выбора видимости номера телефона -->
+			<div class="btn-group dropdown-default col-sm-2" pg-dropdown>
+		        <button class="btn dropdown-toggle" data-toggle="dropdown"> <i class="fa fa-lock"></i> <span class="caret"></span> </button>
+		        <ul class="dropdown-menu ">
+		            <li><a href="">1</a>
+		            </li>
+		            <li><a href="">2</a>
+		            </li>
+		            <li><a href="">3</a>
+		            </li>
+		        </ul>
+		    </div>
+			<!-- 6 форма 2 вкладки-->
+			<div class="col-sm-12">
+				<div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error': editMainContactsForm.fname.$invalid && !editMainOptionsForm.fname.$pristine }">
+				<label>Skype</label>
+				<input type="text" class="form-control">
+				</div>
+				<label class="error" for="fname" ng-show="editMainContactsForm.fname.$invalid && !editMainOptionsForm.fname.$pristine">У тебя нет имени?</label>
+			</div>
+			<!-- 7 форма 2 вкладки-->
+			<div class="col-sm-12">
+				<div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error': editMainContactsForm.fname.$invalid && !editMainOptionsForm.fname.$pristine }">
+				<label>Личный сайт</label>
+				<input type="email" class="form-control">
+				</div>
+				<label class="error" for="fname" ng-show="register.fname.$invalid && !editMainContactsForm.fname.$pristine">У тебя нет имени? Сириусли? -__-</label>
+			</div>
+			<!-- 2 форма кнопки применения изменений-->
+			<div class="col-sm-12">
+			  <div class=" text-right">
+				<button class="btn btn-primary btn-xs " data-target="#" data-toggle="">Применить изменения</button>
+			  </div>
+			</div>
+		</div>
+	</div>
+</form>

@@ -29,18 +29,33 @@
                         	Загрузить аватар
                         </button>
                         <button 
-                        	ng-show="addFriendButtonVisibled"
+                        	ng-show="getAddFriendButtonVisibled()"
                         	ng-click="onAddFriendButtonClick(user)"
                         	class="btn btn-primary btn-xs btn-small" 
                         	type="button">
                         	Добавить в друзья
                         </button>
                         <button 
-                        	ng-show="removeFriendButtonVisibled"
+                        	ng-show="getRemoveFriendButtonVisibled('sent')"
+                        	ng-click="onRemoveFriendButtonClick(user)"
+                        	class="btn btn-primary btn-xs btn-small" 
+                        	type="button"
+                        	title="Отменить заявку в друзья">
+                        	Отменить заявку
+                        </button>
+                        <button 
+                        	ng-show="getRemoveFriendButtonVisibled('confirmed')"
                         	ng-click="onRemoveFriendButtonClick(user)"
                         	class="btn btn-primary btn-xs btn-small" 
                         	type="button">
-                        	Удалить из друзей
+                        	Убрать из друзей
+                        </button>
+                        <button 
+                        	ng-show="getRemoveFriendButtonVisibled('rejected')"
+                        	ng-click="onRemoveFriendButtonClick(user)"
+                        	class="btn btn-primary btn-xs btn-small" 
+                        	type="button">
+                        	Отменить подписку
                         </button>
                         <button 
                         	class="btn btn-primary btn-xs btn-small" 
@@ -80,8 +95,8 @@
                             <div class="row">
                                 <div class="col-md-4">
                                     <p class="m-b-5 small">У {{user.firstname}} {{countFriends}}</p>
-                                    <ul class="list-unstyled" ng-repeat="friend in friends">
-                                        <li>
+                                    <ul class="list-unstyled">
+                                        <li ng-repeat="friend in friends">
                                             <div class="thumbnail-wrapper d32 circular b-white m-r-5 b-a b-white">
                                             	<a ui-sref="app.user({ useruri: friend.getCalculatedUseruri() })">
 	                                                <img 
@@ -139,7 +154,7 @@
                                         </li>
                                     </ul>
                                     <br>
-                                    <p class="m-t-5 small"><a href="/as">посмотреть все достижения</a></p>
+                                    <p class="m-t-5 small"><a href="" ui-sref="app.achievements">посмотреть все достижения</a></p>
                                 </div>
                                 
                                 

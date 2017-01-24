@@ -135,6 +135,7 @@ ul.breadcrumb > li > a:hover {
 .nav-tabs > li.active > a, 
 .nav-tabs > li.active > a:hover,
 .nav-tabs > li.active > a:focus {
+	font-size: 10px;
     font-family: "Days One";
 } 
 
@@ -145,6 +146,7 @@ ul.breadcrumb > li > a:hover {
 
 .nav-tabs > li > a {
     font-family: none;
+    font-size: 10px;
     font-family: "Days One";
     
 }

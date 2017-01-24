@@ -1,0 +1,32 @@
+
+<div class="row" ng-style="(!(!$index && $last) && ($first || $middle)) && { 
+	paddingBottom: '20px', 
+	marginBottom: '20px', 
+	borderBottom: '1px #e8e8e8 solid' 
+}">
+	
+	<div class="col-sm-3">
+		<div class="thumbnail-wrapper circular b-white m-r-5 b-a b-white">
+			<a ui-sref="app.user({ useruri: friend.getCalculatedUseruri() })">
+				<img 
+					width="65" 
+					height="65" 
+					ui-jq="unveil" 
+					alt="{{friend.getFullName()}}" 
+					ng-src="{{friend.getAvatarHref()}}"/>
+			</a>
+		</div>
+	</div>
+	
+	<div class="col-sm-9">
+		<a ui-sref="app.user({ useruri: friend.getCalculatedUseruri() })">
+			{{friend.getFullName()}}
+		</a>
+		<div ng-switch="friendType" class="m-t-10">
+			<button ng-switch-when="friend" class="btn btn-primary btn-xs btn-small" ng-click="removeFriend(friend)">Убрать из друзей</button>
+			<button ng-switch-when="in" class="btn btn-primary btn-xs btn-small" ng-click="confirmFriend(friend)">Добавить в друзья</button>
+			<button ng-switch-when="out" class="btn btn-primary btn-xs btn-small" ng-click="unsubscribeFriend(friend)">Отписаться</button>
+		</div>
+	</div>
+	
+</div>
