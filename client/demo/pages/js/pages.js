@@ -11,7 +11,7 @@
      * @property {object}  $body - Cache Body.
      */
     var Pages = function() {
-        this.VERSION = "2.2.0";
+        this.VERSION = "2.3.0";
         this.AUTHOR = "Revox";
         this.SUPPORT = "support@revox.io";
 
@@ -1835,7 +1835,8 @@
 
          // apply perfectScrollbar plugin only for desktops
          ($.Pages.getUserAgent() == 'desktop') && this.$sidebarMenu.scrollbar({
-             ignoreOverlay: false
+             ignoreOverlay: false,
+             disableBodyScroll :(this.$element.data("disableBodyScroll") == true)? true : false
          });
 
 

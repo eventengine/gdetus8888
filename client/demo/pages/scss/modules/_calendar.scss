@@ -615,7 +615,7 @@ Responsive Util
 		}
 	}
 	.calendar-container {
-		height:100%;
+		height: calc(100% - 169px) !important;
 		.view.week-view .tble{
 			white-space: nowrap;
 			.thead{

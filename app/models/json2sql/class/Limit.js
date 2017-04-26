@@ -5,7 +5,7 @@ const LimitClause = require("./LimitClause");
 module.exports = class Limit {
 	
 	constructor(operands) {
-		this.operands = operands;
+		this.operands = Number(operands);
 	}
 	
 	getResult() {

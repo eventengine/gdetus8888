@@ -47,24 +47,66 @@ angular.module("app")
 				});
 			};
 			
+			User.prototype.getCalculatedUseruri = function() {
+				return this.useruri ? this.useruri : "id" + this.id;
+			};
+			
+			User.prototype.getAvatarHref = function() {
+				return this.avatar_id ? "/file/" + this.avatar_id : "/assets/img/profiles/avatar.jpg";
+			};
+			
+			User.prototype.getAvatarBackgroundHref = function() {
+				return this.avatar_preview_id ? "/file/" + this.avatar_preview_id : null;
+			};
+			
+			User.prototype.getCoord = function() {
+				return this.location_lat && this.location_lon ? [this.location_lat, this.location_lon] : null;
+			};
+			
+			User.prototype.getFullName = function() {
+				return `${this.firstname} ${this.lastname}`;
+			};
+			
+			// Методы для работы со списками друзей, подписок.
+			
 			User.prototype.loadFriends = function(params) {
-				return $http.get("/api/user/" + this.id + "/friend", {
+				return $http.get("/api/user/" + this.id + "/friends", {
 					params: params
 				}).then(function(res) {
 					if (!res.data.success) return $q.reject(new HttpError(res));
 					return {
-						friends: res.data.friends,
+						data: res.data.data,
 						total: res.data.total
 					};
 				}).then(function(data) {
 					return {
-						friends: data.friends.map(function(item) {
+						data: data.data.map(function(item) {
 							return new User(item);
 						}),
 						total: data.total
 					};
 				});
 			};
+			
+			User.prototype.createFriendRequest = function(friend) {
+				var me = this;
+				return $http.post("/api/user/" + me.id + "/friend-requests", { friend: friend.id }).then(function(res) {
+					if (!res.data.success) return $q.reject(new HttpError(res));
+					return res.data;
+				});
+			};
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
 			
 			User.prototype.loadFriendRequestUsers = function(filter) {
 				return $http.get("/api/user/" + this.id + "/friend-request-users/" + filter).then(function(res) {
@@ -97,14 +139,6 @@ angular.module("app")
 				});
 			};
 			
-			User.prototype.addFriend = function(friend) {
-				var me = this;
-				return $http.post("/api/user/" + me.id + "/friend/", friend).then(function(res) {
-					if (!res.data.success) return $q.reject(new HttpError(res));
-					return res.data;
-				});
-			};
-			
 			User.prototype.removeFriend = function(friend) {
 				var me = this;
 				return $http.delete("/api/user/" + me.id + "/friend/" + friend.id).then(function(res) {
@@ -124,25 +158,9 @@ angular.module("app")
 				});
 			};
 			
-			User.prototype.getCalculatedUseruri = function() {
-				return this.useruri ? this.useruri : "id" + this.id;
-			};
 			
-			User.prototype.getAvatarHref = function() {
-				return this.avatar_id ? "/file/" + this.avatar_id : "/assets/img/profiles/avatar.jpg";
-			};
 			
-			User.prototype.getAvatarBackgroundHref = function() {
-				return this.avatar_preview_id ? "/file/" + this.avatar_preview_id : null;
-			};
 			
-			User.prototype.getCoord = function() {
-				return this.location_lat && this.location_lon ? [this.location_lat, this.location_lon] : null;
-			};
-			
-			User.prototype.getFullName = function() {
-				return `${this.firstname} ${this.lastname}`;
-			};
 			
 			return User;
 			

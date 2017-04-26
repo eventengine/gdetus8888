@@ -3,16 +3,20 @@
     <!-- Nav tabs -->
     <ul class="nav nav-tabs">
         <li class="active">
-            <a href="#quickview-chat " data-toggle="tab" pg-tab>Чат</a>
+            <a href="#quickview-chat " data-toggle="tab" pg-tab title="Чат"><i class="pg-social"></i></a>
         </li>
         <li class="">
-            <a href="#quickview-alerts" data-toggle="tab" pg-tab>A</a>
+            <a href="#quickview-alerts" data-toggle="tab" pg-tab title="Уведомления"><i class="fa fa-warning"></i></a>
         </li>
         <li class="">
-            <a href="#quickview-notes" data-toggle="tab" pg-tab>N</a>
+            <a href="#quickview-notes" data-toggle="tab" pg-tab title="Заметки"><i class="pg-note"></i></a>
         </li>
     </ul>
-    <a class="btn-link quickview-toggle" data-toggle-element="#quickview" data-toggle="quickview"><i class="pg-close"></i></a>
+    <a class="btn-link quickview-toggle" data-toggle-element="#quickview" data-toggle="quickview" ><i class="pg-close"></i></a>
+    
+    <!--<button data-placement="bottom" title="" data-toggle="tooltip" class="btn btn-default tip m-b-5 m-r-5" type="button" data-original-title="Look down!" ui-jq="tooltip">Down</button>-->
+    
+    
     <!-- Tab panes -->
     <div class="tab-content">
         <!-- BEGIN Notes !-->
@@ -99,7 +103,7 @@
                             </a>
                             <!-- END Header Controler !-->
                             <div class="view-heading">
-                                Notications
+                                Уведомления
                             </div>
                             <!-- BEGIN Header Controler !-->
                             <a href="" class="inline action p-r-10 pull-right link text-master">
@@ -115,7 +119,7 @@
                         <div class="list-view-group-container">
                             <!-- BEGIN List Group Header!-->
                             <div class="list-view-group-header text-uppercase">
-                                Calendar
+                                Календарь
                             </div>
                             <!-- END List Group Header!-->
                             <ul>
@@ -160,8 +164,9 @@
                             </a>
                             <!-- END Header Controler !-->
                             <div class="view-heading">
-                                Chat List
-                                <div class="fs-11">Show All</div>
+                                Список собеседников
+                                <!--в div class="fs-11" был текст который можно использовать-->
+                                <div class="fs-11"></div>
                             </div>
                             <!-- BEGIN Header Controler !-->
                             <a href="" class="inline action p-r-10 pull-right link text-master">

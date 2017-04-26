@@ -9,7 +9,7 @@ module.exports = {
 	get: (req, res, next) => {
 		const models = req.app.get("models");
 		let userId = req.params.user;
-		models.user.selectFriendRequestUsers(userId, req.query).catch(next);
+		models.user.selectFriendRequestUsers(userId, req.query).then(result => res.send(result)).catch(next);
 	}
 	
 };

@@ -31,9 +31,9 @@ angular.module('app')
 			
 			$scope.user.loadFriends({
 				limit: 6
-			}).then(function(data) {
-				var friends = data.friends;
-				var countFriends = data.total;
+			}).then(function(result) {
+				var friends = result.data;
+				var countFriends = result.total;
 				$scope.countFriends = (countFriends ? countFriends : "ещё нет") + " " + numeralDecline(countFriends, 'друг', 'друга', 'друзей');
 				$scope.friends = friends;
 			});
@@ -49,7 +49,7 @@ angular.module('app')
 			
 			
 			$scope.onAddFriendButtonClick = function(user) {
-				$scope.authenticated.addFriend(user).then(refresh);
+				$scope.authenticated.createFriendRequest(user).then(refresh);
 			};
 			
 			

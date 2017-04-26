@@ -5,7 +5,7 @@ module.exports = {
 		const models = req.app.get("models");
 		let userId = req.params.user;
 		let friendId = req.body.friend;
-		models.user.createFriendRequest(userId, friendId).catch(next);
+		models.user.createFriendRequest(userId, friendId).then(result => res.send(result)).catch(next);
 	},
 	
 	/**
@@ -18,8 +18,8 @@ module.exports = {
 		let friendId = req.body.friend;
 		let action = req.body.action;
 		switch(action) {
-			case "accept": models.user.acceptFriendRequest(userId, friendId).catch(next); break;
-			case "reject": models.user.rejectFriendRequest(userId, friendId).catch(next); break;
+			case "accept": models.user.acceptFriendRequest(userId, friendId).then(result => res.send(result)).catch(next); break;
+			case "reject": models.user.rejectFriendRequest(userId, friendId).then(result => res.send(result)).catch(next); break;
 		}
 	}
 	

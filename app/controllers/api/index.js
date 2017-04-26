@@ -64,9 +64,9 @@ apiRouter.put("/user/avatar", require("./user").putAvatar);
 /**
  * Контроллеры друзей, заявок в друзья и подписок.
  */
-apiRouter.get("/user/:user/friends", require("./user/friend").get);
+/*apiRouter.get("/user/:user/friends", require("./user/friend").get);
 apiRouter.delete("/user/:user/friends/:friend", require("./user/friend").delete);
 apiRouter.get("/user/:user/friend-request/users", require("./user/friendRequestUsers").get);
 apiRouter.post("/user/:user/friend-requests", require("./user/friendRequests").post);
 apiRouter.patch("/user/:user/friend-requests", require("./user/friendRequests").patch);
-apiRouter.delete("/user/:user/subscribes/:subscribed", require("./user/subscribes").delete);
+apiRouter.delete("/user/:user/subscribes/:subscribed", require("./user/subscribes").delete);*/

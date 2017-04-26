@@ -234,6 +234,7 @@
             */          
             var _bindEvents = function(){
                 var $this = this;
+                $(document).off("click", "body:not(.pending) .year-selector");
                 $(document).on("click", "body:not(.pending) .year-selector",function(e) {
                     var year = $(this).attr('data-year');
                     calendar.year = moment(year, Calendar.settings.ui.year.format).year();
@@ -320,6 +321,7 @@
             */
             _bindEvents:function(){
                 var $this = this;
+                $(document).off("click", "body:not(.pending) .month-selector")
                 $(document).on("click", "body:not(.pending) .month-selector",function(e) {
                     var month = $(this).attr('data-month');
                     calendar.month = moment(month, Calendar.settings.ui.month.format).month();
@@ -411,6 +413,7 @@
             */
             _bindEvents:function(){
                 var $this = this;
+                $(document).off("click", "body:not(.pending) .date-selector");
                 $(document).on("click", "body:not(.pending) .date-selector",function(e) {
                     $(".week-date").removeClass('active')
                     $(this).children('.week-date').addClass('active');
@@ -938,10 +941,10 @@
             $('#weekGrid').find('.trow .tcell').removeClass('active');
             //ISO Date
             var d = moment([calendar.year, calendar.month, calendar.date]).format("e");
-            //Convert to Int;
-            d = parseInt(d)+1;
-            $('#viewTableHead').find('.thead .tcell:nth-child(' + (d) + ')').addClass('active');
-            $('#weekGrid').find('.trow .tcell:nth-child(' + (d) + ')').addClass('active');
+            var index = (parseInt(d) + (1 - parseInt(Calendar.settings.ui.week.startOfTheWeek)))
+
+            $('#viewTableHead').find('.thead .tcell:nth-child(' + (index) + ')').addClass('active');
+            $('#weekGrid').find('.trow .tcell:nth-child(' + (index) + ')').addClass('active');
         }
 
          /** 
@@ -957,14 +960,15 @@
 
              var el = $(".cell-inner [data-index='"+_eventIndex[0]+"']");
              var grid = $('.calendar .calendar-container .grid');
-             var parentOffSet =$('.calendar .calendar-container .grid').offset();
-             var elOffset = el.offset()
-             var position = (elOffset.top - parentOffSet.top) - Calendar.settings.ui.grid.scrollToGap;
+             var parentOffSet = $('.calendar .calendar-container .grid').get(0).getBoundingClientRect();
+             var elRect = el.get(0).getBoundingClientRect();
+            
+             var position = (elRect.top - parentOffSet.top) - Calendar.settings.ui.grid.scrollToGap;
              var currentPosition = grid.scrollTop();
-             if( currentPosition != (position + currentPosition)){
-                grid.animate({
-                scrollTop:position},Calendar.settings.ui.grid.scrollToAnimationSpeed);
-            }
+
+             grid.animate({
+                scrollTop:currentPosition+position},Calendar.settings.ui.grid.scrollToAnimationSpeed);
+
         }   
         /** 
          * @function  
@@ -1197,6 +1201,7 @@
         */
         MonthView.prototype._bindEvents= function(){
             var $this = this;
+            $(".month-view .tcell").off("click");
             $(".month-view .tcell").on("click",function(){
                 var d  = moment($(this).attr("data-date"));
                 calendar.date = d.format("D");
@@ -1456,7 +1461,7 @@
             /**
              * @constructor
              */
-            Init: function() {
+            Init: function(rebuild) {
                 this.settings = plugin.settings;
                 if (Calendar.settings.ui.year == null || Calendar.settings.ui.month == null || Calendar.settings.ui.dateHeader == null || Calendar.settings.ui.week == null || Calendar.settings.ui.grid == null) {
                     alert("You have not included the proper ui[] settings, please refer docs");
@@ -1479,7 +1484,7 @@
                 }
 
                 if(!Calendar.settings.ui.year.visible)
-                    $("#years").hide();
+                    $(".calendar-header").hide();
                 if(!Calendar.settings.ui.month.visible)
                     $("#months").hide();
                 if(!Calendar.settings.ui.dateHeader.visible)
@@ -1504,13 +1509,21 @@
                     end : val[1]
                 }
                 plugin.settings.onViewRenderComplete(range);
-                this.bindEventHanders();
+                (!rebuild) ? this.bindEventHanders() : null;
                 this.autoFocusActiveElement();
-                this.scrollToElement('#weeks-wrapper .active')              
+                this.scrollToElement('#weeks-wrapper .active');
+
+                //Set Calendar Height
+                var optionsHeight = $(".calendar .options").get(0).getBoundingClientRect().height;              
+                var headerHeight = $(".calendar-header").get(0).getBoundingClientRect().height;
+                var calendarHeight = "calc(100% - "+(optionsHeight+headerHeight)+"px)";
+                $("#calendar").css({
+                    height:calendarHeight
+                })            
             },
 
             rebuild:function(){
-                Calendar.Init();
+                Calendar.Init(true);
             },
 
             /**
@@ -1766,10 +1779,12 @@
             },
 
             bindEventHanders: function() {
+
                 interact(".cell-inner:not(.disable)").on('doubletap', function (event) {
                     Calendar.timeSlotDblClick($(event.currentTarget));
                     event.preventDefault();
                 })
+                
                 interact('.event-container').on('tap', function (event) {
                     var eventO = Calendar.constructEventForUser($(event.currentTarget).attr('data-index'));
                     plugin.settings.onEventClick(eventO);
@@ -2010,12 +2025,16 @@
     // =======================
 
     function Plugin(option, obj) {
+        var $this = $(this)
+          , data = $this.data('pagescalendar')
+          , options = typeof option == 'object' && option
+        if (typeof option == 'string') {
+           return data[option](obj)
+        }
         return this.each(function () {
-            var $this = $(this)
-              , data = $this.data('pagescalendar')
-              , options = typeof option == 'object' && option
-            if (!data) $this.data('pagescalendar', (data = new PagesCalendar(this, options)))
-            if (typeof option == 'string') data[option](obj)
+            if (!data) {
+                $this.data('pagescalendar', (data = new PagesCalendar(this, options)))
+            }
         });
     }
 

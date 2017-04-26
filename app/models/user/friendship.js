@@ -29,6 +29,9 @@ User.selectFriends = function(user, params) {
 		left join users as user on (user.id = friendship.friend_id)
 		${sqlPartial.getSql()}
 	`;
+	
+	
+	
 	return Promise.all([
 		db.query(sqlTotal, sqlPartialTotal.getValues()).spread(result => result[0].count),
 		db.query(sql, sqlPartial.getValues()).spread(result => result)
@@ -38,6 +41,9 @@ User.selectFriends = function(user, params) {
 			total, 
 			data 
 		};
+	}).catch(err => {
+		err.sql = sql;
+		throw err;
 	});
 };
 

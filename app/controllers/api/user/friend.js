@@ -9,7 +9,7 @@ module.exports = {
 	get: (req, res, next) => {
 		const models = req.app.get("models");
 		let userId = req.params.user;
-		models.user.selectFriends(userId, req.query).catch(next);
+		models.user.selectFriends(userId, req.query).then(result => res.send(result)).catch(next);
 	},
 	
 	/**
@@ -19,7 +19,7 @@ module.exports = {
 		const models = req.app.get("models");
 		let userId = req.params.user;
 		let friendId = req.params.friend;
-		models.user.deleteFriend(userId, friendId).catch(next);
+		models.user.deleteFriend(userId, friendId).then(result => res.send(result)).catch(next);
 	}
 	
 };

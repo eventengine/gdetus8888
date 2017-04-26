@@ -5,7 +5,7 @@ module.exports = {
 		const models = req.app.get("models");
 		let userId = req.params.user;
 		let subscribedUserId = req.params.subscribed;
-		models.user.deleteSubscribe(userId, subscribedUserId).catch(next);
+		models.user.deleteSubscribe(userId, subscribedUserId).then(result => res.send(result)).catch(next);
 	}
 	
 };
