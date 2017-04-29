@@ -19,6 +19,30 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const expressValidator = require('express-validator');
 
+const randomItem = require('random-item');
+
+module.exports = function() {
+	var foods = [
+		'1 Tom yum',
+		'Somtom',
+		'Tom Kha Kai',
+		'Green curry',
+		'Nam tok moo',
+		'Koh moo yang',
+		'Massaman',
+		'Pad thai'
+	];
+
+	console.log `${randomItem(foods)}`;
+	
+	var elem = document.getElementById("foods");
+elem.innerHTML = "Hello World!";
+
+document.getElementById("foods").innerHTML = array[i][1];
+};
+
+
+
 
 /**
  * Приложение Express
@@ -66,6 +90,9 @@ module.exports = {
 		
 		// Временное подключение демо-версии фреймворка и пред. версии клиента.
 		app.use("/demo", express.static(path.join(config.client.path, "demo")));
+		
+		/*// Временное подключение мобильной версии фреймворка и пред. версии клиента.
+		app.use("/m", express.static(path.join(config.client.path, "m")));*/
 		
 		// Основные контроллеры.
 		app.use("/api", require(path.join(paths.controllers, "api")));

@@ -1,5 +1,5 @@
 /*------------------------------------------------------------------
-Pages v2.2.0
+Pages v2.3.0
 Theme : Default
 Generated From SASS
 [Table of contents]
@@ -1620,6 +1620,298 @@ body.rtl [class*="col-"] {
 }
 .horizontal-menu .bar-inner > ul > li > .mega .sub-menu > li > a {
   color: #000;
+}
+.horizontal-app-menu {
+  padding-top: 115px;
+}
+@media (min-width: 992px) {
+  .horizontal-app-menu [data-pages="sidebar"] + .page-container {
+    padding-right: 70px;
+  }
+}
+.horizontal-app-menu [data-pages="sidebar"] + .page-container .header .brand {
+  padding-left: inherit;
+  text-align: center;
+}
+.horizontal-app-menu #horizontal-menu-toggle {
+  display: block !important;
+}
+.horizontal-app-menu .page-container {
+  padding-right: 0;
+}
+.horizontal-app-menu .header .brand {
+  padding-right: 35px;
+  text-align: right;
+}
+.horizontal-app-menu .header-seperation {
+  display: none;
+}
+.horizontal-app-menu .bar {
+  width: 100%;
+  background-color: #fff;
+  position: fixed;
+  display: table;
+  z-index: 50;
+}
+.horizontal-app-menu .bar-inner {
+  display: table-cell;
+  width: 100%;
+}
+.horizontal-app-menu .bar-inner > ul {
+  margin: 0;
+  padding: 0;
+  padding-right: 16px;
+}
+.horizontal-app-menu .bar-inner > ul > li {
+  font-family: "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  display: inline-block;
+  padding: 10px 15px;
+  vertical-align: middle;
+}
+.horizontal-app-menu .bar-inner > ul > li.classic {
+  position: relative;
+}
+.horizontal-app-menu .bar-inner > ul > li.open > a {
+  opacity: 1;
+}
+.horizontal-app-menu .bar-inner > ul > li.mega.open,
+.horizontal-app-menu .bar-inner > ul > li.horizontal.open {
+  position: inherit;
+}
+.horizontal-app-menu .bar-inner > ul > li > a {
+  color: #000;
+}
+.horizontal-app-menu .bar-inner > ul > li > a > .arrow {
+  display: inline-block;
+}
+.horizontal-app-menu .bar-inner > ul > li > a > .arrow:before {
+  display: inline;
+  font-size: 16px;
+  font-family: FontAwesome;
+  height: auto;
+  content: "\f107";
+  font-weight: 300;
+  text-shadow: none;
+  margin-right: 8px;
+  opacity: 0.5;
+  position: relative;
+  vertical-align: middle;
+}
+.horizontal-app-menu .bar-inner > ul > li a {
+  opacity: 0.7;
+}
+.horizontal-app-menu .bar-inner > ul > li a .description {
+  opacity: 0.7;
+  transition: opacity 0.1s linear 0s;
+}
+.horizontal-app-menu .bar-inner > ul > li a:hover {
+  opacity: 1;
+}
+.horizontal-app-menu .bar-inner > ul > li a:hover .description {
+  opacity: 1;
+}
+.horizontal-app-menu .bar-inner > ul > li.open {
+  background: #fff;
+}
+.horizontal-app-menu .bar-inner > ul > li.open > .classic {
+  max-height: 999px;
+}
+.horizontal-app-menu .bar-inner > ul > li.open > .classic > li {
+  opacity: 1;
+}
+.horizontal-app-menu .bar-inner > ul > li.open > .mega,
+.horizontal-app-menu .bar-inner > ul > li.open > .horizontal {
+  display: block;
+}
+.horizontal-app-menu .bar-inner > ul > li > .classic {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  background-color: #fff;
+  list-style: none;
+  left: 0;
+  right: 0;
+  top: 40px;
+  min-width: 220px;
+  max-height: 0;
+  overflow: hidden;
+  -webkit-transition: all 0.3s linear 0s;
+  transition: all 0.3s linear 0s;
+}
+.horizontal-app-menu .bar-inner > ul > li > .classic > li {
+  margin: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e5e9ec;
+  color: #22262e;
+  opacity: 0;
+  -webkit-transition: all 0.1s linear 0.1s;
+  transition: all 0.1s linear 0.1s;
+}
+.horizontal-app-menu .bar-inner > ul > li > .classic > li a {
+  color: #000;
+}
+.horizontal-app-menu .bar-inner > ul > li > .classic > li a .description {
+  display: block;
+  font-size: 12px;
+  color: #21292c;
+}
+.horizontal-app-menu .bar-inner > ul > li > .classic > li:last-child {
+  border-bottom: 0;
+}
+.horizontal-app-menu .bar-inner > ul > li > .horizontal {
+  margin: 0;
+  top: 40px;
+  padding: 0;
+  position: absolute;
+  background-color: #fff;
+  list-style: none;
+  display: none;
+  left: 0;
+  right: 0;
+  width: 100%;
+  border-bottom: 1px solid #e5e9ec;
+}
+.horizontal-app-menu .bar-inner > ul > li > .horizontal li {
+  margin: 15px;
+  color: #000;
+  display: inline-block;
+}
+.horizontal-app-menu .bar-inner > ul > li > .horizontal li a {
+  color: #000;
+}
+.horizontal-app-menu .bar-inner > ul > li > .horizontal li a .description {
+  display: block;
+  font-size: 12px;
+  color: #21292c;
+}
+.horizontal-app-menu .bar-inner > ul > li > .mega {
+  margin: 0;
+  top: 40px;
+  padding: 0;
+  position: absolute;
+  background-color: #fff;
+  list-style: none;
+  display: none;
+  left: 0;
+  right: 0;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e5e9ec;
+}
+.horizontal-app-menu .bar-inner > ul > li > .mega > li {
+  margin: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e5e9ec;
+  color: #000;
+}
+.horizontal-app-menu .bar-inner > ul > li > .mega > li a {
+  color: #000;
+}
+.horizontal-app-menu .bar-inner > ul > li > .mega .sub-menu-heading {
+  font-size: 14px;
+  color: #000;
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+.horizontal-app-menu .bar-inner > ul > li > .mega .sub-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 10px;
+}
+.horizontal-app-menu .bar-inner > ul > li > .mega .sub-menu > li {
+  padding-right: 0;
+  padding-bottom: 5px;
+}
+.horizontal-app-menu .bar-inner > ul > li > .mega .sub-menu > li > a {
+  color: #000;
+}
+.horizontal-app-menu .header {
+  height: 115px;
+  background-color: #2b303b;
+  border-bottom: none;
+}
+.horizontal-app-menu .header .search-link {
+  color: #788196;
+}
+.horizontal-app-menu .header .header-inner .brand.inline {
+  height: 11px;
+  padding-left: 15px;
+  position: absolute;
+  top: 86px;
+  left: 130px;
+  border-left: 1px solid #40444d;
+}
+.horizontal-app-menu .header .header-inner .brand.inline > img {
+  width: 78px;
+  padding-left: 78px;
+  display: block;
+  position: relative;
+  top: -4px;
+  left: -114px;
+  box-sizing: border-box;
+  background: url('../../assets/img/logo_white.png') no-repeat;
+}
+.horizontal-app-menu .header .header-inner .brand.inline::after {
+  content: 'dashboard';
+  position: absolute;
+  top: -12px;
+  font-size: 22px;
+  color: #788196;
+}
+.horizontal-app-menu .header .notification-list {
+  border: none;
+}
+.horizontal-app-menu .header div:last-child > div > div > span {
+  color: #788196 !important;
+}
+.horizontal-app-menu .bar {
+  height: 50px;
+  padding-top: 10px;
+  background-color: #2b303b;
+}
+.horizontal-app-menu .bar .bar-inner > ul > li {
+  padding-bottom: 14px;
+}
+.horizontal-app-menu .bar .bar-inner > ul > li > a {
+  color: #788196;
+  background-color: transparent;
+}
+.horizontal-app-menu .bar .classic {
+  transition: none !important;
+}
+.horizontal-app-menu .bar li.classic.open > a {
+  position: relative;
+  z-index: 2;
+}
+.horizontal-app-menu .bar li.classic.open > a .arrow::before {
+  content: '\f106';
+}
+.horizontal-app-menu .bar li.classic.open > ul {
+  width: 185px;
+  min-width: auto;
+  margin-top: -50px;
+  margin-left: -12px;
+  padding: 50px 15px 12px;
+  z-index: 1;
+  box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.2);
+}
+.horizontal-app-menu .bar li.classic.open > ul > li {
+  margin: 0;
+  padding: 8px 15px;
+  border-bottom: none;
+  transition: none !important;
+}
+.horizontal-app-menu .bar li.classic.open > ul > li:first-child {
+  margin-top: 12px;
+  border-top: 1px solid #e4e4e5;
+}
+.horizontal-app-menu .icon-set {
+  background-image: url('../img/icons/top_tray_bluish.png') !important;
+}
+@media (max-width: 1400px) {
+  .header .brand.inline::after {
+    top: -7px !important;
+  }
 }
 @media (min-width: 980px) {
   .horizontal-menu .page-content {
@@ -9728,7 +10020,7 @@ Responsive Util
     margin-bottom: 10px;
   }
   .calendar .calendar-container {
-    height: 100%;
+    height: calc(100% - 169px) !important;
   }
   .calendar .calendar-container .view.week-view .tble {
     white-space: nowrap;
@@ -13240,6 +13532,9 @@ Main components
   }
   .error-page .error-container {
     width: auto;
+  }
+  .inner-content {
+    margin-left: 0;
   }
   .secondary-sidebar {
     float: none;

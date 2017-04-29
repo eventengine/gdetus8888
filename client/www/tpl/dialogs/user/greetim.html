@@ -1,5 +1,5 @@
 
-<div class="modal fade fill-in" id="modalGreetIm" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal fade " id="modalGreetIm" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog" style="width: 496px;">
         <div class="modal-content">
         	
@@ -7,12 +7,23 @@
             	<!-- Для верстки см. документацию к Bootstrap (оформление заголовка хедера модального окна)-->
             	<!-- http://getbootstrap.com/javascript/#modals -->
             	<!-- http://getbootstrap.com/css/#grid -->
-				<h5 class="text-primary ">Восстановление пароля</h5>
+				<button
+				type="button"
+				class="close"
+				data-dismiss="modal"
+				aria-hidden="false">
+              	<i class="pg-close"></i>
+            	</button>
+            	
+                  <h5 class="text-center p-b-5">Как познакомиться с незнакомцем? Например - спросить его о чём-нибудь!</h5>
+                <p>
+				<small class="text-left">Если вы уже общались с этим пользователем, вы можете <a href="" ui-sref="app.im">открыть ваш диалог</a>.</small>
+				</p>
             </div>
             
             <div class="modal-body">
             	
-				<form id="passwordRestoreForm" name="passwordRestoreForm" class="p-t-15" role="form" novalidate>
+				<!--<form id="passwordRestoreForm" name="passwordRestoreForm" class="p-t-15" role="form" novalidate>
 					
 					<div pg-form-group 
 						class="form-group form-group-default" 
@@ -44,9 +55,37 @@
 						Восстановить пароль
 					</button>
 					
-				</form>
+				</form>-->
+            
+            <!--<div class="panel panel-transparent">-->
+                  <div class="panel-body panel-transparent">
+
+	                  <div class="col-s-18" >
+	                    <input type="text" class="form-control" data-chat-input="" data-chat-conversation="">
+	                  </div>
+				  
+                      	<small>
+					  <div class="checkbox">
+                      <p class="pull-right">
+                        <a href="http://" class=""><i class="fa fa-paperclip"></i></a>
+                      </p>					  
+					    </small>
+					    
+					  <button
+                      type="submit"
+                      class="btn btn-sm btn-primary"
+                      data-dismiss="modal">
+                      Отправить
+                      </button>
+					    
+					  </div>
+                      <!--<div class="clearfix"></div>-->
+                      
+                    <!--</form>-->
+                  </div>
+            <!--</div>-->
             	
-            </div>
+            <!--</div>-->
             
             <div class="modal-footer">
             	<!-- Для верстки см. документацию к Bootstrap (оформление заголовка хедера модального окна)-->
@@ -57,3 +96,43 @@
         </div>
     </div>
 </div>
+
+
+
+<!-- Modal -->
+          <!--<div class="modal fade" id="privateMessage" tabindex="-1" role="dialog" aria-hidden="false">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="false">
+              	<i class="pg-close"></i>
+            	</button>
+                  <h5 class="text-left p-b-5">Как познакомиться с незнакомцем? Например - спросить его о чём-нибудь!</h5>
+                <p>
+				<small class="text-left">Если вы уже общались с этим пользователем, вы можете <a href="/im">открыть ваш диалог</a>.</small>
+				</p>
+			    </div>
+                <div class="panel panel-transparent">
+                  <div class="panel-body">
+                    
+						
+                        <div class="col-s-18" >
+                    <input type="text" class="form-control" data-chat-input="" data-chat-conversation="">
+                  </div>
+				  
+                      <p class="pull-right"><small>
+					  <div class="checkbox">
+                      <p class="pull-right">
+                        <a href="http://" class=""><i class="fa fa-paperclip"></i></a>
+                      </p>					  
+					  </small>
+					  </div>
+                      <div class="clearfix"></div>
+                      <button class="btn btn-primary" type="submit">Отправить</button>
+                    </form>
+                  </div>
+                </div>-->
+              <!-- /.modal-content -->
+            </div>
+          </div>
+          <!-- /.modal-dialog -->

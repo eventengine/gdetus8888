@@ -41,7 +41,7 @@ angular.module("app")
 						var coord = user.getCoord();
 						if (coord) {
 							var popupAvatarStyle = [
-								"height: 32px", 
+								"height: 32px",
 								"margin: 0px 10px 10px 0px", 
 								"float: left; width: 32px", 
 								"display: inline-block !important", 
@@ -64,10 +64,11 @@ angular.module("app")
 									ui-sref="app.user({ useruri: '${user.getCalculatedUseruri()}' })">
 									${user.getFullName()}
 								</a>
-								<div style="margin-top: 5px;">
+								<div style="m-t-5">
 									<i class="fa fa-group"></i>&nbsp;
 									<i class="pg-social"></i>&nbsp;
 									<i class="fa fa-puzzle-piece"></i>
+									
 								</div>
 							`);
 						}
@@ -89,3 +90,4 @@ angular.module("app")
 			
 		}
 	]);
+	
