@@ -40,6 +40,24 @@ angular.module("app", ['ngSanitize', 'daterangepicker', 'ui.select'])
 				{ id: null, title: 'родная страна не выбрана' }
 			];
 			
+			
+			// Справочник поля "родной город"
+			$scope.ownCityValues = [
+				{ id: 'хрю', title: 'Москва' },
+				{ id: 'му', title: 'Новосибирск' },
+				{ id: null, title: 'родной город не выбран' }
+			];
+			
+			
+			// Справочник поля "семейное положение"
+			$scope.releationshipStatusValues = [
+				{ id: 'хрю', title: 'всё сложно' },
+				{ id: 'му', title: 'ТНН' },
+				{ id: 'му2', title: 'есть друг' },
+				{ id: 'му3', title: 'есть подруга' },
+				{ id: null, title: 'не выбрано' }
+			];
+			
 			/**
 			 * Вспомогательная функция для получения списка полей из контроллера формы form.FormController.
 			 * https://code.angularjs.org/1.3.15/docs/api/ng/type/form.FormController

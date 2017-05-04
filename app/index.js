@@ -33,12 +33,13 @@ module.exports = function() {
 		'Pad thai'
 	];
 
-	console.log `${randomItem(foods)}`;
-	
-	var elem = document.getElementById("foods");
-elem.innerHTML = "Hello World!";
 
-document.getElementById("foods").innerHTML = array[i][1];
+	 `${randomItem(foods)}`;
+	
+/*	var elem = document.getElementById("foods");
+		elem.innerHTML = "${randomItem(foods)}";
+		then 
+		document.getElementById("foods").innerHTML = array[i][1];*/
 };
 
 

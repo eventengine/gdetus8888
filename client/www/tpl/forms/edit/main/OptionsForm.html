@@ -56,18 +56,28 @@
 			<label class="error" for="birthday_date_muted" ng-show="editMainOptionsForm.birthday_date_muted.$invalid && !editMainOptionsForm.birthday_date_muted.$pristine">У тебя нет имени? Сириусли?</label>
 			
 			<!-- 6 форма 1 вкладки-->
-			<div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error': editMainOptionsForm.marital_status.$invalid && !editMainOptionsForm.marital_status.$pristine }">
-				<label>Семейное положение</label>
-				<input name="marital_status" type="text" class="form-control">
+			<div pg-form-group class="form-group form-group-default form-group-default-select">
+				<label class="">Семейное положение</label>
+				<ui-select name="releationshipStatusValues" ng-model="user.releationshipStatusValues" theme="bootstrap" search-enabled="false"> 
+					<ui-select-match>{{$select.selected.title}}</ui-select-match>
+					<ui-select-choices repeat="releationshipStatusValues.id as releationshipStatusValues in releationshipStatusValues">
+						<div ng-bind-html="trustAsHtml(releationshipStatusValues.title)"></div>
+					</ui-select-choices>
+				</ui-select>
 			</div>
 			<label class="error" for="fname" ng-show="editMainOptionsForm.marital_status.$invalid && !editMainOptionsForm.marital_status.$pristine">У тебя нет имени? Сириусли?</label>
 			
 			<!-- 7 форма 1 вкладки-->
-			<div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error': editMainOptionsForm.city.$invalid && !register.city.$pristine }">
-				<label>Родной город</label>
-				<input name="city" type="text" class="form-control">
+			<div pg-form-group class="form-group form-group-default form-group-default-select">
+				<label class="">Твой родной город</label>
+				<ui-select name="ownCityValues" ng-model="user.ownCityValues" theme="bootstrap" search-enabled="true"> 
+					<ui-select-match>{{$select.selected.title}}</ui-select-match>
+					<ui-select-choices repeat="ownCityValues.id as ownCityValues in ownCityValues">
+						<div ng-bind-html="trustAsHtml(ownCityValues.title)"></div>
+					</ui-select-choices>
+				</ui-select>
 			</div>
-			<label class="error" for="city" ng-show="editMainOptionsForm.city.$invalid && !editMainOptionsForm.city.$pristine">У тебя нет имени? Сириусли?</label>
+			<label class="error" for="ownCityValues" ng-show="editMainOptionsForm.ownCityValues.$invalid && !editMainOptionsForm.ownCityValues.$pristine">У тебя нет родного города? Сириусли?</label>
 			
 			<!-- 1 кнопки применения изменений-->
 			<div class=" text-right">

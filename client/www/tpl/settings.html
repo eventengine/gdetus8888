@@ -103,6 +103,17 @@
 									<label>Родной город</label>
 									<input type="city" class="form-control">
 								</div>
+								
+								<!--<div pg-form-group class="form-group form-group-default form-group-default-select">
+									<label class="">Твой пол</label>
+									<ui-select ng-model="user.city" theme="bootstrap" search-enabled="false"> 
+										<ui-select-match>{{$select.selected.title}}</ui-select-match>
+										<ui-select-choices repeat="city.id as city in cities">
+											<div ng-bind-html="trustAsHtml(city.title)"></div>
+										</ui-select-choices>
+									</ui-select>
+								</div>-->
+								
 								<label class="error" for="city" ng-show="editMainOptionsForm.city.$invalid && !editMainOptionsForm.city.$pristine">У тебя нет имени? Сириусли?</label>
 								<!-- 1 кнопки применения изменений-->
 								<div class=" text-right">
