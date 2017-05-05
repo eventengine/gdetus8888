@@ -1,25 +1,25 @@
 
-<form name="settingsMainOptionsForm" role="form" novalidate>
+<form name="settingsNotificationsOptionsForm" role="form" novalidate>
 	<div class="row">
 		<div class="col-sm-12">
 			
 			<!-- первая форма 1 вкладки-->
 			<div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error': editMainOptionsForm.firstname.$invalid && !editMainOptionsForm.firstname.$pristine }">
-				<label>Твоё имя</label>
-				<input type="text" name="firstname" class="form-control" placeholder="Имя" ng-model="user.firstname">
+				<label>Нjnba</label>
+				
 			</div>
 			<label class="error" for="firstname" ng-show="editMainOptionsForm.firstname.$invalid && !editMainOptionsForm.firstname.$pristine">У тебя нет имени?</label>
 			
 			<!-- вторая форма 1 вкладки-->
 			<div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error': editMainOptionsForm.lastname.$invalid && !editMainOptionsForm.lastname.$pristine }">
-				<label>Твоя фамилия</label>
-				<input type="text" name="lastname" class="form-control" placeholder="Фамилия" ng-model="user.lastname">
+				<label>Твоя фамилия44</label>
+				
 			</div>
 			<label class="error" for="lastname" ng-show="editMainOptionsForm.lastname.$invalid && !editMainOptionsForm.lastname.$pristine">У тебя нет фамилии?</label>
 			
 			<!-- 3 форма 1 вкладки-->
 			<div pg-form-group class="form-group form-group-default form-group-default-select">
-				<label class="">Твой пол</label>
+				<label class="">Твой полzzz</label>
 				<ui-select name="gender" ng-model="user.gender" theme="bootstrap" search-enabled="false"> 
 					<ui-select-match>{{$select.selected.title}}</ui-select-match>
 					<ui-select-choices repeat="gender.id as gender in genders">

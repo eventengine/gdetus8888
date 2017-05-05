@@ -188,6 +188,33 @@ angular.module("app").config(["$stateProvider", "$urlRouterProvider", "$ocLazyLo
 				resolve: {
 					deps: ["$ocLazyLoad", function($ocLazyLoad) {
 						return $ocLazyLoad.load([
+						    'datepicker',
+                            'daterangepicker',
+                            'select',
+						], {
+							insertBefore: "#lazyload_placeholder"
+						})
+						.then(function() {
+							return $ocLazyLoad.load([
+								"assets/js/controllers/settings.js"
+							]);
+						});
+					}]
+				},
+				data: {
+					meta: {
+						title: "Настройки сервиса"
+					}
+				}
+			})
+			
+			.state("app.settings2", {
+				url: "/settings2",
+				templateUrl: "tpl/settings2.html",
+				controller: "Settings2Ctrl",
+				resolve: {
+					deps: ["$ocLazyLoad", function($ocLazyLoad) {
+						return $ocLazyLoad.load([
 							/* 
 								Load any ocLazyLoad module here
 								ex: "wysihtml5"
@@ -209,6 +236,7 @@ angular.module("app").config(["$stateProvider", "$urlRouterProvider", "$ocLazyLo
 					}
 				}
 			})
+			
 			
 			.state("app.sup", {
 				url: "/sup",
