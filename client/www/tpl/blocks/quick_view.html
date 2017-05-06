@@ -20,12 +20,15 @@
     <!-- Tab panes -->
     <div class="tab-content">
         <!-- BEGIN Notes !-->
-        <div class="tab-pane fade  in no-padding" id="quickview-notes">
+        <div class="tab-pane fade in no-padding" id="quickview-notes">
             <div class="view-port clearfix quickview-notes" id="note-views">
                 <!-- BEGIN Note List !-->
                 <div class="view list" id="quick-note-list">
                     <div class="toolbar clearfix">
                         <ul class="pull-right">
+                            <!--<li>
+                                <a href="" class="search-note-link"><i class="fa fa-search"></i></a>
+                            </li>-->
                             <li>
                                 <a href="" class="delete-note-link"><i class="fa fa-trash-o"></i></a>
                             </li>
@@ -148,7 +151,7 @@
                     </div>
                     <!-- END Alert List !-->
                 </div>
-                <!-- EEND Alerts View !-->
+                <!-- END Alerts View !-->
             </div>
         </div>
         <!-- END Alerts !-->
@@ -166,7 +169,7 @@
                             <div class="view-heading">
                                 Список собеседников
                                 <!--в div class="fs-11" был текст который можно использовать-->
-                                <div class="fs-11"></div>
+                                <!--<div class="fs-11"></div>-->
                             </div>
                             <!-- BEGIN Header Controler !-->
                             <a href="" class="inline action p-r-10 pull-right link text-master">
@@ -206,7 +209,14 @@
                                     <a data-view-animation="push-parrallax" data-view-port="#chat" pg-navigate class="" href="">
                                         <span class="col-xs-height col-middle">
                         <span class="thumbnail-wrapper d32 circular bg-success">
-                            <img width="34" height="34" alt="" ui-jq="unveil" data-src-retina="assets/img/profiles/2x.jpg" data-src="assets/img/profiles/2.jpg" src="assets/img/profiles/2x.jpg" class="col-top">
+                            <img width="34"
+                            	 height="34"
+                            	 alt=""
+                            	 ui-jq="unveil"
+                            	 data-src-retina="assets/img/profiles/2x.jpg"
+                            	 data-src="assets/img/profiles/2.jpg"
+                            	 src="assets/img/profiles/2x.jpg"
+                            	 class="col-top">
                         </span>
                                         </span>
                                         <p class="p-l-10 col-xs-height col-middle col-xs-12">
@@ -244,7 +254,7 @@
                                 <i class="pg-arrow_left"></i>
                             </a>
                             <div class="view-heading">
-                                John Smith
+                                {{authenticated.firstname}} {{authenticated.lastname}}
                                 <div class="fs-11 hint-text">Online</div>
                             </div>
                             <a href="" class="link text-master inline action p-r-10 pull-right ">
@@ -265,7 +275,20 @@
                         <!-- BEGIN From Them Message  !-->
                         <div class="message clearfix">
                             <div class="profile-img-wrapper m-t-5 inline">
-                                <img class="col-top" width="30" height="30" src="assets/img/profiles/avatar_small.jpg" alt="" data-src="assets/img/profiles/avatar_small.jpg" ui-jq="unveil" data-src-retina="assets/img/profiles/avatar_small2x.jpg">
+                                <a href=""
+                                   ui-sref="app.user({ useruri: authenticated.getCalculatedUseruri() })"
+                                   data-toggle="tooltip" 
+                                   data-original-title="{{authenticated.firstname}} {{authenticated.lastname}}"
+                                   ui-jq="tooltip">
+                                	<img class="col-top"
+                                	 width="30"
+                                	 height="30"
+                                	 src="assets/img/profiles/avatar_small.jpg"
+                                	 alt=""
+                                	 data-src="assets/img/profiles/avatar_small.jpg"
+                                	 ui-jq="unveil"
+                                	 data-src-retina="assets/img/profiles/avatar_small2x.jpg">
+                                </a>
                             </div>
                             <div class="chat-bubble from-them">
                                 Hey
@@ -289,7 +312,20 @@
                         <!-- BEGIN From Them Message  !-->
                         <div class="message clearfix">
                             <div class="profile-img-wrapper m-t-5 inline">
-                                <img class="col-top" width="30" height="30" src="assets/img/profiles/avatar_small.jpg" alt="" data-src="assets/img/profiles/avatar_small.jpg" ui-jq="unveil" data-src-retina="assets/img/profiles/avatar_small2x.jpg">
+                                <a href=""
+                                   ui-sref="app.user({ useruri: authenticated.getCalculatedUseruri() })"
+                                   data-toggle="tooltip" 
+                                   data-original-title="{{authenticated.firstname}} {{authenticated.lastname}}"
+                                   ui-jq="tooltip">
+                                	<img class="col-top"
+                                	 width="30"
+                                	 height="30"
+                                	 src="assets/img/profiles/avatar_small.jpg"
+                                	 alt=""
+                                	 data-src="assets/img/profiles/avatar_small.jpg"
+                                	 ui-jq="unveil"
+                                	 data-src-retina="assets/img/profiles/avatar_small2x.jpg">
+                                </a>
                             </div>
                             <div class="chat-bubble from-them">
                                 Yea
@@ -309,20 +345,35 @@
                             </div>-->
                             
                             <div class="col-xs-1 p-t-15 dropdown-default dropup" pg-dropdown>
-                                <!--< class="btn dropdown-toggle" data-toggle="dropdown">--><i class="fa fa-plus-circle"></i> <!--</button>-->
-                                <ul class="dropdown-menu">
+                                <i class="fa fa-plus-circle" class="dropdown-toggle" data-toggle="dropdown">
+                                <!--<ul class="dropdown-menu " role="menu">
+									<li><a href="" ui-sref="app.friends"><i class="fa fa-user"></i> Друзья</a></li>
+									<li><a href="" ui-sref="app.im"><i class="pg-social"></i> Сообщения</a></li>
+									<li><a href="" ui-sref="app.edit"><i class="pg-settings_small"></i> Настройки</a></li>
+									<li><a href="" ui-sref="app.sup"><i class="fa fa-question"></i> Помощь</a></li>
+									<li class="bg-master-lighter"><a href="" ui-sref="app.map"><i class="pg-map"></i>Карта</a></li>
+								</ul>-->
+								</i>
+                                
+                                
+                                
+                                <!--<ul class="dropdown-menu">
                                     <li><a href="">Action</a>
                                     </li>
                                     <li><a href="">Helvetica</a>
                                     </li>
                                     <li><a href="">SegeoUI</a>
                                     </li>
-                                </ul>
+                                </ul>-->
                             </div>
                             
                             
                             <div class="col-xs-8 no-padding">
-                                <input type="text" class="form-control chat-input" data-chat-input="" data-chat-conversation="#my-conversation" placeholder="Ваше сообщение...">
+                                <input type="text"
+                                	   class="form-control chat-input"
+                                	   data-chat-input=""
+                                	   data-chat-conversation="#my-conversation"
+                                	   placeholder="Ваше сообщение...">
                             </div>
                             <div class="col-xs-2 link text-master m-l-10 m-t-15 p-l-10 b-l b-grey col-top">
                                 <a href="" class="link text-master"><i class="pg-camera"></i></a>
