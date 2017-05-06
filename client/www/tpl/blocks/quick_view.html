@@ -26,14 +26,19 @@
                 <div class="view list" id="quick-note-list">
                     <div class="toolbar clearfix">
                         <ul class="pull-right">
-                            <!--<li>
-                                <a href="" class="search-note-link"><i class="fa fa-search"></i></a>
-                            </li>-->
-                            <li>
-                                <a href="" class="delete-note-link"><i class="fa fa-trash-o"></i></a>
+                        	<li>
+                                <a href="" class="new-note-link"
+                                   pg-navigate data-view-port="#note-views"
+                                   data-view-animation="push"
+                                   title="Создать заметку">
+                                	<i class="fa fa-plus"></i>
+                                </a>
+                            </li>
+                        	<li>
+                                <a href="" class="search-note-link" title="Искать в заметках"><i class="fa fa-search"></i></a>
                             </li>
                             <li>
-                                <a href="" class="new-note-link" pg-navigate data-view-port="#note-views" data-view-animation="push"><i class="fa fa-plus"></i></a>
+                                <a href="" class="delete-note-link" title="Удалить"><i class="fa fa-trash-o"></i></a>
                             </li>
                         </ul>
                         <button class="btn-remove-notes btn btn-xs btn-block" style="display:none"><i class="fa fa-times"></i> Удалить</button>
