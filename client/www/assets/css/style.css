@@ -185,3 +185,23 @@ ul.breadcrumb > li > a:hover {
 /*span.semi-bold, span.text-master {
     font-family: "Days One", sans-serif;
 }*/
+
+
+
+/*изменяем длину окна чатика*/
+.chat-view .chat-bubble {
+  position: relative;
+  border-radius: 12px;
+  padding: 4px 12px;
+  font-size: 14px;
+  line-height: 16px;
+  margin: 5px 0px 0 5px;
+  max-width: 84%;
+  white-space: normal;
+}
+
+
+
+
+
+
