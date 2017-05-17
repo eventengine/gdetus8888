@@ -9,9 +9,6 @@ const fs = require('fs');
 const path = require('path');
 const program = require('commander');
 
-
-
-
 /**
  * Параметры запуска сервера.
  */
@@ -47,7 +44,6 @@ httpServer.listen(config.server.port, function () {
 httpServer.on("error", onServerError.bind(httpServer));
 
 
-
 /**
  * Запуск HTTPS веб-сервера.
  */
@@ -67,7 +63,6 @@ if (config.https) {
 	});
 	httpsServer.on("error", onServerError.bind(httpsServer));
 }
-
 
 /**
  * Вспомогательные функции.

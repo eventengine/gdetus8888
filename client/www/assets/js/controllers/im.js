@@ -8,8 +8,15 @@
 angular.module("app")
 	.controller("ImCtrl", ["$scope", function($scope) {
 
-		$scope.message = "Болванка страницы сообщений";
+		//$scope.message = "Болванка страницы сообщений";
+		
+		
 		
 		
 
 	}]);
+	
+	
+	
+
+	

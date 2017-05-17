@@ -19,6 +19,8 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const expressValidator = require('express-validator');
 
+//const io = require('socket.io');
+
 const randomItem = require('random-item');
 
 module.exports = function() {
@@ -41,9 +43,6 @@ module.exports = function() {
 		then 
 		document.getElementById("foods").innerHTML = array[i][1];*/
 };
-
-
-
 
 /**
  * Приложение Express

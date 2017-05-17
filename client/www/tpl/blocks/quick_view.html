@@ -16,11 +16,12 @@
     
     <!--<button 
     	 data-placement="bottom"
-    	 title="" data-toggle="tooltip" 
+    	 title=""
+    	 data-toggle="tooltip" 
     	 class="btn btn-default tip m-b-5 m-r-5" 
-    	 type="button" data-original-title="Look down!" 
+    	 type="button"
+    	 data-original-title="Look down!" 
     	 ui-jq="tooltip">Down</button>-->
-    
     
     <!-- Tab panes -->
     <div class="tab-content">
@@ -40,13 +41,23 @@
                                 </a>
                             </li>
                         	<li>
-                                <a href="" class="search-note-link" title="Искать в заметках"><i class="fa fa-search"></i></a>
+                                <a href="" 
+                                   class="search-note-link"
+                                   title="Искать в заметках"> 
+                                	<i class="fa fa-search"></i></a>
                             </li>
                             <li>
-                                <a href="" class="delete-note-link" title="Удалить"><i class="fa fa-trash-o"></i></a>
+                                <a href="" 
+                                   class="delete-note-link" 
+                                   title="Удалить">
+                                	<i class="fa fa-trash-o"></i>
+                                </a>
                             </li>
                         </ul>
-                        <button class="btn-remove-notes btn btn-xs btn-block" style="display:none"><i class="fa fa-times"></i> Удалить</button>
+                        <button class="btn-remove-notes btn btn-xs btn-block"
+                        		style="display:none">
+                        	<i class="fa fa-times"></i> Удалить
+                        </button>
                     </div>
                     <ul>
                         <!-- BEGIN Note Item !-->
@@ -59,13 +70,15 @@
                                 </div>
                                 <!-- END Note Action !-->
                                 <!-- BEGIN Note Preview Text !-->
-                                <p class="note-preview">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+                                <p class="note-preview">Успех обязательно придёт к тому, кто не останавливается на 
+                                						полпути, на закончив начатое из-за усталости, глупости
+                                						или лени. Ut enim ad minim veniam</p>
                                 <!-- BEGIN Note Preview Text !-->
                             </div>
                             <!-- BEGIN Note Details !-->
                             <div class="right pull-right">
                                 <!-- BEGIN Note Date !-->
-                                <span class="date">12/12/14</span>
+                                <span class="date">21/04/17</span>
                                 <a href=""><i class="fa fa-chevron-right"></i></a>
                                 <!-- END Note Date !-->
                             </div>
@@ -78,11 +91,22 @@
                 <div class="view note" id="quick-note">
                     <div>
                         <ul class="toolbar">
-                            <li><a href="" class="close-note-link" pg-navigate data-view-port="#note-views" data-view-animation="push"><i class="pg-arrow_left"></i></a>
+                            <li><a href=""
+                            	   class="close-note-link" 
+                            	   pg-navigate data-view-port="#note-views" 
+                            	   data-view-animation="push">
+                            		<i class="pg-arrow_left"></i>
+                            	</a>
                             </li>
-                            <li><a href="" class="Bold"><i class="fa fa-bold"></i></a>
+                            <li><a href="" 
+                            	   class="Bold">
+                            		<i class="fa fa-bold"></i>
+                            	</a>
                             </li>
-                            <li><a href="" class="Italic"><i class="fa fa-italic"></i></a>
+                            <li><a href="" 
+                            	   class="Italic">
+                            		<i class="fa fa-italic"></i>
+                            	</a>
                             </li>
                             <li><a href="" class=""><i class="fa fa-link"></i></a>
                             </li>
@@ -90,10 +114,16 @@
                         <div class="body">
                             <div>
                                 <div class="top">
-                                    <span>21st april 2014 2:13am</span>
+                                    <span>21 апреля 2017 2:13 am</span>
                                 </div>
                                 <div class="content">
                                     <div class="quick-note-editor full-width full-height js-input" contenteditable="true"></div>
+                                </div>
+                                <div class="bottom">
+                                    <button class="btn-save-notes btn btn-xs btn-block m-b-10"
+                        					style="display">
+                        				<i class="fa fa-save"></i> Cохранить
+                        			</button>
                                 </div>
                             </div>
                         </div>
@@ -264,7 +294,10 @@
                     <!-- BEGIN Header  !-->
                     <div class="navbar navbar-default">
                         <div class="navbar-inner">
-                            <a href="javascript:;" class="link text-master inline action p-l-10" pg-navigate data-view-port="#chat" data-view-animation="push-parrallax">
+                            <a href="javascript:;"
+                               class="link text-master inline action p-l-10"
+                               pg-navigate data-view-port="#chat"
+                               data-view-animation="push-parrallax">
                                 <i class="pg-arrow_left"></i>
                             </a>
                             <div class="view-heading">
@@ -281,11 +314,14 @@
                     <div class="chat-inner" id="my-conversation">
                         <!-- BEGIN From Me Message  !-->
                         <div class="message clearfix">
-                            <div ng-repeat="message-from-me in chat-inner" class="chat-bubble from-me">
+                            <div ng-repeat="message-from-me" class="chat-bubble from-me">
                                 Hello there 
                             </div>
                         </div>
                         <!-- END From Me Message  !-->
+                        
+                        <!--<div class="tab-pane" id="tab4" ng-include src=" 'tpl/forms/settings/privacy/NotificationsForm.html' "></div>-->
+                        
                         <!-- BEGIN From Them Message  !-->
                         <div class="message clearfix">
                             <div class="profile-img-wrapper m-t-5 inline">
@@ -309,6 +345,7 @@
                             </div>
                         </div>
                         <!-- END From Them Message  !-->
+                        
                         <!-- BEGIN From Me Message  !-->
                         <div class="message clearfix">
                             <div class="chat-bubble from-me">

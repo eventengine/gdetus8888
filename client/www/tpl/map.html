@@ -10,16 +10,15 @@
 	            <button class="btn btn-xs" ng-click="zoomOut()"><i class="fa fa-minus"></i></button>
 	        </div>
 	        <br>
-	        <a href="" class="btn btn-xs m-t-10 clear-map">
+	        <!--<a href="" class="btn btn-xs m-t-10 clear-map">
 	            <i class="fa fa-arrows"></i>
-	        </a>
+	        </a>-->
 	    </div>
 	    
 	    <div class="pull-left m-l-15">
 	        <form role="form">
 	            <div pg-form-group class="form-group form-group-default input-group" style="width:300px">
 	                <label>Поиск</label>
-	
 	                <div class="controls">
 	                    <ui-select ng-model="selected.value" append-to-body="true" on-select="onSelectCallback($item, $model)">
 	                        <ui-select-match>
@@ -30,6 +29,7 @@
 	                        </ui-select-choices>
 	                    </ui-select>
 	                </div>
+
 	            </div>
 	        </form>
 	    </div>
