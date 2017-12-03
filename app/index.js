@@ -19,7 +19,7 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const expressValidator = require('express-validator');
 
-//const io = require('socket.io');
+const io = require('socket.io');
 
 const randomItem = require('random-item');
 
@@ -65,7 +65,7 @@ module.exports = {
 		
 		app.use(httpsRedirect);
 		app.use(cookieParser());
-		app.use(bodyParser.urlencoded({ extended: true, limit: "5mb" }));
+		app.use(bodyParser.urlencoded({ extended: true, limit: "150mb" })); //изначально стояло 5 мб, и периодически сервер падал. возможно из-за этого.
 		app.use(bodyParser.json());
 		app.use(require(path.join(paths.middlewares, "session")).init(config));
 		app.use(expressValidator({
@@ -113,3 +113,4 @@ module.exports = {
 		return app;
 	}
 };
+

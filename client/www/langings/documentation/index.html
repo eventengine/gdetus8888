@@ -1,0 +1,3852 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <title>Pages Documentation - Jquery</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=1200, maximum-scale=1" />
+    <link href="assets/plugins/boostrapv3/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/plugins/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css" />
+    <link href="pages/css/pages-icons.css" rel="stylesheet" type="text/css" />
+    <link href="assets/plugins/bootstrap-select2/select2.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="assets/plugins/ion-slider/css/ion.rangeSlider.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="assets/plugins/ion-slider/css/ion.rangeSlider.skinFlat.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="assets/plugins/jquery-nouislider/jquery.nouislider.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="assets/plugins/bootstrap3-wysihtml5/bootstrap3-wysihtml5.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/plugins/bootstrap-tag/bootstrap-tagsinput.css" rel="stylesheet" type="text/css" />
+    <link href="assets/plugins/dropzone/css/dropzone.css" rel="stylesheet" type="text/css" />
+    <link href="assets/plugins/switchery/css/switchery.min.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="assets/plugins/bootstrap-datepicker/css/datepicker3.css" rel="stylesheet" type="text/css" media="screen">
+    <link href="assets/plugins/summernote/css/summernote.css" rel="stylesheet" type="text/css" media="screen">
+    <link href="assets/plugins/jquery-dynatree/skin/ui.dynatree.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="assets/plugins/jquery-dynatree/skin/ui.dynatree.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="assets/plugins/jquery-dynatree/skin/ui.dynatree.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="pages/css/pages.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/print.css" rel="stylesheet" type="text/css" />
+    <link href="assets/plugins/highlight/styles/github.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body class="index" data-spy="scroll" data-target=".sidebar">
+    <header>
+      <div class="container">
+        <a class="logo" href="#">
+          <img src="assets/img/logo_white.png">
+        </a>
+      </div>
+    </header>
+    <div class="container p-t-70" style="padding-top:70px">
+      <div class="container-inner">
+        <nav class="sidebar ">
+          <div class="scrollable">
+            <ul class="nav">
+              <li>
+                <h6>Introduction</h6>
+                <ul class="nav" style="overflow: hidden; display: block;">
+                  <li class="">
+                    <a href="#getting_started">Getting Started</a>
+                  </li>
+                  <li class="">
+                    <a href="#working_less">LESS</a>
+                  </li>
+                  <li class="">
+                    <a href="#working_grunt">Grunt</a>
+                  </li>
+                  <li class="">
+                    <a href="#working_gulp">Gulp</a>
+                  </li>
+                  <li class="">
+                    <a href="#supported_browsers">Browser Support</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="#api">API Reference</a>
+              </li>
+              <!--         <li>
+            <a href="#themes">Themes</a>
+        </li> -->
+              <li>
+                <a href="#grid">Grid</a>
+              </li>
+              <li>
+                <a href="#helpers">Helpers</a>
+              </li>
+              <li class="">
+                <h6>Options</h6>
+                <ul class="nav">
+                  <li> <a href="#headers"> Headers </a>
+                  </li>
+                  <li> <a href="#slider"> Slider </a>
+                  </li>
+                  <li> <a href="#background_images"> Background Images </a>
+                  </li>
+                  <li> <a href="#parallax"> Parallax </a>
+                  </li>
+                  <li> <a href="#floating"> Floating Elements </a>
+                  </li>
+                  <!--                 <li> <a href="#devicePlaceholders"> Device Placeholders </a>
+                </li>
+                <li> <a href="#blocks">Blocks</a>
+                </li> -->
+                  <li> <a href="#footer">Footer</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="">
+                <h6>UI Elements</h6>
+                <ul class="nav">
+                  <li> <a href="#color"> Color </a>
+                  </li>
+                  <!--                 <li> <a href="#typography"> Typography </a>
+                </li> -->
+                  <li> <a href="#icons">Icons</a>
+                  </li>
+                  <li> <a href="#buttons">Buttons</a>
+                  </li>
+                  <li> <a href="#modals"> Modals </a>
+                  </li>
+                  <li> <a href="#progress_bars"> Progress &amp; Activity </a>
+                  </li>
+                  <li> <a href="#accordians">Accordians </a> </li>
+                  <li> <a href="#tabs"> Tabs </a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <h6>Forms</h6>
+                <ul class="nav">
+                  <li>
+                    <a href="#form_elements">Form Elements</a>
+                  </li>
+                  <li>
+                    <a href="#form_layouts">Form Layouts</a>
+                  </li>
+                  <li>
+                    <a href="#form_validation">Form Validation</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="#email">Mail</a>
+              </li>
+              <li>
+                <a href="#troubleshooting">Troubleshooting</a>
+              </li>
+              <li>
+                <a href="#community">Community</a>
+              </li>
+              <li>
+                <a href="#support">Support</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <div class="row">
+          <div class="col-md-9 col-sm-8 col-md-offset-3 col-sm-offset-4">
+            <div class="content">
+              <section id="introduction" style="padding-top:30px">
+                <h2 class="text-center">Pages Frontend Documentation</h2>
+                <h5 class="text-center">Beautifully Hand Crafted, Light Weight, Hardware Accelerated UI Framework  </h5>
+                <hr>
+                <h3>Introduction</h3>
+                <p>Pages is now aviable for both admin dashboards as well as Frontend, you will be able to experience the same great features that you had in Pages dashboard also Pages frontend as well.</p>
+                <p>This documentation guide for all Pages users who can even be a beginner to Web development
+                </p>
+                <br>
+                <h3>Light Weight & Ready to Go</h3>
+                <p> The entire set of modules clocks in at 38KB* minified and gzipped. Crafted with mobile devices in mind, it was important to us to keep our file sizes small, and every line of CSS was carefully considered. If you decide to only use a subset of these modules, you'll save even more bytes.</p>
+                <br>
+                <p>Production level usage using minfied and gzipped files</p>
+                <table style="width:100%">
+                  <tbody>
+                    <tr>
+                      <td style="width:50%;height:30px" class="bg-danger text-white text-center fs-14 p-t-5 p-b-5">
+                        CSS
+                        <div class="fs-12">38Kb</div>
+                      </td>
+                      <td style="width:10%;height:30px" class="bg-primary text-white text-center fs-14 p-t-5 p-b-5">JS
+                        <div class="fs-12">1.8Kb</div>
+                      </td>
+                      <td style="width:30%;height:30px" class="bg-complete text-white text-center fs-14 p-t-5 p-b-5">Icons
+                        <div class="fs-12">12Kb</div>
+                      </td>
+                      <td style="width:30%;height:30px" class="bg-warning text-white text-center fs-14 p-t-5 p-b-5">Other
+                        <div class="fs-12">120Kb</div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </section>
+              <section id="getting_started">
+                <h3 class="page-title">
+            Getting Started
+          </h3>
+                <hr>
+                <h5>
+            This part of the doc will help you to quick start your project and will you a basic idea about how Pages Frontend works. 
+          </h5>
+                <br>
+                <h4>What's Included</h4>
+                <p>Once you have download the package you will see the following folder structure in "<strong>frontend</strong>" Folder</p>
+                <div class="m-b-20" id="default-tree">
+                  <ul id="treeData" style="display: none;">
+                    <li class="folder">core
+                    </li>
+                    <li class="folder">samples
+                    </li>
+                    <li class="folder">getting_started
+                    </li>
+                    <li class="folder">grunt
+                    </li>
+                    <li class="folder">gulp
+                    </li>
+                    <li id="id2">documentation.html
+                    </li>
+                  </ul>
+                </div>
+                <br>
+                <h4>Whats Inside getting_started</h4>
+                <p>This folder is a quickstart template to help you start your website, you can copy content blocks from samples folder to your to this and create you custom version </p>
+                <div class="m-b-20" id="g-tree">
+                  <ul id="gdata" style="display: none;">
+                    <li class="folder expanded">getting_started
+                      <ul>
+                        <li class="folder">assets
+                          <ul>
+                            <li class="folder">css
+                            </li>
+                            <li class="folder">js
+                            </li>
+                            <li class="folder">img
+                            </li>
+                          </ul>
+                        </li>
+                        <li class="folder">pages
+                          <ul>
+                            <li class="folder expanded">css
+                              <ul>
+                                <li>pages.frontend.css</li>
+                                <li>pages.frontend.min.css</li>
+                              </ul>
+                            </li>
+                            <li class="folder expanded">js
+                              <ul>
+                                <li>pages.frontend.js</li>
+                                <li>pages.frontend.min.js</li>
+                              </ul>
+                            </li>
+                            <li class="folder">img
+                            </li>
+                          </ul>
+                        </li>
+                        <li>index.html
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+                <br>
+                <h5 class="">Folder : assets</h5>
+                <p>This folder is entirely dedicated for you and you can add your own images, custom css and js files, its grouped into resource folders for best practice</p>
+                <br>
+                <h5 class="">Folder : pages</h5>
+                <p>This where the magic happens and contains pre-complied version of Pages, we do recommend updating any contents of the folder as all future updates are affected directly to this</p>
+                <br>
+                <h4>Whats Inside demo</h4>
+                <p>This folder contains all the alternative websites that we have created using Pages frontend.</p>
+                <p>You can copy elements/blocks from one sample 01 to sample 02 they will work entirely on all the pages</p>
+                <div class="m-b-20" id="g-trees">
+                  <ul id="gdatad" style="display: none;">
+                    <li class="folder">samples
+                      <ul>
+                        <li class="folder">01</li>
+                        <li class="folder">02</li>
+                        <li class="folder">03</li>
+                        <li class="folder">04</li>
+                        <li class="folder">05</li>
+                        <li class="folder">06</li>
+                        <li class="folder">07</li>
+                        <li class="folder">08</li>
+                        <li class="folder">09</li>
+                        <li class="folder">10</li>
+                        <li class="folder">11</li>
+                        <li class="folder">12</li>
+                        <li class="folder">13</li>
+                        <li class="folder">14</li>
+                        <li class="folder">15</li>
+                        <li class="folder">16</li>
+                        <li class="folder">17</li>
+                        <li class="folder">18</li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+                <br>
+                <h4>Whats Inside grunt and gulp</h4>
+                <p>Pages support two popular build systems called Grunt and Gulp.</p>
+                <div class="m-b-20" id="b-tree">
+                  <ul id="gdata" style="display: none;">
+                    <li class="folder expanded" id="id5">grunt
+                      <ul>
+                        <li id="id2">package.json
+                        </li>
+                        <li id="id2">gruntfile.js
+                        </li>
+                      </ul>
+                    </li>
+                    <li class="folder expanded" id="id5">gulp
+                      <ul>
+                        <li id="id2">package.json
+                        </li>
+                        <li id="id2">gulpfile.js
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+                <br>
+                <br>
+                <br>
+                <p>Other Useful resources that you may find:</p>
+                <ul class="other-ref">
+                  <li><a href="#working_less">Working with LESS</a></li>
+                  <li><a href="#working_grunt">Working with Grunt</a></li>
+                  <li><a href="#working_gulp">Working with Gulp</a></li>
+                </ul>
+              </section>
+              <section id="working_less">
+                <h3 class="page-title">
+            Working with Less
+          </h3>
+                <hr>
+                <p>Less is a CSS pre-processor, meaning that it extends the CSS language, adding features that allow variables, mixins, functions. Pages supports Less and is pure built on top of Less </p>
+                <p> Less Files are found under <code>pages/less</code>
+                </p>
+                <div class="m-b-20" id="g-tree">
+                  <ul id="gdata" style="display: none;">
+                    <li class="folder expanded" id="gid3">less
+                      <ul>
+                        <li class="folder" id="gid3">modules
+                        </li>
+                        <li class="folder" id="gid5">themes
+                          <ul>
+                            <li id="gid54.1.1" class="folder ">default
+                              <ul>
+                                <li id="gid2">var.less</li>
+                                <li id="gid2">theme.less</li>
+                              </ul>
+                            </li>
+                            <li id="gid54.1.2" class="folder ">simple
+                              <ul>
+                                <li id="gid2">var.less</li>
+                                <li id="gid2">theme.less</li>
+                              </ul>
+                            </li>
+                            <li id="gid54.1.2" class="folder ">corporate
+                              <ul>
+                                <li id="gid2">var.less</li>
+                                <li id="gid2">theme.less</li>
+                              </ul>
+                            </li>
+                            <li id="gid54.1.2" class="folder ">retro
+                              <ul>
+                                <li id="gid2">var.less</li>
+                                <li id="gid2">theme.less</li>
+                              </ul>
+                            </li>
+                          </ul>
+                        </li>
+                        <li id="gid2">mixin.less</li>
+                        <li id="gid2">modules.less</li>
+                        <li id="gid2">pages.less</li>
+                        <li id="gid2">responsive.less</li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+                <br>
+                <h5 class="semi-bold">
+Modules</h5>
+                <p>
+                  The seperation of modules help you to remove whats not necessary and build your own custom pages css You an import any modules from pages dashboard less to pages frontend less.
+                </p>
+                <div class="table-responsive">
+                  <table class="table table-bordered table-condensed table-striped">
+                    <thead>
+                      <tr>
+                        <th>
+                          Name
+                        </th>
+                        <th>
+                          Description
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>layout.less</td>
+                        <td>The core layout styles for pages frontend</td>
+                      </tr>
+                      <tr>
+                        <td>respnsive.less</td>
+                        <td>The responsive handlers</td>
+                      </tr>
+                      <tr>
+                        <td>panels.less</td>
+                        <td>Bootstrap Panels over-written classes</td>
+                      </tr>
+                      <tr>
+                        <td>typography.less</td>
+                        <td>Contains all typo related styles included bg-color</td>
+                      </tr>
+                      <tr>
+                        <td>swiper.less</td>
+                        <td>Image slider classes</td>
+                      </tr>
+                      <tr>
+                        <td>button.less</td>
+                        <td>Bootstrap button over-written classes and pages dropdown</td>
+                      </tr>
+                      <tr>
+                        <td>alerts.less</td>
+                        <td>Bootstrap alert messages over-written classes</td>
+                      </tr>
+                      <tr>
+                        <td>progress_indicators.less</td>
+                        <td>Pages progress bars, bootstrap native progress</td>
+                      </tr>
+                      <tr>
+                        <td>modals.less</td>
+                        <td>Bootstrap Modal Classes</td>
+                      </tr>
+                      <tr>
+                        <td>tabs_accordian.less</td>
+                        <td>Bootstrap tabs and accordains</td>
+                      </tr>
+                      <tr>
+                        <td>form_elements.less</td>
+                        <td>All form related class including layouts & validations</td>
+                      </tr>
+                      <tr>
+                        <td>tables.less</td>
+                        <td>Classes for bootstrap tables and datatables</td>
+                      </tr>
+                      <tr>
+                        <td>tables.less</td>
+                        <td>Classes for bootstrap tables and datatables</td>
+                      </tr>
+                      <tr>
+                        <td>misc.less</td>
+                        <td>All other utilities and helper classes</td>
+                      </tr>
+                      <tr>
+                        <td>z-index.less</td>
+                        <td>To maintian heierachchy and order for layers</td>
+                      </tr>
+                      <tr>
+                        <td>demo.less</td>
+                        <td>Demo purpose classes for setting heights</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <br>
+                <h5 class="semi-bold">
+Varriables</h5>
+                <p>
+                  Varriables help to generate themes, you can custom build you very own theme. The varriables will be include inside a specific theme
+                  <br>e.g:
+                  <code>less/themes/default/var.less</code> by changing the a few 5 main color varrables you can create your own color palette
+                </p>
+                <br>
+                <h5>Creating your own Color Pallete</h5>
+                <p>
+                  By simply changing the following varriables the entire color palete mention here will change
+                  <a href="#color" target="_blank">Color Palette</a>
+                  <br>
+                  <br>
+                  <strong>Main Base color</strong>
+                  <br>
+                  <code>@color-master</code>
+                  <br>
+                  <strong>Primary Colors</strong>
+                  <br>
+                  <code>@color-success</code>
+                  <br>
+                  <code>@color-complete</code>
+                  <br>
+                  <code>@color-primary</code>
+                  <br>
+                  <code>@color-warning</code>
+                  <br>
+                  <code>@color-danger</code>
+                  <br>
+                  <code>@color-info</code>
+                </p>
+                <br>
+                <h5 class="semi-bold">
+Mixins</h5>
+                <p>
+                  We have made a wide varraity of mixins that can be used in less,
+                  <br>mixins can be found under <code>pages/src/less/mixin.less</code>
+                </p>
+                <br>
+                <h5 class="semi-bold">
+Compiling</h5>
+                <p>We recommend to compile locally without using <code>less.js</code> library, there are many Less compilers for Windows, Mac and also Linux users but we made it even easier. With pages powerful CLI you can compile it without any thirdparty software, simple do any changes to the less files in <code>pages/less</code> and it automatically updates the css in <code>pages/css/pages-frontend.css</code>
+                </p>
+                <br>
+                <p>
+                  <b>Use the following commmands on your terminal</b>
+                </p>
+                <br>
+                <p>
+                  <b>Using Grunt</b>
+                </p>
+                <p>This command will automatically compile the less to css on file save</p>
+                <pre><code class="xml">$ grunt watch</code></pre>
+                <p>This command will compile the less to css on execute</p>
+                <pre><code class="xml">$ grunt less</code></pre>
+                <br>
+                <p>
+                  <a href="#working_grunt">Read more about how to setup Grunt </a>
+                </p>
+                <br>
+                <p>
+                  <b>Using Gulp</b>
+                </p>
+                <p>This command will automatically compile the less to css on file save</p>
+                <pre><code class="xml">$ gulp watch</code></pre>
+                <p>This command will compile the less to css on execute</p>
+                <pre><code class="xml">$ gulp less</code></pre>
+                <br>
+                <p>
+                  <a href="#working_gulp">Read more about how to setup gulp </a>
+                </p>
+              </section>
+              <section id="working_grunt">
+                <h3 class="page-title">
+            Working with Grunt
+          </h3>
+                <hr>
+                <p>In one word: automation. The less work you have to do when performing repetitive tasks like minification, compilation, unit testing, linting, etc, the easier your job becomes. After you've configured it through a Gruntfile. Pages supports Grunt to make it even easier for developers, this allows us to implement a powerful command line interface for pages. Here are some of the things that we have added using grunt
+                </p>
+                <h4>
+              <br>
+Installing Grunt</h4>
+                <p>
+                  To install grunt first you must have <a href="http://nodejs.org/download/">NodeJs installed</a>, NodeJS will have npm (node packaged modules)
+                  <br> Run the following commands
+                </p>
+                <ul class="fs-12">
+                  <li>Install <code>grunt-cli</code> globally by running the following command <code>npm install -g grunt-cli</code></li>
+                  <li>In you downloaded package from themeforest, navigate to <code>grunt/</code> directory and copy both <code>package.json</code> <code>gruntfile.js</code> to your project root. e.g : <code>getting_started</code> folder</li>
+                  <li>Navigate to the root directory of your project, then run <code>npm install</code>. </li>
+                </ul>
+                <br>
+                <p>
+                  Once you have succesfully setup now you can use pages Grunt CLI commands to automate your task
+                </p>
+                <h4>
+<br> Commands</h4>
+                <h5>
+<code>Grunt Build</code>
+</h5>
+                <p>This will automatically minify your assets resources like css and js into a folder called <code>dist</code> </p>
+                <h5>
+<code>Grunt Watch</code>
+</h5>
+                <p>This will automaically compile the pages Less files on save</p>
+                <h5>
+<code>Grunt Less</code>
+</h5>
+                <p>This will compile the pages Less files on excute once</p>
+                <br>
+                <p>Your are free to customize the Grunt task to your need by editing the gruntfile.js in the root directory of <code>getting_started</code></p>
+                <h4>
+              <br>
+Troubleshooting </h4>
+                <p>Should you encounter problems with installing dependencies or running Grunt commands, first delete the <code>/node_modules/</code> directory generated by npm. Then, rerun <code>npm install</code>.</p>
+              </section>
+              <section id="working_gulp">
+                <h3 class="page-title">
+            Working with Gulp
+          </h3>
+                <hr>
+                <p>Gulp is another famous build system supported by pages, gulp's use of streams and code-over-configuration makes for a simpler and more intuitive build.
+                </p>
+                <h4>
+              <br>
+Installing Gulp</h4>
+                <p>
+                  To install gulp first you must have <a href="http://nodejs.org/download/">NodeJs installed</a>, NodeJS will have npm (node packaged modules)
+                  <br> Run the following commands
+                </p>
+                <ul class="fs-12">
+                  <li>Install <code>gulp</code> globally by running the following command <code>npm install -g gulp</code></li>
+                  <li>In you downloaded package from themeforest, navigate to <code>gulp/</code> directory and copy both <code>package.json</code> <code>gulpfile.js</code> to your project root. e.g : <code>getting_started</code> folder</li>
+                  <li>Navigate to the root directory of your project or getting_started folder, then run <code>npm install</code>. </li>
+                </ul>
+                <br>
+                <p>
+                  Once you have succesfully setup now you can use pages Gulp CLI commands to automate your task
+                </p>
+                <h4>
+              <br> Commands</h4>
+                <h5>
+                <code>gulp build</code>
+              </h5>
+                <p>This will automatically minify your assets resources like css and js into a folder called <code>dist</code> </p>
+                <h5>
+                <code>gulp watch</code>
+               
+              </h5>
+                <p>This will automaically compile the pages Less files on save</p>
+                <h5>
+                <code>gulp less</code>
+                
+              </h5>
+                <p>This will compile the pages Less files on excute once</p>
+                <br>
+                <p>Your are free to customize the Gulp task to your need by editing the gulpfile.js</p>
+                <h4>
+              <br>
+Troubleshooting </h4>
+                <p>Should you encounter problems with installing dependencies or running Gulps commands, first delete the <code>/node_modules/</code> directory generated by npm. Then, rerun <code>npm install</code>.</p>
+              </section>
+              <section id="supported_browsers">
+                <h3 class="page-title">
+           Browser Support
+          </h3>
+                <hr>
+                <p>Pages is built keeping mind to support a wide range of browsers and devices. We all major browers Google Chrome, Mozilla Firefox, Safari, Opera, Internet Explorer 9 and Above</p>
+                </p>
+                <p>Pages not only is supported by major browser but also is hardware accelarated using the GPU </p>
+                <br>
+                <div class="table-responsive">
+                  <table class="table table-bordered table-striped table-condensed">
+                    <thead>
+                      <tr>
+                        <td></td>
+                        <th>Chrome</th>
+                        <th>Firefox</th>
+                        <th>Internet Explorer</th>
+                        <th>Opera</th>
+                        <th>Safari</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th>Android</th>
+                        <td class="text-success"><span class="glyphicon glyphicon-ok"></span> Supported</td>
+                        <td class="text-success"><span class="glyphicon glyphicon-ok"></span> Supported</td>
+                        <td class="text-muted" rowspan="3" style="vertical-align: middle;">N/A</td>
+                        <td class="text-danger"><span class="glyphicon glyphicon-remove"></span> Not Supported</td>
+                        <td class="text-muted">N/A</td>
+                      </tr>
+                      <tr>
+                        <th>iOS</th>
+                        <td class="text-success"><span class="glyphicon glyphicon-ok"></span> Supported</td>
+                        <td class="text-muted">N/A</td>
+                        <td class="text-danger"><span class="glyphicon glyphicon-remove"></span> Not Supported</td>
+                        <td class="text-success"><span class="glyphicon glyphicon-ok"></span> Supported</td>
+                      </tr>
+                      <tr>
+                        <th>Mac OS X</th>
+                        <td class="text-success"><span class="glyphicon glyphicon-ok"></span> Supported</td>
+                        <td class="text-success"><span class="glyphicon glyphicon-ok"></span> Supported</td>
+                        <td class="text-success"><span class="glyphicon glyphicon-ok"></span> Supported</td>
+                        <td class="text-success"><span class="glyphicon glyphicon-ok"></span> Supported</td>
+                      </tr>
+                      <tr>
+                        <th>Windows</th>
+                        <td class="text-success"><span class="glyphicon glyphicon-ok"></span> Supported</td>
+                        <td class="text-success"><span class="glyphicon glyphicon-ok"></span> Supported</td>
+                        <td class="text-success"><span class="glyphicon glyphicon-ok"></span> Supported</td>
+                        <td class="text-success"><span class="glyphicon glyphicon-ok"></span> Supported</td>
+                        <td class="text-danger"><span class="glyphicon glyphicon-remove"></span> Not Supported</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </section>
+              <section id="api">
+                <h3 class="page-title">API Reference</h3>
+                <hr>
+                <p>
+                  As mentioned in the <a href="#getting_started">Getting Started</a> guide, Pages core framework files can be found in the <code>pages</code> folder. Inside this you'll be able to find <code>pages.js</code> and <code>pages.min.js</code> files which contain the core logic and utility functions of the framework. Simply including either of these files will set environment variables, auto initialize all the core modules for you and present you with the Pages global object
+                  <code>$.Pages</code> which you can use to call utility functions.
+                </p>
+                <pre><code class="xml">&lt;!-- Initialize Pages core objects --&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;pages/js/pages.min.js&quot;&gt;
+</code></pre>
+                <br>
+                <h4>Environment variables</h4>
+                <p>Pages will detect the user OS and add it as a class name (ex: 'windows', 'mac', 'unix', 'linux') into <code>body</code>.</p>
+                <p>It will also detect if it's mobile device or desktop and add either 'mobile' and 'desktop' into the same tag.</p>
+                <br>
+                <h4>Auto-initialized jQuery Plugins</h4>
+                <p>The following table shows which plugins are auto-initialized and their default configuration.
+                </p>
+                <table class="table table-bordered table-striped">
+                  <thead>
+                    <tr>
+                      <th>Plugin</th>
+                      <th>jQuery</th>
+                      <th>AngularJS</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><a href="http://luis-almeida.github.io/unveil/">Unveil</a></td>
+                      <td>Applied to any <code>img</code>
+                      </td>
+                      <td><pre><code class="xml">&lt;img ui-jq=&quot;unveil&quot; src=&quot;avatar.jpg&quot;&gt;</code></pre></td>
+                    </tr>
+                  </tbody>
+                </table>
+                <br>
+                <h4>Utility functions</h4>
+                <p class="bold">$.Pages.init()</p>
+                <p>Reinitialize Pages core</p>
+                <br>
+                <p class="bold">$.Pages.isVisibleXs()</p>
+                <p>Returns true if the current viewport is an <a href="http://getbootstrap.com/css/#responsive-utilities">extra small device</a>. ex: Phones (&lt;768px)</p>
+                <br>
+                <p class="bold">$.Pages.isVisibleSm()</p>
+                <p>Returns true if the current viewport is a <a href="http://getbootstrap.com/css/#responsive-utilities">small device</a>. ex: Tablets (≥768px)</p>
+                <br>
+                <p class="bold">$.Pages.isVisibleMd()</p>
+                <p>Returns true if the current viewport is a <a href="http://getbootstrap.com/css/#responsive-utilities">medium device</a>. ex: Desktops (≥992px)</p>
+                <br>
+                <p class="bold">$.Pages.isVisibleLg()</p>
+                <p>Returns true if the current viewport is a <a href="http://getbootstrap.com/css/#responsive-utilities">large device</a>. ex: Desktops (≥1200px)</p>
+                <br>
+                <p class="bold">$.Pages.getUserAgent()</p>
+                <p>Reads the pre-set user-agent class from <code>body</code> and returns either 'mobile' or 'desktop'</p>
+                <br>
+                <p class="bold">$.Pages.setFullScreen(element)</p>
+                <p>Makes the given element to go full-screen mode. ex: <code>$.Pages.setFullScreen(document.querySelector('html'));</code></p>
+                <br>
+                <p class="bold">$.Pages.getColor(color,opacity)</p>
+                <p>Returns the <code>rgba</code> value for a given <a href="#color">Pages contextual color</a> and opacity. </p>
+              </section>
+              <section id="grid">
+                <h3 class="page-title">
+            Grid
+          </h3>
+                <hr>
+                <h5>
+Bootstrap grid includes a responsive, mobile first fluid grid system that appropriately scales up to 12 columns as the device or viewport size increases. It includes predefined classes for easy layout options, as well as powerful mixins for generating more semantic layouts
+          </h5>
+                <h3 id="grid-intro">Introduction</h3>
+                <p>Grid systems are used for creating page layouts through a series of rows and columns that house your content. Here's how the Bootstrap grid system works:</p>
+                <ul class="fs-13 p-l-25">
+                  <li>You must start with <code>row</code></li>
+                  <li>There are pre-define classes of columns starting from 1 to 12, example <code>col-md-1</code> to <code>col-md-12</code></li>
+                  <li>Each of these value represent a percentage of the screen, 1 being the smallest and 12 being 100%</li>
+                  <li>You can create different grid pattern that finally forms 12 </li>
+                  <p class="all-caps fs-12 bold">
+                    example :
+                  </p>
+                  <pre><code class="xml">&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;col-md-1&quot;&gt;.col-md-1&lt;/div&gt;
+  &lt;div class=&quot;col-md-1&quot;&gt;.col-md-1&lt;/div&gt;
+  &lt;div class=&quot;col-md-1&quot;&gt;.col-md-1&lt;/div&gt;
+  &lt;div class=&quot;col-md-1&quot;&gt;.col-md-1&lt;/div&gt;
+  &lt;div class=&quot;col-md-1&quot;&gt;.col-md-1&lt;/div&gt;
+  &lt;div class=&quot;col-md-1&quot;&gt;.col-md-1&lt;/div&gt;
+  &lt;div class=&quot;col-md-1&quot;&gt;.col-md-1&lt;/div&gt;
+  &lt;div class=&quot;col-md-1&quot;&gt;.col-md-1&lt;/div&gt;
+  &lt;div class=&quot;col-md-1&quot;&gt;.col-md-1&lt;/div&gt;
+  &lt;div class=&quot;col-md-1&quot;&gt;.col-md-1&lt;/div&gt;
+  &lt;div class=&quot;col-md-1&quot;&gt;.col-md-1&lt;/div&gt;
+  &lt;div class=&quot;col-md-1&quot;&gt;.col-md-1&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;col-md-8&quot;&gt;.col-md-8&lt;/div&gt;
+  &lt;div class=&quot;col-md-4&quot;&gt;.col-md-4&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;col-md-4&quot;&gt;.col-md-4&lt;/div&gt;
+  &lt;div class=&quot;col-md-4&quot;&gt;.col-md-4&lt;/div&gt;
+  &lt;div class=&quot;col-md-4&quot;&gt;.col-md-4&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;col-md-6&quot;&gt;.col-md-6&lt;/div&gt;
+  &lt;div class=&quot;col-md-6&quot;&gt;.col-md-6&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                  <br>
+                  <li>There different grids for different screen sizes, "col-md" md stands for medium screen, the following table explains</li>
+                  <div class="table-responsive">
+                    <table class="table table-bordered table-striped">
+                      <thead>
+                        <tr>
+                          <th></th>
+                          <th>
+                            Extra small devices
+                            <small>Phones (&lt;768px)</small>
+                          </th>
+                          <th>
+                            Small devices
+                            <small>Tablets (≥768px)</small>
+                          </th>
+                          <th>
+                            Medium devices
+                            <small>Desktops (≥992px)</small>
+                          </th>
+                          <th>
+                            Large devices
+                            <small>Desktops (≥1200px)</small>
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th class="text-nowrap">Grid behavior</th>
+                          <td>Horizontal at all times</td>
+                          <td colspan="3">Collapsed to start, horizontal above breakpoints</td>
+                        </tr>
+                        <tr>
+                          <th class="text-nowrap">Container width</th>
+                          <td>None (auto)</td>
+                          <td>750px</td>
+                          <td>970px</td>
+                          <td>1170px</td>
+                        </tr>
+                        <tr>
+                          <th class="text-nowrap">Class prefix</th>
+                          <td><code>.col-xs-</code></td>
+                          <td><code>.col-sm-</code></td>
+                          <td><code>.col-md-</code></td>
+                          <td><code>.col-lg-</code></td>
+                        </tr>
+                        <tr>
+                          <th class="text-nowrap"># of columns</th>
+                          <td colspan="4">12</td>
+                        </tr>
+                        <tr>
+                          <th class="text-nowrap">Column width</th>
+                          <td class="text-muted">Auto</td>
+                          <td>~62px</td>
+                          <td>~81px</td>
+                          <td>~97px</td>
+                        </tr>
+                        <tr>
+                          <th class="text-nowrap">Gutter width</th>
+                          <td colspan="4">30px (15px on each side of a column)</td>
+                        </tr>
+                        <tr>
+                          <th class="text-nowrap">Nestable</th>
+                          <td colspan="4">Yes</td>
+                        </tr>
+                        <tr>
+                          <th class="text-nowrap">Offsets</th>
+                          <td colspan="4">Yes</td>
+                        </tr>
+                        <tr>
+                          <th class="text-nowrap">Column ordering</th>
+                          <td colspan="4">Yes</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </ul>
+              </section>
+              <section id="helpers">
+                <h3 class="page-title">Helpers</h3>
+                <hr>
+                <h5>  Pages helper css classes allow you to build your custom layout without touching any CSS code</h5>
+                <p>These classes are generic helper classes predifined in the CSS of pages, here is quick view what they can do</p>
+                <ul class="fs-13 p-l-25">
+                  <li>Set margins - Available for all directions from 5 - 90 px stepping value 5px </li>
+                  <li>Set padding - Available for all directions from 5 - 90 px stepping value 5px </li>
+                  <li>Set border - Available for all sides, default pages border color</li>
+                  <li>Border Radius - Option to set border radius, size sm / md / lg</li>
+                  <li>Image wrapping - Circular image wrap with custom size, sm / md / lg</li>
+                </ul>
+              </section>
+              <section>
+                <h3 class="">Margins</h3>
+                <p>You can add this helper class to any element in your HTML code to set Margins</p>
+                <div class="table-responsive">
+                  <table class="table table-bordered table-condensed table-striped">
+                    <thead>
+                      <tr>
+                        <th>
+                          First Prefix ( m-*)
+                        </th>
+                        <th>
+                          Second Prefix(m-t/b/l/r-*)
+                        </th>
+                        <th>
+                          Last Prefix(m-t-$value)
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>m for margin</td>
+                        <td>t : top, b : bottom, l : left, r : right</td>
+                        <td>5,10,15,20, ... 90</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <p class="all-caps fs-12 bold">
+                  example :
+                </p>
+                <code>m-t-10</code> <span class="fs-13">which means Margin Top 10px</span>
+                <br>
+                <code>m-b-20</code> <span class="fs-13">which means Margin Bottom 20px</span>
+                <br>
+                <code>m-l-5</code> <span class="fs-13">which means Margin Left 5px</span>
+                <br>
+                <code>m-r-35</code> <span class="fs-13">which means Margin Right 35px</span>
+                <br>
+                <p class="all-caps fs-12 bold m-t-30">
+                  Rule :
+                </p>
+                <p>Value can not be anything, 1,2,4,5,6. It has a step of 5px, eg: 5,10,15</p>
+                <p class="all-caps fs-12 bold m-t-30">
+                  Other options :
+                </p>
+                <p>To remove margin from a HTML element add the class <code>no-margin</code></p>
+              </section>
+              <section>
+                <h3 class="">Padding</h3>
+                <p>You can add this helper class to any element in your HTML code to set Padding</p>
+                <div class="table-responsive">
+                  <table class="table table-bordered table-condensed table-striped">
+                    <thead>
+                      <tr>
+                        <th>
+                          First Prefix ( p-*)
+                        </th>
+                        <th>
+                          Second Prefix(p-t/b/l/r-*)
+                        </th>
+                        <th>
+                          Last Prefix(p-t-$value)
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>p for padding</td>
+                        <td>t : top, b : bottom, l : left, r : right</td>
+                        <td>5,10,15,20, ... 90</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <p class="all-caps fs-12 bold">
+                  example :
+                </p>
+                <code>p-t-10</code> <span class="fs-13">which means Padding Top 10px</span>
+                <br>
+                <code>p-b-20</code> <span class="fs-13">which means Padding Bottom 20px</span>
+                <br>
+                <code>p-l-5</code> <span class="fs-13">which means Padding Left 5px</span>
+                <br>
+                <code>p-r-35</code> <span class="fs-13">which means Padding Right 35px</span>
+                <br>
+                <p class="all-caps fs-12 bold m-t-30">
+                  Rule :
+                </p>
+                <p>Value can not be anything, 1,2,4,5,6. It has a step of 5px, eg: 5,10,15</p>
+                <p class="all-caps fs-12 bold m-t-30">
+                  Other options :
+                </p>
+                <p>To remove padding from a HTML element add the class <code>no-padding</code></p>
+              </section>
+              <section>
+                <h3 class="">Border</h3>
+                <p>You can add this helper class to any element in your HTML code to set Border, border currently supports one pixel</p>
+                <div class="table-responsive ">
+                  <table class="table table-bordered table-condensed table-striped">
+                    <thead>
+                      <tr>
+                        <th>
+                          First Prefix ( b-*)
+                        </th>
+                        <th>
+                          Second Prefix(b-t/b/l/r/a-*)
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>b for border</td>
+                        <td>t : top, b : bottom, l : left, r : right, a : all</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <br>
+                <h5>Border Color</h5>
+                <p>By default pages is shipped with border helper classes are of two</p>
+                <p><code>b-transparent</code> 40% opacity</p>
+                <p><code>b-grey</code></p>
+                <p><code>b-primary</code></p>
+                <p><code>b-success</code></p>
+                <p><code>b-complete</code></p>
+                <p><code>b-danger</code></p>
+                <p><code>b-warning</code></p>
+                <p class="all-caps fs-12 bold">
+                  example :
+                </p>
+                <pre><code class="xml">&lt;div class=&quot;b-b b-grey&quot;&gt;
+  I have a bottom border 
+&lt;/div&gt;</code></pre>
+                <h5>Border Style</h5>
+                <p><code>b-dashed</code> - change the border style to 'dashed'</p>
+                <p><code>b-thick</code> - change the border width to 2px</p>
+              </section>
+              <section>
+                <h5 class="">Border Radius</h5>
+                <p>Helpy class to apply quick border radius, you can change the value in misc.less or in style.css</p>
+                <div class="table-responsive ">
+                  <table class="table table-bordered table-condensed table-striped">
+                    <thead>
+                      <tr>
+                        <th>
+                          Class
+                        </th>
+                        <th>
+                          Description
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><code>b-rad-sm</code></td>
+                        <td>3px border radius</td>
+                      </tr>
+                      <tr>
+                        <td><code>b-rad-md</code></td>
+                        <td>5px border radius</td>
+                      </tr>
+                      <tr>
+                        <td><code>b-rad-lg</code></td>
+                        <td>7px border radius</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </section>
+              <section>
+                <h3 class="">Table-like behavior</h3>
+                <p>Add table behavior to any <code>div</code> by using these helper classes. These classes will come handy when you want to vertically align any content like in native <code>table</code>s. </p>
+                <div class="example m-t-15">
+                  <p class="all-caps fs-12 bold">
+                    example :
+                  </p>
+                  <div class="container-sm-height bg-master-lighter" style="height:200px">
+                    <div style="height:50px" class="row row-sm-height b-b b-grey">
+                      <div class="col-sm-height col-sm-12 col-top ">
+                        <span class="hint-text">I'm top aligned just like in a table-cell</span>
+                      </div>
+                    </div>
+                    <div class="row row-sm-height">
+                      <div class="col-sm-height col-sm-12 col-middle ">
+                        <span class="hint-text">I'm middle aligned just like in a table-cell</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <pre><code class="xml">&lt;div class=&quot;container-sm-height bg-master-lighter&quot; style=&quot;height:200px&quot;&gt;
+    &lt;div style=&quot;height:50px&quot; class=&quot;row row-sm-height b-b b-grey&quot;&gt;
+        &lt;div class=&quot;col-sm-12 col-sm-height col-top &quot;&gt;
+            &lt;span class=&quot;hint-text&quot;&gt;I'm top aligned just like in a table-cell&lt;/span&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;row row-sm-height &quot;&gt;
+        &lt;div class=&quot;col-sm-12 col-sm-height col-middle &quot;&gt;
+            &lt;span class=&quot;hint-text&quot;&gt;I'm middle aligned just like in a table-cell&lt;/span&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                <p>The table created in the above example is only activated for resolutions ≥768px. Hence the prefix <code>*-sm-*</code>. You can replace <code>*-sm-*</code> with any other breakpoint prefix defined in Bootstrap to restrict the table-like behavior to a particular resolution (ex: 'xs','md','lg')</p>
+                <p>You can also append <code>col-middle</code>, <code>col-top</code> or <code>col-bottom</code> to <code>col-*-height</code> to vertically align the content</p>
+                <p>It is also possible to mix these classes together with Bootstrap's <code>row</code> and <code>col-*-*</code> classes without any conflict</p>
+              </section>
+              <section>
+                <h3 class="">Elements that resize maintaining aspect ratio</h3>
+                <p>Make the height of any element auto-adjust depending on its width while constraining to a given aspect ratio.</p>
+                <div class="example m-t-15">
+                  <p class="all-caps fs-12 bold">
+                    example :
+                  </p>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <div class="ar-1-2">
+                        <div class="bg-master-light padding-20">
+                          <h3>1x2</h3>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-sm-3">
+                      <div class="ar-2-3">
+                        <div class="bg-master-light padding-20">
+                          <h3>2x3</h3>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-sm-3">
+                      <div class="ar-1-1">
+                        <div class="bg-master-light padding-20">
+                          <h3>1x1</h3>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-sm-3">
+                      <div class="ar-3-2">
+                        <div class="bg-master-light padding-20">
+                          <h3>3x2</h3>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-sm-3 m-t-20">
+                      <div class="ar-2-1">
+                        <div class="bg-master-light padding-20">
+                          <h3>2x1</h3>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <pre><code class="xml">&lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;col-sm-3&quot;&gt;
+        &lt;div class=&quot;ar-1-2&quot;&gt;
+            &lt;div class=&quot;bg-master-light padding-20&quot;&gt;
+                &lt;h3&gt;1x2&lt;/h3&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;col-sm-3&quot;&gt;
+        &lt;div class=&quot;ar-2-3&quot;&gt;
+            &lt;div class=&quot;bg-master-light padding-20&quot;&gt;
+                &lt;h3&gt;2x3&lt;/h3&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;col-sm-3&quot;&gt;
+        &lt;div class=&quot;ar-1-1&quot;&gt;
+            &lt;div class=&quot;bg-master-light padding-20&quot;&gt;
+                &lt;h3&gt;1x1&lt;/h3&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;col-sm-3&quot;&gt;
+        &lt;div class=&quot;ar-3-2&quot;&gt;
+            &lt;div class=&quot;bg-master-light padding-20&quot;&gt;
+                &lt;h3&gt;3x2&lt;/h3&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;col-sm-3 m-t-20&quot;&gt;
+        &lt;div class=&quot;ar-2-1&quot;&gt;
+            &lt;div class=&quot;bg-master-light padding-20&quot;&gt;
+                &lt;h3&gt;2x1&lt;/h3&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+              </section>
+              <section>
+                <h3 class="">Absolute positioning</h3>
+                <p>Makes elements to have <code>position:absolute</code>. Add <code>.relative</code> to the parent of the element that you want to be absolute to have relative positioning</p>
+                <div class="example m-t-15">
+                  <p class="all-caps fs-12 bold">
+                    example :
+                  </p>
+                  <div class="relative" style="height:300px">
+                    <!-- Equivalent to "pull-up" -->
+                    <div class="top-left bg-master-light text-center padding-20">Top-left</div>
+                    <!-- Equivalent to "pull-bottom" -->
+                    <div class="bottom-left bg-master-light text-center padding-20">Bottom-left</div>
+                    <div class="top-right bg-master-light text-center padding-20">Top-right</div>
+                    <div class="bottom-right bg-master-light text-center padding-20">Bottom-right</div>
+                  </div>
+                </div>
+                <pre><code class="xml">&lt;div class=&quot;relative&quot; style=&quot;height:300px&quot;&gt;
+    &lt;!-- Equivalent to &quot;pull-up&quot; --&gt;
+    &lt;div class=&quot;top-left bg-master-light text-center padding-20&quot;&gt;Top-left&lt;/div&gt;
+    &lt;!-- Equivalent to &quot;pull-bottom&quot; --&gt;
+    &lt;div class=&quot;bottom-left bg-master-light text-center padding-20&quot;&gt;Bottom-left&lt;/div&gt;
+    &lt;div class=&quot;top-right bg-master-light text-center padding-20&quot;&gt;Top-right&lt;/div&gt;
+    &lt;div class=&quot;bottom-right bg-master-light text-center padding-20&quot;&gt;Bottom-right&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                <p>It is also possible to mix two or more classes. ex: Mixing <code>top-left top-right</code> will produce the following CSS styling</p>
+                <code>top:0; left:0; right:0</code>
+              </section>
+              <section>
+                <h5 class="">Misc. classes</h5>
+                <div class="table-responsive ">
+                  <table class="table table-bordered table-condensed table-striped">
+                    <thead>
+                      <tr>
+                        <th>
+                          Class name
+                        </th>
+                        <th>
+                          Description
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><code>full-width</code></td>
+                        <td>Spans the element to have 100% width of the parent</td>
+                      </tr>
+                      <tr>
+                        <td><code>full-height</code></td>
+                        <td>Spans the element to have 100% height of the parent</td>
+                      </tr>
+                      <tr>
+                        <td><code>scrollable</code></td>
+                        <td>Adds <code>overflow-y:auto</code></td>
+                      </tr>
+                      <tr>
+                        <td><code>center-margin</code></td>
+                        <td>Adds <code>margin-left:auto; margin-right:auto</code>. Useful when center aligning any div</td>
+                      </tr>
+                      <tr>
+                        <td><code>inherit-size</code></td>
+                        <td>Inherits width and height from parent</td>
+                      </tr>
+                      <tr>
+                        <td><code>inherit-height</code></td>
+                        <td>Inherits only the height from parent</td>
+                      </tr>
+                      <tr>
+                        <td><code>hide</code></td>
+                        <td>Hides any element</td>
+                      </tr>
+                      <tr>
+                        <td><code>inline</code></td>
+                        <td>Adds <code>display:inline-block</code></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </section>
+              <section id="headers">
+                <h3 class="page-title">
+		Headers
+	</h3>
+                <hr>
+                <p>
+                  This part of the document will help you understand the types of headers, there color options and size options available
+                </p>
+                <h4><br>
+		Sizes Classes
+	</h4>
+                <h5>
+		<code>bg-header</code>
+	</h5>
+                <p>
+                  Larger header with 110px height, you can change height in var.less varriable name : <code>@header-big-height</code>
+                </p>
+                <h5>
+		<code>md-header</code>
+	</h5>
+                <p>
+                  Medium header with 88px height, you can change height in var.less varriable name : <code>@header-medium-height</code>
+                </p>
+                <h5>
+		<code>sm-header</code>
+	</h5>
+                <p>
+                  Small header with 44px height, you can change height in var.less varriable name : <code>@header-small-height</code>
+                </p>
+                <h5>
+		<code>minimized</code>
+	</h5>
+                <p>
+                  Small header with 60px height, you can change height in var.less varriable name : <code>@header-minimized-height</code>
+                </p>
+                <h4><br>
+		Color Classes
+	</h4>
+                <h5>
+		<code>transparent-light</code>
+	</h5>
+                <p>
+                  Transparent header with no background and white text
+                </p>
+                <h5>
+		<code>transparent-dark</code>
+	</h5>
+                <p>
+                  Transparent header with no background and black/dark text
+                </p>
+                <h5>
+		<code>dark</code>
+	</h5>
+                <p>
+                  Dark/Black header with white text
+                </p>
+                <h5>
+		<code>white</code>
+	</h5>
+                <p>
+                  White header with black text
+                </p>
+                <h4><br>
+		Other Options
+	</h4>
+                <h5><br>
+		<code>data-pages="header"</code>
+	</h5>
+                <p>
+                  Add the following attribute to initialize Pages header and monitor your header : Required
+                </p>
+                <h5><br>
+		<code>data-pages-header="autoresize"</code>
+	</h5>
+                <p>
+                  Helps to initialize auto resize
+                </p>
+                <h5><br>
+		<code>data-pages-resize-class="light"</code>
+	</h5>
+                <p>
+                  You can decide what class you want to add when the header resizes, you can make add the color classes to change from transparent to light
+                </p>
+                <h4><br>
+		HTML Structure
+	</h4>
+                <pre><code class="xml">&lt;!-- BEGIN HEADER --&gt;
+    &lt;nav class=&quot;header bg-header transparent-dark &quot; data-pages=&quot;header&quot; data-pages-header=&quot;autoresize&quot; data-pages-resize-class=&quot;dark&quot;&gt;
+      &lt;div class=&quot;container relative&quot;&gt;
+        &lt;!-- BEGIN LEFT CONTENT --&gt;
+        &lt;div class=&quot;pull-left&quot;&gt;
+          &lt;!-- .header-inner Allows to horizontally Align elements to the Center--&gt;
+          &lt;div class=&quot;header-inner&quot;&gt;
+            &lt;!-- BEGIN LOGO --&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;!-- END HEADER TOGGLE FOR MOBILE &amp; TABLET --&gt;
+        &lt;!-- BEGIN RIGHT CONTENT --&gt;
+        &lt;div class=&quot;menu-content mobile-dark pull-right clearfix&quot; data-pages-direction=&quot;slideRight&quot; id=&quot;header&quot;&gt;
+          &lt;!-- YOUR MENU ITEMS --&gt;
+          &lt;!-- END MENU ITEMS --&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/nav&gt;</pre></code>
+                <p>
+                  You can use <code>pull-left</code> <code>pull-center</code> <code>pull-right</code> to align content you want, make sure you add the div
+                  <code>header-inner</code> so that you content automatically align horizontaly without the need of top and bottom paddings
+                </p>
+                <br>
+                <h4><br>
+		Menu Items
+	</h4>
+                <p>Have all your menu items inside the following as show : </p>
+                <pre><code class="xml" style="width:1500px">&lt;!-- BEGIN RIGHT CONTENT --&gt;
+&lt;div class=&quot;menu-content mobile-dark pull-right clearfix&quot; data-pages-direction=&quot;slideRight&quot; id=&quot;header&quot;&gt;
+  &lt;!-- BEGIN HEADER CLOSE TOGGLE FOR MOBILE --&gt;
+  &lt;div class=&quot;pull-right&quot;&gt;
+    &lt;a href=&quot;#&quot; class=&quot;padding-10 visible-xs-inline visible-sm-inline pull-right m-t-10 m-b-10 m-r-10&quot; data-pages=&quot;header-toggle&quot; data-pages-element=&quot;#header&quot;&gt;
+      &lt;i class=&quot; pg-close_line&quot;&gt;&lt;/i&gt;
+    &lt;/a&gt;
+  &lt;/div&gt;
+  &lt;!-- END HEADER CLOSE TOGGLE FOR MOBILE --&gt;
+  &lt;!-- BEGIN MENU ITEMS --&gt;
+  &lt;div class=&quot;header-inner&quot;&gt;
+    &lt;ul class=&quot;menu&quot;&gt;
+        &lt;li&gt;
+            &lt;a href=&quot;#&quot; class=&quot;active&quot;&gt;Home &lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;a href=&quot;#&quot;&gt;Elements &lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;a href=&quot;pricing.html&quot; &gt;Pricing &lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;a href=&quot;portfolio.html&quot; &gt;Portfolio &lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;a href=&quot;contact.html&quot;&gt;Contact Us&lt;/a&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;a href=&quot;#&quot; class=&quot;search-toggle hidden-xs hidden-sm&quot;&gt;&lt;i class=&quot;fs-14 pg-search&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+    &lt;!-- BEGIN COPYRIGHT FOR MOBILE --&gt;
+    &lt;div class=&quot;font-arial m-l-35 m-r-35 m-b-20 bottom-left visible-sm visible-xs&quot;&gt;
+        &lt;p class=&quot;fs-11 no-margin small-text p-b-20&quot;&gt;Exclusive only at ,Themeforest.
+        See Standard licenses &amp; Extended licenses
+        &lt;/p&gt;
+        &lt;p class=&quot;fs-11 small-text muted&quot;&gt;Copyright &amp;copy; 2014 REVOX&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;!-- END COPYRIGHT FOR MOBILE --&gt;
+  &lt;/div&gt;
+  &lt;!-- END MENU ITEMS --&gt;
+&lt;/div&gt;</code></pre>
+                <p>
+                  <strong>Rules : </strong>
+                  <ul>
+                    <li>Have the menu-content inside a nav.header</li>
+                    <li>Have an ID to your menu-content</li>
+                  </ul>
+                </p>
+                <h4><br>
+		Mobile Menu
+	</h4>
+                <p>Now you have the flexibilty to choose how your menu will look like on mobile, all these are added to "menu-content" DIV, this is how it looks like </p>
+                <pre><code class="xml" style="width:1500px">&lt;div class=&quot;menu-content mobile-dark pull-right clearfix&quot; data-pages-direction=&quot;slideRight&quot; id=&quot;header&quot;&gt;
+&lt;/div&gt;</pre></code>
+                <br>
+                <h5>Animation Options</h5>
+                <p>Change the following attribute value</p>
+                <h5>
+		<code>data-pages-direction</code>
+	</h5>
+                <p>
+                  You can change to it to
+                  <br>
+                  <br>
+                  <code>slideLeft</code>
+                  <br>
+                  <code>slideRight</code>
+                  <br>
+                  <code>overlay</code>
+                  <br>
+                </p>
+                <h5><br>Color Options</h5>
+                <p>By default you will see a white menu on mobile, you can change it to dark/black by addding the class "mobile-dark" to you "menu-content" div</p>
+                <h5><br>Toggle On/Off Menu : Mobile</h5>
+                <p>Add the following attributes with the ID you have used in your "menu-content", this means you can have more than one menu-content</p>
+                <pre><code class="xml">&lt;a href=&quot;#&quot; data-pages=&quot;header-toggle&quot; data-pages-element=&quot;#header&quot;&gt;
+  &lt;i class=&quot; pg-close_line&quot;&gt;&lt;/i&gt;
+&lt;/a&gt;</pre></code>
+                <h5><br>Callback</h5>
+                <p>Once the menu is opened, a class <code>menu-open</code> is added to the body</p>
+              </section>
+              <section id="slider">
+                <h3 class="page-title">
+		Slider
+	</h3>
+                <hr>
+                <p>
+                  Slider is powered by a Custom Swiper plugin made only for Pages Frontend. We have added some cool new features and credit goes to the author
+                  <a href="https://github.com/nolimits4web" target "_blank">@Vladimir Kharlampidi</a>
+                </p>
+                <h4><br>
+		HTML Structure
+	</h4>
+                <pre><code class="xml" style="width:1500px">&lt;!-- Slider main container --&gt;
+&lt;div class=&quot;swiper-container&quot;&gt;
+    &lt;!-- Additional required wrapper --&gt;
+    &lt;div class=&quot;swiper-wrapper&quot;&gt;
+        &lt;!-- Slides --&gt;
+        &lt;div class=&quot;swiper-slide&quot;&gt;Slide 1&lt;/div&gt;
+        &lt;div class=&quot;swiper-slide&quot;&gt;Slide 2&lt;/div&gt;
+        &lt;div class=&quot;swiper-slide&quot;&gt;Slide 3&lt;/div&gt;
+        ...
+    &lt;/div&gt;
+    &lt;!-- If we need pagination --&gt;
+    &lt;div class=&quot;swiper-pagination&quot;&gt;&lt;/div&gt;
+    
+    &lt;!-- If we need navigation buttons --&gt;
+    &lt;div class=&quot;swiper-button-prev&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;swiper-button-next&quot;&gt;&lt;/div&gt;
+    
+    &lt;!-- If we need scrollbar --&gt;
+    &lt;div class=&quot;swiper-scrollbar&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                <h4><br>
+		Parrallax Slides HTML Structure
+	</h4>
+                <pre><code class="xml" style="width:1500px">&lt;div class=&quot;swiper-container&quot;&gt;
+&lt;div class=&quot;swiper-wrapper&quot;&gt;
+  &lt;!-- BEGIN SLIDE --&gt;
+  &lt;div class=&quot;swiper-slide fit&quot;&gt;
+    &lt;!-- BEGIN IMAGE PARRALAX --&gt;
+    &lt;div class=&quot;slider-wrapper&quot;&gt;
+      &lt;div class=&quot;image&quot; data-swiper-parallax=&quot;30%&quot;&gt;
+        &lt;img draggable=&quot;false&quot; src=&quot;assets/images/hero_1.jpg&quot; class=&quot;image-responsive-height&quot; alt=&quot;&quot; title=&quot;&quot;&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;!-- END IMAGE PARRALAX --&gt;
+    &lt;!-- BEGIN CONTENT --&gt;
+    &lt;div class=&quot;content-layer&quot;&gt;
+    &lt;/div&gt;
+    &lt;!-- END CONTENT --&gt;
+  &lt;/div&gt;
+  &lt;!-- END SLIDE --&gt;
+ &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                <h4><br>
+		Javascript 
+	</h4>
+                <p>Initialize your plugin</p>
+                <pre><code class="js" style="width:1500px">//Intialize Slider
+var slider = new Swiper('#my-hero-element-id', {
+    pagination: '.swiper-pagination',
+    paginationClickable: true,
+    nextButton: '.swiper-button-next',
+    prevButton: '.swiper-button-prev',
+    slidesPerView: 1,
+    loop: true,
+    parallax: true,
+    speed:1000,
+});</pre></code>
+                <h4><br>
+		Arrow Elements
+	</h4>
+                <p>Arrow navigations options and classes</p>
+                <pre><code class="xml" style="width:1500px">&lt;div class=&quot;swiper-button-prev&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;swiper-button-next&quot;&gt;&lt;/div&gt;
+</code></pre>
+                <h4><br>
+		Color Classes
+	</h4>
+                <h5>
+		<code>swiper-navigation swiper-white-solid</code>
+	</h5>
+                <p>Add the class to your swiper navigation for squre white arrow</p>
+                <h5>
+		<code>swiper-navigation swiper-dark-solid</code>
+	</h5>
+                <p>Add the class to your swiper navigation for squre white arrow</p>
+                <h5>
+		<code>swiper-rounded</code>
+	</h5>
+                <p>Add the class to your swiper navigation with the above classes mention previous to have a rounded navigation</p>
+                <h4><br>	
+		Responsive Elements
+	</h4>
+                <p>Simply add the class <code>fit</code> to your slide and it will scale all your headings and parragraphs
+                  <br> To scale images add the class <code>image-responsive-height</code> or <code>image-responsive-width</code> as required
+                </p>
+                <h4><br>
+		Aniimating Slider Elements
+	</h4>
+                <p>
+                  All elements are animate using VelocityJS and VelocityJS.UI(optional), You can even right pure JS code to animate using velocityJS but we have made it easy using Pages data-atttributes.
+                </p>
+                <h5><br>
+		Custom Animation
+	</h5>
+                <p>Being able to animate an element by its css attritbute, e.g: top, scale ...</p>
+                <pre><code class="xml" style="width:1500px">&lt;h1
+data-pages-animation=&quot;custom&quot;
+data-attr=&quot;scale&quot; 
+data-delay=&quot;600&quot; 
+data-duration=&quot;500&quot; 
+data-end=&quot;4&quot; 
+data-start=&quot;0&quot;
+data-easing=&quot;easeInSine&quot;
+&gt;
+Hello World! 
+&lt;/h1&gt;</code></pre>
+                <table class="table table-bordered table-striped">
+                  <thead>
+                    <tr>
+                      <th>Attribute</th>
+                      <th>Value</th>
+                      <th>Description</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>data-pages-animation</td>
+                      <td>custom | </td>
+                      <td>To determin the type of animation
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>data-attr</td>
+                      <td>Any CSS attribute </td>
+                      <td>The attribute you want to animate eg : top, left, padding-left, translateX...
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>data-delay</td>
+                      <td>Miliseconds : eg: 400</td>
+                      <td>The time you want to delay the animation as soon as the slide appears. Default 400
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>data-duration</td>
+                      <td>Miliseconds : eg: 500</td>
+                      <td>How long you wish to keep the animation going
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>data-start</td>
+                      <td>Start position</td>
+                      <td>This depends on the attribute you selected. Its can be px,em, % etc
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>data-end</td>
+                      <td>End position</td>
+                      <td>This depends on the attribute you selected. Its can be px,em, % etc
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>data-easing</td>
+                      <td>Your animation curve : linear etc</td>
+                      <td>You can set your animation curve mentioned in <a href="http://julian.com/research/velocity/#easing">VelocityJS Docs</a> You can parse in array too eg : <code>data-easing="[ 250, 15 ]"</code>
+                        </a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <h5><br>
+		Standard Animation
+	</h5>
+                <p>Pre built Easy to use animations that you can use like slideDown, fadeIn,etc to any element on the slide</p>
+                <pre><code class="xml" style="width:1500px">&lt;h1 
+data-pages-animation=&quot;standard&quot; 
+data-type=&quot;transition.slideDownIn&quot; 
+data-duration=&quot;600&quot; 
+data-delay=&quot;1000&quot;&gt;
+Hellow!
+&lt;/h1&gt;</code></pre>
+                <table class="table table-bordered table-striped">
+                  <thead>
+                    <tr>
+                      <th>Attribute</th>
+                      <th>Value</th>
+                      <th>Description</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>data-pages-animation</td>
+                      <td>standard </td>
+                      <td>To determin the type of animation
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>data-type</td>
+                      <td> </td>
+                      <td><pre id=""> callout.bounce
+ callout.shake
+ callout.flash
+ callout.pulse
+ callout.swing
+ callout.tada
+ transition.fadeIn
+ transition.fadeOut
+ transition.flipXIn
+ transition.flipXOut
+ transition.flipYIn
+ transition.flipYOut
+ transition.flipBounceXIn
+ transition.flipBounceXOut
+ transition.flipBounceYIn
+ transition.flipBounceYOut
+ transition.swoopIn
+ transition.swoopOut
+ transition.whirlIn
+ transition.whirlOut
+ transition.shrinkIn
+ transition.shrinkOut
+ transition.expandIn
+ transition.expandOut
+ transition.bounceIn
+ transition.bounceOut
+ transition.bounceUpIn
+ transition.bounceUpOut
+ transition.bounceDownIn
+ transition.bounceDownOut
+ transition.bounceLeftIn
+ transition.bounceLeftOut
+ transition.bounceRightIn
+ transition.bounceRightOut
+ transition.slideUpIn
+ transition.slideUpOut
+ transition.slideDownIn
+ transition.slideDownOut
+ transition.slideLeftIn
+ transition.slideLeftOut
+ transition.slideRightIn
+ transition.slideRightOut
+ transition.slideUpBigIn
+ transition.slideUpBigOut
+ transition.slideDownBigIn
+ transition.slideDownBigOut
+ transition.slideLeftBigIn
+ transition.slideLeftBigOut
+ transition.slideRightBigIn
+ transition.slideRightBigOut
+ transition.perspectiveUpIn
+ transition.perspectiveUpOut
+ transition.perspectiveDownIn
+ transition.perspectiveDownOut
+ transition.perspectiveLeftIn
+ transition.perspectiveLeftOut
+ transition.perspectiveRightIn
+ transition.perspectiveRightOut</pre>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>data-delay</td>
+                      <td>Miliseconds : eg: 400</td>
+                      <td>The time you want to delay the animation as soon as the slide appears. Default 400
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>data-duration</td>
+                      <td>Miliseconds : eg: 500</td>
+                      <td>How long you wish to keep the animation going
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>data-easing</td>
+                      <td>Your animation curve : linear etc</td>
+                      <td>You can set your animation curve mentioned in <a href="http://julian.com/research/velocity/#easing">VelocityJS Docs</a> You can parse in array too eg : <code>data-easing="[ 250, 15 ]"</code>
+                        </a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </section>
+              <section id="background_images">
+                <h3 class="page-title">
+        Background Images - Lazy loading
+    </h3>
+                <hr>
+                <p>
+                  You can add background images to any element with lazy loading capabilities, follow the guide below.
+                </p>
+                <p>
+                  <pre><code class="xml">&lt;div data-pages-bg-image=&quot;assets/images/gallery_1.jpg&quot; data-bg-overlay=&quot;black&quot; data-overlay-opacity=&quot;0.4&quot;&gt;
+&lt;/div&gt;</code></pre>
+                  <h4><br> Options </h4>
+                  <table class="table table-bordered table-striped">
+                    <thead>
+                      <tr>
+                        <th>Attribute</th>
+                        <th>Default Value</th>
+                        <th>Description</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>data-pages-bg-image</td>
+                        <td></td>
+                        <td>URL of the Background Images</td>
+                      </tr>
+                      <tr>
+                        <td>data-bg-overlay</td>
+                        <td>"black"</td>
+                        <td>A class class, you can add any css class you want eg: bg-success</td>
+                      </tr>
+                      <tr>
+                        <td>data-overlay-opacity</td>
+                        <td>0.4</td>
+                        <td>The overlay opacity level after the image is loaded</td>
+                      </tr>
+                    </tbody>
+                  </table>
+              </section>
+              <section id="parallax">
+                <h3 class="page-title">
+		Parallax 
+	</h3>
+                <hr>
+                <p>
+                  You can add parallax to heroes,sliders, sections to show a depth of field.
+                </p>
+                <h4><br>
+		HTML Structure
+	</h4>
+                <pre><code class="xml" style="width:1500px">&lt;!-- PARENT--&gt;
+&lt;section class=&quot;&quot; data-pages=&quot;parallax&quot;&gt;
+	&lt;!-- CHILD ELEMENT THAT MOVES--&gt;
+	&lt;div class=&quot;inner&quot;&gt;
+		
+	&lt;/div&gt;
+	&lt;!-- IT CAN BE ANYTHING--&gt;
+&lt;/section&gt;</code></pre>
+                <h4> Advance Attributes</h4>
+                <p>You can mix in background elements, opacity and many attributes to get a unique output.
+                  <p>
+                    <pre><code class="xml" >&lt;section class=&quot;p-b-65 p-t-60 bg-master-darkest&quot; data-pages-bg-image=&quot;assets/images/paralax_1.jpg&quot;  data-pages=&quot;parallax&quot; data-bg-overlay=&quot;black&quot; data-overlay-opacity=&quot;0.4&quot;&gt;
+&lt;div class=&quot;inner&quot;&gt;
+&lt;/div&gt;
+&lt;div&gt;</code></pre>
+              </section>
+              <section id="floating">
+                <h3 class="page-title">
+		Floating Elements
+	</h3>
+                <hr>
+                <p>
+                  This part of the document will help you understand how to apply floating parallax effect to any element you want.
+                </p>
+                <p>
+                  You can the following to have a reveal footer.</p>
+                <h5><code>data-pages="float"</code></h5>
+                <h4><br> Other Options </h4>
+                <table class="table table-bordered table-striped">
+                  <thead>
+                    <tr>
+                      <th>Attribute</th>
+                      <th>Default Value</th>
+                      <th>Description</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>data-top-margin</td>
+                      <td>0</td>
+                      <td>Top margin offset</td>
+                    </tr>
+                    <tr>
+                      <td>data-bottom-margin</td>
+                      <td>0</td>
+                      <td>Bottom margin offset</td>
+                    </tr>
+                    <tr>
+                      <td>data-speed</td>
+                      <td>0.1</td>
+                      <td>Animation Speed</td>
+                    </tr>
+                    <tr>
+                      <td>data-delay</td>
+                      <td>1000</td>
+                      <td>Delay after scroll</td>
+                    </tr>
+                    <tr>
+                      <td>data-curve</td>
+                      <td>'ease'</td>
+                      <td>Animation Curve</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </section>
+              <section id="footer">
+                <h3 class="page-title">
+		Footer
+	</h3>
+                <hr>
+                <p>
+                  This part of the document will help you understand how to apply auto reveal footer
+                </p>
+                <p>
+                  You can the following to have a reveal footer.
+                  <code>data-pages="reveal-footer"</code></p>
+                <br>
+                <h4>Example Code</h4>
+                <p>This can be found in <code>sample 18</code></p>
+                <pre><code class="xml">&lt;!-- START FOOTER --&gt;
+&lt;section class=&quot;z-index-1 pull-bottom-fixed full-width&quot; data-pages=&quot;reveal-footer&quot;&gt;
+    &lt;section class=&quot;p-b-70 p-t-55 &quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;!-- CONTENT --&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+    &lt;section class=&quot;p-t-10 p-b-10 bg-master-darkest&quot;&gt;
+        &lt;!-- REVEAL --&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;div class=&quot;row&quot;&gt;
+                &lt;div class=&quot;col-sm-7&quot;&gt;
+                    &lt;p class=&quot;fs-11 no-margin font-arial text-white small-text&quot;&gt;&lt;span class=&quot;hint-text&quot;&gt;Exclusive only at&lt;/span&gt; Envato Marketplace,Themeforest &lt;span class=&quot;hint-text&quot;&gt;See&lt;/span&gt; Standard licenses &amp;amp; Extended licenses
+                    &lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;col-sm-5 text-right&quot;&gt;
+                    &lt;p class=&quot;fs-11 no-margin font-arial text-white small-text&quot;&gt;Copyright &copy; 2014 REVOX. All Rights Reserved.
+                    &lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+&lt;/section&gt;
+&lt;!-- END FOOTER --&gt;</code></pre>
+              </section>
+              <section id="color">
+                <h3 class="page-title">Color</h3>
+                <hr>
+                <p>Every color used throughout the theme has been generated by using the following eight base colors, which are defined in the
+                  <code>var.less</code>file. This makes theme customization a matter of changing few LESS variables.
+                </p>
+                <p>Please refer to <a href="#">Working with LESS</a> for more on theme customization</p>
+                <div class="row">
+                  <div class="col-md-3 col-sm-6">
+                    <div class="bg-master b-a b-grey">
+                      <div class="bg-white m-t-45 padding-10">
+                        <p class="small no-margin pull-left">Master color</p>
+                        <p class="small no-margin pull-right">#626262</p>
+                        <div class="clearfix"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3 col-sm-6">
+                    <div class="bg-primary b-a b-grey">
+                      <div class="bg-white m-t-45 padding-10 text-master">
+                        <p class="small no-margin pull-left">Primary color</p>
+                        <p class="small no-margin pull-right">#6D5CAE</p>
+                        <div class="clearfix"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3 col-sm-6">
+                    <div class="bg-complete b-a b-grey">
+                      <div class="bg-white m-t-45 padding-10">
+                        <p class="small no-margin pull-left">Complete color</p>
+                        <p class="small no-margin pull-right">#48B0F7</p>
+                        <div class="clearfix"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3 col-sm-6">
+                    <div class="bg-success b-a b-grey">
+                      <div class="bg-white m-t-45 padding-10">
+                        <p class="small no-margin pull-left">Success color</p>
+                        <p class="small no-margin pull-right">#10CFBD</p>
+                        <div class="clearfix"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <br>
+                <div class="row">
+                  <div class="col-md-3 col-sm-6">
+                    <div class="bg-menu b-a b-grey">
+                      <div class="bg-white m-t-45 padding-10">
+                        <p class="small no-margin pull-left">Menu color</p>
+                        <p class="small no-margin pull-right">#202328</p>
+                        <div class="clearfix"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3 col-sm-6">
+                    <div class="bg-info b-a b-grey">
+                      <div class="bg-white m-t-45 padding-10">
+                        <p class="small no-margin pull-left">Info color</p>
+                        <p class="small no-margin pull-right">#3B4752</p>
+                        <div class="clearfix"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3 col-sm-6">
+                    <div class="bg-danger b-a b-grey">
+                      <div class="bg-white m-t-45 padding-10">
+                        <p class="small no-margin pull-left">Danger color</p>
+                        <p class="small no-margin pull-right">#F55753</p>
+                        <div class="clearfix"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3 col-sm-6">
+                    <div class="bg-warning b-a b-grey">
+                      <div class="bg-white m-t-45 padding-10">
+                        <p class="small no-margin pull-left">Warning color</p>
+                        <p class="small no-margin pull-right">#F8D053</p>
+                        <div class="clearfix"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <section>
+                <h4>Monochrome color shades</h4>
+                <div class="row">
+                  <div class="col-md-3 col-sm-6">
+                    <p>Menu options</p>
+                    <div class="bg-master-darkest b-a b-grey">
+                      <div class="bg-white m-t-45 padding-10">
+                        <p class="small no-margin pull-left hint-text">.bg-master-darkest</p>
+                        <p class="small no-margin pull-right hint-text">#000000</p>
+                        <div class="clearfix"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3 col-sm-6">
+                    <p>Menu</p>
+                    <div class="bg-master-darker b-a b-grey">
+                      <div class="bg-white m-t-45 padding-10">
+                        <p class="small no-margin pull-left hint-text">.bg-master-darker</p>
+                        <p class="small no-margin pull-right hint-text">#1A1A1A</p>
+                        <div class="clearfix"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3 col-sm-6">
+                    <p>Text heading</p>
+                    <div class="bg-master-dark b-a b-grey">
+                      <div class="bg-white m-t-45 padding-10">
+                        <p class="small no-margin pull-left hint-text">.bg-master-dark</p>
+                        <p class="small no-margin pull-right hint-text">#2C2C2C</p>
+                        <div class="clearfix"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3 col-sm-6">
+                    <p>Default text (base)</p>
+                    <div class="bg-master b-a b-grey">
+                      <div class="bg-white m-t-45 padding-10">
+                        <p class="small no-margin pull-left hint-text">.bg-master</p>
+                        <p class="small no-margin pull-right hint-text">#626262</p>
+                        <div class="clearfix"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <br>
+                <div class="row">
+                  <div class="col-md-3 col-sm-6">
+                    <p>Dividers</p>
+                    <div class="bg-master-light b-a b-grey">
+                      <div class="bg-white m-t-45 padding-10">
+                        <p class="small no-margin pull-left hint-text">.bg-master-light</p>
+                        <p class="small no-margin pull-right hint-text">#000000</p>
+                        <div class="clearfix"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3 col-sm-6">
+                    <p>Cover page</p>
+                    <div class="bg-master-lighter b-a b-grey">
+                      <div class="bg-white m-t-45 padding-10">
+                        <p class="small no-margin pull-left hint-text">.bg-master-lighter</p>
+                        <p class="small no-margin pull-right hint-text">#1A1A1A</p>
+                        <div class="clearfix"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3 col-sm-6">
+                    <p>Background</p>
+                    <div class="bg-master-lightest b-a b-grey">
+                      <div class="bg-white m-t-45 padding-10">
+                        <p class="small no-margin pull-left hint-text">.bg-master-lightest</p>
+                        <p class="small no-margin pull-right hint-text">#2C2C2C</p>
+                        <div class="clearfix"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <section>
+                <h4>Primary color shades</h4>
+                <div class="row">
+                  <div class="col-md-3 col-sm-6">
+                    <p>Notification text</p>
+                    <div class="bg-primary-darker b-a b-grey">
+                      <div class="bg-white m-t-45 padding-10 text-master">
+                        <p class="small no-margin pull-left hint-text">.bg-primary-darker</p>
+                        <p class="small no-margin pull-right hint-text">#413768</p>
+                        <div class="clearfix"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3 col-sm-6">
+                    <p>Text color</p>
+                    <div class="bg-primary-dark b-a b-grey">
+                      <div class="bg-white m-t-45 padding-10 text-master">
+                        <p class="small no-margin pull-left hint-text">.bg-primary-dark</p>
+                        <p class="small no-margin pull-right hint-text">#5B4D91</p>
+                        <div class="clearfix"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3 col-sm-6">
+                    <p>Base color</p>
+                    <div class="bg-primary b-a b-grey">
+                      <div class="bg-white m-t-45 padding-10 text-master">
+                        <p class="small no-margin pull-left hint-text">.bg-primary</p>
+                        <p class="small no-margin pull-right hint-text">#6D5CAE</p>
+                        <div class="clearfix"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3 col-sm-6">
+                    <p>Button overlay</p>
+                    <div class="bg-primary-light b-a b-grey">
+                      <div class="bg-white m-t-45 padding-10 text-master">
+                        <p class="small no-margin pull-left hint-text">.bg-primary-light</p>
+                        <p class="small no-margin pull-right hint-text">#8A7DBE</p>
+                        <div class="clearfix"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <br>
+                <div class="row">
+                  <div class="col-md-3 col-sm-6">
+                    <p>Background opt.</p>
+                    <div class="bg-primary-lighter b-a b-grey">
+                      <div class="bg-white m-t-45 padding-10 text-master">
+                        <p class="small no-margin pull-left hint-text">.bg-primary-lighter</p>
+                        <p class="small no-margin pull-right hint-text">#E2DEEF</p>
+                        <div class="clearfix"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <section>
+                <h4>Complete color shades</h4>
+                <div class="row">
+                  <div class="col-md-3 col-sm-6">
+                    <p>Notification text</p>
+                    <div class="bg-complete-darker b-a b-grey">
+                      <div class="bg-white m-t-45 padding-10 text-master">
+                        <p class="small no-margin pull-left hint-text">.bg-complete-darker</p>
+                        <p class="small no-margin pull-right hint-text">#2B6A94</p>
+                        <div class="clearfix"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3 col-sm-6">
+                    <p>Text color</p>
+                    <div class="bg-complete-dark b-a b-grey">
+                      <div class="bg-white m-t-45 padding-10 text-master">
+                        <p class="small no-margin pull-left hint-text">.bg-complete-dark</p>
+                        <p class="small no-margin pull-right hint-text">#3C93CE</p>
+                        <div class="clearfix"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3 col-sm-6">
+                    <p>Base color</p>
+                    <div class="bg-complete b-a b-grey">
+                      <div class="bg-white m-t-45 padding-10 text-master">
+                        <p class="small no-margin pull-left hint-text">.bg-complete</p>
+                        <p class="small no-margin pull-right hint-text">#48B0F7</p>
+                        <div class="clearfix"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3 col-sm-6">
+                    <p>Button overlay</p>
+                    <div class="bg-complete-light b-a b-grey">
+                      <div class="bg-white m-t-45 padding-10 text-master">
+                        <p class="small no-margin pull-left hint-text">.bg-complete-light</p>
+                        <p class="small no-margin pull-right hint-text">#6DC0F9</p>
+                        <div class="clearfix"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <br>
+                <div class="row">
+                  <div class="col-md-3 col-sm-6">
+                    <p>Background opt.</p>
+                    <div class="bg-complete-lighter b-a b-grey">
+                      <div class="bg-white m-t-45 padding-10 text-master">
+                        <p class="small no-margin pull-left hint-text">.bg-complete-lighter</p>
+                        <p class="small no-margin pull-right hint-text">#DAEFFD</p>
+                        <div class="clearfix"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <section>
+                <h4>Success color shades</h4>
+                <div class="row">
+                  <div class="col-md-3 col-sm-6">
+                    <p>Notification text</p>
+                    <div class="bg-success-darker b-a b-grey">
+                      <div class="bg-white m-t-45 padding-10 text-master">
+                        <p class="small no-margin pull-left hint-text">.bg-success-darker</p>
+                        <p class="small no-margin pull-right hint-text">#0A7C71</p>
+                        <div class="clearfix"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3 col-sm-6">
+                    <p>Text color</p>
+                    <div class="bg-success-dark b-a b-grey">
+                      <div class="bg-white m-t-45 padding-10 text-master">
+                        <p class="small no-margin pull-left hint-text">.bg-success-dark</p>
+                        <p class="small no-margin pull-right hint-text">#0DAD9E</p>
+                        <div class="clearfix"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3 col-sm-6">
+                    <p>Base color</p>
+                    <div class="bg-success b-a b-grey">
+                      <div class="bg-white m-t-45 padding-10 text-master">
+                        <p class="small no-margin pull-left hint-text">.bg-success</p>
+                        <p class="small no-margin pull-right hint-text">#10CFBD</p>
+                        <div class="clearfix"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3 col-sm-6">
+                    <p>Button overlay</p>
+                    <div class="bg-success-light b-a b-grey">
+                      <div class="bg-white m-t-45 padding-10 text-master">
+                        <p class="small no-margin pull-left hint-text">.bg-success-light</p>
+                        <p class="small no-margin pull-right hint-text">#40D9CA</p>
+                        <div class="clearfix"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <br>
+                <div class="row">
+                  <div class="col-md-3 col-sm-6">
+                    <p>Background opt.</p>
+                    <div class="bg-success-lighter b-a b-grey">
+                      <div class="bg-white m-t-45 padding-10 text-master">
+                        <p class="small no-margin pull-left hint-text">.bg-success-lighter</p>
+                        <p class="small no-margin pull-right hint-text">#CFF5F2</p>
+                        <div class="clearfix"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <section>
+                <h4>Warning color shades</h4>
+                <div class="row">
+                  <div class="col-md-3 col-sm-6">
+                    <p>Notification text</p>
+                    <div class="bg-warning-darker b-a b-grey">
+                      <div class="bg-white m-t-45 padding-10 text-master">
+                        <p class="small no-margin pull-left hint-text">.bg-warning-darker</p>
+                        <p class="small no-margin pull-right hint-text">#957D32</p>
+                        <div class="clearfix"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3 col-sm-6">
+                    <p>Text color</p>
+                    <div class="bg-warning-dark b-a b-grey">
+                      <div class="bg-white m-t-45 padding-10 text-master">
+                        <p class="small no-margin pull-left hint-text">.bg-warning-dark</p>
+                        <p class="small no-margin pull-right hint-text">#CFAE45</p>
+                        <div class="clearfix"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3 col-sm-6">
+                    <p>Base color</p>
+                    <div class="bg-warning b-a b-grey">
+                      <div class="bg-white m-t-45 padding-10 text-master">
+                        <p class="small no-margin pull-left hint-text">.bg-warning</p>
+                        <p class="small no-margin pull-right hint-text">#F8D053</p>
+                        <div class="clearfix"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3 col-sm-6">
+                    <p>Button overlay</p>
+                    <div class="bg-warning-light b-a b-grey">
+                      <div class="bg-white m-t-45 padding-10 text-master">
+                        <p class="small no-margin pull-left hint-text">.bg-warning-light</p>
+                        <p class="small no-margin pull-right hint-text">#F9D975</p>
+                        <div class="clearfix"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <br>
+                <div class="row">
+                  <div class="col-md-3 col-sm-6">
+                    <p>Background opt.</p>
+                    <div class="bg-warning-lighter b-a b-grey">
+                      <div class="bg-white m-t-45 padding-10 text-master">
+                        <p class="small no-margin pull-left hint-text">.bg-warning-lighter</p>
+                        <p class="small no-margin pull-right hint-text">#FEF6DD</p>
+                        <div class="clearfix"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <section>
+                <h4>Danger color shades</h4>
+                <div class="row">
+                  <div class="col-md-3 col-sm-6">
+                    <p>Notification text</p>
+                    <div class="bg-danger-darker b-a b-grey">
+                      <div class="bg-white m-t-45 padding-10 text-master">
+                        <p class="small no-margin pull-left hint-text">.bg-danger-darker</p>
+                        <p class="small no-margin pull-right hint-text">#933432</p>
+                        <div class="clearfix"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3 col-sm-6">
+                    <p>Text color</p>
+                    <div class="bg-danger-dark b-a b-grey">
+                      <div class="bg-white m-t-45 padding-10 text-master">
+                        <p class="small no-margin pull-left hint-text">.bg-danger-dark</p>
+                        <p class="small no-margin pull-right hint-text">#CD4945</p>
+                        <div class="clearfix"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3 col-sm-6">
+                    <p>Base color</p>
+                    <div class="bg-danger b-a b-grey">
+                      <div class="bg-white m-t-45 padding-10 text-master">
+                        <p class="small no-margin pull-left hint-text">.bg-danger</p>
+                        <p class="small no-margin pull-right hint-text">#F55753</p>
+                        <div class="clearfix"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3 col-sm-6">
+                    <p>Button overlay</p>
+                    <div class="bg-danger-light b-a b-grey">
+                      <div class="bg-white m-t-45 padding-10 text-master">
+                        <p class="small no-margin pull-left hint-text">.bg-danger-light</p>
+                        <p class="small no-margin pull-right hint-text">#F77975</p>
+                        <div class="clearfix"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <br>
+                <div class="row">
+                  <div class="col-md-3 col-sm-6">
+                    <p>Background opt.</p>
+                    <div class="bg-danger-lighter b-a b-grey">
+                      <div class="bg-white m-t-45 padding-10 text-master">
+                        <p class="small no-margin pull-left hint-text">.bg-danger-lighter</p>
+                        <p class="small no-margin pull-right hint-text">#FDDDDD</p>
+                        <div class="clearfix"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <section>
+                <h4>Info color shades</h4>
+                <div class="row">
+                  <div class="col-md-3 col-sm-6">
+                    <p>Notification text</p>
+                    <div class="bg-info-darker b-a b-grey">
+                      <div class="bg-white m-t-45 padding-10 text-master">
+                        <p class="small no-margin pull-left hint-text">.bg-info-darker</p>
+                        <p class="small no-margin pull-right hint-text">#232B31</p>
+                        <div class="clearfix"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3 col-sm-6">
+                    <p>Text color</p>
+                    <div class="bg-info-dark b-a b-grey">
+                      <div class="bg-white m-t-45 padding-10 text-master">
+                        <p class="small no-margin pull-left hint-text">.bg-info-dark</p>
+                        <p class="small no-margin pull-right hint-text">#313B44</p>
+                        <div class="clearfix"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3 col-sm-6">
+                    <p>Base color</p>
+                    <div class="bg-info b-a b-grey">
+                      <div class="bg-white m-t-45 padding-10 text-master">
+                        <p class="small no-margin pull-left hint-text">.bg-info</p>
+                        <p class="small no-margin pull-right hint-text">#3B4752</p>
+                        <div class="clearfix"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3 col-sm-6">
+                    <p>Button overlay</p>
+                    <div class="bg-info-light b-a b-grey">
+                      <div class="bg-white m-t-45 padding-10 text-master">
+                        <p class="small no-margin pull-left hint-text">.bg-info-light</p>
+                        <p class="small no-margin pull-right hint-text">#626C75</p>
+                        <div class="clearfix"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <br>
+                <div class="row">
+                  <div class="col-md-3 col-sm-6">
+                    <p>Background opt.</p>
+                    <div class="bg-info-lighter b-a b-grey">
+                      <div class="bg-white m-t-45 padding-10 text-master">
+                        <p class="small no-margin pull-left hint-text">.bg-info-lighter</p>
+                        <p class="small no-margin pull-right hint-text">#D8DADC</p>
+                        <div class="clearfix"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <section>
+                <h4>Menu color shades</h4>
+                <div class="row">
+                  <div class="col-md-3 col-sm-6">
+                    <p>Menu open color</p>
+                    <div class="bg-menu-light b-a b-grey">
+                      <div class="bg-white m-t-45 padding-10 text-master">
+                        <p class="small no-margin pull-left hint-text">.bg-menu-light</p>
+                        <p class="small no-margin pull-right hint-text">#191B1F</p>
+                        <div class="clearfix"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3 col-sm-6">
+                    <p>Base color</p>
+                    <div class="bg-menu b-a b-grey">
+                      <div class="bg-white m-t-45 padding-10 text-master">
+                        <p class="small no-margin pull-left hint-text">.bg-menu</p>
+                        <p class="small no-margin pull-right hint-text">#202328</p>
+                        <div class="clearfix"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3 col-sm-6">
+                    <p>Text/icon color</p>
+                    <div class="bg-menu-light b-a b-grey">
+                      <div class="bg-white m-t-45 padding-10 text-master">
+                        <p class="small no-margin pull-left hint-text">.bg-menu-dark</p>
+                        <p class="small no-margin pull-right hint-text">#646972</p>
+                        <div class="clearfix"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <section>
+                <h4>Other colors</h4>
+                <div class="row">
+                  <div class="col-md-3 col-sm-6">
+                    <p>White color</p>
+                    <div class="bg-white b-a b-grey">
+                      <div class="bg-white m-t-45 padding-10 text-master">
+                        <p class="small no-margin pull-left hint-text">.bg-white</p>
+                        <p class="small no-margin pull-right hint-text">#ffffff</p>
+                        <div class="clearfix"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3 col-sm-6">
+                    <p>Transparent</p>
+                    <div class="bg-transparent b-a b-grey">
+                      <div class="bg-white m-t-45 padding-10 text-master">
+                        <p class="small no-margin pull-left hint-text">.bg-transparent</p>
+                        <p class="small no-margin pull-right hint-text"></p>
+                        <div class="clearfix"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <section id="icons">
+                <h3 class="page-title">Icons</h3>
+                <hr>
+                <p>
+                  Pages come with its very own pixel perfect font icons that is made specially for pages, this has over 50 icons to choose from.
+                  <br>We have also include the popular <a href="#">Font Awesome</a> and <a href="#">Line Icons</a>. Currently it will scale up over Over <strong> 600 </strong> icons
+                </p>
+                <br>
+                <h4><a href="#pages-icon">
+            Pages Icons
+          </a>
+          </h4>
+                <p class="m-b-15">
+                  Follow these steps to include an icon on to your page
+                </p>
+                <h5 class="semi-bold">
+            Step one
+          </h5>
+                <p>
+                  Check if the following Style sheet is already added inside the <code>&lt;head&gt;</code> tag
+                  <pre><code class="xml">&lt;link href=&quot;pages/css/pages-icon.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;</code></pre>
+                </p>
+                <div class="m-b-25"></div>
+                <h5 class="semi-bold">
+            Step two
+          </h5>
+                <p>
+                  Place the icon class in a <code>&lt;i&gt;&lt;/i&gt;</code> tag, pages icon prefix class starts with <code>pg-</code>. To view all classes in pages icon go to our <a href="http://pages.revox.io/dashboard/latest/html/icons.html">demo icons page</a>
+                  <p class="all-caps fs-12 bold">
+                    example :
+                  </p>
+                  <pre><code class="xml">&lt;i class=&quot;pg-social&quot;&gt;&lt;/i&gt;</code></pre>
+                </p>
+              </section>
+              <section>
+                <h4><a href="#fa">
+            Font Awesome Icons
+          </a>
+          </h4>
+                <p class="m-b-15">
+                  Follow these steps to include an icon on to your page
+                </p>
+                <h5 class="semi-bold">
+            Step one
+          </h5>
+                <p>
+                  Check if the following Style sheet is already added inside the <code>&lt;head&gt;</code> tag
+                  <pre><code class="xml">&lt;link href=&quot;assets/plugins/font-awesome/css/font-awesome.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; /&gt;</code></pre>
+                </p>
+                <div class="m-b-25"></div>
+                <h5 class="semi-bold">
+            Step two
+          </h5>
+                <p>
+                  Place the icon class in a <code>&lt;i&gt;&lt;/i&gt;</code> tag, pages icon prefix class starts with <code>fa fa-</code>. To view all classes in Font Awesome go to our <a href="http://pages.revox.io/dashboard/latest/html/icons.html">demo icons page</a>
+                  <p class="all-caps fs-12 bold">
+                    example :
+                  </p>
+                  <pre><code class="xml">&lt;i class=&quot;fa fa-cloud&quot;&gt;&lt;/i&gt;</code></pre>
+                </p>
+              </section>
+              <section>
+                <h4><a href="#line">
+           Simple Line Icons
+            </a>
+          </h4>
+                <p class="m-b-15">
+                  Follow these steps to include an icon on to your page
+                </p>
+                <h5 class="semi-bold">
+            Step one
+          </h5>
+                <p>
+                  Check if the following Style sheet is already added inside the <code>&lt;head&gt;</code> tag
+                  <pre><code class="xml">&lt;link href=&quot;assets/plugins/simple-line-icons/simple-line-icons.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; media=&quot;screen&quot;/&gt;</code></pre>
+                </p>
+                <div class="m-b-25"></div>
+                <h5 class="semi-bold">
+            Step two
+          </h5>
+                <p>
+                  Place the icon class in a <code>&lt;i&gt;&lt;/i&gt;</code> tag, pages icon prefix class starts with <code>sl-</code>. To view all classes in Simple Line icon go to our <a href="http://pages.revox.io/dashboard/latest/html/icons.html">demo icons page</a>
+                  <p class="all-caps fs-12 bold">
+                    example :
+                  </p>
+                  <pre><code class="xml">&lt;i class=&quot;sl-user&quot;&gt;&lt;/i&gt;</code></pre>
+                </p>
+              </section>
+              <p>Other Useful resources thay you may find:</p>
+              <ul class="other-ref">
+                <li><a href="http://pages.revox.io/dashboard/latest/html/icons.html">Pages Icon Search</a></li>
+                <li><a href="http://fortawesome.github.io/Font-Awesome/icons/" target="_blank">Font Awesome Documentation</a></li>
+              </ul>
+              <section id="buttons">
+                <h3 class="page-title">Buttons</h3>
+                <hr>
+                <h4>Colors</h4>
+                <p>Pages buttons use the same contextual classes introduced in Bootstrap
+                </p>
+                <div class="example m-t-15">
+                  <p class="all-caps fs-12 bold">
+                    example :
+                  </p>
+                  <button class="btn btn-primary btn-cons m-b-10">Primary</button>
+                  <button class="btn btn-success btn-cons m-b-10">Success</button>
+                  <button class="btn btn-complete btn-cons m-b-10">Complete</button>
+                  <button class="btn btn-info btn-cons m-b-10">Info</button>
+                  <button class="btn btn-warning btn-cons m-b-10">Warning</button>
+                  <button class="btn btn-danger btn-cons m-b-10">Danger</button>
+                </div>
+                <pre><code class="xml">&lt;button class=&quot;btn btn-primary btn-cons&quot;&gt;Primary&lt;/button&gt;
+&lt;button class=&quot;btn btn-success btn-cons&quot;&gt;Success&lt;/button&gt;
+&lt;button class=&quot;btn btn-complete btn-cons&quot;&gt;Complete&lt;/button&gt;
+&lt;button class=&quot;btn btn-info btn-cons&quot;&gt;Info&lt;/button&gt;
+&lt;button class=&quot;btn btn-warning btn-cons&quot;&gt;Warning&lt;/button&gt;
+&lt;button class=&quot;btn btn-danger btn-cons&quot;&gt;Danger&lt;/button&gt;</code></pre>
+              </section>
+              <section>
+                <h4>Button animation</h4>
+                <p>Content inside a button can be animate on hover. Simply include the classes
+                  <code>.btn-animated</code> together with <code>.from-top</code> or <code>.from-left</code> to specify the animation direction, followed by the desired <a href="">icon font</a> class name (ex: <code>fa fa-check</code>)
+                </p>
+                <div class="example m-t-15">
+                  <p class="all-caps fs-12 bold">
+                    example :
+                  </p>
+                  <button class="btn btn-primary btn-cons btn-animated from-left fa fa-check" type="button">
+                    <span>Checkbox</span>
+                  </button>
+                  <button class="btn btn-primary btn-cons btn-animated from-top pg pg-clock" type="button">
+                    <span>Clock</span>
+                  </button>
+                </div>
+                <pre><code class="xml">&lt;button class=&quot;btn btn-primary btn-animated from-left fa fa-check&quot; type=&quot;button&quot;&gt;
+    &lt;span&gt;Checkbox&lt;/span&gt;
+&lt;/button&gt;
+&lt;button class=&quot;btn btn-primary btn-animated from-top pg pg-clock&quot; type=&quot;button&quot;&gt;
+    &lt;span&gt;Clock&lt;/span&gt;
+&lt;/button&gt;</code></pre>
+              </section>
+              <section>
+                <h4>Default Dropdown</h4>
+                <div class="alert alert-info">AngularJS users will have to append <code>pg-dropdown</code> directive to the <code>&lt;div class="btn-group dropdown-default"&gt;</code> element</div>
+                <p>
+                  Tired of seeing the standard Bootstrap dropdown? Wrap your dropdown toggle button and dropdown menu within <code>.dropdown-default</code> to get a modern and clean feel
+                </p>
+                <div class="example m-t-15">
+                  <p class="all-caps fs-12 bold">
+                    example :
+                  </p>
+                  <div class="btn-group dropdown-default">
+                    <a class="btn dropdown-toggle" data-toggle="dropdown" href="#"> Dropdown <span class="caret"></span> </a>
+                    <ul class="dropdown-menu ">
+                      <li><a href="#">Arial</a>
+                      </li>
+                      <li><a href="#">Helvetica</a>
+                      </li>
+                      <li><a href="#">SegeoUI</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="btn-group dropdown-default dropup">
+                    <a class="btn dropdown-toggle" data-toggle="dropdown" href="#"> Dropdown <span class="caret"></span> </a>
+                    <ul class="dropdown-menu ">
+                      <li><a href="#">Arial</a>
+                      </li>
+                      <li><a href="#">Helvetica</a>
+                      </li>
+                      <li><a href="#">SegeoUI</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <pre><code class="xml">&lt;div class=&quot;btn-group dropdown-default&quot;&gt;
+    &lt;a class=&quot;btn dropdown-toggle&quot; data-toggle=&quot;dropdown&quot; href=&quot;#&quot;&gt; Dropdown &lt;span class=&quot;caret&quot;&gt;&lt;/span&gt; &lt;/a&gt;
+    &lt;ul class=&quot;dropdown-menu &quot;&gt;
+        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Arial&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Helvetica&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;SegeoUI&lt;/a&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
+&lt;!-- Upside dropdown --&gt;
+&lt;div class=&quot;btn-group dropdown-default dropup&quot;&gt;
+    &lt;a class=&quot;btn dropdown-toggle&quot; data-toggle=&quot;dropdown&quot; href=&quot;#&quot;&gt; Dropdown &lt;span class=&quot;caret&quot;&gt;&lt;/span&gt; &lt;/a&gt;
+    &lt;ul class=&quot;dropdown-menu &quot;&gt;
+        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Arial&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Helvetica&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;SegeoUI&lt;/a&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+              </section>
+              <section>
+                <h4>Tag Options</h4>
+                <p>
+                  Add <code>.btn-tag</code> followed by <code>.btn-tag-light</code> or <code>.btn-tag-dark</code> to have tag options with color variations for buttons. Additionally, rounded tags can be achieved by adding <code>.btn-tag-rounded</code>
+                </p>
+                <div class="example m-t-15">
+                  <p class="all-caps fs-12 bold">
+                    example :
+                  </p>
+                  <!-- Tag with a light background -->
+                  <button class="btn btn-tag  btn-tag-light m-r-20">Link me</button>
+                  <!-- Tag with a dark background -->
+                  <button class="btn btn-tag  btn-tag-dark">Link me</button>
+                  <br>
+                  <br>
+                  <!-- Rounded tag with a light background -->
+                  <button class="btn btn-tag   btn-tag-light btn-tag-rounded m-r-20">Link me</button>
+                  <!-- Rounded tag with a dark background -->
+                  <button class="btn btn-tag   btn-tag-dark btn-tag-rounded">Link me</button>
+                </div>
+                <pre><code class="xml">&lt;!-- Tag with a light background --&gt;
+&lt;button class=&quot;btn btn-tag  btn-tag-light m-r-20&quot;&gt;Link me&lt;/button&gt;
+&lt;!-- Tag with a dark background --&gt;
+&lt;button class=&quot;btn btn-tag  btn-tag-dark&quot;&gt;Link me&lt;/button&gt;
+&lt;!-- Rounded tag with a light background --&gt;
+&lt;button class=&quot;btn btn-tag   btn-tag-light btn-tag-rounded m-r-20&quot;&gt;Link me&lt;/button&gt;
+&lt;!-- Rounded tag with a dark background --&gt;
+&lt;button class=&quot;btn btn-tag   btn-tag-dark btn-tag-rounded&quot;&gt;Link me&lt;/button&gt;</code></pre>
+              </section>
+              <section>
+                <h4>Rounded buttons</h4>
+                <p>
+                  Any button can be made to have rounded corners by adding <code>.btn-rounded</code>
+                </p>
+                <div class="example m-t-15">
+                  <p class="all-caps fs-12 bold">
+                    example :
+                  </p>
+                  <!-- Large rounded button -->
+                  <button class="btn btn-lg btn-rounded m-r-20 m-b-10">Large rounded</button>
+                  <br>
+                  <!-- Regular rounded button -->
+                  <button class="btn btn-rounded m-b-10">Regular</button>
+                  <br>
+                  <!-- Small rounded button -->
+                  <button class="btn btn-sm btn-rounded">Small</button>
+                </div>
+                <pre><code class="xml">&lt;!-- Large rounded button --&gt;
+&lt;button class=&quot;btn btn-lg btn-rounded&quot;&gt;Large rounded&lt;/button&gt;
+&lt;!-- Regular rounded button --&gt;
+&lt;button class=&quot;btn btn-rounded&quot;&gt;Regular&lt;/button&gt;
+&lt;!-- Small rounded button --&gt;
+&lt;button class=&quot;btn btn-sm btn-rounded&quot;&gt;Small&lt;/button&gt;</code></pre>
+              </section>
+              <div class="well bs-ref clearfix">
+                <span class="pull-left">For native Bootstrap button classes </span><a class="btn btn-primary pull-right " target="_blank" href="http://getbootstrap.com/css/#buttons">Bootstrap Documentation</a>
+              </div>
+              <section id="modals">
+                <h3 class="page-title">Modals</h3>
+                <hr>
+                <p>
+                  Modals are created using <a href="http://getbootstrap.com/javascript/#modals" target="_blank">Bootstrap Native Modals</a>, they will work as the same way how it works in bootstrap, but it is styled to pages color scheme. To run a Bootstrap Modal, there is no depencies, you do not have to include extra JS or CSS files, To add a modal to pages please reffer following guidelines
+                </p>
+                <a href="http://getbootstrap.com/javascript/#modals" target="_blank" class="btn btn-complete">Bootstrap Modals Guideline</a>
+                <br>
+                <br>
+                <div class="text-center">
+                </div>
+              </section>
+              <div class="alert alert-info">If you are using AngularJS modals will have to be triggered programmatically using <a href="http://getbootstrap.com/javascript/#via-javascript">Bootstrap's javascript API</a> for Modals
+              </div>
+              <section>
+                <h4><a href="#line">
+           Modal Types
+            </a>
+          </h4>
+                <p class="m-b-15">
+                  We have added new options to bootstrap modals and made even awesome, by simply changing a class name you can get the following. There 3 different modals to choose from with 3 different size options for each, varying upt 9 modals
+                </p>
+                <br>
+                <section>
+                  <h5><a href="#line">
+             Slide Up
+              </a>
+            </h5>
+                  <p class="m-b-15">
+                    Simply add the class <code>slide-up</code> to main <code>modal</code> DIV & wrap <code>modal-content</code> with <code>modal-content-wrapper</code>, Your HTML tag structure should look like this. You can change the <code>id</code> attribute of the modal to anything you want.
+                  </p>
+                  <pre><code class="xml">&lt;!-- Modal --&gt;
+&lt;div class=&quot;modal fade slide-up disable-scroll&quot; id=&quot;modalSlideUp&quot; tabindex=&quot;-1&quot; role=&quot;dialog&quot; aria-labelledby=&quot;modalSlideUpLabel&quot; aria-hidden=&quot;false&quot;&gt;
+    &lt;div class=&quot;modal-dialog &quot;&gt;
+        &lt;div class=&quot;modal-content-wrapper&quot;&gt;
+        &lt;div class=&quot;modal-content&quot;&gt;
+            &lt;div class=&quot;modal-header clearfix text-left&quot;&gt;
+                &lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;modal&quot; aria-hidden=&quot;true&quot;&gt;
+                  &lt;i class=&quot;pg-close fs-14&quot;&gt;&lt;/i&gt;
+                &lt;/button&gt;
+                &lt;h5&gt;Heading &lt;span class=&quot;semi-bold&quot;&gt;here&lt;/span&gt;&lt;/h5&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;modal-body&quot;&gt;
+                Add Your Content here
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;!-- /.modal-content --&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- /.modal-dialog --&gt;</code></pre>
+                </section>
+                <section>
+                  <h5><a href="#line">
+             Stick Up
+              </a>
+            </h5>
+                  <p class="m-b-15">
+                    Simply add the class <code>stick-up</code> to main <code>modal</code> DIV. You can change the <code>id</code> attribute of the modal to anything you want.
+                  </p>
+                  <pre><code class="xml">&lt;!-- MODAL STICK UP  --&gt;
+&lt;div class=&quot;modal fade stick-up&quot; id=&quot;myModal&quot; tabindex=&quot;-1&quot; role=&quot;dialog&quot; aria-labelledby=&quot;myModalLabel&quot; aria-hidden=&quot;true&quot;&gt;
+    &lt;div class=&quot;modal-dialog&quot;&gt;
+        &lt;div class=&quot;modal-content&quot;&gt;
+            &lt;div class=&quot;modal-header clearfix text-left&quot;&gt;
+                &lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;modal&quot; aria-hidden=&quot;true&quot;&gt;
+                &lt;i class=&quot;pg-close fs-14&quot;&gt;&lt;/i&gt;
+                &lt;/button&gt;
+                &lt;h5&gt;Payment &lt;span class=&quot;semi-bold&quot;&gt;Information&lt;/span&gt;&lt;/h5&gt;
+                &lt;p&gt;We need payment information inorder to process your order&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;modal-body&quot;&gt;
+                &lt;form class=&quot;form-default&quot; role=&quot;form&quot;&gt;
+                    &lt;div class=&quot;row&quot;&gt;
+                        &lt;div class=&quot;col-sm-12&quot;&gt;
+                            &lt;div class=&quot;form-group&quot;&gt;
+                                &lt;label&gt;Company Name&lt;/label&gt;
+                                &lt;input type=&quot;email&quot; class=&quot;form-control&quot; &gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;row&quot;&gt;
+                        &lt;div class=&quot;col-sm-8&quot;&gt;
+                            &lt;div class=&quot;form-group&quot;&gt;
+                                &lt;label&gt;Card Number&lt;/label&gt;
+                                &lt;input type=&quot;text&quot; class=&quot;form-control&quot; &gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;col-sm-4&quot;&gt;
+                            &lt;div class=&quot;form-group&quot;&gt;
+                                &lt;label&gt;Card Holder&lt;/label&gt;
+                                &lt;input type=&quot;text&quot; class=&quot;form-control&quot; &gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/form&gt;
+                &lt;div class=&quot;row&quot;&gt;
+                    &lt;div class=&quot;col-sm-9&quot;&gt;
+                        &lt;div class=&quot;b-a b-grey b-rad-sm clearfix p-l-10 p-r-10&quot;&gt;
+                            &lt;div class=&quot;pull-left&quot;&gt;
+                                &lt;h5 class=&quot;semi-bold&quot;&gt;TOTAL&lt;/h5&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;pull-right&quot;&gt;
+                                &lt;h5 class=&quot;light&quot;&gt;$20.00&lt;/h5&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;col-sm-3&quot;&gt;
+                        &lt;button type=&quot;button&quot; class=&quot;btn btn-primary btn-lg btn-large btn-block&quot; data-dismiss=&quot;modal&quot;&gt;
+                        PAY
+                        &lt;/button&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;!-- /.modal-content --&gt;
+    &lt;/div&gt;
+    &lt;!-- /.modal-dialog --&gt;
+&lt;/div&gt;
+&lt;!-- END MODAL STICK UP  --&gt;</code></pre>
+                </section>
+                <section>
+                  <h5><a href="#line">
+             Slide Right
+              </a>
+            </h5>
+                  <p class="m-b-15">
+                    Simply add the class <code>slide-right</code> to main <code>modal</code> DIV & wrap <code>modal-content</code> with <code>modal-content-wrapper</code>, Your HTML tag structure should look like this. You can change the <code>id</code> attribute of the modal to anything you want.
+                  </p>
+                  <pre><code class="xml">&lt;div class=&quot;modal fade slide-right&quot; id=&quot;modalSlideLeft&quot; tabindex=&quot;-1&quot; role=&quot;dialog&quot; aria-labelledby=&quot;myModalLabel&quot; aria-hidden=&quot;true&quot;&gt;
+&lt;div class=&quot;modal-dialog modal-sm&quot;&gt;
+    &lt;div class=&quot;modal-content-wrapper&quot;&gt;
+        &lt;div class=&quot;modal-content table-block&quot;&gt;
+            &lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;modal&quot; aria-hidden=&quot;true&quot;&gt;&lt;i class=&quot;pg-close fs-14&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+            &lt;div class=&quot;modal-body v-align-middle text-center   &quot;&gt;
+                &lt;h5 class=&quot;text-primary &quot;&gt;Before you &lt;span class=&quot;semi-bold&quot;&gt;proceed&lt;/span&gt;, you have to login to make the necessary changes&lt;/h5&gt;
+                &lt;br&gt;
+                &lt;button type=&quot;button&quot; class=&quot;btn btn-primary btn-block&quot; data-dismiss=&quot;modal&quot;&gt;Continue&lt;/button&gt;
+                &lt;button type=&quot;button&quot; class=&quot;btn btn-default btn-block&quot; data-dismiss=&quot;modal&quot;&gt;Cancel&lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;!-- /.modal-content --&gt;
+&lt;/div&gt;
+&lt;!-- /.modal-dialog --&gt;
+&lt;/div&gt;</code></pre>
+                </section>
+                <section>
+                  <h5><a href="#line">
+             Fill In
+              </a>
+            </h5>
+                  <p class="m-b-15">
+                    Simply add the class <code>fill-in</code> to main <code>modal</code> DIV. You can change the <code>id</code> attribute of the modal to anything you want.
+                  </p>
+                  <pre><code class="xml">&lt;div class=&quot;modal fade fill-in&quot; id=&quot;modalFillIn&quot; tabindex=&quot;-1&quot; role=&quot;dialog&quot; aria-labelledby=&quot;modalFillInLabel&quot; aria-hidden=&quot;true&quot;&gt;
+&lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;modal&quot; aria-hidden=&quot;true&quot;&gt;
+    &lt;i class=&quot;pg-close&quot;&gt;&lt;/i&gt;
+&lt;/button&gt;
+&lt;div class=&quot;modal-dialog &quot;&gt;
+    &lt;div class=&quot;modal-content&quot;&gt;
+        &lt;div class=&quot;modal-header&quot;&gt;
+            &lt;h5 class=&quot;text-left p-b-5&quot;&gt;&lt;span class=&quot;semi-bold&quot;&gt;News letter&lt;/span&gt; signup&lt;/h5&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;modal-body&quot;&gt;
+            &lt;div class=&quot;row&quot;&gt;
+                &lt;div class=&quot;col-md-9&quot;&gt;
+                    &lt;input type=&quot;text&quot; placeholder=&quot;Your email address here&quot; class=&quot;form-control input-lg&quot; id=&quot;icon-filter&quot; name=&quot;icon-filter&quot;&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;col-md-3 text-center&quot;&gt;
+                    &lt;button type=&quot;button&quot; class=&quot;btn btn-primary btn-lg btn-large fs-15&quot;&gt;Sign up&lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;p class=&quot;text-right hinted-text p-t-10 p-r-10&quot;&gt;What is it ? Terms and conditions&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;modal-footer&quot;&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;!-- /.modal-content --&gt;
+&lt;/div&gt;
+&lt;!-- /.modal-dialog --&gt;
+&lt;/div&gt;</code></pre>
+                </section>
+                <section>
+                  <h5><a href="#line">
+             How to Open Bootstrap Modal
+              </a>
+            </h5>
+                  <p class="m-b-15">
+                    One method is to create a Link or Button with the following attributes
+                    <code>data-toggle="modal" data-target="#myModal"</code>
+                    <span class="text-danger fs-16">*</span> Make sure the data-target value to be the ID of your Modal</span>
+                  </p>
+                  <p class="all-caps fs-12 bold">
+                    example :
+                  </p>
+                  <pre><code class="xml">&lt;!-- Button trigger modal --&gt;
+&lt;button class=&quot;btn btn-primary btn-lg&quot; data-toggle=&quot;modal&quot; data-target=&quot;#myModal&quot;&gt;
+  Launch demo modal
+&lt;/button&gt;
+</pre></code>
+                </section>
+              </section>
+              <div class="well bs-ref clearfix">
+                <span class="pull-left">For Bootstrap Modal Options and Methods </span><a href="http://getbootstrap.com/javascript/#modals" target="_blank" class="btn btn-primary pull-right ">Bootstrap Documentation</a>
+              </div>
+              <p>Other Useful resources thay you may find:</p>
+              <ul class="other-ref">
+                <li><a href="#color">Color options</a></li>
+                <li><a href="#working_less">Working with LESS</a></li>
+              </ul>
+              <section id="progress_bars">
+                <h3 class="page-title">Progress Bars</h3>
+                <hr>
+                <h4>Linear Progress</h4>
+                <h5>Indeterminate progress</h5>
+                <p>Indicates a running process where the progress is unknown using an animated <i>svg</i>. ex: AJAX form submission. Simply wrap <code>.progress-bar-indeterminate</code> with Bootstrap's <code>.progress</code>. The progress bar will automatically expand to get the width of its parent <code>&lt;div&gt;</code></p>
+                <div class="example m-t-15">
+                  <p class="all-caps fs-12 bold">
+                    example :
+                  </p>
+                  <div style="width:50%">
+                    <div class="progress">
+                      <div class="progress-bar-indeterminate"></div>
+                    </div>
+                  </div>
+                </div>
+                <pre><code class="xml">&lt;div style=&quot;width:50%&quot;&gt;
+    &lt;div class=&quot;progress&quot;&gt;
+        &lt;div class=&quot;progress-bar-indeterminate&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                <h5>Color options</h5>
+                <p>In addition to Bootstrap's contextual progress bar classes, Pages has introduced two new classes, <code>.progress-bar-success</code> and <code>.progress-bar-complete</code> if you want to add more color to your project</p>
+                <div class="example m-t-15">
+                  <p class="all-caps fs-12 bold">
+                    example :
+                  </p>
+                  <div style="width:50%">
+                    <div class="progress">
+                      <div class="progress-bar progress-bar-primary" style="width: 35%;"></div>
+                    </div>
+                    <div class="progress">
+                      <div class="progress-bar progress-bar-complete" style="width: 45%;"></div>
+                    </div>
+                  </div>
+                </div>
+                <pre><code class="xml">&lt;div style=&quot;width:50%&quot;&gt;
+    &lt;div class=&quot;progress&quot;&gt;
+        &lt;div class=&quot;progress-bar progress-bar-primary&quot; style=&quot;width: 35%;&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;progress&quot;&gt;
+        &lt;div class=&quot;progress-bar progress-bar-complete&quot; style=&quot;width: 45%;&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                <h5>Size options</h5>
+                <p>Append <code>.progress-small</code> to <code>.progress</code> to make the progress bars thinner than the usual height</p>
+                <div class="example m-t-15">
+                  <p class="all-caps fs-12 bold">
+                    example :
+                  </p>
+                  <div style="width:50%">
+                    <!-- Thinner progress bar -->
+                    <div class="progress progress-small">
+                      <div style="width: 45%;" class="progress-bar progress-bar-success"></div>
+                    </div>
+                    <!-- Default height -->
+                    <div class="progress">
+                      <div style="width: 45%;" class="progress-bar progress-bar-success"></div>
+                    </div>
+                  </div>
+                </div>
+                <pre><code class="xml">&lt;div style=&quot;width:50%&quot;&gt;
+    &lt;!-- Thinner progress bar --&gt;
+    &lt;div class=&quot;progress progress-small&quot;&gt;
+        &lt;div style=&quot;width: 45%;&quot; class=&quot;progress-bar progress-bar-success&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;!-- Default height --&gt;
+    &lt;div class=&quot;progress&quot;&gt;
+        &lt;div style=&quot;width: 45%;&quot; class=&quot;progress-bar progress-bar-success&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+              </section>
+              <section>
+                <h4>Circular Progress</h4>
+                <div class="alert alert-info"><strong>AngularJS users</strong>
+                  <p>Replace <code>data-pages-progress="circle"</code> with <code>ui-jq</code> directive to apply jQuery plugin ex:<code>ui-jq="circularProgress"</code></p>
+                </div>
+                <p>
+                  Don't like the linear style? Try circular progress indicators instead. These also come with determinate and inderminate options
+                </p>
+                <h5>Indeterminate progress</h5>
+                <div class="example m-t-15">
+                  <p class="all-caps fs-12 bold">
+                    example :
+                  </p>
+                  <div class="progress-circle-indeterminate"></div>
+                </div>
+                <pre><code class="xml">&lt;div class=&quot;progress-circle-indeterminate&quot;&gt;&lt;/div&gt;</code></pre>
+                <h5>Determinate progress</h5>
+                <p>A determinate circular progress indicator can be initialized without writing a single line of Javascript code by simply including markup below. Pass any percentage value (0-100) into the <code>value</code> field to set the progress</p>
+                <div class="example m-t-15">
+                  <p class="all-caps fs-12 bold">
+                    example :
+                  </p>
+                  <!-- Show 75% of progress -->
+                  <input class="progress-circle" data-pages-progress="circle" value="75" type="hidden">
+                </div>
+                <pre><code class="xml">&lt;!-- Show 75% of progress --&gt;
+&lt;input class=&quot;progress-circle&quot; data-pages-progress=&quot;circle&quot; value=&quot;75&quot; type=&quot;hidden&quot; data-color=&quot;complete&quot;&gt;</code></pre>
+                <h5>Color options</h5>
+                <p>Color options can be set using the <code>data-color</code> attribute. Any contextual color can be included. </p>
+                <div class="example m-t-15">
+                  <p class="all-caps fs-12 bold">
+                    example :
+                  </p>
+                  <input class="progress-circle" data-pages-progress="circle" value="45" type="hidden" data-color="complete">
+                  <br>
+                  <input class="progress-circle" data-pages-progress="circle" value="65" type="hidden" data-color="primary">
+                  <br>
+                  <input class="progress-circle" data-pages-progress="circle" value="75" type="hidden" data-color="success">
+                </div>
+                <pre><code class="xml">&lt;input class=&quot;progress-circle&quot; data-pages-progress=&quot;circle&quot; value=&quot;45&quot; type=&quot;hidden&quot; data-color=&quot;complete&quot;&gt;
+&lt;input class=&quot;progress-circle&quot; data-pages-progress=&quot;circle&quot; value=&quot;65&quot; type=&quot;hidden&quot; data-color=&quot;primary&quot;&gt;
+&lt;input class=&quot;progress-circle&quot; data-pages-progress=&quot;circle&quot; value=&quot;75&quot; type=&quot;hidden&quot; data-color=&quot;success&quot;&gt;</code></pre>
+                <h5>Size options</h5>
+                <p>Stroke of the circle can be made thicker by setting <code>data-thick="true"</code></p>
+                <div class="example m-t-15">
+                  <p class="all-caps fs-12 bold">
+                    example :
+                  </p>
+                  <input class="progress-circle" data-pages-progress="circle" value="75" type="hidden" data-thick="true">
+                </div>
+                <pre><code class="xml">&lt;input class=&quot;progress-circle&quot; data-pages-progress=&quot;circle&quot; value=&quot;75&quot; type=&quot;hidden&quot; data-thick=&quot;true&quot;&gt;
+</code></pre>
+              </section>
+              <div class="well bs-ref clearfix">
+                <span class="pull-left">For native Bootstrap progress bar classes </span><a class="btn btn-primary pull-right " target="_blank" href="http://getbootstrap.com/components/#progress">Bootstrap Documentation</a>
+              </div>
+              <section id="accordians">
+                <h3 class="page-title">Accordians</h3>
+                <hr>
+                <p>
+                  Accordians are created using <a href="#">Bootstrap Native Accordians</a>, they will work as the same way how it works in bootstrap, but it is styled to pages color scheme. To run a Bootstrap Accordians, there is no depencies, <a href="#">you do not have to include extra JS or CSS files</a>,To add a modal to pages please reffer following guidelines
+                </p>
+                <a href="http://getbootstrap.com/javascript/#collapse" target="_blank" class="btn btn-complete">Bootstrap Accordians Guideline</a>
+              </section>
+              <section>
+                <p class="">
+                  Place this HTML code in any Pages html file
+                </p>
+                <pre><code class="xml">&lt;div class=&quot;panel panel-group panel-transparent&quot; data-toggle=&quot;collapse&quot; id=
+&quot;accordion&quot;&gt;
+  &lt;div class=&quot;panel panel-default&quot;&gt;
+    &lt;div class=&quot;panel-heading&quot;&gt;
+      &lt;h4 class=&quot;panel-title&quot;&gt;
+        &lt;a class=&quot;collapsed&quot; data-parent=&quot;#accordion&quot; data-toggle=
+        &quot;collapse&quot; href=&quot;#collapseOne&quot;&gt;Collapsible Group Item&lt;/a&gt;
+      &lt;/h4&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;panel-collapse collapse&quot; id=&quot;collapseOne&quot;&gt;
+      &lt;div class=&quot;panel-body&quot;&gt;
+        Content Goes here
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;panel panel-default&quot;&gt;
+    &lt;div class=&quot;panel-heading&quot;&gt;
+      &lt;h4 class=&quot;panel-title&quot;&gt;
+        &lt;a class=&quot;&quot; data-parent=&quot;#accordion&quot; data-toggle=&quot;collapse&quot; href=
+        &quot;#collapseTwo&quot;&gt;Typography Variables&lt;/a&gt;
+      &lt;/h4&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;panel-collapse collapse in&quot; id=&quot;collapseTwo&quot;&gt;
+      &lt;div class=&quot;panel-body&quot;&gt;
+        &lt;h4&gt;Try Something neat&lt;/h4&gt;
+        Content Goes here
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;panel panel-default&quot;&gt;
+    &lt;div class=&quot;panel-heading&quot;&gt;
+      &lt;h4 class=&quot;panel-title&quot;&gt;
+        &lt;a class=&quot;collapsed&quot; data-parent=&quot;#accordion&quot; data-toggle=
+        &quot;collapse&quot; href=&quot;#collapseThree&quot;&gt;Easy Edit&lt;/a&gt;
+      &lt;/h4&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;panel-collapse collapse&quot; id=&quot;collapseThree&quot;&gt;
+      &lt;div class=&quot;panel-body&quot;&gt;
+        Content Goes here
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                <br>
+              </section>
+              <section id="tabs">
+                <h3 class="page-title">Tabs</h3>
+                <hr>
+                <p>
+                  Tabs are created using <a href="http://getbootstrap.com/javascript/#tabs" target="_blank">Bootstrap Native Tabs</a>, they will work as the same way how it works in bootstrap, but it is styled to pages color scheme. To run a Bootstrap Tabs, there is no depencies, you do not have to include extra JS or CSS files, To add a Tabs to pages please reffer following guidelines
+                </p>
+                <a href="http://getbootstrap.com/javascript/#tabs" target="_blank" class="btn btn-complete">Bootstrap Tabs Guideline</a>
+                <br>
+                <br>
+                <div class="text-center">
+                </div>
+              </section>
+              <section>
+                <h4><a href="#createtab" id="createtab">
+           Creating a Tab
+            </a>
+          </h4>
+                <p class="m-b-15">
+                  Place this HTML code in any "Pages" html file
+                </p>
+                <div class="alert alert-info">
+                  <strong><i class="fa fa-lightbulb-o"></i> Tip : Tabs</strong>
+                  <br> Make sure you keep the tab pane ID's unquie
+                </div>
+                <div class="alert alert-info">
+                  <strong>AngularJS users</strong>
+                  <br> Please add <code>pg-tab</code> directive to each tab toggle. ex: <code>&lt;a role=&quot;tab&quot; data-toggle=&quot;tab&quot; href=&quot;#myTab&quot; pg-tab&gt;Tab handle&lt;/a&gt;</code>
+                </div>
+                <pre><code class="xml">&lt;div class=&quot;panel&quot;&gt;
+  &lt;ul class=&quot;nav nav-tabs nav-tabs-simple&quot;&gt;
+    &lt;li class=&quot;active&quot;&gt;
+      &lt;a data-toggle=&quot;tab&quot; href=&quot;#tab2hellowWorld&quot;&gt;Hello World&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a data-toggle=&quot;tab&quot; href=&quot;#tab2FollowUs&quot;&gt;Hello Two&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a data-toggle=&quot;tab&quot; href=&quot;#tab2Inspire&quot;&gt;Hello Three&lt;/a&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;div class=&quot;tab-content&quot;&gt;
+    &lt;div class=&quot;tab-pane active&quot; id=&quot;tab2hellowWorld&quot;&gt;
+      &lt;div class=&quot;row column-seperation&quot;&gt;
+        &lt;div class=&quot;col-md-6&quot;&gt;
+          &lt;h3&gt;
+            &lt;span class=&quot;semi-bold&quot;&gt;Sometimes&lt;/span&gt; Small things in life means
+            the most
+          &lt;/h3&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;col-md-6&quot;&gt;
+          &lt;h3 class=&quot;semi-bold&quot;&gt;
+            great tabs
+          &lt;/h3&gt;
+          &lt;p&gt;
+            Native boostrap tabs customized to Pages look and feel, simply
+            changing class name you can change color as well as its animations
+          &lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;tab-pane&quot; id=&quot;tab2FollowUs&quot;&gt;
+      &lt;div class=&quot;row&quot;&gt;
+        &lt;div class=&quot;col-md-12&quot;&gt;
+          &lt;h3&gt;
+            &ldquo; Nothing is &lt;span class=&quot;semi-bold&quot;&gt;impossible&lt;/span&gt;, the word
+            itself says 'I'm &lt;span class=&quot;semi-bold&quot;&gt;possible&lt;/span&gt;'! &rdquo;
+          &lt;/h3&gt;
+          &lt;p&gt;
+            A style represents visual customizations on top of a layout. By
+            editing a style, you can use Squarespace's visual interface to
+            customize your...
+          &lt;/p&gt;&lt;br&gt;
+          &lt;p class=&quot;pull-right&quot;&gt;
+            &lt;button class=&quot;btn btn-white btn-cons&quot; type=&quot;button&quot;&gt;White&lt;/button&gt;
+            &lt;button class=&quot;btn btn-success btn-cons&quot; type=
+            &quot;button&quot;&gt;Success&lt;/button&gt;
+          &lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;tab-pane&quot; id=&quot;tab2Inspire&quot;&gt;
+      &lt;div class=&quot;row&quot;&gt;
+        &lt;div class=&quot;col-md-12&quot;&gt;
+          &lt;h3&gt;
+            Follow us &amp;amp; get updated!
+          &lt;/h3&gt;
+          &lt;p&gt;
+            Instantly connect to what's most important to you. Follow your
+            friends, experts, favorite celebrities, and breaking news.
+          &lt;/p&gt;&lt;br&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+              </section>
+              <section>
+                <h4><a href="#taborientation" id="taborientation">
+           Tab Orientaion
+            </a>
+          </h4>
+                <p class="m-b-15">
+                  To change tab orientation, create a tab like before using the above code, add the class
+                  <code>nav-tabs-left</code> or <code>nav-tabs-left</code> to <code> nav nav-tabs </code> UL element
+                </p>
+                <pre><code class="xml">&lt;!-- LEFT ORIENTATION --&gt;
+&lt;div class=&quot;panel&quot;&gt;
+  &lt;ul class=&quot;nav nav-tabs nav-tabs-left nav-tabs-simple&quot;&gt;
+  ....
+  &lt;/ul&gt;
+  &lt;div class=&quot;tab-content&quot;&gt;
+  ....
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- RIGHT ORIENTATION --&gt;
+&lt;div class=&quot;panel&quot;&gt;
+  &lt;ul class=&quot;nav nav-tabs nav-tabs-right nav-tabs-simple&quot;&gt;
+  ....
+  &lt;/ul&gt;
+  &lt;div class=&quot;tab-content&quot;&gt;
+  ....
+  &lt;/div&gt;
+&lt;/div&gt;</code></section>
+        <section>
+          <h4><a href="#tabstyles" id="tabstyles">
+           Tab Styles
+            </a>
+          </h4>
+          <p class="m-b-15">
+            To change tab styles, create a tab like before using the first code in <a href="#createtab">Create Tab</a> section, add the class
+            <code>nav-tabs-linetriangle</code> or <code>nav-tabs-fillup</code> to <code> nav nav-tabs </code> UL element
+          </p>
+          <div class="alert alert-info">
+            <strong><i class="fa fa-lightbulb-o"></i> Tip : Tabs</strong><br>
+            You can try different orientation with tab styles
+          </div>
+           
+<pre><code class="xml">&lt;!-- LINE TRIANGLE --&gt;
+&lt;div class=&quot;panel&quot;&gt;
+  &lt;ul class=&quot;nav nav-tabs nav-tabs-linetriangle nav-tabs-simple&quot;&gt;
+  ....
+  &lt;/ul&gt;
+  &lt;div class=&quot;tab-content&quot;&gt;
+  ....
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- FILL UP ANIMATION --&gt;
+&lt;div class=&quot;panel&quot;&gt;
+  &lt;ul class=&quot;nav nav-tabs nav-tabs-fillup nav-tabs-simple&quot;&gt;
+  ....
+  &lt;/ul&gt;
+  &lt;div class=&quot;tab-content&quot;&gt;
+  ....
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+              </section>
+              <section>
+                <h4>Sliding Tabs</h4>
+                <p>Append <code>slide-left</code> or <code>slide-right</code> to <code>tab-pane</code> to reveal tab content with a sliding effect</p>
+                <pre><code class="xml">&lt;!-- Nav tabs --&gt;
+&lt;ul class=&quot;nav nav-tabs&quot;&gt;
+    &lt;li class=&quot;active&quot;&gt;
+        &lt;a data-toggle=&quot;tab&quot; href=&quot;#slide1&quot;&gt;
+            &lt;span&gt;Home&lt;/span&gt;
+        &lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;a data-toggle=&quot;tab&quot; href=&quot;#slide2&quot;&gt;
+            &lt;span&gt;Profile&lt;/span&gt;
+        &lt;/a&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- Tab panes --&gt;
+&lt;div class=&quot;tab-content&quot;&gt;
+    &lt;div class=&quot;tab-pane slide-left active&quot; id=&quot;slide1&quot;&gt;
+        ...
+    &lt;/div&gt;
+    &lt;div class=&quot;tab-pane slide-right&quot; id=&quot;slide2&quot;&gt;
+        ...
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+              </section>
+              <div class="well bs-ref clearfix">
+                <span class="pull-left">For native Bootstrap Tab Options</span><a href="http://getbootstrap.com/javascript/#tabs" target="_blank" class="btn btn-primary pull-right ">Bootstrap Documentation</a>
+              </div>
+              <p>Other Useful resources thay you may find:</p>
+              <ul class="other-ref">
+                <li><a href="#accordians">Accordians</a></li>
+              </ul>
+              <section id="form_elements">
+                <h3 class="page-title">Form Elements</h3>
+                <hr>
+                <h4>Checkbox controls</h4>
+                <p>
+                  Get rid of native look n' feel with our very own custom checkboxes written purely in CSS. These are retina compatible and available in all Bootstrap's contextual classes (ex: <code>.check-primary</code>)
+                </p>
+                <div class="example m-t-15">
+                  <p class="all-caps fs-12 bold">
+                    example :
+                  </p>
+                  <div class="checkbox check-default">
+                    <input type="checkbox" checked="checked" value="1" id="checkbox1">
+                    <label for="checkbox1">Keep Me Signed in</label>
+                  </div>
+                  <div class="checkbox check-success  ">
+                    <input type="checkbox" checked="checked" value="1" id="checkbox2">
+                    <label for="checkbox2">I agree</label>
+                  </div>
+                  <div class="checkbox check-primary">
+                    <input type="checkbox" checked="checked" value="1" id="checkbox3">
+                    <label for="checkbox3">Mark</label>
+                  </div>
+                  <div class="checkbox check-info">
+                    <input type="checkbox" checked="checked" value="1" id="checkbox4">
+                    <label for="checkbox4">Steve Jobs</label>
+                  </div>
+                  <div class="checkbox check-warning">
+                    <input type="checkbox" checked="checked" value="1" id="checkbox5">
+                    <label for="checkbox5">Action</label>
+                  </div>
+                  <div class="checkbox check-danger">
+                    <input type="checkbox" checked="checked" value="1" id="checkbox6">
+                    <label for="checkbox6">Mark as read</label>
+                  </div>
+                </div>
+                <pre><code class="xml">&lt;div class=&quot;checkbox check-default&quot;&gt;
+    &lt;input type=&quot;checkbox&quot; checked=&quot;checked&quot; value=&quot;1&quot; id=&quot;checkbox1&quot;&gt;
+    &lt;label for=&quot;checkbox1&quot;&gt;Keep Me Signed in&lt;/label&gt;
+&lt;/div&gt;
+&lt;div class=&quot;checkbox check-success  &quot;&gt;
+    &lt;input type=&quot;checkbox&quot; checked=&quot;checked&quot; value=&quot;1&quot; id=&quot;checkbox2&quot;&gt;
+    &lt;label for=&quot;checkbox2&quot;&gt;I agree&lt;/label&gt;
+&lt;/div&gt;
+&lt;div class=&quot;checkbox check-primary&quot;&gt;
+    &lt;input type=&quot;checkbox&quot; checked=&quot;checked&quot; value=&quot;1&quot; id=&quot;checkbox3&quot;&gt;
+    &lt;label for=&quot;checkbox3&quot;&gt;Mark&lt;/label&gt;
+&lt;/div&gt;
+&lt;div class=&quot;checkbox check-info&quot;&gt;
+    &lt;input type=&quot;checkbox&quot; checked=&quot;checked&quot; value=&quot;1&quot; id=&quot;checkbox4&quot;&gt;
+    &lt;label for=&quot;checkbox4&quot;&gt;Steve Jobs&lt;/label&gt;
+&lt;/div&gt;
+&lt;div class=&quot;checkbox check-warning&quot;&gt;
+    &lt;input type=&quot;checkbox&quot; checked=&quot;checked&quot; value=&quot;1&quot; id=&quot;checkbox5&quot;&gt;
+    &lt;label for=&quot;checkbox5&quot;&gt;Action&lt;/label&gt;
+&lt;/div&gt;
+&lt;div class=&quot;checkbox check-danger&quot;&gt;
+    &lt;input type=&quot;checkbox&quot; checked=&quot;checked&quot; value=&quot;1&quot; id=&quot;checkbox6&quot;&gt;
+    &lt;label for=&quot;checkbox6&quot;&gt;Mark as read&lt;/label&gt;
+&lt;/div&gt;</code></pre>
+                <h5 class="m-t-30">Shape options</h5>
+                <p>Bored with traditional boxed shape check boxes? Here is a circle one simply add the class <code>.checkbox-circle</code> to change it</p>
+                <div class="example m-t-15">
+                  <p class="all-caps fs-12 bold">
+                    example :
+                  </p>
+                  <div class="checkbox check-default checkbox-circle">
+                    <input type="checkbox" checked="checked" value="1" id="checkbox7">
+                    <label for="checkbox7">Keep Me Signed in</label>
+                  </div>
+                  <div class="checkbox check-success checkbox-circle">
+                    <input type="checkbox" checked="checked" value="1" id="checkbox8">
+                    <label for="checkbox8">I agree</label>
+                  </div>
+                  <div class="checkbox check-primary checkbox-circle">
+                    <input type="checkbox" checked="checked" value="1" id="checkbox9">
+                    <label for="checkbox9">Mark</label>
+                  </div>
+                </div>
+                <pre><code class="xml">&lt;div class=&quot;checkbox check-default checkbox-circle&quot;&gt;
+    &lt;input type=&quot;checkbox&quot; checked=&quot;checked&quot; value=&quot;1&quot; id=&quot;checkbox7&quot;&gt;
+    &lt;label for=&quot;checkbox7&quot;&gt;Keep Me Signed in&lt;/label&gt;
+&lt;/div&gt;
+&lt;div class=&quot;checkbox check-success checkbox-circle&quot;&gt;
+    &lt;input type=&quot;checkbox&quot; checked=&quot;checked&quot; value=&quot;1&quot; id=&quot;checkbox8&quot;&gt;
+    &lt;label for=&quot;checkbox8&quot;&gt;I agree&lt;/label&gt;
+&lt;/div&gt;
+&lt;div class=&quot;checkbox check-primary checkbox-circle&quot;&gt;
+    &lt;input type=&quot;checkbox&quot; checked=&quot;checked&quot; value=&quot;1&quot; id=&quot;checkbox9&quot;&gt;
+    &lt;label for=&quot;checkbox9&quot;&gt;Mark&lt;/label&gt;
+&lt;/div&gt;</code></pre>
+                <h5 class="m-t-30">State options</h5>
+                <p>These act the same way as normal HTML check boxes. Here are some states that</p>
+                <div class="example m-t-15">
+                  <p class="all-caps fs-12 bold">
+                    example :
+                  </p>
+                  <div class="checkbox check-success">
+                    <input type="checkbox" disabled="disabled" value="check1" name="check" id="check1">
+                    <label for="check1">Checkbox No. 1</label>
+                  </div>
+                  <div class="checkbox check-success">
+                    <input type="checkbox" disabled="disabled" checked="checked" value="check2" name="check" id="check2">
+                    <label for="check2">Checkbox No. 2</label>
+                  </div>
+                </div>
+                <pre><code class="xml">&lt;div class=&quot;checkbox check-success&quot;&gt;
+    &lt;input type=&quot;checkbox&quot; disabled=&quot;disabled&quot; value=&quot;check1&quot; name=&quot;check&quot; id=&quot;check1&quot;&gt;
+    &lt;label for=&quot;check1&quot;&gt;Checkbox No. 1&lt;/label&gt;
+&lt;/div&gt;
+&lt;div class=&quot;checkbox check-success&quot;&gt;
+    &lt;input type=&quot;checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; value=&quot;check2&quot; name=&quot;check&quot; id=&quot;check2&quot;&gt;
+    &lt;label for=&quot;check2&quot;&gt;Checkbox No. 2&lt;/label&gt;
+&lt;/div&gt;</code></pre>
+              </section>
+              <section>
+                <h4>Toggle controls</h4>
+                <p></p>
+                <div class="alert alert-warning">
+                  <p>Do not delete the <code>label</code> element which is placed next to each <code>radio</code>. Leave it blank if you don't want it to hold any text
+                  </p>
+                </div>
+                <div class="example m-t-15">
+                  <p class="all-caps fs-12 bold">
+                    example :
+                  </p>
+                  <div class="radio radio-default">
+                    <input type="radio" checked="checked" value="yes" name="radio1" id="radio1Yes">
+                    <label for="radio1Yes">Agree</label>
+                    <input type="radio" value="no" name="radio1" id="radio1No">
+                    <label for="radio1No">Disagree</label>
+                  </div>
+                  <div class="radio radio-success">
+                    <input type="radio" checked="checked" value="yes" name="radio2" id="radio2Yes">
+                    <label for="radio2Yes">Male</label>
+                    <input type="radio" value="no" name="radio2" id="radio2No">
+                    <label for="radio2No">Female</label>
+                  </div>
+                  <div class="radio radio-primary">
+                    <input type="radio" checked="checked" value="yes" name="radio3" id="radio3Yes">
+                    <label for="radio3Yes">High</label>
+                    <input type="radio" value="no" name="radio3" id="radio3No">
+                    <label for="radio3No">Low</label>
+                  </div>
+                  <div class="radio radio-info">
+                    <input type="radio" checked="checked" value="yes" name="radio4" id="radio4Yes">
+                    <label for="radio4Yes">HTML</label>
+                    <input type="radio" value="no" name="radio4" id="radio4No">
+                    <label for="radio4No">JS</label>
+                  </div>
+                  <div class="radio radio-warning">
+                    <input type="radio" checked="checked" value="yes" name="radio5" id="radio5Yes">
+                    <label for="radio5Yes">Chrome</label>
+                    <input type="radio" value="no" name="radio5" id="radio5No">
+                    <label for="radio5No">Firefox</label>
+                  </div>
+                  <div class="radio radio-danger">
+                    <input type="radio" checked="checked" value="yes" name="radio6" id="radio6Yes">
+                    <label for="radio6Yes">iOS</label>
+                    <input type="radio" value="no" name="radio6" id="radio6No">
+                    <label for="radio6No">Android</label>
+                  </div>
+                </div>
+                <pre><code class="xml">&lt;div class=&quot;radio radio-default&quot;&gt;
+    &lt;input type=&quot;radio&quot; checked=&quot;checked&quot; value=&quot;yes&quot; name=&quot;radio1&quot; id=&quot;radio1Yes&quot;&gt;
+    &lt;label for=&quot;radio1Yes&quot;&gt;Agree&lt;/label&gt;
+    &lt;input type=&quot;radio&quot; value=&quot;no&quot; name=&quot;radio1&quot; id=&quot;radio1No&quot;&gt;
+    &lt;label for=&quot;radio1No&quot;&gt;Disagree&lt;/label&gt;
+&lt;/div&gt;
+&lt;div class=&quot;radio radio-success&quot;&gt;
+    &lt;input type=&quot;radio&quot; checked=&quot;checked&quot; value=&quot;yes&quot; name=&quot;radio2&quot; id=&quot;radio2Yes&quot;&gt;
+    &lt;label for=&quot;radio2Yes&quot;&gt;Male&lt;/label&gt;
+    &lt;input type=&quot;radio&quot; value=&quot;no&quot; name=&quot;radio2&quot; id=&quot;radio2No&quot;&gt;
+    &lt;label for=&quot;radio2No&quot;&gt;Female&lt;/label&gt;
+&lt;/div&gt;
+&lt;div class=&quot;radio radio-primary&quot;&gt;
+    &lt;input type=&quot;radio&quot; checked=&quot;checked&quot; value=&quot;yes&quot; name=&quot;radio3&quot; id=&quot;radio3Yes&quot;&gt;
+    &lt;label for=&quot;radio3Yes&quot;&gt;High&lt;/label&gt;
+    &lt;input type=&quot;radio&quot; value=&quot;no&quot; name=&quot;radio3&quot; id=&quot;radio3No&quot;&gt;
+    &lt;label for=&quot;radio3No&quot;&gt;Low&lt;/label&gt;
+&lt;/div&gt;
+&lt;div class=&quot;radio radio-info&quot;&gt;
+    &lt;input type=&quot;radio&quot; checked=&quot;checked&quot; value=&quot;yes&quot; name=&quot;radio4&quot; id=&quot;radio4Yes&quot;&gt;
+    &lt;label for=&quot;radio4Yes&quot;&gt;HTML&lt;/label&gt;
+    &lt;input type=&quot;radio&quot; value=&quot;no&quot; name=&quot;radio4&quot; id=&quot;radio4No&quot;&gt;
+    &lt;label for=&quot;radio4No&quot;&gt;JS&lt;/label&gt;
+&lt;/div&gt;
+&lt;div class=&quot;radio radio-warning&quot;&gt;
+    &lt;input type=&quot;radio&quot; checked=&quot;checked&quot; value=&quot;yes&quot; name=&quot;radio5&quot; id=&quot;radio5Yes&quot;&gt;
+    &lt;label for=&quot;radio5Yes&quot;&gt;Chrome&lt;/label&gt;
+    &lt;input type=&quot;radio&quot; value=&quot;no&quot; name=&quot;radio5&quot; id=&quot;radio5No&quot;&gt;
+    &lt;label for=&quot;radio5No&quot;&gt;Firefox&lt;/label&gt;
+&lt;/div&gt;
+&lt;div class=&quot;radio radio-danger&quot;&gt;
+    &lt;input type=&quot;radio&quot; checked=&quot;checked&quot; value=&quot;yes&quot; name=&quot;radio6&quot; id=&quot;radio6Yes&quot;&gt;
+    &lt;label for=&quot;radio6Yes&quot;&gt;iOS&lt;/label&gt;
+    &lt;input type=&quot;radio&quot; value=&quot;no&quot; name=&quot;radio6&quot; id=&quot;radio6No&quot;&gt;
+    &lt;label for=&quot;radio6No&quot;&gt;Android&lt;/label&gt;
+&lt;/div&gt;</code></pre>
+                <h5 class="m-t-20">State options</h5>
+                <p>Use of different color opacity helps to destigues between different states such as disable</p>
+                <div class="example m-t-15">
+                  <p class="all-caps fs-12 bold">
+                    example :
+                  </p>
+                  <div class="radio radio-primary">
+                    <input type="radio" disabled="disabled" value="Disabled" name="Disabled" id="Disabled">
+                    <label for="Disabled">Disabled</label>
+                    <input type="radio" disabled="disabled" checked="checked" value="ADisabled" name="ADisabled" id="ADisabled">
+                    <label for="ADisabled">Disabled</label>
+                  </div>
+                </div>
+                <pre><code class="xml">&lt;div class=&quot;radio radio-primary&quot;&gt;
+    &lt;input type=&quot;radio&quot; disabled=&quot;disabled&quot; value=&quot;Disabled&quot; name=&quot;Disabled&quot; id=&quot;Disabled&quot;&gt;
+    &lt;label for=&quot;Disabled&quot;&gt;Disabled&lt;/label&gt;
+    &lt;input type=&quot;radio&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; value=&quot;ADisabled&quot; name=&quot;ADisabled&quot; id=&quot;ADisabled&quot;&gt;
+    &lt;label for=&quot;ADisabled&quot;&gt;Disabled&lt;/label&gt;
+&lt;/div&gt;</code></pre>
+              </section>
+              <div class="well bs-ref clearfix">
+                <span class="pull-left">For native Bootstrap form controls </span><a class="btn btn-primary pull-right " target="_blank" href="http://getbootstrap.com/css/#forms">Bootstrap Documentation</a>
+              </div>
+              <section id="form_layouts">
+                <h3 class="page-title">Form Layouts</h3>
+                <hr>
+                <p>
+                  This section of the documentation will guide you how to apply different form styles for your need, There 3 different new styles that you an use, Please follow the steps in achieving this. There is no need of external JS or CSS libraries.
+                </p>
+              </section>
+              <section>
+                <h3 class="#standardbsform" id="standardbsform">
+            Creating a Standard Bootstrap Form
+          </h3>
+                <hr>
+                <p>
+                  To create a native bootstrap form, the following tags are a must, It is the standard procedure in Bootstrap
+                  <ol class="fs-13 p-l-25">
+                    <li>You should have a form tag</li>
+                    <li>A label for your input is conditional</li>
+                    <li>Both label and input should be wrapped in <code>form-group</code></li>
+                  </ol>
+                </p>
+                <p class="all-caps fs-12 bold">
+                  example :
+                </p>
+                <pre><code class="xml">&lt;form role=&quot;form&quot;&gt;
+  &lt;div class=&quot;form-group&quot;&gt;
+    &lt;label for=&quot;exampleInputEmail1&quot;&gt;Email address&lt;/label&gt;
+    &lt;input type=&quot;email&quot; class=&quot;form-control&quot; id=&quot;exampleInputEmail1&quot; placeholder=&quot;Enter email&quot;&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;form-group&quot;&gt;
+    &lt;label for=&quot;exampleInputPassword1&quot;&gt;Password&lt;/label&gt;
+    &lt;input type=&quot;password&quot; class=&quot;form-control&quot; id=&quot;exampleInputPassword1&quot; placeholder=&quot;Password&quot;&gt;
+  &lt;/div&gt;
+  &lt;button type=&quot;submit&quot; class=&quot;btn btn-default&quot;&gt;Submit&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+                <br>
+                <p>For more detailed documentation of Bootstrap forms
+                  <br>
+                  <br>
+                  <a href="http://getbootstrap.com/css/#forms" target="_blank" class="btn btn-complete">Bootstrap Form Guideline</a>
+                </p>
+              </section>
+              <section>
+                <h3 id="defaultform">
+            Pages Default Form Layout
+          </h3>
+                <hr>
+                <div class="alert alert-info"><strong>AngularJS users</strong>
+                  <p>Please add <code>pg-form-group</code> directive to your <code>.form-group-default </code> element
+                    <p>
+                </div>
+                <p>
+                  To create a pages default form layout, append the class <code>form-group-default</code> to <code>form-group</code>. But first you must create a bootstrap form <a href="#standardbsform">Click here to see</a>
+                </p>
+                <div class="example m-t-15">
+                  <p class="all-caps fs-12 bold">
+                    example :
+                  </p>
+                  <form role="form">
+                    <div class="form-group form-group-default ">
+                      <label class="control-label">Project</label>
+                      <input type="email" class="form-control" required>
+                    </div>
+                    <div class="row">
+                      <div class="col-sm-6">
+                        <div class="form-group form-group-default">
+                          <label class="control-label">First name</label>
+                          <input type="text" class="form-control" required>
+                        </div>
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="form-group form-group-default">
+                          <label class="control-label">Last name</label>
+                          <input type="text" class="form-control">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group form-group-default">
+                      <label class="control-label">Password</label>
+                      <input type="password" class="form-control" required>
+                    </div>
+                    <div class="form-group form-group-default">
+                      <label class="control-label">Placeholder</label>
+                      <input type="email" class="form-control" placeholder="ex: some@example.com" required>
+                    </div>
+                    <div class="form-group form-group-default disabled">
+                      <label class="control-label">Disabled</label>
+                      <input type="email" class="form-control" value="You can put anything here" disabled>
+                    </div>
+                  </form>
+                </div>
+                <pre><code class="xml">&lt;form role=&quot;form&quot;&gt;
+    
+    &lt;div class=&quot;form-group form-group-default &quot;&gt;
+        &lt;label&gt;Project&lt;/label&gt;
+        &lt;input type=&quot;email&quot; class=&quot;form-control&quot; required&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;row&quot;&gt;
+        &lt;div class=&quot;col-sm-6&quot;&gt;
+            &lt;div class=&quot;form-group form-group-default&quot;&gt;
+                &lt;label&gt;First name&lt;/label&gt;
+                &lt;input type=&quot;text&quot; class=&quot;form-control&quot; required&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;col-sm-6&quot;&gt;
+            &lt;div class=&quot;form-group form-group-default&quot;&gt;
+                &lt;label&gt;Last name&lt;/label&gt;
+                &lt;input type=&quot;text&quot; class=&quot;form-control&quot;&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;form-group form-group-default&quot;&gt;
+        &lt;label&gt;Password&lt;/label&gt;
+        &lt;input type=&quot;password&quot; class=&quot;form-control&quot; required&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;form-group form-group-default&quot;&gt;
+        &lt;label&gt;Placeholder&lt;/label&gt;
+        &lt;input type=&quot;email&quot; class=&quot;form-control&quot; placeholder=&quot;ex: some@example.com&quot; required&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;form-group form-group-default disabled&quot;&gt;
+        &lt;label&gt;Disabled&lt;/label&gt;
+        &lt;input type=&quot;email&quot; class=&quot;form-control&quot; value=&quot;You can put anything here&quot; disabled&gt;
+    &lt;/div&gt;
+&lt;/form&gt;</code></pre>
+                <br>
+              </section>
+              <section>
+                <h3 class="#attachedform">
+            Pages Attached Form Layout
+          </h3>
+                <hr>
+                <div class="alert alert-info"><strong>AngularJS users</strong>
+                  <p>Please add <code>pg-form-group</code> directive to your <code>.form-group-default </code> element
+                    <p>
+                </div>
+                <p>
+                  To create a attached form layout follow the following steps
+                  <ol class="fs-13 p-l-25">
+                    <li>Create a form following the <a href="#defaultform">Pages Default Form layout</a>. Attached layout can ONLY be applied to the Pages Default style.</li>
+                    <li>Wrap a set of <code>form-group-default</code> elements with <code>form-group-attached</code></li>
+                  </ol>
+                </p>
+                <div class="example m-t-15">
+                  <p class="all-caps fs-12 bold">
+                    example :
+                  </p>
+                  <form role="form">
+                    <div class="form-group-attached">
+                      <div class="form-group form-group-default required">
+                        <label class="control-label">Project name</label>
+                        <input type="text" class="form-control" name="projectName" required>
+                      </div>
+                      <div class="row clearfix">
+                        <div class="col-sm-6">
+                          <div class="form-group form-group-default required">
+                            <label class="control-label">First name</label>
+                            <input type="text" class="form-control" name="firstName" required>
+                          </div>
+                        </div>
+                        <div class="col-sm-6">
+                          <div class="form-group form-group-default">
+                            <label class="control-label">Last name</label>
+                            <input type="text" class="form-control" name="lastName">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+                <pre><code class="xml">&lt;form role=&quot;form&quot;&gt;
+    &lt;div class=&quot;form-group-attached&quot;&gt;
+        &lt;div class=&quot;form-group form-group-default required&quot;&gt;
+            &lt;label&gt;Project name&lt;/label&gt;
+            &lt;input type=&quot;text&quot; class=&quot;form-control&quot; name=&quot;projectName&quot; required&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;row clearfix&quot;&gt;
+            &lt;div class=&quot;col-sm-6&quot;&gt;
+                &lt;div class=&quot;form-group form-group-default required&quot;&gt;
+                    &lt;label&gt;First name&lt;/label&gt;
+                    &lt;input type=&quot;text&quot; class=&quot;form-control&quot; name=&quot;firstName&quot; required&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;col-sm-6&quot;&gt;
+                &lt;div class=&quot;form-group form-group-default&quot;&gt;
+                    &lt;label&gt;Last name&lt;/label&gt;
+                    &lt;input type=&quot;text&quot; class=&quot;form-control&quot; name=&quot;lastName&quot;&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/form&gt;</code></pre>
+              </section>
+              <section>
+                <h3 class="#form_horizontal" id="form_horizontal">
+            Pages Horizontal Form Layout
+          </h3>
+                <hr>
+                <p>
+                  To create a pages default form layout, add the class <code>form-horizontal</code>. First you must create a bootstrap form <a href="#standardbsform">Click here to see</a>
+                </p>
+                <p class="all-caps fs-12 bold">
+                  example :
+                </p>
+                <pre><code class="xml">&lt;form class=&quot;form-horizontal&quot; role=&quot;form&quot;&gt;
+...
+&lt;/form&gt;</code></pre>
+              </section>
+              <p>Other Useful resources thay you may find:</p>
+              <ul class="other-ref">
+                <li><a href="#grid">Bootstrap Grid</a></li>
+                <li><a href="#form_elements">Form Elements</a></li>
+                <li><a href="#form_validation">Form Validation</a></li>
+              </ul>
+              <section id="form_validation">
+                <h3 class="page-title">Form Validation</h3>
+                <hr>
+                <p>Pages is packaged with <a href="http://jqueryvalidation.org/">jQuery Validation Plugin</a> which is currently the de-facto plugin for form validation.
+                </p>
+                <div class="alert alert-info">
+                  <p>Please refer to <a href="http://jqueryvalidation.org/">jQuery Validation Plugin Documentation</a> to learn about plugin options</p>
+                </div>
+                <h5 class="semi-bold">Step one</h5>
+                <p>Include the relevant javascript files inside the
+                  <code>&lt;body&gt;</code>before core template script inclusions, if it's not there already.
+                </p>
+                <pre><code class="xml">&lt;script type=&quot;text/javascript&quot; src=&quot;assets/plugins/jquery-validation/js/jquery.validate.min.js&quot;&gt;</code></pre>
+                <h5 class="semi-bold m-t-20">Step two</h5>
+                <p>Create the markup.</p>
+                <pre><code class="xml">&lt;form id=&quot;myForm&quot; role=&quot;form&quot;&gt;
+    &lt;div class=&quot;row&quot;&gt;
+        &lt;div class=&quot;col-sm-6&quot;&gt;
+            &lt;div class=&quot;form-group form-group-default required&quot;&gt;
+                &lt;label&gt;First name&lt;/label&gt;
+                &lt;input type=&quot;text&quot; class=&quot;form-control&quot; name=&quot;firstName&quot; minlength=&quot;2&quot; required&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;col-sm-6&quot;&gt;
+            &lt;div class=&quot;form-group form-group-default&quot;&gt;
+                &lt;label&gt;Last name&lt;/label&gt;
+                &lt;input type=&quot;text&quot; class=&quot;form-control&quot; name=&quot;lastName&quot; minlength=&quot;2&quot; required&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;button class=&quot;btn btn-primary&quot; type=&quot;submit&quot;&gt;Register&lt;/button&gt;
+&lt;/form&gt;
+</code></pre>
+                <h5 class="semi-bold m-t-20">Step three</h5>
+                <p>Apply the plugin.</p>
+                <pre><code class="xml">&lt;script&gt;
+$(document).ready(function() {
+    $('#myForm').validate();
+});
+&lt;/script&gt;</code></pre>
+                <h5>Error messages</h5>
+                <p><code>showErrors</code> and <code>errorPlacement</code> functions of jQuery Validate have been overridden in Pages core. As a result, the way error messages are displayed will differ depending on the <a href="#form_elements">form layout style</a> you've declared in the code</p>
+                <h5 class="semi-bold">Standard</h5>
+                <p>Standard way of showing error messages. Will appear on any form except for forms with <a href="#form_elements">attached groups</a></p>
+                <img src="assets/img/error-message-standard.png" style="width:50%">
+                <h5 class="semi-bold">Attached</h5>
+                <p>Recommended to use with Pages <a href="#form_elements">default form style</a> having attached elements with <code>.form-group-attached</code> wrapper. The error messages will appear in the form of popovers.</p>
+                <img src="assets/img/error-message-popover.png" style="width:50%">
+              </section>
+              <section id="email">
+                <h3 class="page-title">Email</h3>
+                <hr>
+                <p>
+                  Pages frontend comes with an built in emailing module for contact page, a simple frontend validation and a popular libray called PHPMailer. Mailing is demonstrated in the contact.html page in every sample.
+                </p>
+                <a href="https://github.com/PHPMailer/PHPMailer" target="_blank" class="btn btn-complete">PHPMailer Documentation</a>
+                <br>
+                <br>
+                <h4 class="light m-b-20">Setting Up Email to work on Contact Page</h4>
+                <h5 class="semi-bold">Step one</h5>
+                <p>Open up <code>_lib/mail.php</code>
+                </p>
+                <br>
+                <h5 class="semi-bold">Step Two</h5>
+                <p>Change the relavent Attributes to your needs
+                  <pre><code>$mail->Host = 'smtp.gmail.com';                // Specify main and backup server (this is a fake name for the use of this example)             
+$mail->Username = 'xx@gmail.com';                  // SMTP username
+$mail->Password = '';                         // SMTP password
+$mail->SMTPSecure = 'tls';                          // Enable encryption, 'ssl' also accepted                                   
+$mail->Port = 587; </code></pre>
+                </p>
+                <br>
+                <p>Currently the form is setup to do all the task with zero configuration, you can open up <code>assets/js/contact.js</code> to play around and do advance configurations for your needs.
+              </section>
+              <section id="troubleshooting">
+                <h3 class="page-title">Troubleshooting</h3>
+                <hr>
+                <p>This section of the page describes how to trouble shoot Javascript errors that you may in counter. </p>
+                <p>JavaScript errors are likely to prevent a web page from working as expected. By default all browsers hide the JavaScript errors from the end user.</p>
+                <p>Fortunately there are <a href="http://javascript.info/tutorial/development" target="_blank">browser developer tools</a> to inspect and debug JavaScript errors.</p>
+              </section>
+              <section id="community">
+                <h3 class="page-title">
+		Community
+	</h3>
+                </hr>
+                <br>
+                <p>Joing the commnunity to find answers, ask questions and collaborate with the support team to create a knowledge base for future references, there are tutorials, questions and faq.
+                  <a href="http://help.revox.io/">Help Community</a>
+              </section>
+              <section id="support">
+                <h3 class="page-title">Support</h3>
+                <hr>
+                <p>
+                  You can request for support via email or themeforest comments
+                </p>
+                <p>
+                  We will assist you any problem you face while buidling your app via Pages framework
+                </p>
+                <br>
+                <a href="http://help.revox.io/" class="btn btn-white" href=""><i class="fa-users fa"></i> Help Commnunity</a>
+                <a class="btn btn-white" href="http://themeforest.net/item/pages-multipurpose-html5-website-template/12366875/comments"><i class="pg-comment"></i> Themeforest Comments</a>
+                <a class="btn btn-white" href="mailto:support@revox.io"><i class=" pg-mail"></i> support@revox.io</a>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      Copyright Reserved Revox 2014 - 2015
+    </footer>
+    <script src="./assets/plugins/jquery/jquery-1.11.1.min.js" type="text/javascript"></script>
+    <script src="./assets/plugins/jquery-ui/jquery-ui.min.js" type="text/javascript"></script>
+    <script src="./assets/plugins/modernizr.custom.js" type="text/javascript"></script>
+    <script type="text/javascript" src="./assets/plugins/boostrapv3/js/bootstrap.min.js"></script>
+    <script src="./assets/plugins/highlight/highlight.pack.js" type="text/javascript"></script>
+    <script src="./assets/plugins/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+    <script src="./pages/js/pages.js" type="text/javascript"></script>
+    <script src="assets/js/sidebar.js" type="text/javascript"></script>
+    <script src="assets/plugins/jquery-dynatree/jquery.dynatree.min.js" type="text/javascript"></script>
+    <script>
+    $(document).ready(function()
+    {
+      //Initialize Pages core
+      hljs.initHighlightingOnLoad();
+      $("#default-tree").dynatree();
+      $("#angular-tree").dynatree();
+      $("#g-tree").dynatree();
+      $("#g-trees").dynatree();
+      $("#b-tree").dynatree();
+    });
+    </script>
+    <script>
+    $(document).ready(function()
+    {
+      //Initialize Pages core
+      hljs.initHighlightingOnLoad();
+    });
+    </script>
+  </body>
+</html>

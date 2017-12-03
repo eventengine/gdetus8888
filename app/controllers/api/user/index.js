@@ -178,8 +178,6 @@ module.exports = {
 	}
 	
 };
-
-
 	
 function getAllUsers(req, res) {
 	if (req.isAuthenticated()) {

@@ -302,7 +302,11 @@
                             </a>
                             <div class="view-heading">
                                 {{authenticated.firstname}} {{authenticated.lastname}}
-                                <div class="fs-11 hint-text">online</div>
+                                <div class="fs-12 hint-text">online  
+	                                <a href="#" class="link text-master" ui-sref="#">
+	                                	<i class="pg-phone"></i>
+	                                </a>
+                                </div> 
                             </div>
                             <a href="" class="link text-master inline action p-r-10 pull-right">
                                 <i class="pg-more"></i>
@@ -315,7 +319,7 @@
                         <!-- BEGIN From Me Message  !-->
                         <div class="message clearfix">
                             <div ng-repeat="message-from-me" class="chat-bubble from-me">
-                                Hello there 
+                                Hello there )))
                             </div>
                         </div>
                         <!-- END From Me Message  !-->
@@ -341,7 +345,7 @@
                                 </a>
                             </div>
                             <div class="chat-bubble from-them">
-                                Hey
+                                Хэй!
                             </div>
                         </div>
                         <!-- END From Them Message  !-->
@@ -349,14 +353,16 @@
                         <!-- BEGIN From Me Message  !-->
                         <div class="message clearfix">
                             <div class="chat-bubble from-me">
-                                Did you check out Pages framework ?
+                                Привет! Слушай, ты смотрел Cortex от #НичегоЛичного?
+                                Они его после Гдетуса начали делать. 
+                                Оч крутой, чистый код, и, как я понял отличная платформа.
                             </div>
                         </div>
                         <!-- END From Me Message  !-->
                         <!-- BEGIN From Me Message  !-->
                         <div class="message clearfix">
                             <div class="chat-bubble from-me">
-                                Its an awesome chat
+                                Круто сделано, прям ламповый код. Короче - советую поинтересоваться.
                             </div>
                         </div>
                         <!-- END From Me Message  !-->
@@ -379,7 +385,7 @@
                                 </a>
                             </div>
                             <div class="chat-bubble from-them">
-                                Yea
+                                Угу, я уже смотрел его. Думаю взять в продакшен :)
                             </div>
                         </div>
                         <!-- END From Them Message  !-->
@@ -396,7 +402,7 @@
                             </div>-->
                             
                             <div class="col-xs-1 p-t-15 dropdown-default dropup" pg-dropdown>
-                                <i class="fa fa-plus-circle" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-paperclip" class="link text-master" class="dropdown-toggle" data-toggle="dropdown">
                                 <!--<ul class="dropdown-menu " role="menu">
 									<li><a href="" ui-sref="app.friends"><i class="fa fa-user"></i> Друзья</a></li>
 									<li><a href="" ui-sref="app.im"><i class="pg-social"></i> Сообщения</a></li>
@@ -424,10 +430,12 @@
                                 	   class="form-control chat-input"
                                 	   data-chat-input=""
                                 	   data-chat-conversation="#my-conversation"
-                                	   placeholder="Ваше сообщение...">
+                                	   placeholder="Ваше сообщение..."/>
                             </div>
                             <div class="col-xs-2 link text-master m-l-10 m-t-15 p-l-10 b-l b-grey col-top">
-                                <a href="" class="link text-master"><i class="pg-camera"></i></a>
+                                <a href="" class="link text-master">
+                                	<i class="fa fa-smile-o"></i>
+                                </a>
                             </div>
                         </div>
                     </div>

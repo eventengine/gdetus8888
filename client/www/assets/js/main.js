@@ -158,7 +158,7 @@ angular.module('app')
 	
 /**
  * html5Mode
- * Включаем, чтобы убрать из URL знак решетки.
+ * Включаем, чтобы убрать из URL знак решётки.
  */
 angular.module('app')
 	.config(['$locationProvider', function($locationProvider) {
